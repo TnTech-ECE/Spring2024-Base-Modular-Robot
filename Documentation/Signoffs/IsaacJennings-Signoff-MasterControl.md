@@ -1,7 +1,7 @@
 # Master Control Signoff
 ## Functionality
-	[Insert Picture]
-	The Master Control subsytem will facilitate navigation and control of the other
+[Insert Picture]
+The Master Control subsytem will facilitate navigation and control of the other
 	subsystems to direct the robot around the board. The system will receive 
 	inputs from the start button, sensing microcontroller, and other peripherals
 	designed by future teams, and it will output instructions to the motor Control
@@ -24,22 +24,22 @@
 -C9:The robot shall travel inclines and declines up to 25 degrees
 	* The master controller will send the signal to the motor controller, so it must know when and to what degree any inclines and declines may be. 
 
-	-C10:The robot shall turn 360 degrees left and right and move
-		forwards and backwards based on sensor inputs.
-			* The master controller will send commands to enable movement.
+-C10:The robot shall turn 360 degrees left and right and move
+	forwards and backwards based on sensor inputs.
+		* The master controller will send commands to enable movement.
 
 	
-	-C11: The robot shall have a navigation system that controls
-		movement.
+-C11: The robot shall have a navigation system that controls
+	movement.
 		* The master controller will use the data from the sensor inputs to make decisions on the movement outputs. 
 	
-	-C12:The robot shall know its location within a two-inch
-		tolerance.
-			* The sensor information must be accurately decoded in the master controller to ensure the two-inch tolerance is met. 
+-C12:The robot shall know its location within a two-inch
+	tolerance.
+		* The sensor information must be accurately decoded in the master controller to ensure the two-inch tolerance is met. 
 	
-	-C13:The robot shall possess a maximum speed of 2 feet per
-		second.
-			* The master controller will send speed commands, so it is necessary that the proper speed that is sent should show at the output. 
+-C13:The robot shall possess a maximum speed of 2 feet per
+	second.
+		* The master controller will send speed commands, so it is necessary that the proper speed that is sent should show at the output. 
 	
 	
 
