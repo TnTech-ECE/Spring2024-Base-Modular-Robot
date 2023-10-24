@@ -13,31 +13,31 @@ The Master Control subsytem will facilitate navigation and control of the other
 ## Constraints
 	how they apply
 	
--C2:The robot shall possess an allocated data input point for
+- C2:The robot shall possess an allocated data input point for
 	an alternative start method.
 	* The master control system will reserve these pins for future users to attach an alternative start method.
 	
--C3:The robot shall be autonomous with customizable dimensions and the stock design only occupying up to one-half
+- C3:The robot shall be autonomous with customizable dimensions and the stock design only occupying up to one-half
 	of the allowed cubic foot (1 ft x 1 ft x 6 in) [1]–[3].
 	* Autonomy will be achieved by the master controller. All navigation decision will be made in the master controller. 
 
--C9:The robot shall travel inclines and declines up to 25 degrees
+- C9:The robot shall travel inclines and declines up to 25 degrees
 	* The master controller will send the signal to the motor controller, so it must know when and to what degree any inclines and declines may be. 
 
--C10:The robot shall turn 360 degrees left and right and move
+- C10:The robot shall turn 360 degrees left and right and move
 	forwards and backwards based on sensor inputs.
 		* The master controller will send commands to enable movement.
 
 	
--C11: The robot shall have a navigation system that controls
+- C11: The robot shall have a navigation system that controls
 	movement.
 		* The master controller will use the data from the sensor inputs to make decisions on the movement outputs. 
 	
--C12:The robot shall know its location within a two-inch
+- C12:The robot shall know its location within a two-inch
 	tolerance.
 		* The sensor information must be accurately decoded in the master controller to ensure the two-inch tolerance is met. 
 	
--C13:The robot shall possess a maximum speed of 2 feet per
+- C13:The robot shall possess a maximum speed of 2 feet per
 	second.
 		* The master controller will send speed commands, so it is necessary that the proper speed that is sent should show at the output. 
 	
