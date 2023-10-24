@@ -13,16 +13,16 @@
 ## Constraints
 	how they apply
 	
-	-C2:The robot shall possess an allocated data input point for
-		an alternative start method.
-			* The master control system will reserve these pins for future users to attach an alternative start method.
+-C2:The robot shall possess an allocated data input point for
+	an alternative start method.
+	* The master control system will reserve these pins for future users to attach an alternative start method.
 	
-	-C3:The robot shall be autonomous with customizable dimensions and the stock design only occupying up to one-half
-		of the allowed cubic foot (1 ft x 1 ft x 6 in) [1]–[3].
-			* Autonomy will be achieved by the master controller. All navigation decision will be made in the master controller. 
+-C3:The robot shall be autonomous with customizable dimensions and the stock design only occupying up to one-half
+	of the allowed cubic foot (1 ft x 1 ft x 6 in) [1]–[3].
+	* Autonomy will be achieved by the master controller. All navigation decision will be made in the master controller. 
 
-	-C9:The robot shall travel inclines and declines up to 25 degrees
-			* The master controller will send the signal to the motor controller, so it must know when and to what degree any inclines and declines may be. 
+-C9:The robot shall travel inclines and declines up to 25 degrees
+	* The master controller will send the signal to the motor controller, so it must know when and to what degree any inclines and declines may be. 
 
 	-C10:The robot shall turn 360 degrees left and right and move
 		forwards and backwards based on sensor inputs.
@@ -49,6 +49,7 @@ current draw, etc
 The following is a table of the Jetson Nano's pins and adapters:
 
 |Name|Quantity|
+|-|-|
 |Micros SD slot| 1|
 |GPIO pins| 40|
 |Micro-USB|1|
@@ -73,7 +74,7 @@ Therefore, it is recommended that the micro-USB is used to reduce the current dr
 
 ## ROS Implementation and Testing
 
-	ROS will be used; explain how; create a simulation; Using Arduino?
+ROS will be used; explain how; create a simulation; Using Arduino?
 
 ### Bill of Materials (BOM)
 
