@@ -26,20 +26,20 @@ The Master Control subsytem will facilitate navigation and control of the other
 
 - C10:The robot shall turn 360 degrees left and right and move
 	forwards and backwards based on sensor inputs.
-		* The master controller will send commands to enable movement.
+	* The master controller will send commands to enable movement.
 
 	
 - C11: The robot shall have a navigation system that controls
 	movement.
-		* The master controller will use the data from the sensor inputs to make decisions on the movement outputs. 
+	* The master controller will use the data from the sensor inputs to make decisions on the movement outputs. 
 	
 - C12:The robot shall know its location within a two-inch
 	tolerance.
-		* The sensor information must be accurately decoded in the master controller to ensure the two-inch tolerance is met. 
+	* The sensor information must be accurately decoded in the master controller to ensure the two-inch tolerance is met. 
 	
 - C13:The robot shall possess a maximum speed of 2 feet per
 	second.
-		* The master controller will send speed commands, so it is necessary that the proper speed that is sent should show at the output. 
+	* The master controller will send speed commands, so it is necessary that the proper speed that is sent should show at the output. 
 	
 	
 
