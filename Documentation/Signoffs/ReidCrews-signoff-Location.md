@@ -17,7 +17,7 @@ The location subsystem sends data to the master control  to control and move the
 
 * C11: The robot shall have a navigation system that controls movement.
 
-	* This constraint is applicable because the sensor needs to transmit data to the master control.
+    * This constraint is applicable because the sensor needs to transmit data to the master control.
 		
 * C12: The robot shall know its location within a two-inch tolerance.
     
