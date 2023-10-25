@@ -54,7 +54,9 @@ The ultrasonic sensor has an operating current at 8 mA and operating voltage at 
 
 The operating frequency is 40 kHz. When a pulse trigger signal with more than 10 &#956;s, the ultrasonic sensor will issue 8 cycles of 40 kHz cycle level and detect the echo signal (return signal). 
 
-![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-Location/Documentation/Images/Position/PositionSensorTimingDiagram.PNG)
+<p align = "center">
+<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-Location/Documentation/Images/Position/PositionSensorTimingDiagram.PNG"/>
+</p>
 
 The recommended sampling rate is over 60 ms (16.7 Hz) [2]. 
 
