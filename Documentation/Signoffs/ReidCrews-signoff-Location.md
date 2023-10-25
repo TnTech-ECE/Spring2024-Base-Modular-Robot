@@ -33,7 +33,7 @@ The location subsystem sends data to the master control  to control and move the
 
 ### Location Subsystem Schmatic
 
-![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-Location/Documentation/Electrical/Schematics/Sources/Position/PositionSensorSchematic.PNG)
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-Location/Documentation/Electrical/Schematics/Sources/Position/PositionSensorSchematic2.png)
 
 
 The location schematic is shown above. The Grove Ultrasonic Distance Sensors are used from SeeedStudio. The sensor is powered by the Arduino Mega 5V pin. The SIG pin is for both the transmitter and receiver, and the NC pin is the non-connection pin. Each sensor SIG pin is connected to a digital pin of the Arduino Mega. Four sensors are used with one on each side because this allows each side of the robot to be known relative to the arena's boundaries.
