@@ -94,6 +94,8 @@ The formula above is used to find the distance between the sensor and object. Th
 
 [4] [SECON 2024 Hardware Competition][def3]: Rules for SECON Hardware Competition
 
+[5] [Grove Ultrasonic Ranger Datasheet][def5]: Datasheet from Seeed Studio
+
 
 
 [def1]: https://www.seeedstudio.com/Grove-Ultrasonic-Distance-Sensor.html?utm_source=blog&utm_medium=blog
@@ -103,3 +105,5 @@ The formula above is used to find the distance between the sensor and object. Th
 [def3]: https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-Location/Documentation/Background%20Documents/SEC24-HW-Competition_V5.6-1.pdf
 
 [def4]: https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf
+
+[def5]: https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-Location/Documentation/Background%20Documents/Position/Grove-Ultrasonic_Ranger_WiKi.pdf
