@@ -71,8 +71,12 @@ The formula above is used to find the distance between the sensor and object. Th
 
 [2] [Grove - Ultrasonic Distance Sensor][def1]: The link for the ultrasonic sensor from Seeed Studio
 
+[3] [SECON 2024 Hardware Cmpetition][def3]: Rules for SECON Hardware Cmpetition
+
 
 
 [def1]: https://www.seeedstudio.com/Grove-Ultrasonic-Distance-Sensor.html?utm_source=blog&utm_medium=blog
 
 [def2]: https://www.seeedstudio.com/blog/2019/11/04/hc-sr04-features-arduino-raspberrypi-guide/
+
+[def3]: https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-Location/Documentation/Background%20Documents/SEC24-HW-Competition_V5.6-1.pdf
