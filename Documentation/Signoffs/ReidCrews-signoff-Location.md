@@ -52,12 +52,29 @@ The ultrasonic sensor has an operating current at 8 mA and operating voltage at 
 
 ![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-Location/Documentation/Images/Position/UltrasonicSensorComparsion.jpg)
 
-The operating frequency is 40 kHz. When a pulse trigger signal with more than 10 &#956;s, the ultrasonic sensor will issue 8 cycles of 40 kHz cycle level and detect the echo signal (return signal). The pulse width of the echo signal is directly proportional to the measured distance.
+The operating frequency is 40 kHz. When a pulse trigger signal with more than 10 &#956;s, the ultrasonic sensor will issue 8 cycles of 40 kHz cycle level and detect the echo signal (return signal). 
+
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-Location/Documentation/Images/Position/PositionSensorTimingDiagram.PNG)
+
+The recommended sampling rate is over 60 ms (16.7 Hz) [2]. 
+
+$$ Max \space robot \space speed: \space 2 \space {ft \over s}$$
+
+$$Sampling \space Rate \space for \space 60\space ms\space (16.7\space Hz)$$
+
+$$ 2 \space {ft \over s} *0.06 \space s = 0.12 \space ft \space or \space 1.44 \space in $$
+
+$$Sampling \space Rate \space for \space 80\space ms\space (12.5\space Hz)$$
+
+$$ 2 \space {ft \over s} *0.08 \space s = 0.16 \space ft \space or \space 1.92 \space in $$
+
+
+The pulse width of the echo signal is directly proportional to the measured distance.
 
 
 $$Distance = {Echo\space Time * Speed\space of\space Sound \over 2}$$
 
-The formula above is used to find the distance between the sensor and object. The measuring range is 2 to 350 cm. This specification is upheld by the constraint of the 4 x 8 ft arena because 350 cm (11.5 ft) is enough distance to measure anywhere in the arena. Worst case scenario distance is the adjacent diagonal to the 8 ft wall. That distance is around 9 ft which is still inside of the 11.5 ft maxmium distance. The tolerance for measured distance is $\pm$ 2 mm which is upheld by the $\pm$ 2 in. tolerance constraint [2]. The height of the ultrasonic sensor placement will be around 1.75 to 3.5 inches because a 1x4 wood board is used for the arena boundaries [3]. The width placment will be in the middle of robot on each side. The weight of the ultrasonic sensor is 13 g which should not be a factor in the robot overall weight. The measured angle of the ultrasonic sensor is 15 $^\circ$.
+The formula above is used to find the distance between the sensor and object. The measuring range is 2 to 350 cm. This specification is upheld by the constraint of the 4 x 8 ft arena because 350 cm (11.5 ft) is enough distance to measure anywhere in the arena. Worst case scenario distance is the adjacent diagonal to the 8 ft wall. That distance is around 9 ft which is still inside of the 11.5 ft maxmium distance. The tolerance for measured distance is $\pm$ 2 mm which is upheld by the $\pm$ 2 in. tolerance constraint [3]. The height of the ultrasonic sensor placement will be around 1.75 to 3.5 inches because a 1x4 wood board is used for the arena boundaries [4]. The width placment will be in the middle of robot on each side. The weight of the ultrasonic sensor is 13 g which should not be a factor in the robot overall weight. The measured angle of the ultrasonic sensor is 15 $^\circ$.
 
 ## BOM
 
@@ -69,9 +86,11 @@ The formula above is used to find the distance between the sensor and object. Th
 
 [1] [Comparing Ultrasonic Sensors][def2]: Comparing the HC-SR04 and Grove – Ultrasonic Distance Sensor
 
-[2] [Grove - Ultrasonic Distance Sensor][def1]: The link for the ultrasonic sensor from Seeed Studio
+[2] [Ultrasonic Sensor Datasheet][def4]: Sampling Rate & Timimg Digram
 
-[3] [SECON 2024 Hardware Competition][def3]: Rules for SECON Hardware Competition
+[3] [Grove - Ultrasonic Distance Sensor][def1]: The link for the ultrasonic sensor from Seeed Studio
+
+[4] [SECON 2024 Hardware Competition][def3]: Rules for SECON Hardware Competition
 
 
 
@@ -80,3 +99,5 @@ The formula above is used to find the distance between the sensor and object. Th
 [def2]: https://www.seeedstudio.com/blog/2019/11/04/hc-sr04-features-arduino-raspberrypi-guide/
 
 [def3]: https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-Location/Documentation/Background%20Documents/SEC24-HW-Competition_V5.6-1.pdf
+
+[def4]: https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf
