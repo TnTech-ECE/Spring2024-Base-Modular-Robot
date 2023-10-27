@@ -36,9 +36,10 @@ The above component attaches to the chassis frame on the underside of the extrud
 The above figure is the attachment fully assembled with the sensor manufacturer's provided 3D model. 
 
 #### 2 Sensor Set Attachment
-![Alt text]()
-![Alt text]()
-![Alt text]()
+The following attachment is an exact copy of the previous attachment, but with the length of the 2 sensor set. Therefore, all reasoning and justifications are the same. 
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/attachment-signoff/Documentation/Images/Line%20Sensor%202%20Bracket.jpg)
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/attachment-signoff/Documentation/Images/2%20Backet%20Adjustment.jpg)
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/attachment-signoff/Documentation/Images/2%20Sensor%20Assembly.jpg)
 
 ### Ultrasonic Distance Sensor
 ![Alt text]()
