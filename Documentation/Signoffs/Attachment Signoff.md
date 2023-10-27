@@ -23,19 +23,32 @@ The function of the attachment subsystem is to hold components of other sybsyste
 ## Buildable Schematics
 
 ### Line Following Sensor
-The line following sensor comes in an 8 sensor set that is broken along a preforated line that splits the sensor into a 6 sensor set and a 2 sensor set. Therefore, an attachment will created for each. The buildable schematic for each is seen below. The attachment for both is comprised of two peices that will be connected through a screw and washer to allow for height adjustment from the minimum to maximum recommended heights of 0.125 - 0.375 inches. 
+The line following sensor comes in an 8 sensor set that is broken along a preforated line that splits the sensor into a 6 sensor set and a 2 sensor set. Therefore, an attachment will created for each. The buildable schematic for each is seen below. The attachment for both is comprised of two peices that will be connected through a screw and washer to allow for height adjustment from the minimum to maximum recommended height of 0.125 - 0.375 inches. 
 
 #### 6 Sensor Set Attachment
 ![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/attachment-signoff/Documentation/Images/Line%20Sensor%206%20Bracket%20Drawing.jpg)
-(Place 6 Adjustment Drawing jpeg)
+The above component is the what the physical sensor will attach to. It is designed in such a way that at the maximum height the sensor will not rise up into the attachment. Becasue the sensor read reflectance off the ground, if any portion of the attachmetn caused shadowing onto the sensor then the readings could be inaccurate. This component will sit into the adjustment mechanism below. 
+
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/attachment-signoff/Documentation/Images/6%20Backet%20Adjustment%20Drawing.jpg)
+The above component attaches to the chassis frame on the underside of the extruded alumnium. In the analysis section, the distance from the bottom of the extruded aluminum to the ground will be calculated to confirm that this places the sensor at the appropriate height. The adjustment mechanism works through loosening and tightening a screw with a washer to catch the edge.
+
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/attachment-signoff/Documentation/Images/6%20Bracket%20Assembly.jpg)
+The above figure is the attachment fully assembled with the sensor manufacturer's provided 3D model. 
 
 #### 2 Sensor Set Attachment
+![Alt text]()
+![Alt text]()
+![Alt text]()
 
 ### Ultrasonic Distance Sensor
+![Alt text]()
 
 ### Time of Flight Sensor
+![Alt text]()
 
 ### Motor
+![Alt text]()
+![Alt text]()
 
 ## Analysis
 
