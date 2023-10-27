@@ -26,7 +26,7 @@ The function of the attachment subsystem is to hold components of other sybsyste
 The line following sensor comes in an 8 sensor set that is broken along a preforated line that splits the sensor into a 6 sensor set and a 2 sensor set. Therefore, an attachment will created for each. The buildable schematic for each is seen below. The attachment for both is comprised of two peices that will be connected through a screw and washer to allow for height adjustment from the minimum to maximum recommended heights of 0.125 - 0.375 inches. 
 
 #### 6 Sensor Set Attachment
-![Alt text](C:\Users\olson\OneDrive\Documents\GitHub\Control-Sensing-Wireless-Charging-Robot\Documentation\Images\6 Backet Adjustment Drawing.jpg)
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/attachment-signoff/Documentation/Images/Line%20Sensor%206%20Bracket%20Drawing.jpg)
 (Place 6 Adjustment Drawing jpeg)
 
 #### 2 Sensor Set Attachment
