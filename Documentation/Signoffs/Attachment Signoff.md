@@ -42,13 +42,13 @@ The following attachment is an exact copy of the previous attachment, but with t
 ![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/attachment-signoff/Documentation/Images/2%20Sensor%20Assembly.jpg)
 
 ### Ultrasonic Distance Sensor
-![Alt text]()
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/attachment-signoff/Documentation/Images/Ultrasonic%20Sensor%20Drawing.jpg)
 
 ### Time of Flight Sensor
-![Alt text]()
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/attachment-signoff/Documentation/Images/Time%20of%20Flight%20Attachment%20Drawing.jpg)
 
 ### Motor
-![Alt text]()
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/attachment-signoff/Documentation/Images/Motor%20Attachment%20Drawing.jpg)
 ![Alt text]()
 
 ## Analysis
