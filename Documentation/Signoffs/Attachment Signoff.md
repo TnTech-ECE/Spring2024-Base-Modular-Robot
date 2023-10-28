@@ -57,7 +57,9 @@ The motors possess attachments designed for them; however, they are not compatib
 ![Alt text]()
 
 ## Analysis
-The analysis performed is confirmation of the distance from the bottom of the extruded aluminum to the ground. This is an important measurement to know because the lien sensor must be a speecific distance to the ground. The mininum height is 0.125 inches and maximum recommended height is 0.375 inches. The first figure below measures the distance to the ground being () inches. The second figure measures rom the top of both line sensor attachments to the face of the sensor on the pcb  to be () inches at the lowest setting. Therefore, the minimum height is 0.125 inches. Therefore, this confirms compliance with the sensors specfication for the minimum height. The third figure measues from the top of both line sensor attachments to the face of the sensor on the pcb  to be () inches at the lowest setting. Therefore, the minimum height is 0.125 inches. Therefore, this confirms compliance with the sensors specfication for the maximum height.
+The analysis performed is confirm that the sensor is placed between 0.125 and 0.375 inches. The first figure below measures the distance from the bottom of the extruded alumninum to the ground being () inches. The second figure measures from the top of both line sensor attachment, which is the same for both, to the face of the sensor on the pcb  to be () inches at the lowest setting. Therefore, the minimum height is () - () = 0.125 inches. Therefore, this confirms compliance with the sensors specfication for the minimum height. The third figure measures from the top of both line sensor attachments to the face of the sensor on the pcb to be () inches at the highest setting. Therefore, the maximum height is () - () = 0.375 inches. Therefore, this confirms compliance with the sensors specfication for the maximum height.
+![Alt text]()
+![Alt text]()
 ![Alt text]()
 
 ## BOM
