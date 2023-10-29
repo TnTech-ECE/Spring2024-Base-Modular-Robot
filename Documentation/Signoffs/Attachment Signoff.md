@@ -53,7 +53,7 @@ The time of flight sensor detects small distances. Therefore, it will be used fo
 ![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/attachment-signoff/Documentation/Images/Time%20of%20Flight%20Sensor%20Front.png)
 
 ### Motor
-The motors possess attachments designed for them; however, they are not compatible with the extruded alumnium. Therefore, these adapators have been desgined for attachment onto the extruded aluminum. It is important to note that an attachment was not created to combine these attributes into one design because of the material. It was determined that the the metal mount provided would be the best for direct attachment to motors and this printed attachment will be best for attaching to the chassis framee figures below outline the dimensions for the design and overall connection with the motor system. 
+The motors possess attachments designed for them; however, they are not compatible with the extruded alumnium. Therefore, these adapators have been designed for attachment onto the extruded aluminum. It is important to note that an attachment was not created to combine these attributes into one design because of the material. It was determined that the the metal mount provided would be the best for direct attachment to motors and this printed attachment will be best for attaching to the chassis framee figures below outline the dimensions for the design and overall connection with the motor system. 
 ![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/attachment-signoff/Documentation/Images/Motor%20Attachment%20Drawing.jpg)
 ![Alt text]()
 
@@ -65,9 +65,13 @@ The analysis performed is confirm that the sensor is placed between 0.125 and 0.
 
 ## BOM
 | Item | Quantity | Price/Item | Total Price | 
-|-|-|-|-| 
-| | | | | 
-| | | | |
+|1/4-20 Screw (20 pk)|1|$8.99|$8.99| 
+|1/4" Washer(100 pk)| 1|$6.19|$6.19| 
+|2-56 Screw (25 pk)|1|$2.25|$2.25|
+|2-56 Hex Nut (25 pk)|1|$2.25|$2.25|
+| |1|$|$|
+| |1|$|$|
+|PLA Filament|1|$17.99|$17.99|
 
 ## References
 Pololu Line Following Sensor Information: https://www.pololu.com/product/961/ (Accessed 10/18/2023)
