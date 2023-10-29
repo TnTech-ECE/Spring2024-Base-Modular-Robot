@@ -55,24 +55,22 @@ The time of flight sensor detects small distances. Therefore, it will be used fo
 ### Motor
 The motors possess attachments designed for them; however, they are not compatible with the extruded alumnium. Therefore, these adapators have been designed for attachment onto the extruded aluminum. It is important to note that an attachment was not created to combine these attributes into one design because of the material. It was determined that the the metal mount provided would be the best for direct attachment to motors and this printed attachment will be best for attaching to the chassis framee figures below outline the dimensions for the design and overall connection with the motor system. 
 ![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/attachment-signoff/Documentation/Images/Motor%20Attachment%20Drawing.jpg)
-![Alt text]()
 
 ## Analysis
 The analysis performed is confirm that the sensor is placed between 0.125 and 0.375 inches. The first figure below measures the distance from the bottom of the extruded alumninum to the ground being () inches. The second figure measures from the top of both line sensor attachment, which is the same for both, to the face of the sensor on the pcb  to be () inches at the lowest setting. Therefore, the minimum height is () - () = 0.125 inches. Therefore, this confirms compliance with the sensors specfication for the minimum height. The third figure measures from the top of both line sensor attachments to the face of the sensor on the pcb to be () inches at the highest setting. Therefore, the maximum height is () - () = 0.375 inches. Therefore, this confirms compliance with the sensors specfication for the maximum height.
-![Alt text]()
-![Alt text]()
-![Alt text]()
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/attachment-signoff/Documentation/Images/Motor%20Connection%20Drawing.jpg)
+
 
 ## BOM
 | Item | Quantity | Price/Item | Total Price | 
 |-|-|-|-|
 |1/4-20 Screw (20 pk)|1|$8.99|$8.99| 
-|1/4" Washer(100 pk)|1|$6.19|$6.19| 
+|1/4" Washer (100 pk)|1|$6.19|$6.19| 
 |2-56 Screw (25 pk)|1|$2.25|$2.25|
 |2-56 Hex Nut (25 pk)|1|$2.25|$2.25|
-| |1| | |
-| |1| | |
+|Assorted Nylon Hardware|1|$7.99|$7.99|
 |PLA Filament|1|$17.99|$17.99|
+| | | |$45.91|
 
 ## References
 Pololu Line Following Sensor Information: https://www.pololu.com/product/961/ (Accessed 10/18/2023)
