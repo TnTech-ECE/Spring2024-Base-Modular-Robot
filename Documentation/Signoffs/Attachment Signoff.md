@@ -65,13 +65,13 @@ The analysis performed is confirm that the sensor is placed between 0.125 and 0.
 
 ## BOM
 | Item | Quantity | Price/Item | Total Price | 
-|1/4-20 Screw (20 pk)|1|$8.99|$8.99| 
-|1/4" Washer(100 pk)| 1|$6.19|$6.19| 
-|2-56 Screw (25 pk)|1|$2.25|$2.25|
-|2-56 Hex Nut (25 pk)|1|$2.25|$2.25|
-| |1|$|$|
-| |1|$|$|
-|PLA Filament|1|$17.99|$17.99|
+| 1/4-20 Screw (20 pk) | 1 | $8.99 | $8.99 | 
+| 1/4" Washer(100 pk) | 1 | $6.19 | $6.19 | 
+| 2-56 Screw (25 pk) | 1 | $2.25 | $2.25 |
+| 2-56 Hex Nut (25 pk) | 1 | $2.25 | $2.25 |
+| | 1 | | |
+| | 1 | | |
+| PLA Filament | 1 | $17.99 | $17.99 |
 
 ## References
 Pololu Line Following Sensor Information: https://www.pololu.com/product/961/ (Accessed 10/18/2023)
