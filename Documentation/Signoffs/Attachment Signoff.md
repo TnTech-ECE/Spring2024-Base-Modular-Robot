@@ -44,12 +44,12 @@ The following attachment is an exact copy of the previous attachment, but with t
 ### Ultrasonic Distance Sensor
 The ultrasonic distance sensor will be used to detect the robot's distance from the borders of the arena. Therefore, this sensor need to be placed on the side(s) of the robot at the appropriate height. The borders are 2 by 4 peices of wood; therefore, the sensor needs to be placed somewhere in the middle. This height will not be determined until the testing phase. Therefore, the slots on the sides of the attachment will allow for height adjustment on the extruded aluminum. The figures below outline the dimensions for the design and provides the specifactions for the sensor.
 ![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/attachment-signoff/Documentation/Images/Ultrasonic%20Sensor%20Drawing.jpg)
-![Alt text]()
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/attachment-signoff/Documentation/Images/Time%20of%20Flight%20Sensor%20Specs.png)
 
 ### Time of Flight Sensor
 The time of flight sensor detects small distances. Therefore, it will be used for object detection. This means that this sensor will also need to be placed on the side(s) of the robot. The height that is effective will be determined during the testing phase; therefore, the current design allows for height adjustment by the tabs on the top and bottom. The figures below outline the dimensions for the design and provides the specifactions for the sensor.
 ![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/attachment-signoff/Documentation/Images/Time%20of%20Flight%20Attachment%20Drawing.jpg)
-![Alt text]()
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/attachment-signoff/Documentation/Images/Time%20of%20Flight%20Sensor%20Specs.png)
 
 ### Motor
 The motors possess attachments designed for them; however, they are not compatible with the extruded alumnium. Therefore, these adapators have been desgined for attachment onto the extruded aluminum. It is important to note that an attachment was not created to combine these attributes into one design because of the material. It was determined that the the metal mount provided would be the best for direct attachment to motors and this printed attachment will be best for attaching to the chassis framee figures below outline the dimensions for the design and overall connection with the motor system. 
