@@ -104,3 +104,8 @@ upgrade to the SD card will be an easy adjustment to make.
 https://www.amazon.com/dp/B09X7CRKRZ/ref=twister_B0BHJXCFXW?_encoding=UTF8&th=1
 https://www.amazon.com/Keyboard-Rii-Computer-Notebook-Windows/dp/B09Q838VRC/ref=sr_1_5?crid=360ZL8SY2W4KO&keywords=keyboard%2Band%2Bmouse%2Bwired&qid=1698694224&s=electronics&sprefix=keyboard%2Band%2Bmouse%2Bwired%2Celectronics%2C105&sr=1-5&th=1
 https://www.amazon.com/Monoprice-Micro-B-compatible-Samsung-Android/dp/B002HZYBZ6/ref=sr_1_4?crid=3Q2OWA8F1PC7C&keywords=microusb&qid=1698694400&s=electronics&sprefix=microusb%2Celectronics%2C145&sr=1-4
+
+References:
+https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-display
+https://www.amazon.com/Studio-Jetson-Developer-Computer-Development/dp/B09CPYR31L/ref=asc_df_B09CPYR31L/?tag=hyprod-20&linkCode=df0&hvadid=647233209265&hvpos=&hvnetw=g&hvrand=8442709519489363891&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1025954&hvtargid=pla-1656062339711&gclid=CjwKCAjwkNOpBhBEEiwAb3MvvfKncC-7VGuGfBhIuEgc8PBLcEU-9zpSj5f8J05tcG3_ACXFJG-hiBoCspsQAvD_BwE&th=1
+https://www.dfrobot.com/blog-1647.html
