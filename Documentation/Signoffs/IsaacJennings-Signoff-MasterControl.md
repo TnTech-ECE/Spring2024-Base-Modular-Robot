@@ -45,7 +45,7 @@ The Master Control subsytem will facilitate navigation and control of the other
 
 ## Analysis
 
-current draw, etc
+
 The following is a table of the Jetson Nano's pins and adapters:
 
 |Name|Quantity|
@@ -72,6 +72,11 @@ Subsystem will need to supply the Jetson Nano with 5V and 4A to properly power t
 However, if the micro-USB is used, the current only needs to reach 2A to properly power the controller. 
 Therefore, it is recommended that the micro-USB is used to reduce the current draw on the power system. 
 
+Data Synchronization between multiple microcontrollers will be achieved with the libraries provided on
+the Jetson Nano. Commands like stream.synchronize() will achieve the desired synchronization of data streams. 
+
+To have enough storage for any navigation algorithm that is conceivable on the Jetson Nano, a 32 GB SD card will be purchased to ensure the 
+proper amount of space is available for all applications. 
 ## ROS Implementation and Testing
 
 ROS will be used; explain how; create a simulation; Using Arduino?
@@ -82,3 +87,4 @@ ROS will be used; explain how; create a simulation; Using Arduino?
 |-|-|-|-|
 |Jetson Nano| 1 | $152.00| $152.00|
 
+https://store.goldbots.com/products/32gb-micro-sd-card-for-the-nvidia-jetson-nano-1?variant=31103415287890&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&gclid=Cj0KCQjwhfipBhCqARIsAH9msbkshfl22lHChfrqKATiTuCoWPwYdcE1xL9jH0uSsQMw7ozXlUQSdT0aAlP9EALw_wcB
