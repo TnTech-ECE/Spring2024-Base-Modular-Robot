@@ -5,13 +5,12 @@ The Master Control subsytem will facilitate navigation and control of the other
 	subsystems to direct the robot around the board. The system will receive 
 	inputs from the start button, sensing microcontroller, and other peripherals
 	designed by future teams, and it will output instructions to the motor Control
-	subsystem and peripherals designed by future teams. The subsystem will use a 
+	subsystem and other specified systems (designed by future teams). The subsystem will use a 
 	Jetson Nano microcontroller to do all calculations and to send instructions. 
-	The system will ultimately perform pathfinding, navigation, and user-defined peripherals,
+	The system will ultimately perform pathfinding, navigation, and user-defined peripheral tasks,
 	but for the scope of the current system, pathfinding and navigation will be addressed 
 	and user-defined peripherals will be considered and allotted for. 
 ## Constraints
-	how they apply
 	
 - C2:The robot shall possess an allocated data input point for
 	an alternative start method.
@@ -75,16 +74,33 @@ Therefore, it is recommended that the micro-USB is used to reduce the current dr
 Data Synchronization between multiple microcontrollers will be achieved with the libraries provided on
 the Jetson Nano. Commands like stream.synchronize() will achieve the desired synchronization of data streams. 
 
-To have enough storage for any navigation algorithm that is conceivable on the Jetson Nano, a 32 GB SD card will be purchased to ensure the 
-proper amount of space is available for all applications. 
+To have enough storage for any navigation algorithm that is conceivable on the Jetson Nano, a 64 GB SD card will be purchased to ensure the 
+proper amount of space is available for all applications. In order to interface with the Jetson Nano, a keyboard and mouse will also be needed.
+
 ## ROS Implementation and Testing
 
-ROS will be used; explain how; create a simulation; Using Arduino?
+The robot operating system (ROS) was used in the 2023 SECON robot as the master level controller. 
+As such, there is already ample proof that the Jetson Nano can easily connect to microcontrollers. 
+Therefore, no simulation is necessary to understand that the Nano will not have compatibility issues controlling other microcontrollers. 
+
+Using ROS and its programs does require the storage to be large enough to house all available code and algorithms, though. Since the Nano is capable of 
+housing AI algorithms in tandem with vision systems and complex navigation systems all at once, it is safe to say that the Nano will be more than capable of 
+running any simultaneous localization and mapping (SLAM) algorithm and should still have ample space for other user applications. 
+Even if future teams use vision systems or neural networks, the Jetson Nano is designed to properly handle nearly any case within the scope of SECON. 
+
+To further ensure that there is enough space, though, a 64GB SD card will be used to provide an abundance of storage. If future teams need to add even more space, a simple
+upgrade to the SD card will be an easy adjustment to make. 
 
 ### Bill of Materials (BOM)
 
-|Item Name|Quantity|Price/Item|Total Price|
-|-|-|-|-|
-|Jetson Nano| 1 | $152.00| $152.00|
+|Item Name|Sale Location|Quantity|Price/Item|Total Price|
+|-|-|-|-|-|
+|Jetson Nano|Amazon.com| 1 | $152.00| $152.00|
+|64 GB Memory Card| Amazon.com| 1 | $25.00| $25.00|
+|Keboard and Mouse Combo| Amazon.com| 1| $15.00 | $15.00|
+|Micro-USB cable| Amazon.com| 1| $5.00 | $5.00 |
 
-https://store.goldbots.com/products/32gb-micro-sd-card-for-the-nvidia-jetson-nano-1?variant=31103415287890&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&gclid=Cj0KCQjwhfipBhCqARIsAH9msbkshfl22lHChfrqKATiTuCoWPwYdcE1xL9jH0uSsQMw7ozXlUQSdT0aAlP9EALw_wcB
+
+https://www.amazon.com/dp/B09X7CRKRZ/ref=twister_B0BHJXCFXW?_encoding=UTF8&th=1
+https://www.amazon.com/Keyboard-Rii-Computer-Notebook-Windows/dp/B09Q838VRC/ref=sr_1_5?crid=360ZL8SY2W4KO&keywords=keyboard%2Band%2Bmouse%2Bwired&qid=1698694224&s=electronics&sprefix=keyboard%2Band%2Bmouse%2Bwired%2Celectronics%2C105&sr=1-5&th=1
+https://www.amazon.com/Monoprice-Micro-B-compatible-Samsung-Android/dp/B002HZYBZ6/ref=sr_1_4?crid=3Q2OWA8F1PC7C&keywords=microusb&qid=1698694400&s=electronics&sprefix=microusb%2Celectronics%2C145&sr=1-4
