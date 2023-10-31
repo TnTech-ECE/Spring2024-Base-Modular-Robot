@@ -1,6 +1,7 @@
 # Master Control Signoff
 ## Functionality
-[Insert Picture]
+![Alt text] (https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/IsaacJennings-Signoff-MasterControl/Documentation/Images/Master_Control_Pinout.png)
+
 The Master Control subsytem will facilitate navigation and control of the other
 	subsystems to direct the robot around the board. The system will receive 
 	inputs from the start button, sensing microcontroller, and other peripherals
