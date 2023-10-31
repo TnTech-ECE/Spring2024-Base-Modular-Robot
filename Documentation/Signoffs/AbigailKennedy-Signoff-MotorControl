@@ -1,33 +1,33 @@
 # Motor Control Subsystem
 ## Function of the Subsystem
-- 
+- Transport the robot with a maximum speed of 2 ft/s
+- Turn the robot 360 degrees and move forward and backward
+- The motor drivers will control the motors’ speeds and then move the wheels according to the control signals from the motor control microcontroller (outlined in a different detail design)
 
 ## Constraints
-- 
+- The robot must be able to move up to 2 ft/s to complete the course within the time limit from the competition rules. 
+- The robot's speed will be calculated assuming the robot weighs 20 pounds. This is done due to the maximum weight limit for competition.
 
 ### Socioeconomic Consideration
-- 
+- The motors chosen should operate at about 70% of the maximum efficiency to ensure power can be conserved and to reduce charging costs. Additionally, this will give the robot enough extra power when traversing inclines. 
+- The work done on this design and the implementation will be documented thoroughly to ensure the user manual is as helpful as possible for future groups using the robot.
 
 ## Buildable Schematics
 
 ### Motor
 ![image](https://user-images.githubusercontent.com/112428353/203175771-01a94bf9-d55d-4ecd-9e12-75bcc7caf23c.png)
 
-The two motor encoders will tell the low level microcontroller how fast the motor is driving, as well as the direction. These will be used in the path planning process.
+The two motor encoders will tell the low-level microcontroller how fast the motor is driving, as well as the direction. These will be used in the path planning process.
 
 ### Electrical Schematic
-![image](https://github.com/nathan-gardner/CapstoneRepo/blob/main/Documentation/Images/LocomotionSystem/locomotion_schematic.jpg)
+![image]()
 
-The electrical schematic can be found [here](https://github.com/nathan-gardner/CapstoneRepo/tree/main/Documentation/Electrical/Schematics/Sources/Locomotion):
+The electrical schematic can be found [here]():
 
 ### Locomotion Assembly
-![image](https://github.com/nathan-gardner/CapstoneRepo/blob/main/Documentation/Images/LocomotionSystem/assembly_side_view.jpg)
+![image]()
 
-![image](https://github.com/nathan-gardner/CapstoneRepo/blob/main/Documentation/Images/LocomotionSystem/locomotion_top_view.png)
-
-![image](https://github.com/nathan-gardner/CapstoneRepo/blob/main/Documentation/Images/LocomotionSystem/locomotion_whole_view.png)
-
-Each motor will have a motor mount. The mount will attach to the motor by two screws. The motor and mount assembly will attach to the chassis by four screws. Please note that the chassis has not been designed yet, so the model does not show the final product, rather how the motor assebmly will be mounted.
+Each motor will have a motor mount. The mount will attach to the motor by six screws. The motor and mount assembly will attach to the chassis by four screws. Please note that the chassis has not been designed yet, so the model does not show the final product, rather how the motor assebmly will be mounted.
 
 The CAD model for the motor and wheel assembly can be found here.
 https://github.com/nathan-gardner/CapstoneRepo/tree/main/Documentation/3D%20Models/LocomotionSystem
@@ -36,102 +36,75 @@ https://github.com/nathan-gardner/CapstoneRepo/tree/main/Documentation/3D%20Mode
 ## Analysis
 ### Acceleration
 
-In order to traverse the entire playing field within the three minute time limit, the robot needs to move no slower than 0.0677 m\s. However, to allow for two minutes to complete the other tasks, the fastest velocity needed will be 0.2023 m/s. This would be the worst case scenario.
+The robot must go 2 ft/s (0.6096 m/s) at its fastest speed. The worst-case scenario for this would be if it is at the maximum weight capacity and going up a 25-degree incline. 
 
-$v = 0.2023\ m/s$ 
+$v = 0.6096\ m/s$ 
 
 $a = \frac{v - v_{o}}{t}$
 
-$a = \frac{0.2023 - 0}{1}$
+$a = \frac{0.6096 - 0}{1}$
 
-$a = 0.2032\ m/s^2$
+$a = 0.6096\ m/s^2$
 
 ### Force
-#### Main Robot Weight
-$W_{Motors} = 0.606\ kg_f$
+#### Subsystem Mass
+$M_{Motors} = 0.840\ kg
 
-$W_{ConsumptionParts} \approx  1.128\ kg_f$
+$M_{Microcontroller} \approx 0.037\ kg
 
-$W_{Controllers} \approx 0.129\ kg_f$
+$M_{Motor Mount} \approx 0.044\ kg
 
-$W_{Bolts} \approx 0.366\ kg_f$
+$M_{Wheels and Couplings} \approx 0.392\ kg
 
-$W_{Walls} \approx 1.669\ kg_f$
-
-$W_{Power Supply} \approx 1\ kg_f$
-
-$W_{Miscelaneous} \approx 4\ kg_f$
-
+$M_{Total Subsystem Weight} \approx 1.313\ kg
 $\ $
 
-#### Robot Caboose Weight
-$W_{Ducks} = 0.708\ kg_f$
+#### Maximum Robot Weight and Mass
 
-$W_{Pedestals} = 0.1442\ kg_f$
+$W_{Maximum} \20.00\ lb
 
-$W_{Walls} \approx 0.626\ kg_f$
-
-$\ $
-
-#### Total Weight
-
-$W_{Total} \approx 10.376\ kg_f$
-
-$M_{Total} \approx 1.0588\ kg_m$
-
-$\ $
-
-$\mu_{s} = 0.95$ (wood on rubber)
-
-$\Sigma F_x = ma$
-
-$F_n = mg = W_T$
-
-$\Sigma F_x = F - (\mu_{s}F_n)$
-
-$ma_x = F - (\mu_{s}F_n)$
-
-$1.0588 * 0.2023 = F - (0.95 * 10.3762)$
-
-$F = 10.07\ N$
+$M_{Maximum} \9.07\ kg
 
 $\ $
 
 ### Torque
-$r = 0.024\ m$
+$r = 0.030\ m$
 
-$\tau_{total} = rFsin(\theta)$
+$N = 4\ number of drive wheels
 
-$\tau_{total} = 0.024 * 10.07*sin(90^\degree)$
+$Theta = 25\ degrees
 
-$\tau_{total} = 0.2417\ Nm$
+$e = 50\ efficiency
 
-$\tau_{motor} = \tau_{total} / 4 $
+$g = 9.80\ m/s^2
 
-$\tau_{motor} = 0.0604 \ Nm$
+$T=\frac{100(a+gsin(theta)*M*r}{e*N}$
 
-$0.0604\ Nm = 6.149\ kgmm$
+$0.64698\ Nm = 6.5951\ kgcm$
 
 $\ $
 
-![image](https://user-images.githubusercontent.com/112428353/203174595-19bb7e9c-7a0c-4a4a-93ec-1e5f7feb3a6f.png)
-
-The chosen motor is the Pololu #4865. It is a 12V medium power motor. The required torque for each motor is 6.149 kg-mm. This motor has a max efficiency at 8.6 kg-mm of torque. At 6.149 kg-mm of torque, the motor will operate at $\approx$ 70% of it's maximum efficiency. This motor choice will allow the torque requirments to be met while simultaneously achieving high efficiency. The motor draws 0.28 A. The L298N motor driver supplies 2A which is more than enough for this motor. The maximum torque of each motor is 40 kg-mm.
+The chosen motor is the Pololu #2828. It is a 12V medium-power motor. The required torque for each motor is 6.5951 kg-cm. This motor has a max efficiency of 6.5 kg-cm of torque. At 6.5951 kg-cm of torque, the motor will operate at $\approx$ 99% of it's maximum efficiency. This motor choice will allow the torque requirements to be met while simultaneously achieving high efficiency. The motor draws 0.72 A. The L298N motor driver supplies 2A, which is more than enough for this motor.
 
 
-$6.149\ kgmm / 40\ kgmm = 15.34$\%
+$6.5951\ kgcm / 10\ kgcm = 65.95$\%
 
-$100$\% $- 15.34$\% $= 84.66$\%
+$100$\% $- 65.95$\% $= 34.05$\%
 
-At the current torque requirment of 6.149 kg-mm of torque, only 15.34\% of the motor's torque capacity is being used. This allows for 84.66\% of each motor's torque capacity as the margin of safety.
+At the current torque requirement of 6.5951 kg-mm of torque, only 65.95\% of the motor's torque capacity is being used. This allows for 34.05\% of each motor's torque capacity as the margin of safety.
 
 
 ## BOM
-| Name of Item   | Description                                                                                 | Used in which subsystem(s) | Part Number | Manufacturer     | Quantity | Price      | Total  |
+| Name of Item   | Description                                                                                 | Part Number | Manufacturer     | Quantity | Price      | Total  |
 |----------------|---------------------------------------------------------------------------------------------|----------------------------|-------------|------------------|----------|------------|--------|
-| Mecanum Wheel  | Mecanum wheels will allow the robot to move and turn in any direction (pack of four wheels) | Locomotion                 | 14209       | Nexus Robot       | 1        | 41.48      | 41.48  |
-| Wheel Coupling | The wheel couping attaches the wheel to the motor                                           | Locomotion                 | 18077       | Nexus Robot       | 4        | 2.34       | 9.36   |
-| Motor          | The motors will drive the wheels allowing the robot to move                                 | Locomotion                 | 4865        | Pololu           | 4        | 45.95      | 183.80  |
-| Motor Mount    | The motor mount will secure the motor to the chassis (pack of two mounts)                   | Locomotion                 | 2676        | Pololu           | 2        | 7.95       | 15.90   |
-| Motor Driver   | The motor drivers supply the voltage and current requirements of the motor (pack of 4)                 | Locomotion                 | L298N       | ST               | 1        | 7.41       | 11.39  |
-| Total          |                                                                                             |                            |             | Total Components | 13       | Total Cost | 261.93 |
+| Mecanum Wheels | The mecanum wheels allow the robot to move in any direction.                                | 14209       | Nexus Robot       | 1  (set of 4)      | 68.00      | 68.00  |
+| Wheel Hubs     | The wheel hub attaches a wheel to a motor.                                                  | 18077       | Nexus Robot       | 4        | 6.90       | 6.90   |
+| Motor          | The motors will turn the wheels, allowing the robot to move.                                | 2828        | Pololu           | 4        | 51.95      | 207.80  |
+| Motor Mount    | The motor mount attaches the motor to the chassis.                                          | 2676        | Pololu           | 2 (2 pack)       | 9.95       | 19.90   |
+| Motor Driver   | The motor driver supplies the voltage and current to the motor.                             | L298N       | STMelectronics               | 4        | 11.63       | 46.52  |
+| Microcontroller|The microcontroller gets communication from the master control and tells the motor drivers how to move the wheels. | Mega 2560 Rev 3 | Arduino | 1 | $48.40 | $48.40
+
+| Total          |                                                                                             |                            |             |       | Total Cost | $418.22 |
+
+##References
+https://community.robotshop.com/blog/show/drive-motor-sizing-tool
