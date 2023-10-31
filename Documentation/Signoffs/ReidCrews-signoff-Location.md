@@ -82,7 +82,7 @@ The formula above is used to find the distance between the sensor and object. Th
 
 | Item | Part Number | Quantity | Price | Total Price | 
 |-|-|-|-|-| 
-| Grove - Ultrasonic Distance Sensor | SKU 101020010 | 4 | $3.95 | $15.80| 
+| Grove - Ultrasonic Distance Sensor | SKU 101020010 | 4 | $4.30 | $17.20| 
 
 ## Reference
 
@@ -96,6 +96,8 @@ The formula above is used to find the distance between the sensor and object. Th
 
 [5] [Grove Ultrasonic Ranger Datasheet][def5]: Datasheet from Seeed Studio
 
+[6] [Ultrasonic Range Finder][def6]: Purchase Site for Ultrasonic Sensors - DigiKey Electronics
+
 
 
 [def1]: https://www.seeedstudio.com/Grove-Ultrasonic-Distance-Sensor.html?utm_source=blog&utm_medium=blog
@@ -107,3 +109,5 @@ The formula above is used to find the distance between the sensor and object. Th
 [def4]: https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf
 
 [def5]: https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-Location/Documentation/Background%20Documents/Position/Grove-Ultrasonic_Ranger_WiKi.pdf
+
+[def6]: https://www.digikey.com/en/products/detail/seeed-technology-co.,-ltd/101020010/5482600?utm_adgroup=Seeed%20Technology%20Co.%2C%20LTD.&utm_source=bing&utm_medium=cpc&utm_campaign=Shopping_DK%2BSupplier_Tier%201%20-%20Block%202&utm_term=&utm_content=Seeed%20Technology%20Co.%2C%20LTD.&utm_id=bi_cmp-442211287_adg-1307319747084747_ad-81707570054041_pla-4585307092955128:aud-813320050_dev-c_ext-_prd-5482600&msclkid=0e37d2868a1f12279432b7c784dd6e37
