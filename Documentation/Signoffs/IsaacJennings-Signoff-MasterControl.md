@@ -72,7 +72,7 @@ Therefore, it is recommended that the micro-USB is used to reduce the current dr
 Data Synchronization between multiple microcontrollers will be achieved with the libraries provided on
 the Jetson Nano. Commands like stream.synchronize() will achieve the desired synchronization of data streams. 
 
-To have enough storage for any navigation algorithm that is conceivable on the Jetson Nano, a 64 GB SD card will be purchased to ensure the 
+To have enough storage for any navigation algorithm that is conceivable on the Jetson Nano, a 256GB SD card will be purchased to ensure the 
 proper amount of space is available for all applications. In order to interface with the Jetson Nano, a keyboard and mouse will also be needed.
 
 ## ROS Implementation and Testing
@@ -86,7 +86,7 @@ housing AI algorithms in tandem with vision systems and complex navigation syste
 running any simultaneous localization and mapping (SLAM) algorithm and should still have ample space for other user applications. 
 Even if future teams use vision systems or neural networks, the Jetson Nano is designed to properly handle nearly any case within the scope of SECON. 
 
-To further ensure that there is enough space, though, a 64GB SD card will be used to provide an abundance of storage. If future teams need to add even more space, a simple
+To further ensure that there is enough space, though, a 256GB SD card will be used to provide an abundance of storage. If future teams need to add even more space, a simple
 upgrade to the SD card will be an easy adjustment to make. 
 
 ### Bill of Materials (BOM)
@@ -94,7 +94,7 @@ upgrade to the SD card will be an easy adjustment to make.
 |Item Name|Sale Location|Quantity|Price/Item|Total Price|
 |-|-|-|-|-|
 |Jetson Nano|Amazon.com| 1 | $152.00| $152.00|
-|64 GB Memory Card| Amazon.com| 1 | $25.00| $25.00|
+|256 GB Memory Card| Amazon.com| 1 | $25.00| $25.00|
 |Keboard and Mouse Combo| Amazon.com| 1| $15.00 | $15.00|
 |Micro-USB cable| Amazon.com| 1| $5.00 | $5.00 |
 
