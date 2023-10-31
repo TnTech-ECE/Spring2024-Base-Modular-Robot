@@ -1,37 +1,29 @@
 # Motor Control Subsystem
 ## Function of the Subsystem
-- Transport the robot with a maximum speed of 2 ft/s
-- Turn the robot 360 degrees and move forward and backward
-- The motor drivers will control the motors’ speeds and then move the wheels according to the control signals from the motor control microcontroller (outlined in a different detail design)
+The motor control subsystem takes serial signals from the master control and determines the signals to send to the motor drivers to move the robot. To be successful, the robot must be able to move with a maximum speed of 2 ft/s, move up an incline of 25 degrees, turn 360 degrees, and move forward and backward. 
 
 ## Constraints
-- The robot must be able to move up to 2 ft/s to complete the course within the time limit from the competition rules. 
+- C9: The robot shall travel inclines and declines up to 25 degrees. 
+- C10: The robot shall turn 360 degrees left and right and move forwards and backward based on sensor inputs.
+- C13: The robot shall possess a maximum speed of 2 feet per second.
 - The robot's speed will be calculated assuming the robot weighs 20 pounds. This is done due to the maximum weight limit for competition.
 
 ### Socioeconomic Consideration
 - The motors chosen should operate at about 70% of the maximum efficiency to ensure power can be conserved and to reduce charging costs. Additionally, this will give the robot enough extra power when traversing inclines. 
-- The work done on this design and the implementation will be documented thoroughly to ensure the user manual is as helpful as possible for future groups using the robot.
+- C14: The robot shall have a user manual that explains all functions and capabilities of the robot. 
+        - The work done on this design and the implementation will be documented thoroughly to ensure the user manual is as helpful as possible for future groups using the robot.
 
 ## Buildable Schematics
 
-### Motor
-![image](https://user-images.githubusercontent.com/112428353/203175771-01a94bf9-d55d-4ecd-9e12-75bcc7caf23c.png)
-
-The two motor encoders will tell the low-level microcontroller how fast the motor is driving, as well as the direction. These will be used in the path planning process.
-
 ### Electrical Schematic
-![image]()
+![image](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Motor-Control/MotorControl-Schematic.png)
 
-The electrical schematic can be found [here]():
+This electrical schematic shows the connections between the microcontroller, motor drivers, and motors. 
 
-### Locomotion Assembly
-![image]()
+### Motor and Wheel Assembly
+![image](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Motor-Control/MotorControl-PhysicalConnections.png)
 
-Each motor will have a motor mount. The mount will attach to the motor by six screws. The motor and mount assembly will attach to the chassis by four screws. Please note that the chassis has not been designed yet, so the model does not show the final product, rather how the motor assebmly will be mounted.
-
-The CAD model for the motor and wheel assembly can be found here.
-https://github.com/nathan-gardner/CapstoneRepo/tree/main/Documentation/3D%20Models/LocomotionSystem
-
+Each motor will have a motor mount. The mount will attach to the motor by six screws. The motor and mount assembly will attach to the chassis by four screws. Please note that the chassis is designed in a different subsystem, so those connections are not shown here.
 
 ## Analysis
 ### Acceleration
@@ -46,8 +38,8 @@ $a = \frac{0.6096 - 0}{1}$
 
 $a = 0.6096\ m/s^2$
 
-### Force
 #### Subsystem Mass
+
 $M_{Motors} \approx 0.840\ kg$
 
 $M_{Microcontroller} \approx 0.037\ kg$
@@ -64,9 +56,9 @@ $\ $
 $W_{Maximum} = 20.00\ lb$
 
 $M_{Maximum} = 9.07\ kg$
-
 $\ $
 ### Torque
+
 $r = 0.030\ m$
 
 $N = 4\ number of drive wheels$
@@ -83,8 +75,9 @@ $T = 0.64698\ Nm = 6.5951\ kgcm$
 
 $\ $
 
-The chosen motor is the Pololu #2828. It is a 12V medium-power motor. The required torque for each motor is 6.5951 kg-cm. This motor has a max efficiency of 6.5 kg-cm of torque. At 6.5951 kg-cm of torque, the motor will operate at $\approx$ 99% of its maximum efficiency. This motor choice will allow the torque requirements to be met while simultaneously achieving high efficiency. The motor draws 0.72 A. The L298N motor driver supplies 2A, which is more than enough for this motor.
+![image](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Motor-Control/MotorPerformanceChart.png)
 
+The chosen motor is the Pololu #2828. It is a 12V medium-power motor. The required torque for each motor is 6.5951 kg-cm. This motor has a max efficiency of 6.5 kg-cm of torque. At 6.5951 kg-cm of torque, the motor will operate at $\approx$ 99% of its maximum efficiency. This motor choice will allow the torque requirements to be met while simultaneously achieving high efficiency. The motor draws 0.72 A. The L298N motor driver supplies 2A, which is more than enough for this motor.
 
 $6.5951\ kgcm / 10\ kgcm = 65.95$\%
 
@@ -101,7 +94,7 @@ At the current torque requirement of 6.5951 kg-mm of torque, only 65.95\% of the
 | Motor          | The motors will turn the wheels, allowing the robot to move.                 | 2828            | Pololu           | 4            | 51.95      | 207.80  |
 | Motor Mount    | The motor mount attaches the motor to the chassis.                           | 2676            | Pololu           | 2 (2 pack)   | 9.95       | 19.90   |
 | Motor Driver   | The motor driver supplies the voltage and current to the motor.              | L298N           | STM electronics  | 4            | 11.63      | 46.52   |
-| Microcontroller|The microcontroller communicates with the master control and motor drivers.   | Mega 2560 Rev 3 | Arduino          | 1            | 48.40      | 48.40   |
+| Microcontroller| The microcontroller communicates with the master control and motor drivers.  | Mega 2560 Rev 3 | Arduino          | 1            | 48.40      | 48.40   |
 | Total          |                                                                              |                 |                  |              | Total Cost | $418.22 |
 
 ## References
