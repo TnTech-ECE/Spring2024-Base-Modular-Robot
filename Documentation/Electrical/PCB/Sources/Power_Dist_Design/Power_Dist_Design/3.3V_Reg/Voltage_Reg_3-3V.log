@@ -1,4 +1,4 @@
-Circuit: * Z:\home\luke\Workspace\F23\Capstone Design I - ECE 4961\Power_Distribution\Power-Dist_Design\3.3V_Reg\Voltage_Reg_3-3V.asc
+Circuit: * Z:\home\luke\Workspace\Git\Control-Sensing-Wireless-Charging-Robot\Documentation\Electrical\PCB\Sources\Power_Dist_Design\Power_Dist_Design\3.3V_Reg\Voltage_Reg_3-3V.asc
 
 Questionable use of curly braces in "b§e_abmgate yint 0 v={if(v(a)>{{vthresh}}|v(b)>{{vthresh}},{{vdd}},{{vss}})}"
     Error: undefined symbol in: "if([v](a)>((vthresh))|v(b)>((vthresh)),((vdd)),((vss)))"
@@ -91,25 +91,25 @@ Ignoring empty pin current: Ix(u1:vfb)
 Ignoring empty pin current: Ix(u1:en)
 Ignoring empty pin current: Ix(u1:vfb)
 Ignoring empty pin current: Ix(u1:en)
-Heightened Def Con from 1.93232e-06 to 1.93445e-06
-Heightened Def Con from 1.87876e-05 to 1.88096e-05
-Heightened Def Con from 2.24834e-05 to 2.24854e-05
+Heightened Def Con from 1.77627e-05 to 1.77647e-05
+Heightened Def Con from 1.81384e-05 to 1.81387e-05
+Heightened Def Con from 2.89128e-05 to 2.89318e-05
 
-Date: Sat Oct 21 12:54:18 2023
-Total elapsed time: 6.555 seconds.
+Date: Mon Oct 30 18:30:49 2023
+Total elapsed time: 6.307 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 132241
-traniter = 132227
-tranpoints = 44533
-accept = 33126
-rejected = 11410
+totiter = 133925
+traniter = 133911
+tranpoints = 45417
+accept = 33718
+rejected = 11702
 matrix size = 390
 fillins = 269
 solver = Normal
-Avg thread counts: 6.0/1.0/1.0/1.0
-Matrix Compiler1: 20.72 KB object code size  6.0/2.8/[1.6]
-Matrix Compiler2: off  [1.9]/5.1/2.6
+Avg thread counts: 1.0/1.0/1.0/1.0
+Matrix Compiler1: 20.72 KB object code size  8.8/4.2/[2.6]
+Matrix Compiler2: off  [1.8]/3.4/2.3
 
