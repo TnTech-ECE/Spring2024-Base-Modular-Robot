@@ -100,10 +100,6 @@ upgrade to the SD card will be an easy adjustment to make.
 |Micro-USB cable| Amazon.com| 1| $5.00 | $5.00 |
 
 
-https://www.amazon.com/dp/B09X7CRKRZ/ref=twister_B0BHJXCFXW?_encoding=UTF8&th=1
-https://www.amazon.com/Keyboard-Rii-Computer-Notebook-Windows/dp/B09Q838VRC/ref=sr_1_5?crid=360ZL8SY2W4KO&keywords=keyboard%2Band%2Bmouse%2Bwired&qid=1698694224&s=electronics&sprefix=keyboard%2Band%2Bmouse%2Bwired%2Celectronics%2C105&sr=1-5&th=1
-https://www.amazon.com/Monoprice-Micro-B-compatible-Samsung-Android/dp/B002HZYBZ6/ref=sr_1_4?crid=3Q2OWA8F1PC7C&keywords=microusb&qid=1698694400&s=electronics&sprefix=microusb%2Celectronics%2C145&sr=1-4
-
 References:
 
 Navigation Algorithms: DFRobot, “Most popular slam open source framework for LIDAR,” DFRobot, https://www.dfrobot.com/blog-1647.html (accessed Oct. 30, 2023). 
