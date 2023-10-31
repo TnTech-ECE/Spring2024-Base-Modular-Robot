@@ -59,8 +59,6 @@ The following is a table of the Jetson Nano's pins and adapters:
 |MIPI CSI-2 camera connectors| 1|
 
 
-
-
 The Jetson Nano only has a 40-pin expansion header to interface with sensors, peripherals, and 
 motors, which does not leave an abundanc of extra space. As a result, two of the USB 3.0 ports will be utilized to communicate with
 the system microcontrollers. Serial communication will be sent from the sensors to the 
@@ -106,6 +104,9 @@ https://www.amazon.com/Keyboard-Rii-Computer-Notebook-Windows/dp/B09Q838VRC/ref=
 https://www.amazon.com/Monoprice-Micro-B-compatible-Samsung-Android/dp/B002HZYBZ6/ref=sr_1_4?crid=3Q2OWA8F1PC7C&keywords=microusb&qid=1698694400&s=electronics&sprefix=microusb%2Celectronics%2C145&sr=1-4
 
 References:
-https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-display
-https://www.amazon.com/Studio-Jetson-Developer-Computer-Development/dp/B09CPYR31L/ref=asc_df_B09CPYR31L/?tag=hyprod-20&linkCode=df0&hvadid=647233209265&hvpos=&hvnetw=g&hvrand=8442709519489363891&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1025954&hvtargid=pla-1656062339711&gclid=CjwKCAjwkNOpBhBEEiwAb3MvvfKncC-7VGuGfBhIuEgc8PBLcEU-9zpSj5f8J05tcG3_ACXFJG-hiBoCspsQAvD_BwE&th=1
-https://www.dfrobot.com/blog-1647.html
+
+Navigation Algorithms: DFRobot, “Most popular slam open source framework for LIDAR,” DFRobot, https://www.dfrobot.com/blog-1647.html (accessed Oct. 30, 2023). 
+
+Jetson Nano basic info: “Amazon.com: Jetson Nano Developer Kit ,” Amazon, https://www.amazon.com/Studio-Jetson-Developer-Computer-Development/dp/B09CPYR31L (accessed Oct. 31, 2023). 
+
+Jetson Nano Setup Procedures:  “Get started with Jetson Nano Developer Kit,” NVIDIA Developer, https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-display (accessed Oct. 30, 2023). 
