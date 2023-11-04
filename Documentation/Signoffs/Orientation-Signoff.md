@@ -40,6 +40,13 @@ The Adafruit LSM6DSOX + LIS3MDL breakout board will be used to sense acceleratio
 
 Grove connections will be used (more details in the Navigation Microcontroller signoff). This wire grouping technique will allow the sensor to be 100% plug and play adaptable. The grove wires will be connected to a Grove I2C bus module. The electrical connections are shown below:
 
+
+<p align = "center">
+<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Orientation/Sensor_Connections.png
+?raw=true"alt="Axis"/>
+</p>
+
+As shown above, the STEMMA QT/Qwicc conenctor from the board is attatched to the Grove I2C bus. The first connection is connected to the Arduino Mega SDA and SCL pins to tie it to the data bus. The ground and VCC of the bus are connected to the power busses to prevent the microcontroller from sourcing too much current.
 ---
 
 ## Analysis
