@@ -32,8 +32,11 @@ The pinout diagram of the Arduino Mega 2560 Rev3 board is shown above. The elect
 The I2C bus will be implemented using 4 Grove I2C Hub 6 Port modules. The first connection to each of the modules will be the SCL an SDA pins of the Arduino. The power and ground pins will be connected directly to the regulated bus to prevent the Arduino from sourcing too much current. Two of the four modules will be connected to the 5V power bus while the other two will be connected to the 3.3 V bus. The 5 V and 3 V connections will power all electronic sensors. The bus will allow all I2C compatible sensors to be read in with just 2 Arduino pins. By using the grove bus, every I2C sensor will be 100% plug and play adaptable. 
 
 <p align = "center">
-<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Nav-Microcontroller/Grove_Arduino_Connections.png"alt="Grove-Arduino">
+<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Nav-Microcontroller/Grove_Arduino_Connections.png?raw=true"alt="Grove-Arduino">
 </p>
+
+### Sensor Connections
+
 
 ---
 
@@ -72,11 +75,16 @@ To keep code looking uniform, the coding conventions brought forth by Dr. Bruce 
 ## Robot Integration
 
 The Arduino Mega and I2C bus will be attached to the robot via 3D printed trays. The trays will be in the interior of the robot.
+
 ---
+
 ## BOM
 |Item        |Quantity   |Price   |Total   |
 |------------|-----------|--------|--------|
-|Arduino Mega|1          |$\$43.56^{1}$ |$\$43.5$
+|Arduino Mega|1          |$\$43.56^{1}$ |$\$43.56$|
+|Grove I2C Bus|4         |$\$1.70$|$\$6.80$|
+|Grove Connectors|
+Subsystem Total |||$\$50.36$|
 
 
 1. This is a sale price listed on Amazon. Normal retail is $55.00
