@@ -4,6 +4,13 @@
 The microcontroller susbystem will provide the computing power needed to read in sensor data, filter the data as needed, and send the resulting values to the master control subsystem via serial communication.
 
 ----
+## Reach Goals
+
+There are two reach goals in the project. The first is the implementation of the ESP 32 wifi module. The implementation will require 2 sets of the ESP 32 boards. One will act as a receiver and one will act as a transmitter. The trasnitter will be embedded in the robot. The module will be connected to the Arduino navigation microcontroller and will send sensor data to the receiver in various intervals (update). The receiver will be conencted to a pc to display the data via a serial monitor.
+
+The second reach goal is an on-robot OLED display. The display will aid teams in troubleshooting, as well as the option of showing the robot's battery life.
+
+---
 
 ## Constraints
 
@@ -30,6 +37,7 @@ The Arduino serial monitor and serial plotter will aid in validating the voltage
 ### Arduino Libraries
 
 ### Communication with Jetson Nano
+
 ---
 
 ## Robot Integration
