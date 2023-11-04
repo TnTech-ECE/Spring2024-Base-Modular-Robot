@@ -1,10 +1,12 @@
-### Orientation Signoff
+# Orientation Signoff
 
 ## Functionality
 The orientation signoff will provide the master control with the angle with respect to a certain position.
 	This will aid with robot navigation when traversing an arena that does not have a line present.
 	For future capstone teams, it will allow them to know what direction the robot is facing in order 
 	to complete unique tasks. The change of angle in the z-direction will aid the master control and motor control in traversing inclines and declines.
+
+---
 
 ## Constraints
 ### Derived from Shall Statements
@@ -26,10 +28,19 @@ The orientation signoff will provide the master control with the angle with resp
 	
 - C14: The robot shall have a user manual that explains all functions and capabilities of the robot. 
 	- This constraint will require all detailed design decisions to be documented and explained. Not only will the design have to be explained, but the motives behind the design and the other options explored so that future SECON teams have an understanding of why the design was created in a certain manner.
+
+---
+
 ## Schematic
+The Adafruit LSM6DSOX + LIS3MDL breakout board will be used to sense acceleration and direction.
 
+<p align = "center">
+<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Orientation/Accelerometer_Compass.png?raw=true"alt="Axis"/>
+</p>
 
+Grove connections will be used (more details in the Navigation Microcontroller signoff). This wire grouping technique will allow the sensor to be 100% plug and play adaptable. The grove wires will be connected to a Grove I2C bus module. The electrical connections are shown below:
 
+---
 
 ## Analysis
 The Adafruit LSM6DSOX + LIS3MDL breakout board has the ST LSM6DSOX and ST LIS3MDL packaged on the
@@ -50,7 +61,7 @@ and gyroscope provide the chip with 6 degrees of freedom to measure the orientat
 <img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Orientation/Sensing_Axis.png?raw=true"alt="Axis"/>
 </p>
 
-The module is capable of capturing the acceleration in the x,y, and z 		planes (top image). In addition to measuring the acceleration, it can also produce angle values shown in the bottom image. ST claims that the accelerometer is capable of measuring $\pm2\pm4\pm8\pm16$ g from 1.6 Hz to 6.7 kHz update rate. The gyroscope is capable of $\pm125\pm250\pm500\pm1000\pm2000$ degrees per second from 12.5 Hz to 6.7 kHz update rate. The update rate of 2 kHz will provide the master control with ample readings. At maximum speed, the sensor will read new data every 0.012 inches: 
+The module is capable of capturing the acceleration in the x,y, and z planes (top image). In addition to measuring the acceleration, it can also produce angle values shown in the bottom image. ST claims that the accelerometer is capable of measuring $\pm2\pm4\pm8\pm16$ g from 1.6 Hz to 6.7 kHz update rate. The gyroscope is capable of $\pm125\pm250\pm500\pm1000\pm2000$ degrees per second from 12.5 Hz to 6.7 kHz update rate. The update rate of 2 kHz will provide the master control with ample readings. At maximum speed, the sensor will read new data every 0.012 inches: 
 
 
 $2 \frac{ft}{s}\cdot \frac{1}{2000s} = 0.001 ft \text{ or }0.012in$
@@ -63,16 +74,27 @@ The LIS3MDL Magnetometer will draw a maximum of 270 $\mu A$ in high resolution m
 The device can be tested using the "self test". The self test tests the sensor without having to have any external force applied to the module. 
 
 <p align = "center">
-<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Orientation/Compass_Directions.png"alt="Compass Direction"/>
+<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Orientation/Compass_Directions.png?raw=true"alt="Compass Direction"/>
 </p>
 
 The sensor is capable of measuring the magnetic fields in the x, y, and z directions. The reference to Earth will help calculate which direction the robot is facing. 
+
+---
+
 ## BOM
 |Item              |Quantity   |Price   |Total   |
 |------------------|-----------|--------|--------|
 |LSM6DSOX + LIS3MDL|1          |$19.95  |$19.95  |
+|STEMMA QT to Grove Wires|1    |$1.95   |$1.95   |
+|Subsystem Total| | |$21.90 |
+
+---
+
 ## Robot Attachment
 Ideally, the sensor needs to be mounted on a plane parallel to the robot. That is, the sensor orientation needs to mimic the robot's orientation. The sensor can be mounted on the interior of the robot. The sensor will be held by a 3D printed tray. Details on the tray configuration can be found in the chassis design signoffs.
+
+---
+
 ## References
 Adafruit Technical Details:  https://www.adafruit.com/product/4517#technical-details
 
