@@ -16,13 +16,24 @@ The second reach goal is an on-robot OLED display. The display will aid teams in
 
 ----
 
-## Schematic
+## Schematics
+### Arduino Pinouts
+<p align = "center">
+<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Nav-Microcontroller/Arduino_Mega_Pinout.png?raw=true"alt="Grove Bus">
+</p>
 
+The pinout diagram of the Arduino Mega 2560 Rev3 board is shown above. The electrical connections for sensors and other modules will be discussed in the following schematic sections. A pinout table will be provided at the end of the schematics section to provide connection documentation.
+
+### Grove Connections
 <p align = "center">
 <img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Nav-Microcontroller/Grove_Connections.png?raw=true"alt="Grove Bus">
 </p>
 
 The I2C bus will be implemented using 4 Grove I2C Hub 6 Port modules. The first connection to each of the modules will be the SCL an SDA pins of the Arduino. The power and ground pins will be connected directly to the regulated bus to prevent the Arduino from sourcing too much current. Two of the four modules will be connected to the 5V power bus while the other two will be connected to the 3.3 V bus. The 5 V and 3 V connections will power all electronic sensors. The bus will allow all I2C compatible sensors to be read in with just 2 Arduino pins. By using the grove bus, every I2C sensor will be 100% plug and play adaptable. 
+
+<p align = "center">
+<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Nav-Microcontroller/Grove_Arduino%20Connections.png"alt="Grove-Arduino">
+</p>
 
 ---
 
@@ -35,8 +46,26 @@ The input/supply voltage to the Arduino Mega can span from 7 to 12 V from the DC
 
 The Arduino serial monitor and serial plotter will aid in validating the voltages received from the sensors. The plotter will also aid in creating software filters. Each of the sensors will be tested with the plotter active so that votlage readings are known for a controlled reading. 
 ### Arduino Libraries
+The sensor sets used for the robust robot will utilize manufacturer provided Arduino Libraries to ease the coding process.
+
+Line Following Library:
+
+Orientation Library:
+
+Position Library:
+
+Object Detection Library:
 
 ### Communication with Jetson Nano
+The Arduino will communicate with the Jetson Nano through the USB port. The USB port will provide serial data to the Jetson Nano using UART (Universal Asynchronous Receiver Transmitter) Communication Protocol. Another option is to use the Tx/Rx pins on the Arduino Mega to send the serial data, rather than the USB. This would allow code to be uploaded to the Arduino Mega while still being serially connected to the Jetson Nano.
+
+By using UART, the serial data must have a beginning marker, such as '<', and an ending marker, such as '>'. This is an effect of the communication method being asynchronous. The start and end markers will allow the Jetson Nano to differentiate the data packages.
+
+---
+
+### Coding Conventions
+
+To keep code looking uniform, the coding conventions brought forth by Dr. Bruce will be used. The coding convention documentation can be found here: http://jwbruce.info/teaching/ece4140/files/ccode.pdf. The convention covers variable, struct, and class naming, as well as commenting techniques.
 
 ---
 
