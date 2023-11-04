@@ -27,7 +27,8 @@ The orientation signoff will provide the master control with the angle with resp
 - C14: The robot shall have a user manual that explains all functions and capabilities of the robot. 
 	- This constraint will require all detailed design decisions to be documented and explained. Not only will the design have to be explained, but the motives behind the design and the other options explored so that future SECON teams have an understanding of why the design was created in a certain manner.
 ## Schematic
-The sensors' datasheets did not have electrical schematics
+
+
 
 
 ## Analysis
