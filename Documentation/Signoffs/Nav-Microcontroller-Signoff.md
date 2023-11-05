@@ -1,7 +1,7 @@
 # Arduino Signoff
 
 ## Functionality
-The microcontroller susbystem will provide the computing power needed to read in sensor data, filter the data as needed, and send the resulting values to the master control subsystem via serial communication.
+The microcontroller susbystem will provide the computing power needed to read in sensor data, filter the data as needed, and send the resulting values to the master control subsystem via serial communication. The data in the master control will help navigate the robot across the arena.
 
 ----
 ## Reach Goals
@@ -13,6 +13,18 @@ The second reach goal is an on-robot OLED display. The display will aid teams in
 ---
 
 ## Constraints
+
+### Derived from Shall Statements
+- C4: The robot shall contain modules that are plug-and-play adaptable for different IEEE competition requirements.
+	- This applies to the microcontroller subsystem because the bus connections must be easily replaceable or removable. The microcontroller code must also be easily adaptable.
+
+* C11: The robot shall have a navigation system that controls movement.
+	* The microcontroller subsystem will transmit the data from all navigation sensors to the master control. The master control will make decisions based off of the provided data.
+
+### Derived from Broader Implications
+	
+- C14: The robot shall have a user manual that explains all functions and capabilities of the robot. 
+	- The microcontroller connections and coding techniques will be documented to make it easily adoptable for future Capstone teams.
 
 ----
 
@@ -38,6 +50,8 @@ The I2C bus will be implemented using 4 Grove I2C Hub 6 Port modules. The first 
 ### Sensor Connections
 
 
+### Reach Goal Schematics
+
 ---
 
 ## Analysis
@@ -51,9 +65,9 @@ The Arduino serial monitor and serial plotter will aid in validating the voltage
 ### Arduino Libraries
 The sensor sets used for the robust robot will utilize manufacturer provided Arduino Libraries to ease the coding process.
 
-Line Following Library:
+Line Following Library: "QTR Sensors" : https://www.pololu.com/docs/0J19/1
 
-Orientation Library:
+Orientation Library: Accelerometer: https://github.com/adafruit/Adafruit_LSM6DS, Compass: https://github.com/adafruit/Adafruit_LIS3MDL
 
 Position Library:
 
@@ -63,6 +77,10 @@ Object Detection Library:
 The Arduino will communicate with the Jetson Nano through the USB port. The USB port will provide serial data to the Jetson Nano using UART (Universal Asynchronous Receiver Transmitter) Communication Protocol. Another option is to use the Tx/Rx pins on the Arduino Mega to send the serial data, rather than the USB. This would allow code to be uploaded to the Arduino Mega while still being serially connected to the Jetson Nano.
 
 By using UART, the serial data must have a beginning marker, such as '<', and an ending marker, such as '>'. This is an effect of the communication method being asynchronous. The start and end markers will allow the Jetson Nano to differentiate the data packages.
+
+---
+
+### Reach Goal Analysis
 
 ---
 
@@ -83,7 +101,7 @@ The Arduino Mega and I2C bus will be attached to the robot via 3D printed trays.
 |------------|-----------|--------|--------|
 |Arduino Mega|1          |$\$43.56^{1}$ |$\$43.56$|
 |Grove I2C Bus|4         |$\$1.70$|$\$6.80$|
-|Grove Connectors|
+|Grove Connectors|4      |
 Subsystem Total |||$\$50.36$|
 
 
