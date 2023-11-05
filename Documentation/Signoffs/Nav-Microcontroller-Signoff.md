@@ -10,6 +10,9 @@ There are two reach goals in the project. The first is the implementation of the
 
 The second reach goal is an on-robot OLED display. The display will aid teams in troubleshooting, as well as the option of showing the robot's battery life.
 
+
+***The implementation of reach goals will only occur if it is evident that the requirements provided by the customer are met, or will be met.***
+
 ---
 
 ## Constraints
@@ -82,6 +85,12 @@ By using UART, the serial data must have a beginning marker, such as '<', and an
 
 ### Reach Goal Analysis
 
+#### ESP 32
+The ESP 32 module is an MCU created by Espressif. Adafruit's "Huzzah32" breakout board will provide the system with communication from robot to user. The IEEE competiton strictly prohibits the use of external control. Therefore, the module will be easily removable for the competition. The ESP 32 will be heavily used in testing so real-time data can be read while the robot works autonomously. The module is SPI, UART, and I2C compatible. The module has an on-board antenna and supports both wifi and bluetooth for wireless communication. The ESP 32 has an operating voltage range from 3.0 to 3.6 V, making it compatible with the 3.3 V distribution bus present in the robot. Because this is a reach goal, the 0.5 A draw is not accounted for on the power distribution anaylsis. Thus, a small battery just for the ESP 32 would be the best route if implemented.
+
+**NOTE: Getting devices approved for TTU wifi usage may be an issue, so the bluetooth attribute will likely be used.**
+
+#### OLED Display
 ---
 
 ### Coding Conventions
