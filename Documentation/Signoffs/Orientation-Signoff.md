@@ -47,6 +47,13 @@ Grove connections will be used (more details in the Navigation Microcontroller s
 </p>
 
 As shown above, the STEMMA QT/Qwicc conenctor from the board is attatched to the Grove I2C bus. The first connection is connected to the Arduino Mega SDA and SCL pins to tie it to the data bus. The ground and VCC of the bus are connected to the power busses to prevent the microcontroller from sourcing too much current.
+
+<p align = "center">
+<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Orientation/Qwiic_to_Grove.png?raw=true">
+</p>
+
+The smaller connector (bottom right of photo) will be attached to the sensor and the larger connector (top left of photo) will be attached to the data bus.
+
 ---
 
 ## Analysis
