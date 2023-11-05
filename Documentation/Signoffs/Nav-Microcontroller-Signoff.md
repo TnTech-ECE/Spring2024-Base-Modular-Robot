@@ -1,4 +1,4 @@
-# Arduino Signoff
+# Navigation Microcontroller Signoff
 
 ## Functionality
 The microcontroller susbystem will provide the computing power needed to read in sensor data, filter the data as needed, and send the resulting values to the master control subsystem via serial communication. The data in the master control will help navigate the robot across the arena.
@@ -91,6 +91,12 @@ The ESP 32 module is an MCU created by Espressif. Adafruit's "Huzzah32" breakout
 **NOTE: Getting devices approved for TTU wifi usage may be an issue, so the bluetooth attribute will likely be used.**
 
 #### OLED Display
+The SSD 1306 0.96" display has a 128 x 64 dot matrix for display. The module runs off of 3.3 V and has a maximum operating current of 15 mA. The module is I2C compatible and can be easily implemented into the data bus by using a grove to male pin wire. Because it is an OLED, user-created images can be imported and used. This will aid in showing battery life pictures such as the one seen below: 
+
+<p align = "center">
+<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Nav-Microcontroller/OLED_Battery_Life.jpg?raw=true">
+</p>
+
 ---
 
 ### Coding Conventions
@@ -101,20 +107,23 @@ To keep code looking uniform, the coding conventions brought forth by Dr. Bruce 
 
 ## Robot Integration
 
-The Arduino Mega and I2C bus will be attached to the robot via 3D printed trays. The trays will be in the interior of the robot.
+The Arduino Mega and I2C bus will be attached to the robot via 3D printed trays. The trays will be in the interior of the robot. The ESP 32 will have it's own tray if adopted. The tray must be easily accessible so that wiring can be disconnected for the competition. The OLED display will be mounted on an external wall of the robot where it can be easily viewed.
 
 ---
 
 ## BOM
 |Item        |Quantity   |Price   |Total   |
 |------------|-----------|--------|--------|
-|Arduino Mega|1          |$\$43.56^{1}$ |$\$43.56$|
-|Grove I2C Bus|4         |$\$1.70$|$\$6.80$|
+|Arduino Mega|1          |\$43.56 $^{1}$ |$43.56|
+|Grove I2C Bus|4         |$1.70|$6.80|
 |Grove Connectors|4      |
-Subsystem Total |||$\$50.36$|
+|ESP 32 $^{2}$ |1| $19.95| $19.95|
+|OLED Display $^{2}$|$8.99|$8.99
+Subsystem Total |||$50.36|
 
 
 1. This is a sale price listed on Amazon. Normal retail is $55.00
+2. Reach goals
 
 ---
 ## References
