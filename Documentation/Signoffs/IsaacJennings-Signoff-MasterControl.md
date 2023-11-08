@@ -12,7 +12,7 @@ The Master Control subsytem will facilitate navigation and control of the other
 	Jetson Nano microcontroller to do all calculations and to send instructions. 
 	The system will ultimately perform pathfinding, navigation, and user-defined peripheral tasks,
 	but for the scope of the current system, pathfinding and navigation will be addressed 
-	and user-defined peripherals will be considered and allotted for. 
+	and user-defined peripherals will be considered and allotted for future use. 
 ## Constraints
 	
 - C2:The robot shall possess an allocated data input point for
@@ -103,6 +103,8 @@ upgrade to the SD card will be an easy adjustment to make.
 
 
 References:
+
+Previous Team's Github Signoff: Gardner, Nathan (2023) ToplevelController. https://github.com/TnTech-ECE/Spring2023-SECONRobot.
 
 Navigation Algorithms: DFRobot, “Most popular slam open source framework for LIDAR,” DFRobot, https://www.dfrobot.com/blog-1647.html (accessed Oct. 30, 2023). 
 
