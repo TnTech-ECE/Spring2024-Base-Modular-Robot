@@ -1,7 +1,7 @@
 # Master Control Signoff
 ## Functionality
 <p align = "center">
-<img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/IsaacJennings-Signoff-MasterControl/Documentation/Images/Master_Control_Pinout.png>
+<img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/IsaacJennings-Signoff-MasterControl/Documentation/Images/Master_Control_Pinout.png?raw=true"alt="Grove Bus">
 </p>
 
 The Master Control subsytem will facilitate navigation and control of the other
@@ -70,17 +70,17 @@ Most of the pins will be left for future users to implement tasks.
 	In terms of current, if the DC barrel jack is used, battery and charging 
 Subsystem will need to supply the Jetson Nano with 5V and 4A to properly power the controller. 
 However, if the micro-USB is used, the current only needs to reach 2A to properly power the controller. 
-Therefore, it is recommended that the micro-USB is used to reduce the current draw on the power system. 
+Therefore, it is recommended that the micro-USB is used to reduce the current draw on the power system [1]. 
 
 Data Synchronization between multiple microcontrollers will be achieved with the libraries provided on
-the Jetson Nano. Commands like stream.synchronize() will achieve the desired synchronization of data streams. 
+the Jetson Nano. Commands like stream.synchronize() will achieve the desired synchronization of data streams [2]. 
 
 To have enough storage for any navigation algorithm that is conceivable on the Jetson Nano, a 256GB SD card will be purchased to ensure the 
 proper amount of space is available for all applications. In order to interface with the Jetson Nano, a keyboard and mouse will also be needed.
 
 ## ROS Implementation and Testing
 
-The robot operating system (ROS) was used in the 2023 SECON robot as the master level controller. 
+The robot operating system (ROS) was used in the 2023 SECON robot as the master level controller [3]. 
 As such, there is already ample proof that the Jetson Nano can easily connect to microcontrollers. 
 Therefore, no simulation is necessary to understand that the Nano will not have compatibility issues controlling other microcontrollers. 
 
@@ -104,10 +104,10 @@ upgrade to the SD card will be an easy adjustment to make.
 
 References:
 
-Previous Team's Github Signoff: Gardner, Nathan (2023) ToplevelController. https://github.com/TnTech-ECE/Spring2023-SECONRobot.
+[1]Jetson Nano basic info: “Amazon.com: Jetson Nano Developer Kit ,” Amazon, https://www.amazon.com/Studio-Jetson-Developer-Computer-Development/dp/B09CPYR31L (accessed Oct. 31, 2023). 
+
+[2]Jetson Nano Setup Procedures:  “Get started with Jetson Nano Developer Kit,” NVIDIA Developer, https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-display (accessed Oct. 30, 2023). 
+
+[3]Previous Team's Github Signoff: Gardner, Nathan (2023) ToplevelController. https://github.com/TnTech-ECE/Spring2023-SECONRobot.
 
 Navigation Algorithms: DFRobot, “Most popular slam open source framework for LIDAR,” DFRobot, https://www.dfrobot.com/blog-1647.html (accessed Oct. 30, 2023). 
-
-Jetson Nano basic info: “Amazon.com: Jetson Nano Developer Kit ,” Amazon, https://www.amazon.com/Studio-Jetson-Developer-Computer-Development/dp/B09CPYR31L (accessed Oct. 31, 2023). 
-
-Jetson Nano Setup Procedures:  “Get started with Jetson Nano Developer Kit,” NVIDIA Developer, https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-display (accessed Oct. 30, 2023). 
