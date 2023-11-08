@@ -24,8 +24,8 @@ The following schematics outline the dimensions for the extrusion itself and the
 
 ## Analysis
 The following analysis section will calculate if the extruded alumninum can withstand the maximum 20 pound load it aims to withstand. 
-$\sigma = \frac{ M_{y} }{I} = \frac{ \frac{PL}{4}(10mm)}{0.6826 cm^4( \frac{10 mm}{1 cm})^4}= \frac{0.0003663 \frac{1}{mm^3}PL}{214 MPa}$
-$ => 214 MPa = (0.0003662 \frac{1}{mm^3})P_{max}L $
+$\sigma = \frac{ M_{y} }{I} = \frac{ \frac{PL}{4}(10mm)}{0.6826 cm^4( \frac{10 mm}{1 cm})^4}= \frac{0.0003663 \frac{1}{mm^3}PL}{214 MPa}$  
+$ => 214 MPa = (0.0003662 \frac{1}{mm^3})P_{max}L $  
 $ => P_{max}L = 584380 Nm $
 
 ## BOM
