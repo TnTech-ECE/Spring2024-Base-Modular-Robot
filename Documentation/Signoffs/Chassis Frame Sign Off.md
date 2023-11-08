@@ -24,7 +24,7 @@ The following schematics outline the dimensions for the extrusion itself and the
 
 ## Analysis
 The following analysis section will calculate if the extruded alumninum can withstand the maximum 20 pound load it aims to withstand. 
-$\sigma$ = /frac{M~y~}{I} = /frac{}{}
+$\sigma = \frac{ M_{y} }{I} = \frac{}{}$
 
 ## BOM
 | Item | Quantity | Price/Item | Total Price | 
