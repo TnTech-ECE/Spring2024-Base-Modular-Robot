@@ -47,9 +47,9 @@ Therefore, with all this the following $\ P_{max}$ can be calculated.
    
 => 16 ksi = $\frac{ \frac{P_{max}L}{4}(0.393701 in)}{0.0163995 in^4}$   
    
-$\ => P_{max}L$ = 2.6659 kip-in  
+=> $\P_{max}L$ = 2.6659 kip-in  
    
-$\ => P_{max} = \frac{2.6659 kip-in}{9.842520 in}$ = 0.270855 kip = 270.855 lbf (pound force)   
+=> $\P_{max} = \frac{2.6659 kip-in}{9.842520 in}$ = 0.270855 kip = 270.855 lbf (pound force)   
   
 This means that it would take 270.855 pounds of force on a single point of the extuded aluminum for deflection to occur. This is more than 13 times the amount the team is aiming to hold. Therefore, the frame can easily withstand the weight requirement.  
 
