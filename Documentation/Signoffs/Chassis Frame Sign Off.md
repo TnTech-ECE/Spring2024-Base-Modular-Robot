@@ -23,10 +23,28 @@ The following schematics outline the dimensions for the extrusion itself and the
 ![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/mbolson-ChassisFrame-Signoff/Documentation/Images/Chassis%20Frame.jpg)
 
 ## Analysis
-The following analysis section will calculate if the extruded alumninum can withstand the maximum 20 pound load it aims to withstand. 
-$\sigma = \frac{ M_{y} }{I} = \frac{ \frac{PL}{4}(10mm)}{0.6826 cm^4( \frac{10 mm}{1 cm})^4}= \frac{0.0003663 \frac{1}{mm^3}PL}{214 MPa}$  
-$\ => 214 MPa = (0.0003662 \frac{1}{mm^3})P_{max}L $  
-$\ => P_{max}L = 584380 Nm $
+The following analysis section will calculate if the extruded alumninum can withstand the maximum 20 pound load it aims to withstand.  
+  
+$\sigma_{b} = \frac{ My }{I}$  
+  
+$\sigma_{b} = sigma_{Yield Strength} = 16 ksi (kilopound per square inch)$  
+This value comes from the material itself: 6063 Aluminum - T5 Alloy  
+  
+$\M = \frac{P_{max}L}{4}$  
+L = 250 mm = 9.842520 in  
+These two values are important because we are after $\P_{max}. P_{max} is the maximum allowable pressure that the component can withstand before any sort of deflection in the material occurs. L is the length of the shorted component used. $  
+  
+y = 10 mm = 0.393701 in  
+$\I = 0.6826 cm^4 = 0.0163995 in^4$  
+y is the distance from center of the extrusion to the outside edge. I is the moment of interia. This is a constant based on the shape of the component. This specific manufacturer did not provide the moment of interia; however, a manufacturer with a nearly identical component was found and used for calculation. Once the value is calculated, it was discovered that any difference would be negliable due to the magnitude of the pressure compared to the weigtht we are aiming to hold as well as the fact that the weight will be distributed. This calculation is how much pressure it would take to deflect if that full weight was placed on a single point of the component. Additionally, this is just considering a single 250 mm long bar. In reality the weight will be distributed roughly evenly across all bars.
+  
+Therefore, with all this the following $\ P_{max}$ can be calculated.  
+   
+$\ => 16 ksi = \frac{ \frac{P_{max}L}{4}(0.393701 in}{0.0163995 in^4}$  
+$\ => P_{max}L = 2.6659 kip-in $  
+$\ => P_{max} = \frac{2.6659 kip-in}{9.842520 in} = 0.270855 kip = 270.855 lbf (pound force)$  
+  
+This means that it would take 270.855 pounds of force on a single point of the extuded aluminum for deflection to occur. This is more than 13 times the amount the team is aiming to hold. Therefore, the frame can easily withstand the weight requirement.  
 
 ## BOM
 | Item | Quantity | Price/Item | Total Price | 
@@ -37,7 +55,7 @@ $\ => P_{max}L = 584380 Nm $
 | | | | $48.62 |
 
 ## References
-Extrusion : https://www.amazon.com/Aluminum-Extrusion-European-Standard-Anodized/dp/B08CN92SP1/ref=asc_df_B08PQPJYHX/?tag=hyprod-20&linkCode=df0&hvadid=476087064164&hvpos=&hvnetw=g&hvrand=14031235594181596355&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9013365&hvtargid=pla-1157023532048&th=1
-Moment of Inertia : https://8020.net/20-2020.html
-Extruded Aluminum Data : https://web.archive.org/web/20031006212043/http:/www.alcoa.com/adip/catalog/pdf/Extruded_Alloy_6063.pdf
+Extrusion : https://www.amazon.com/Aluminum-Extrusion-European-Standard-Anodized/dp/B08CN92SP1/ref=asc_df_B08PQPJYHX/?tag=hyprod-20&linkCode=df0&hvadid=476087064164&hvpos=&hvnetw=g&hvrand=14031235594181596355&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9013365&hvtargid=pla-1157023532048&th=1  
+Moment of Inertia : https://8020.net/20-2020.html  
+Extruded Aluminum Data : https://web.archive.org/web/20031006212043/http:/www.alcoa.com/adip/catalog/pdf/Extruded_Alloy_6063.pdf  
 Strength Equations : R. C. Hibbeler, Mechanics of Materials, 10th Ed. Hoboken, NJ, USA: Pearson, 2015.
