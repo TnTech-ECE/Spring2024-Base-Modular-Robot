@@ -26,7 +26,7 @@ that is accessible and stops all robot movement without removing power to essent
 
 ## Schematic
 
-![Circuit Board Schematic](./Images/power_dist_schematic.png)
+![Circuit Board Schematic](../Images/Power_Distribution/power_dist_schematic.png)
 
 The schematic for the power distribution circuit board is shown above. The board has a screw terminal connector meant for connecting to the battery. This then supplies the input voltage to the three power rail subcircuits. 
 
@@ -83,19 +83,19 @@ The 3.3 V rail can source an additional 1119% (4.59 A) of the current worst-case
 
 The four images below show the simulated results of the buck-converter subcircuits designed based on the recommended values given in the datasheet of the TPS565201 buck converter chip [6]. The SPICE model used is provided by Texas Instruments on the website for the TPS565201 chip [14].
 
-![5V Regulation LTSpice Circuit](./Images/5v_reg_ltspice.png)
+![5V Regulation LTSpice Circuit](../Images/Power_Distribution/5v_reg_ltspice.png)
 
-![5V Regulation LTSpice Output Voltage Plot](./Images/5v_reg_ltspice_plot.png)
+![5V Regulation LTSpice Output Voltage Plot](../Images/Power_Distribution/5v_reg_ltspice_plot.png)
 
-![3.3V Regulation LTSpice Circuit](./Images/3-3v_reg_ltspice.png)
+![3.3V Regulation LTSpice Circuit](../Images/Power_Distribution/3-3v_reg_ltspice.png)
 
-![3.3V Regulation LTSpice Output Voltage Plot](./Images/3-3v_reg_ltspice_plot.png)
+![3.3V Regulation LTSpice Output Voltage Plot](../Images/Power_Distribution/3-3v_reg_ltspice_plot.png)
 
 As can be seen above, the voltage regulator circuits successfully convert a 12.8 V input voltage, the nominal voltage of the battery chosen, down to 5 V and 3.3 V with minimal start-up delay [15]. The datasheet for the TPS565201 states that the chip is able to source 5 A [6]. This means that the 3.3 V and 5 V power rails are both able to source up to 5 A of current. The 12 V rail does not have a voltage regulator, and so it current-limited by the 10 A fuse F3 in the schematic, discussed further later in this document. 
 
 The layout of the printed circuit board is shown below. The layout is very heavily based on the recommended layout given in the datasheet of the buck converters and can be found in Figure 30 in the datasheet [6]. The recommended layout was used to ensure the best possible thermal management and current capacity to avoid failures due to overheating or overcurrent. 
 
-![Power Distribution Printed Circuit Board Layout](./Images/power_dist_layout.png)
+![Power Distribution Printed Circuit Board Layout](../Images/Power_Distribution/power_dist_layout.png)
 
 The above calculations show that the power distribution system can supply adequate voltages and currents to the components of the robot, satisfying this constraint. A more detailed discussion on the current limits of the different power rails is shown in the section "Allowable Ampacities" below.
 
