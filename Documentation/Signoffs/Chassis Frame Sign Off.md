@@ -26,16 +26,15 @@ The following schematics outline the dimensions for the extrusion itself and the
 The following analysis section will calculate if the extruded alumninum can withstand the maximum 20 pound load it aims to withstand.  
   
 $\sigma_{b} = \frac{ My }{I}$  
+$\sigma_{b} = \sigma_{Yield Strength} = 16$ ksi (kilopound per square inch)   
+This value comes from the material itself: 6063 Aluminum - T5 Alloy.  
   
-$\sigma_{b} = sigma_{Yield Strength} = 16 ksi (kilopound per square inch)$  
-This value comes from the material itself: 6063 Aluminum - T5 Alloy  
-  
-$\M = \frac{P_{max}L}{4}$  
+$\ M = \frac{P_{max}L}{4}$  
 L = 250 mm = 9.842520 in  
-These two values are important because we are after $\P_{max}. P_{max} is the maximum allowable pressure that the component can withstand before any sort of deflection in the material occurs. L is the length of the shorted component used. $  
+$\ These two values are important because we are after P_{max}. P_{max} is the maximum allowable pressure that the component can withstand before any sort of deflection in the material occurs. L is the length of the shorted component used. $  
   
 y = 10 mm = 0.393701 in  
-$\I = 0.6826 cm^4 = 0.0163995 in^4$  
+$\ I = 0.6826 cm^4 = 0.0163995 in^4$  
 y is the distance from center of the extrusion to the outside edge. I is the moment of interia. This is a constant based on the shape of the component. This specific manufacturer did not provide the moment of interia; however, a manufacturer with a nearly identical component was found and used for calculation. Once the value is calculated, it was discovered that any difference would be negliable due to the magnitude of the pressure compared to the weigtht we are aiming to hold as well as the fact that the weight will be distributed. This calculation is how much pressure it would take to deflect if that full weight was placed on a single point of the component. Additionally, this is just considering a single 250 mm long bar. In reality the weight will be distributed roughly evenly across all bars.
   
 Therefore, with all this the following $\ P_{max}$ can be calculated.  
