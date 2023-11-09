@@ -45,9 +45,9 @@ y is the distance from center of the extrusion to the outside edge. I is the mom
   
 Therefore, with all this the following $\ P_{max}$ can be calculated.  
    
-=> 16 ksi = $\frac{ \frac{P_{max}L}{4}(0.393701 in)}{0.0163995 in^4}$  
+=> 16 ksi = $\frac{ \frac{P_{max}L}{4}(0.393701 in)}{0.0163995 in^4}$   
    
-$\ => P_{max}L $ = 2.6659 kip-in  
+$\ => P_{max}L$ = 2.6659 kip-in  
    
 $\ => P_{max} = \frac{2.6659 kip-in}{9.842520 in}$ = 0.270855 kip = 270.855 lbf (pound force)   
   
