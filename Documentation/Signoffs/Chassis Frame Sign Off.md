@@ -31,17 +31,17 @@ This value comes from the material itself: 6063 Aluminum - T5 Alloy.
   
 M = $\frac{P_{max}L}{4}$  
 L = 250 mm = 9.842520 in  
-These two values are important because we are after $\ P_{max}. P_{max}$ is the maximum allowable pressure that the component can withstand before any sort of deflection in the material occurs. L is the length of the shorted component used. $  
+These two values are important because we are after $\ P_{max}. P_{max}$ is the maximum allowable pressure that the component can withstand before any sort of deflection in the material occurs. L is the length of the shortest component used.   
   
 y = 10 mm = 0.393701 in  
 I = $\ 0.6826 cm^4 = 0.0163995 in^4$  
-y is the distance from center of the extrusion to the outside edge. I is the moment of interia. This is a constant based on the shape of the component. This specific manufacturer did not provide the moment of interia; however, a manufacturer with a nearly identical component was found and used for calculation. Once the value is calculated, it was discovered that any difference would be negliable due to the magnitude of the pressure compared to the weigtht we are aiming to hold as well as the fact that the weight will be distributed. This calculation is how much pressure it would take to deflect if that full weight was placed on a single point of the component. Additionally, this is just considering a single 250 mm long bar. In reality the weight will be distributed roughly evenly across all bars.
+y is the distance from center of the extrusion to the outside edge. I is the moment of interia. This is a constant based on the shape of the component. This specific manufacturer did not provide the moment of interia; however, a manufacturer with a nearly identical component was found and used for calculation. Once the value is calculated, it was discovered that any difference would be negliable due to the magnitude of the pressure compared to the weight we are aiming to hold as well as the fact that the weight will be distributed. This calculation is how much pressure it would take to deflect if that full weight was placed on a single point of the component. Additionally, this is just considering a single 250 mm long bar. In reality the weight will be distributed roughly evenly across all bars.
   
 Therefore, with all this the following $\ P_{max}$ can be calculated.  
    
-$\ => 16 ksi = \frac{ \frac{P_{max}L}{4}(0.393701 in}{0.0163995 in^4}$  
+$\ => 16 ksi = \frac{ \frac{P_{max}L}{4}(0.393701 in)}{0.0163995 in^4}$  
 $\ => P_{max}L = 2.6659 kip-in $  
-$\ => P_{max} = \frac{2.6659 kip-in}{9.842520 in} = 0.270855 kip = 270.855 lbf (pound force)$  
+$\ => P_{max} = \frac{2.6659 kip-in}{9.842520 in}$ = 0.270855 kip = 270.855 lbf (pound force)   
   
 This means that it would take 270.855 pounds of force on a single point of the extuded aluminum for deflection to occur. This is more than 13 times the amount the team is aiming to hold. Therefore, the frame can easily withstand the weight requirement.  
 
