@@ -33,7 +33,7 @@ There are several parts to this constraint, all discussed below.
 
 #### Battery Capacity
 
-In order to meet this constraint, first the robot must be able to have a 30-minute runtime before requiring that the batteries be recharged.
+In order to meet this constraint, first the robot must be able to have at least a 30-minute runtime before requiring that the batteries be recharged.
 
 Because this will require a large battery capacity along with stringent mass and volume constraints placed by the battery needing to fit within the chassis of the robot, a high energy-density battery is preferable. Of the standard battery types (lithium, nickel-metal hydride, sealed lead acid, etc.), lithium batteries have the best volumetric energy density (energy/unit volume) and the best gravimetric energy density (energy/unit mass) [3]. For this reason a lithium battery was chosen to be used for the robot.
 
@@ -51,11 +51,11 @@ Because this will require a large battery capacity along with stringent mass and
 
 \*The Jetson Nano current requirements depend on the supply method chosen. The Micro-USB connection was chosen in this case.
 
-As shown in Table 1 above, the total worst-case current required by all of the components of the base robot is a little over 9 A. In order for the battery to be able to supply enough energy for 30 minutes of continuous playtime, it must then have a capacity of at least 4.5 Amp-Hours (Ah) (9 Amps x 0.5 Hours).
+As shown in Table 1 above, the total worst-case current required by all of the components of the base robot is a little over 9 A. In order for the battery to be able to supply enough energy for 30 minutes of continuous runtime, it must then have a capacity of at least 4.5 Amp-Hours (Ah) (9 Amps x 0.5 Hours).
 
-The battery chosen has more capacity than the requirement, having a capacity of 7.2 Ah [11]. This means that a total of 9 A could be pulled from the battery for 48 minutes before the battery needs to be recharged.
+The battery chosen has more capacity than this requirement, having a capacity of 7.2 Ah [11]. This means that a total of 9 A could be pulled from the battery for 48 minutes before the battery needs to be recharged.
 
-Note that the above calculation means that the worst-case current draw can be supplied for 48 minutes. Any future additional current requirements can still potentially be supplied but for a shorter time period. Additionally, this calculation is made based on the worst-case requirements. The realistic case is a longer battery life as not every component will be pulling the maximum current.
+Note that the above calculation means that the worst-case current draw can be supplied for 48 minutes. Any future additional current requirements can still potentially be supplied but for a shorter time period. Additionally, the realistic case is a longer battery life as not every component will be pulling the maximum (worst-case) current.
 
 #### Battery Management
 
@@ -63,33 +63,37 @@ As is implied by the name of the signoff, in order for this subsystem to be cons
 
 The charger chosen is designed for a battery with a 12.8 V nominal voltage, which the chosen battery has, and will charge the battery until fully charged, at which point the charger will cease supplying current [2].
 
-By taking voltage and current measurements continuously, the battery charger has protection against short circuits, overcharging, undercharging, and reverse polarity. Additionally, the charger has LEDs that indicate the current state of the battery (fully charged, charging, etc.).
+By taking voltage and current measurements continuously, the battery charger has protection against short circuits, overcharging, undercharging, and reverse polarity [2]. Additionally, the charger has LEDs that indicate the current state of the battery (fully charged, charging, etc.).
+
+Additionally, current can be pulled directly from the battery charger if needed. This will be used if the robot is running directly off of power from a wall socekt. The current capabilities of the battery charger are discussed more below.
 
 This data provided by the manufacturer gives the best guarentee that the battery management system will be able to adequately and safely manage the battery that powers the entire robot.
 
 #### Current Sourcing
 
-The battery itself must also be able to source the worst-case current without damage. The battery chosen is able to supply up to 15 A, much more than the nominal worst-case system current of about 9 A [11].
+The battery itself must be able to source the worst-case current without damage. The battery chosen is able to supply up to 15 A, much more than the nominal worst-case system current of about 9 A given in Table 1 [11].
 
-It is preferable that the robot have the ability to be run using only the power from the wall socket. Since all power to the robot is routed through the battery charger, whether it is used for charging or not, the battery charger must be able to source the worst-case current draw of the robot by itself. Using the same worst-case current number calculated above of 9 A, the battery charger chosen can source more than the worst-case figure, up to 10 A [2].
+It is preferable that the robot have the ability to be run using only the power from the wall socket. Since all power to the robot is routed through the battery charger, whether it is used for charging or not, the battery charger must be able to source the worst-case current drawn by robot by itself. Using the same worst-case current number calculated in Table 1 of 9 A, the battery charger chosen can source more than the worst-case figure, up to 10 A [2].
 
-Note that if future teams require that a robot with higher current requirements can be run directly off wall-socket power, then the battery charger may need to be replaced with higher-current capacity alternatives. The suggested alternative is the PCCG-LFP14.4V15A charger, a nearly identical charger but with a higher maximum output current [12].
+Note that if future teams require that a robot with higher current requirements can be run directly off wall-socket power, then the battery charger may need to be replaced with higher-current capacity alternatives. The suggested alternative is the PCCG-LFP14.4V15A charger, a nearly identical charger made by the same manufacturer but with a higher maximum output current of 15 A [12].
 
 #### Charging without Battery Removal
 
-Another requirement of this constraint is that the battery be chargeable without being removed. The design for this is shown in the schematic Figure 1. To provide charging capability without battery removal the following system was designed. A panel-mount connector was chosen that could be mounted onto the chassis with screws. This connector has an IEC 320 C14 (male) connector on both sides for connecting cables to both the interior and exterior of the robot [13]. For connecting to this on the interior of the chassis, an IEC 320 C13 - IEC 320 C13 adapter (female to female) was used to match the cable connected to the battery charger [14]. This is needed because the battery charger and chassis connectors both have male connectors, which without the adapter would require a female-female IEC 320 cable, which are difficult to find.
+Another requirement of this constraint is that the battery be chargeable without being removed. The design for this is shown in the schematic Figure 1. To provide charging capability without battery removal the following system was designed. 
+
+A panel-mount connector was chosen that could be mounted onto the chassis with screws. This connector has an IEC 320 C14 (male) connector on both sides for connecting cables to both the interior and exterior of the robot [13]. For connecting to this on the interior side of the chassis, an IEC 320 C13 - IEC 320 C13 adapter (female to female) was used to match the cable connected to the battery charger [14]. This is needed because the battery charger and chassis connectors both have male connectors, which without the adapter would require a female-female IEC 320 cable, which are difficult to find.
 
 For connecting to the exterior side of the chassis connector another cable was chosen with one side IEC 320 C13 and one side NEMA 5-15P connector [15]. The IEC connector side will fit the chassis connector, and the NEMA connector side will fit a standard US wall socket. All of these cables and connectors together allow for direct sourcing of power from a standard US wall socket.
 
 These components work together to allow for easy charging of the battery with a standard 3-prong cable without removal.
 
-### Current Capacities
+### C17: Current Capacities
 
-All components involved in the battery management and charging must be able to handle the worst case current with some buffer for extra safety. While the worst-case current for the robot is about 9 A, all power is routed through the battery charger. This means that the battery charger must be able to source enough current, and the conductors before the charger must only be able to supply the input current required of the charger.
+All components involved in the battery management and charging must be able to handle the worst case current with some buffer for extra safety. While the worst-case current for the robot is about 9 A, all power is routed through the battery charger. This means that the battery charger must be able to source enough current, (discussed earlier) and the conductors before the charger must be able to supply the input current required by the charger.
 
 From the datasheet of the battery charger, the charger requires an input current of 2.5 A [2]. This means that the conductors and connectors before the charger must be able to supply more than this current.
 
-All of the conductors and connectors chosen can sustain much more than 2.5 A without damage [13][14][15][16]. All of the components chosen for supplying current to the battery charger can supply up to 10 A of current, far more than the required 2.5 A. These components are all within the requirements given by NEC 310.15(B)(16), and can adequately sustain much more than the current required without failure [1].
+All of the conductors and connectors chosen can sustain much more than 2.5 A without damage [13][14][15][16]. All of the components chosen for supplying current to the battery charger (wall cable, connector, adapter, and charger cable) can supply up to 10 A of current, far more than the required 2.5 A. These components are all within the requirements given by NEC 310.15(B)(16), and can adequately sustain much more than the current required without failure [1].
 
 ## BOM 
 
