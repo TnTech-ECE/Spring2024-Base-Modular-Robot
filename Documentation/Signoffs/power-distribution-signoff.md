@@ -30,7 +30,7 @@ that is accessible and stops all robot movement without removing power to essent
 
 The schematic for the power distribution circuit board is shown above. The board has a screw terminal connector meant for connecting to the battery. This then supplies the input voltage to the three power rail subcircuits. 
 
-The circuit board is based around a single type of buck converter chip, the TPS565201. This chip is a variable voltage regulator buck converter that can source up to 5 A of output current [6]. The output voltage is set by the ratio of feedback resistors connected to the the VFB pin of the chip. 
+The circuit board is based around a single type of buck converter chip, the TPS565201. This chip is a variable voltage regulator buck converter that can source up to 5 A of output current [6]. The output voltage is set by the ratio of feedback resistors connected to the the VFB pin of the chip. The datasheet for the voltage regulator provides a formula for calculating the necessary feedback resistor valuesThe datasheet also provides a table of component values for common output voltages in Table 2. The nearest standard resistor values to the ones provided in this table were the values chosen.
 
 There are two buck converter-based subcircuits on the board, one for the 3.3 V and one for the 5 V rail. The feedback resistors are R5, R7, R4, and R6, which set output voltages of 5 V and 3.3 V, respectively.
 
@@ -46,9 +46,9 @@ Any components references in the analysis below can be found in the table in the
 
 ### Adequate Power Supply
 
-To ensure that the first constraint is met, that the power distribution system can supply adequate power and current to the other subsystems, is met the following analysis was done.
+To ensure that the first constraint is met, that the power distribution system can supply adequate power and current to the other subsystems, the following analysis was done.
 
-The current requirements were a very large constraint of the subsystem. The current requirements of each power rail are shown below.
+The current requirements are a very large constraint of the subsystem. Each component sources its supply voltage directly from the corresponding voltage rail, not through any other component. This is to provide the lowest probability of a cascading failure resulting from chained components. The current requirements of each power rail are shown below.
 
 #### 5 V Rail Current Requirements [7][8][9]
 | Item | Part Number | Quantity | Max Current Draw (mA) | Item Current (mA) |
@@ -91,7 +91,9 @@ The four images below show the simulated results of the buck-converter subcircui
 
 ![3.3V Regulation LTSpice Output Voltage Plot](../Images/Power_Distribution/3-3v_reg_ltspice_plot.png)
 
-As can be seen above, the voltage regulator circuits successfully convert a 12.8 V input voltage, the nominal voltage of the battery chosen, down to 5 V and 3.3 V with minimal start-up delay [15]. The datasheet for the TPS565201 states that the chip is able to source 5 A [6]. This means that the 3.3 V and 5 V power rails are both able to source up to 5 A of current. The 12 V rail does not have a voltage regulator, and so it current-limited by the 10 A fuse F3 in the schematic, discussed further later in this document. 
+As can be seen above, the voltage regulator circuits successfully convert a 12.8 V input voltage, the nominal voltage of the battery chosen, down to 5 V and 3.3 V with minimal start-up delay [15]. The steady-state output voltages calculated by the simulations are 5.011 V and 3.48 V for the 5 V and 3.3 V circuits, respectively. Because the resistor values are chosen based on the values given in the datasheet, the differences between simulated and ideal values are likely just due to inaccuracies in the SPICE model provided. Furthermore, the simulated steady-state values is within the functional tolerance of 3.3 V logic [16].
+
+The datasheet for the TPS565201 states that the chip is able to source 5 A [6]. This means that the 3.3 V and 5 V power rails are both able to source up to 5 A of current. The 12 V rail does not have a voltage regulator, and so it current-limited by the 10 A fuse F3 in the schematic, discussed further later in this document. 
 
 The layout of the printed circuit board is shown below. The layout is very heavily based on the recommended layout given in the datasheet of the buck converters and can be found in Figure 30 in the datasheet [6]. The recommended layout was used to ensure the best possible thermal management and current capacity to avoid failures due to overheating or overcurrent. 
 
@@ -103,7 +105,7 @@ The above calculations show that the power distribution system can supply adequa
 
 To ensure that the power distribution system is "plug-and-play," satisfying the second constraint, the power rail connectors were designed such that most standard connectors will be compatible. The through-hole connectors for the 3.3 V, 5 V, and ground rails are spaced apart by 2.54 mm (0.1 in) with a hole diameter of 1 mm. This allows for screw terminals, female pin headers, and any other connectors that have a 2.54 mm connector pitch and connector diameter less than 1 mm to be compatible. There are 82 through hole connectors for each of the three rails mentioned above. This allows for easy power connections that can allow for many components to be quickly connected and unconnected to power depending on the power requirements.
 
-For the 12 V power rails there were less connectors put into place due to less components likely to require a 12 V rail in the future. Additionally, the higher current requirements typical of the 12 V rail require a higher-current connection. The screw terminals used for the motor connections allow for up to 10 A of current, far more than what would be being pulled by the motors used in any non-failure scenario [12][16].
+For the 12 V power rails there were less connectors put into place due to less components likely to require a 12 V rail in the future. Additionally, the higher current requirements typical of the 12 V rail require a higher-current connection. The screw terminals used for the motor connections allow for up to 10 A of current, far more than what would be being pulled by the motors used in any non-failure scenario [12][17].
 
 There are still more than enough screw terminals for the base robot, allowing for additional motors and motor drivers to be driven by future designs through the extra screw terminals. 
 
@@ -115,37 +117,37 @@ Another constraint laid out for this subsystem is that there must be an emergenc
 
 To accomplish this a screw terminal was placed in series with the 12 V rail. This screw terminal is meant to be connected to a SPST emergency stop button with each end of the SPST switch being connected to each connection on the two-connection screw terminal block, allowing the button to interrupt current to the 12 V rail.
 
-A screw terminal was chosen such that it would allow for adequate current to pass through normally, and could effectively stop current when the button is pressed. The IDEC NWAR-27 emergency stop button was chosen for this. This emergency stop button can adequately handle 10 A of current, and is a normally-closed button that will open the circuit when the button is pressed [17]. Once the button is pressed and the circuit opened, the button must be reset by pulling the button out again.
+A screw terminal was chosen such that it would allow for adequate current to pass through normally, and could effectively stop current when the button is pressed. The IDEC NWAR-27 emergency stop button was chosen for this. This emergency stop button can adequately handle 10 A of current, and is a normally-closed button that will open the circuit when the button is pressed [18]. Once the button is pressed and the circuit opened, the button must be reset by pulling the button out again.
 
 This emergency stop button will cut all power from the motors when pressed, but leave the sensors and computers on the robot functional, fulfilling this requirement.
 
 ### Diode Protection
 
-The next constraint of the power distribution subsystem is that the DC motors cannot interfere with the power rails of the other components. The reason that DC motors interfere with other power rails is that when a motor is switched off it resists the change in current [18]. As it does this, it generates a "back-EMF" that pushes back against the power supply, lowering the supply voltage for all components connected to that rail. To prevent this a diode, called a flyback diode, is inserted in parallel to the motor and is reverse-biased. After this when the motor induces a back-EMF, the induced voltage forces current through the diode, not the power supply, allowing the current to dissipate safely in the diode instead of the power rail.
+The next constraint of the power distribution subsystem is that the DC motors cannot interfere with the power rails of the other components. The reason that DC motors interfere with other power rails is that when a motor is switched off it resists the change in current [19]. As it does this, it generates a "back-EMF" that pushes back against the power supply, lowering the supply voltage for all components connected to that rail. To prevent this a diode, called a flyback diode, is inserted in parallel to the motor and is reverse-biased. After this when the motor induces a back-EMF, the induced voltage forces current through the diode, not the power supply, allowing the current to dissipate safely in the diode instead of the power rail.
 
 The circuit board design utilizes reverse-biased diodes across every motor connector. It should be noted that these are optional. If the user does not want the diodes in place or is connecting a motor driver or another component that does not require it, then the circuit design does not require a diode in place. For easy installation, the polarity of the diode is indicated on a drawing next to each of the diodes on the circuit board. 
 
-In order to ensure the lowest possible chance of failure, the flyback diodes must be able to sustain the maximum current draw of the motor (about 1 A) and the full reverse-biased source voltage of the motor (about 12 V) [12]. The diodes chosen are able to survive much more than the required current and reverse-bias voltage, and can be found in the datasheet [19].
+In order to ensure the lowest possible chance of failure, the flyback diodes must be able to sustain the maximum current draw of the motor (about 1 A) and the full reverse-biased source voltage of the motor (about 12 V) [12]. The diodes chosen are able to survive much more than the required current and reverse-bias voltage, and can be found in the datasheet [20].
 
 The diode protection added to the circuit board should provide adequate protection from the worst-case back-EMF resulting from the motor according to the datasheet. This shows that this constraint is also sufficiently met by the design.
 
 ### Allowable Ampacities
 
-The final constraint requires that the circuit board traces fall within the allowable ampacities given by the NFPA standard. The allowable currents, trace widths, and other required values are calculated below using the stated NFPA 79-10 and IPC-2221 standards [1][20].
+The final constraint requires that the circuit board traces fall within the allowable ampacities given by the NFPA standard. The allowable currents, trace widths, and other required values are calculated below using the stated NFPA 79-10 and IPC-2221 standards [1][21].
 
 Aside from the voltage regulator chips, the output 3.3 V rail and 5 V rail currents are limited by the narrowest trace on the output line from the chip. In the case of this board the narrowest trace bottle-necking the output current is the trace immediately connected to the SW pin because it is limited by the space between the chip's pins. All other traces that the output current passes through are wider than this trace and so can support more current. The maximum possible width of the trace connected to the SW pin is 0.5 mm.
 
-The IPC-2221 standard gives formulas and data to calculate the maximum current of this trace [20]. From Figure A and Figure B in Appendix B, the maximum current can be calculated based on the maximum required change in temperature. The maximum acceptable change in temperature can be found by looking at the transition temperature of the PCB laminate material FR4, the temperature at which the laminate will begin to degrade, and is around 110 degrees Celsius [21]. Because the transition temperature of FR4 is so much lower than the melting point of copper (1083 Celsius), the FR4 transition temperature is the upper bound on trace temperature limiting the current through the trace [22].
+The IPC-2221 standard gives formulas and data to calculate the maximum current of this trace [21]. From Figure A and Figure B in Appendix B, the maximum current can be calculated based on the maximum required change in temperature. The maximum acceptable change in temperature can be found by looking at the transition temperature of the PCB laminate material FR4, the temperature at which the laminate will begin to degrade, and is around 110 degrees Celsius [21]. Because the transition temperature of FR4 is so much lower than the melting point of copper (1083 Celsius), the FR4 transition temperature is the upper bound on trace temperature limiting the current through the trace [23].
 
-To find the maximum current of the trace, the trace cross section needs to be found, which requires the width and thickness of the trace. The width is limited to 0.5 mm. Thickness of PCB copper traces is often given in oz/ft^2, which is the thickness of that weight of copper if it were rolled into a square-foot area [23]. To allow for higher current, 2 oz/ft^2 was chosen instead of the default option of 1 oz/ft^2. Using Figure B of Appendix B of the IPC-2221 standard after converting the trace width to inches, the cross section of the trace is found to be about 50 square-mils.
+To find the maximum current of the trace, the trace cross section needs to be found, which requires the width and thickness of the trace. The width is limited to 0.5 mm. Thickness of PCB copper traces is often given in oz/ft^2, which is the thickness of that weight of copper if it were rolled into a square-foot area [24]. To allow for higher current, 2 oz/ft^2 was chosen instead of the default option of 1 oz/ft^2. Using Figure B of Appendix B of the IPC-2221 standard after converting the trace width to inches, the cross section of the trace is found to be about 50 square-mils.
 
-To then find the maximum allowable current, Figure A is used [20]. Assuming that the trace begins at a room temperature of 25 Celsius and that the maximum allowable temperature is 110 Celsius, this yields a maximum change in temperature of 85 degrees Celsius. Using the graph, this yields a maximum current a little over 6 Amps. For more precise calculations, the FR4 source referenced earlier provides the formula for calculating maximum current in equation (1) [21]. When the aforementioned values are used in this formula, a maximum current of 6.28 A is calculated.
+To then find the maximum allowable current, Figure A is used [21]. Assuming that the trace begins at a room temperature of 25 Celsius and that the maximum allowable temperature is 110 Celsius, this yields a maximum change in temperature of 85 degrees Celsius. Using the graph, this yields a maximum current a little over 6 Amps. For more precise calculations, the FR4 source referenced earlier provides the formula for calculating maximum current in equation (1) [22]. When the aforementioned values are used in this formula, a maximum current of 6.28 A is calculated.
 
 Because this current limit is higher than the output current limit of the voltage regulator chips, the trace will not fail within the normal operating parameters of the voltage regulators. To further prevent failures from occurring in the case of a sudden increase in current, a 6 A fuse is placed on the 3.3 V and 5 V rails near the output from the chip so that the fuse will blow before the trace can sustain any damage from overcurrent.
 
-A similar method is used for calculating the maximum supportable current of the 12 V rail. The narrowest trace of the 12 V rail is 1.25 mm wide. Using Figure B from Appendix B in the IPC-2221 standard document after converting the width to inches, the cross section in square-mils is about 125 square-mils [20]. Using the same formula given in the FR4 source document, the maximum current given an 85 degree Celsius change in temperature from room temperature is about 11.7 A [21]. To prevent damage to the conductor, a 10 A fuse is inserted at the beginning of the 12 V rail so that the fuse will blow before the 12 V rail trace can sustain damage.
+A similar method is used for calculating the maximum supportable current of the 12 V rail. The narrowest trace of the 12 V rail is 1.25 mm wide. Using Figure B from Appendix B in the IPC-2221 standard document after converting the width to inches, the cross section in square-mils is about 125 square-mils [21]. Using the same formula given in the FR4 source document, the maximum current given an 85 degree Celsius change in temperature from room temperature is about 11.7 A [22]. To prevent damage to the conductor, a 10 A fuse is inserted at the beginning of the 12 V rail so that the fuse will blow before the 12 V rail trace can sustain damage.
 
-Finally, the screw terminals used for connecting the motors to the 12 V power rail can supply up to 10 A safely [16]. This indicates that all parts of the 12 V power supply can support the high amounts of current that may be required of it.
+Finally, the screw terminals used for connecting the motors to the 12 V power rail can supply up to 10 A safely [17]. This indicates that all parts of the 12 V power supply can support the high amounts of current that may be required of it.
 
 The above calculations ensure that the components and traces used on the printed circuit board are within the acceptable value range. This shows that the fifth and final constraint is met by this design.
 
@@ -169,6 +171,8 @@ The above calculations ensure that the components and traces used on the printed
 | 10 uFarad Capacitor   | RMCF1206JT33K0  | 30 | $0.136   | $4.08  |
 | 22 uFarad Capacitor   | RMCF1206JT56K0  | 30 | $0.25100 | $7.53  |
 | Total                 |                 |    |          | $94.19 |
+
+The component quantities were chosen to provide enough for several full printed circuit boards to be constructed. For example, two buck converters are required per board which requires ten total buck converters for five full PCBs to be constructed. Five PCBs was chosen as it is the minimum quantity offered by JLCPCB, a commonly used PCB manufacturer. 
 
 ## References
 
@@ -206,18 +210,21 @@ Mar. 2021. [Online]. Available: https://github.com/lchapman42/Control-Sensing-Wi
 
 [15] “LIS3MDL - Digital output magnetic sensor : ultra-low-power, high-performance 3-axis magnetometer - STMicroelectronics.” STMicroelectronics, May 2017. Accessed: Oct. 22, 2023. [Online]. Available: https://www.st.com/en/mems-and-sensors/lis3mdl.html
 
-[16] “397730002.” Molex. Accessed: Oct. 24, 2023. [Online]. Available: https://tools.molex.com/pdm_docs/sd/397730002_sd.pdf
+[16] “Low Voltage Logic Interfacing.” [Online]. Available: https://www.
+analog.com/media/en/training-seminars/tutorials/MT-098.pdf
 
-[17] “TW Series — 22mm NEMA Style Pushbuttons.” IDEC. Accessed: Oct. 23, 2023. [Online]. Available: https://www.mouser.com/datasheet/2/650/idec_TWSeries-1894031.pdf
+[17] “397730002.” Molex. Accessed: Oct. 24, 2023. [Online]. Available: https://tools.molex.com/pdm_docs/sd/397730002_sd.pdf
 
-[18] G. Recktenwald, “Basic DC Motor Circuits.” Portland State University. Accessed: Oct. 18, 2023. [Online]. Available: http://web.cecs.pdx.edu/~eas199/A/topics/dc_motor/DC_motor_circuits_slides.pdf
+[18] “TW Series — 22mm NEMA Style Pushbuttons.” IDEC. Accessed: Oct. 23, 2023. [Online]. Available: https://www.mouser.com/datasheet/2/650/idec_TWSeries-1894031.pdf
 
-[19] “RB070MM-30 Schottky Barrier Diode.” ROHM Semiconductor, 2017. Accessed: Oct. 16, 2023. [Online]. Available: https://fscdn.rohm.com/en/products/databook/datasheet/discrete/diode/schottky_barrier/rb070mm-30tr-e.pdf
+[19] G. Recktenwald, “Basic DC Motor Circuits.” Portland State University. Accessed: Oct. 18, 2023. [Online]. Available: http://web.cecs.pdx.edu/~eas199/A/topics/dc_motor/DC_motor_circuits_slides.pdf
 
-[20] “IPC-2221A Generic Standard on Printed Board Design.” IPC, May 2003. [Online]. Available: https://www-eng.lbl.gov/~shuman/NEXT/CURRENT_DESIGN/TP/MATERIALS/IPC-2221A(L).pdf
+[20] “RB070MM-30 Schottky Barrier Diode.” ROHM Semiconductor, 2017. Accessed: Oct. 16, 2023. [Online]. Available: https://fscdn.rohm.com/en/products/databook/datasheet/discrete/diode/schottky_barrier/rb070mm-30tr-e.pdf
 
-[21] J. Adam, “New correlations between electrical current and temperature rise in PCB traces,” in Twentieth Annual IEEE Semiconductor Thermal Measurement and Management Symposium (IEEE Cat. No.04CH37545), San Jose, CA, USA: IEEE, 2004, pp. 292–299. doi: 10.1109/STHERM.2004.1291337.
+[21] “IPC-2221A Generic Standard on Printed Board Design.” IPC, May 2003. [Online]. Available: https://www-eng.lbl.gov/~shuman/NEXT/CURRENT_DESIGN/TP/MATERIALS/IPC-2221A(L).pdf
 
-[22] “nglos324 - copper,” Princeton. Accessed: Oct. 13, 2023. [Online]. Available: https://www.princeton.edu/~maelabs/mae324/glos324/copper.htm
+[22] J. Adam, “New correlations between electrical current and temperature rise in PCB traces,” in Twentieth Annual IEEE Semiconductor Thermal Measurement and Management Symposium (IEEE Cat. No.04CH37545), San Jose, CA, USA: IEEE, 2004, pp. 292–299. doi: 10.1109/STHERM.2004.1291337.
 
-[23] “Fabricating Boards,” MIT. Accessed: Oct. 19, 2023. [Online]. Available: https://pcb.mit.edu/lectures/board_fab/
+[23] “nglos324 - copper,” Princeton. Accessed: Oct. 13, 2023. [Online]. Available: https://www.princeton.edu/~maelabs/mae324/glos324/copper.htm
+
+[24] “Fabricating Boards,” MIT. Accessed: Oct. 19, 2023. [Online]. Available: https://pcb.mit.edu/lectures/board_fab/
