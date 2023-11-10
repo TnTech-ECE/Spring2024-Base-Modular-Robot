@@ -210,8 +210,7 @@ Mar. 2021. [Online]. Available: https://github.com/lchapman42/Control-Sensing-Wi
 
 [15] “LIS3MDL - Digital output magnetic sensor : ultra-low-power, high-performance 3-axis magnetometer - STMicroelectronics.” STMicroelectronics, May 2017. Accessed: Oct. 22, 2023. [Online]. Available: https://www.st.com/en/mems-and-sensors/lis3mdl.html
 
-[16] “Low Voltage Logic Interfacing.” [Online]. Available: https://www.
-analog.com/media/en/training-seminars/tutorials/MT-098.pdf
+[16] “Low Voltage Logic Interfacing.” [Online]. Available: https://www.analog.com/media/en/training-seminars/tutorials/MT-098.pdf
 
 [17] “397730002.” Molex. Accessed: Oct. 24, 2023. [Online]. Available: https://tools.molex.com/pdm_docs/sd/397730002_sd.pdf
 
