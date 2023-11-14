@@ -72,9 +72,13 @@ Line Following Library: "QTR Sensors" : https://www.pololu.com/docs/0J19/1
 
 Orientation Library: Accelerometer: https://github.com/adafruit/Adafruit_LSM6DS, Compass: https://github.com/adafruit/Adafruit_LIS3MDL
 
-Position Library:
+Position Library: [Grove - Ultrasonic Ranger][def2]
 
-Object Detection Library:
+Object Detection Library: [Grove - Time of Flight Distance Sensor VL53L0X][def1] 
+
+[def1]: https://github.com/Seeed-Studio/Grove-Ranging-sensor-VL53L0X
+
+[def2]: https://github.com/SeeedDocument/Grove_Ultrasonic_Ranger
 
 ### Communication with Jetson Nano
 The Arduino will communicate with the Jetson Nano through the USB port. The USB port will provide serial data to the Jetson Nano using UART (Universal Asynchronous Receiver Transmitter) Communication Protocol. Another option is to use the Tx/Rx pins on the Arduino Mega to send the serial data, rather than the USB. This would allow code to be uploaded to the Arduino Mega while still being serially connected to the Jetson Nano.
