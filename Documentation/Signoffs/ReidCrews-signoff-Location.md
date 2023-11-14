@@ -33,14 +33,14 @@ The location subsystem sends data to the master control  to control and move the
 
 ### Location Subsystem Schmatic
 
-![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-Location/Documentation/Electrical/Schematics/Sources/Position/PositionSensorSchematic2.png)
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Electrical/Schematics/Sources/Position/PositionSensorSchematic2.png)
 
 
 The location schematic is shown above. The Grove Ultrasonic Distance Sensors are used from SeeedStudio. The sensor and Arduino Mega are powered by the power distribution bus (5 V). The SIG pin is for both the transmitter and receiver, and the NC pin is the non-connection pin. Each sensor SIG pin is connected to the Arduino Mega PMW (Pulse Width Modulation) digtal pins (D#). Each sensor SIG pin is connected to a digital pin of the Arduino Mega. Four sensors are used with one on each side because this allows each side of the robot to be known relative to the arena's boundaries.
 
 ### Ultrasonic Sensor Pinout
 
-![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-Location/Documentation/Images/Position/Grove-Ultrasonic-Distance-Sensor-pinout.png)
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Position/Grove-Ultrasonic-Distance-Sensor-pinout.png)
 
 The pinout of the ultrasonic sensor is shown above.
 
@@ -50,12 +50,12 @@ The pinout of the ultrasonic sensor is shown above.
 The ultrasonic sensor has an operating current at 8 mA and operating voltage at 3.3 to 5 V. The wide voltage level range is an advantage compared to the HC-SR04. The Grove Ultrasonic Sensor is easy direct connection with Arduino or Raspberry Pi with STEMMA connectors. The HC-SR04 ultrasonic sensor needs voltage conversion circuit. The Grove Ultrasonic Sensor requires only one pin for the transmitter and receiver. The HC-SR04 ultrasonic sensor needs two pins for the transmitter and receiver. The Grove Ultrasonic Sensor saves one GPIO pin on the microcontroller which is the most valuable resource [1]. 
 
 
-![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-Location/Documentation/Images/Position/UltrasonicSensorComparsion.jpg)
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Position/UltrasonicSensorComparsion.jpg)
 
 The operating frequency is 40 kHz. When a pulse trigger signal with more than 10 &#956;s, the ultrasonic sensor will issue 8 cycles of 40 kHz cycle level and detect the echo signal (return signal). 
 
 <p align = "center">
-<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-Location/Documentation/Images/Position/PositionSensorTimingDiagram.PNG"/>
+<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Position/PositionSensorTimingDiagram.PNG"/>
 </p>
 
 The recommended sampling rate is over 60 ms (16.7 Hz) [2]. 
@@ -104,10 +104,10 @@ The formula above is used to find the distance between the sensor and object. Th
 
 [def2]: https://www.seeedstudio.com/blog/2019/11/04/hc-sr04-features-arduino-raspberrypi-guide/
 
-[def3]: https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-Location/Documentation/Background%20Documents/SEC24-HW-Competition_V5.6-1.pdf
+[def3]: https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Background%20Documents/SEC24-HW-Competition_V5.6-1.pdf
 
 [def4]: https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf
 
-[def5]: https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-Location/Documentation/Background%20Documents/Position/Grove-Ultrasonic_Ranger_WiKi.pdf
+[def5]: https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Background%20Documents/Position/Grove-Ultrasonic_Ranger_WiKi.pdf
 
 [def6]: https://www.digikey.com/en/products/detail/seeed-technology-co.,-ltd/101020010/5482600?utm_adgroup=Seeed%20Technology%20Co.%2C%20LTD.&utm_source=bing&utm_medium=cpc&utm_campaign=Shopping_DK%2BSupplier_Tier%201%20-%20Block%202&utm_term=&utm_content=Seeed%20Technology%20Co.%2C%20LTD.&utm_id=bi_cmp-442211287_adg-1307319747084747_ad-81707570054041_pla-4585307092955128:aud-813320050_dev-c_ext-_prd-5482600&msclkid=0e37d2868a1f12279432b7c784dd6e37
