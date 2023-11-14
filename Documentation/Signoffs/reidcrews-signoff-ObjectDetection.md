@@ -61,7 +61,9 @@ $$ Max \space Distance = {x \over 2} * tan(77.5^\circ)$$
 
 The *Max Distance* is max distance in the blind spot and *x* is the distance between the two sensors. For the CAD drawing case, the *Max Distance* is 13.53 in, and the area is 40.59 in $^2$. For the maxmium apart case (12 in apart), *Max Distance* is 54.12 in, and the area is 324.77 in $^2$. The chosen distance between the sensors is 6 in becuase the max distance from edges and blind spot is the lowest average distance. The blue and green lines are 13.53 in.
 
-![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-ObjectDetection/Documentation/Images/Object%20Detection/ObjDetectionSensorLengthMeasurements.png)
+<p align = "center">
+<img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-ObjectDetection/Documentation/Images/Object%20Detection/ObjDetectionSensorLengthMeasurements.png/>
+</p>
 
 The sampling rate for the time of flight sensor 33 ms at default. The minimum is 8 ms, and the maximum is 200 ms. The default frequency is 30.3 Hz. The time of flight sensor has four modes in the table below [1-2].
 
