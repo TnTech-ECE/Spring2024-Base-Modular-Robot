@@ -1,7 +1,7 @@
 # Master Control Signoff
 ## Functionality
 
-![alt text](../Images/Master_Control_Pinout)
+![alt text](../Images/Master_Control_Pinout.png)
 
 The Master Control subsystem will facilitate navigation and control of the other
 	subsystems to direct the robot around the board. The system will receive 
