@@ -68,9 +68,9 @@ The Arduino serial monitor and serial plotter will aid in validating the voltage
 ### Arduino Libraries
 The sensor sets used for the robust robot will utilize manufacturer provided Arduino Libraries to ease the coding process.
 
-Line Following Library: "QTR Sensors" : https://www.pololu.com/docs/0J19/1
+Line Following Library: [QTR Sensors][def3]
 
-Orientation Library: Accelerometer: https://github.com/adafruit/Adafruit_LSM6DS, Compass: https://github.com/adafruit/Adafruit_LIS3MDL
+Orientation Library: [Accelerometer][def4] , [Compass][def5]
 
 Position Library: [Grove - Ultrasonic Ranger][def2]
 
@@ -79,6 +79,12 @@ Object Detection Library: [Grove - Time of Flight Distance Sensor VL53L0X][def1]
 [def1]: https://github.com/Seeed-Studio/Grove-Ranging-sensor-VL53L0X
 
 [def2]: https://github.com/SeeedDocument/Grove_Ultrasonic_Ranger
+
+[def3]: https://www.pololu.com/docs/0J19/1
+
+[def4]: https://github.com/adafruit/Adafruit_LSM6DS
+
+[def5]: https://github.com/adafruit/Adafruit_LIS3MDL
 
 ### Communication with Jetson Nano
 The Arduino will communicate with the Jetson Nano through the USB port. The USB port will provide serial data to the Jetson Nano using UART (Universal Asynchronous Receiver Transmitter) Communication Protocol. Another option is to use the Tx/Rx pins on the Arduino Mega to send the serial data, rather than the USB. This would allow code to be uploaded to the Arduino Mega while still being serially connected to the Jetson Nano.
