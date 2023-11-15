@@ -123,7 +123,7 @@ A screw terminal was chosen such that it would allow for adequate current to pas
 
 This emergency stop button will cut all power from the motors when pressed, but leave the sensors and computers on the robot functional, fulfilling this requirement.
 
-### Diode Protection
+### Motor Protection
 
 The next constraint of the power distribution subsystem is that the DC motors cannot interfere with the power rails of the other components. The reason that DC motors interfere with other power rails is that when a motor is switched off it resists the change in current [19]. As it does this, it generates a "back-EMF" that pushes back against the power supply, lowering the supply voltage for all components connected to that rail. To prevent this a diode, called a flyback diode, is inserted in parallel to the motor and is reverse-biased. After this when the motor induces a back-EMF, the induced voltage forces current through the diode, not the power supply, allowing the current to dissipate safely in the diode instead of the power rail.
 
@@ -132,6 +132,8 @@ The circuit board design utilizes reverse-biased diodes across every motor conne
 In order to ensure the lowest possible chance of failure, the flyback diodes must be able to sustain the maximum current draw of the motor (about 1 A) and the full reverse-biased source voltage of the motor (about 12 V) [12]. The diodes chosen are able to survive much more than the required current and reverse-bias voltage, and can be found in the datasheet [20].
 
 The diode protection added to the circuit board should provide adequate protection from the worst-case back-EMF resulting from the motor according to the datasheet. This shows that this constraint is also sufficiently met by the design.
+
+Additionally, the motor ground and ground for the rest of the printed circuit board are quasi-isolated to help prevent interference travelling through the ground of the board. This was done by electrically isolating the motor ground plane and normal ground plane except through a small trace connecting the two. This keeps the "grounds" at an equal reference potential, but causes the noise from the motor ground to prefer to not travel to the grounds of the other components.This in addition to the diode protection should prevent the motors from interfering with the DC power buses.
 
 ### Allowable Ampacities
 
