@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Grove")(type "KiCad")(uri "${KIPRJMOD}/Grove.kicad_sym")(options "")(descr ""))
+)
