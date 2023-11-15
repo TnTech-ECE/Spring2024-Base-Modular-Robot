@@ -18,14 +18,14 @@ The motor control subsystem takes serial signals from the master control and det
 ### Electrical Schematic
 ![image](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Motor-Control/MotorControl-Schematic.png)
 
-This electrical schematic shows the connections between the microcontroller, motor drivers, and motors. This microcontroller - Arduino Mega - was chosen due to the number of analog ports available since those are needed to communicate with the motor drivers. This is the same microcontroller used by past SECON robot teams for motor control so it will have the capabilities needed for the communication from master control to the motor drivers. The motors chosen are similar to ones from past years, but these are larger and have more torque to meet the new obstacle of moving up an incline and the possibility of the robot being double the weight of past robots. The maximum torque needed was calculated to prepare for the worst-case scenario (found in the analysis subsection). When the motors are running, they should pull 0.72 A, which is well below the 2 A maximum rating output current for the driver. This driver was chosen since past teams were successful in using it, and it will be able to power the motors successfully. All the chosen components are connected to either 3.3 V, 5 V, or 12 V based on their specific power ratings found in the datasheets. 
+This electrical schematic shows the connections between the microcontroller [1], motor drivers [2], and motors [3]. This microcontroller - Arduino Mega - was chosen due to the number of analog ports available since those are needed to communicate with the motor drivers. This is the same microcontroller used by past SECON robot teams for motor control, so that it will have the capabilities required for the communication from master control to the motor drivers. The motors chosen are similar to ones from past years, but these are larger and have more torque to meet the new obstacle of moving up an incline and the possibility of the robot being double the weight of past robots. The maximum torque needed was calculated to prepare for the worst-case scenario (found in the analysis subsection). When the motors run, they should pull 0.72 A, well below the 2 A maximum rating output current for each driver channel. This driver was chosen since past teams successfully used it, and it can power the motors successfully. All the selected components are connected to either 3.3 V, 5 V, or 12 V based on their specific power ratings in the datasheets. 
 
 ### Motor and Wheel Assembly
 ![inamge](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Motor-Control/MotorControl-WheelConnections.png)
 
 ![image](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Motor-Control/MotorControl-PhysicalConnections.png)
 
-Since each of the four wheels is a drive wheel, they are each connected to a motor. The top photo shows that the wheel will be connected to the motor through a hub with three screws. Each motor will have a motor mount to connect it to the chassis. The mount will attach to the motor by six screws, as shown in the second photo, and this is attached to the chassis by four screws. The connection to the chassis is shown in that subsystem's documentation.
+Since each of the four wheels is a drive wheel [4], they are each connected to a motor. The top photo shows that the wheel will be connected to the motor through a hub [5] with three screws. Each motor will have a mount [6] connecting it to the chassis. The mount will attach to the motor by six screws, as shown in the second photo, and this is attached to the chassis by four screws. The connection to the chassis is established in that subsystem's documentation.
 
 ## Analysis
 ### Acceleration
@@ -100,4 +100,16 @@ At the current torque requirement of 6.5951 kg-mm of torque, only 65.95\% of the
 | Total          |                                                                              |                 |                  |              | Total Cost | $418.22 |
 
 ## References
-https://community.robotshop.com/blog/show/drive-motor-sizing-tool
+[1] Microcontroller https://store-usa.arduino.cc/collections/boards-modules/products/arduino-mega-2560-rev3?_pos=2&_fid=5fe04baa2&_ss=c 
+
+[2] Motor Driver https://estore.st.com/en/l298n-cpn.html
+
+[3] Motor https://www.pololu.com/product/2828
+
+[4] Mecanum Wheel https://ozrobotics.com/shop/60mm-aluminum-lego-compatible-mecanum-wheel-set-2-left-2-right-basic-14159/
+
+[5] Wheel Hub https://ozrobotics.com/shop/6mm-aluminum-mounting-hub-for-60mm-mecanum-wheel-18021/
+
+[6] Motor Mount https://www.pololu.com/product/1084
+
+Motor Sizing Tool used to double check calculations: https://community.robotshop.com/blog/show/drive-motor-sizing-tool
