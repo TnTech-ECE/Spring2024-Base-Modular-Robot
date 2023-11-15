@@ -28,7 +28,7 @@ Below the cable, a panel-mount power connector with two IEC 320 C14 (male) conne
 This adapter allows for male prongs to connect on both sides of the adapter, which is needed because both the chassis connector and charger cable have male prongs on the adapter-side of their cables. The adapter used is shown below in Figure 2. The adapter used is very simple, being a third-party device and entirely passive. The current capabilities of it and the other components are discussed further in "Current Capacities" section.
 
 ![Female to Female Adapter](../Images/Battery_Management/Female_Female_Adapter.jpg)
-Figure 2. Female to Female Adapter Used [adapter]
+Figure 2. Female to Female Adapter Used [2]
 
  A short cable with one side IEC 320 C14 (male) and one side IEC 320 C13 (female) was then chosen to connect the adapter to the battery charger, which has a male receptacle connector for its power supply.
 
