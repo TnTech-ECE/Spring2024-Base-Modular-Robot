@@ -9,26 +9,28 @@ The primary functionality of the power distribution system is to reliably supply
 ### Derived from Shall Statements
 
 - The power distribution system must be able to supply enough current and power to all other subsystems on the robot for their proper functionality.
-	+ This constraint was made because the purpose of the power distribution system is to provide adequate power the entire robot. Because of this, the other subsystems constrain the power distribution subsystem and this constraint is the most important to this subsystem.
+    + This constraint was made because the purpose of the power distribution system is to provide adequate power the entire robot. Because of this, the other subsystems constrain the power distribution subsystem and this constraint is the most important to this subsystem.
+- The robot shall have a single start button. Once activated, the robot will begin navigating its environment.
+    + This constraint was explicitly required by the official hardware competition rules [1]–[3].
 - C4: The robot shall contain modules that are plug-and-play
 adaptable for different IEEE competition requirements.
-	+ This constraint is applicable to all subsystems of the robot platform in order to make the robot easily adaptable year to year. This in particular applies to the power distribution system by requiring that power connections should be easy to connect and disconnect.
+    + This constraint is applicable to all subsystems of the robot platform in order to make the robot easily adaptable year to year. This in particular applies to the power distribution system by requiring that power connections should be easy to connect and disconnect.
 - C7:  The robot shall possess a single emergency stop button
-that is accessible and stops all robot movement without removing power to essential processors that is compliant with standard NFPA 79-10 [1].
-	+ The constraint is required by the IEEE hardware competition rules every year as a safety precaution and is followed by the power distribution system of the robot [2][3][4].
+that is accessible and stops all robot movement without removing power to essential processors that is compliant with standard NFPA 79-10 [4].
+    + The constraint is required by the IEEE hardware competition rules every year as a safety precaution and is followed by the power distribution system of the robot [1]-[3].
 - C8: The robot shall contain a power bus that is not inhibited by DC motor operation.
-	+ This constraint was made because DC motors can cause interference in the power buses of electronics by supplying a voltage pushing back on their power source, referred to as "back-EMF", inhibiting the function of the power rails for other components. Diode protection is used to prevent this.
+    + This constraint was made because DC motors can cause interference in the power buses of electronics by supplying a voltage pushing back on their power source, referred to as "back-EMF", inhibiting the function of the power rails for other components. Diode protection is used to prevent this.
 
 ### Derived from Broader Implications
 
 - C17: This standard outlines the allowable ampacities of insulated conductors up to 2000 volts. The project will be well under this voltage and is therefore applicable. The standard will need to be followed for the safety of the design team and potential users by ensuring all wire is appropriately rated for the load [5].
-	+ This constraint is applicable because it outlines the allowable ampacities of insulated conductors up to 2000 Volts. The voltages used in the power distribution system will fall under this limit and so this standard is an applicable constraint of the system.
+    + This constraint is applicable because it outlines the allowable ampacities of insulated conductors up to 2000 Volts. The voltages used in the power distribution system will fall under this limit and so this standard is an applicable constraint of the system.
 
 ## Schematic
 
 ![Circuit Board Schematic](../Images/Power_Distribution/power_dist_schematic.png)
 
-The schematic for the power distribution circuit board is shown above. The board has a screw terminal connector meant for connecting to the battery. This then supplies the input voltage to the three power rail subcircuits. 
+The schematic for the power distribution circuit board is shown above. The board has a screw terminal connector meant for connecting to the battery. This then supplies the input voltage to the three power rail subcircuits.
 
 The circuit board is based around a single type of buck converter chip, the TPS565201. This chip is a variable voltage regulator buck converter that can source up to 5 A of output current [6]. The output voltage is set by the ratio of feedback resistors connected to the the VFB pin of the chip. The datasheet for the voltage regulator provides a formula for calculating the necessary feedback resistor valuesThe datasheet also provides a table of component values for common output voltages in Table 2. The nearest standard resistor values to the ones provided in this table were the values chosen.
 
@@ -77,7 +79,7 @@ The current requirements are a very large constraint of the subsystem. Each comp
 | Motor Driver | L298N Motor Drive Controller Board | 2 | 2000 | 4000 |
 | Total Current |  |  |  | 6880 |
 
-The subcircuits for each power rail must be able to supply the required current and more to allow for future expansions. The voltage regulator chips used for the 3.3 V and 5 V rails are the major current limiting factor for those power rails. The datasheet of the TPS565201 buck converter states that the chip can source a nominal output current of 5 A, with a maximum possible output current of 8 A [6]. Using the nominal output current of 5 A, the 3.3 V and 5 V rails can source well over the required current. 
+The subcircuits for each power rail must be able to supply the required current and more to allow for future expansions. The voltage regulator chips used for the 3.3 V and 5 V rails are the major current limiting factor for those power rails. The datasheet of the TPS565201 buck converter states that the chip can source a nominal output current of 5 A, with a maximum possible output current of 8 A [6]. Using the nominal output current of 5 A, the 3.3 V and 5 V rails can source well over the required current.
 
 The 3.3 V rail can source an additional 1119% (4.59 A) of the current worst-case current draw, and the 5 V rail can source an additional 134% (2.87 A) of the  worst-case current draw from that power rail.
 
@@ -93,9 +95,9 @@ The four images below show the simulated results of the buck-converter subcircui
 
 As can be seen above, the voltage regulator circuits successfully convert a 12.8 V input voltage, the nominal voltage of the battery chosen, down to 5 V and 3.3 V with minimal start-up delay [15]. The steady-state output voltages calculated by the simulations are 5.011 V and 3.48 V for the 5 V and 3.3 V circuits, respectively. Because the resistor values are chosen based on the values given in the datasheet, the differences between simulated and ideal values are likely just due to inaccuracies in the SPICE model provided. Furthermore, the simulated steady-state values is within the functional tolerance of 3.3 V logic [16].
 
-The datasheet for the TPS565201 states that the chip is able to source 5 A [6]. This means that the 3.3 V and 5 V power rails are both able to source up to 5 A of current. The 12 V rail does not have a voltage regulator, and so it current-limited by the 10 A fuse F3 in the schematic, discussed further later in this document. 
+The datasheet for the TPS565201 states that the chip is able to source 5 A [6]. This means that the 3.3 V and 5 V power rails are both able to source up to 5 A of current. The 12 V rail does not have a voltage regulator, and so it current-limited by the 10 A fuse F3 in the schematic, discussed further later in this document.
 
-The layout of the printed circuit board is shown below. The layout is very heavily based on the recommended layout given in the datasheet of the buck converters and can be found in Figure 30 in the datasheet [6]. The recommended layout was used to ensure the best possible thermal management and current capacity to avoid failures due to overheating or overcurrent. 
+The layout of the printed circuit board is shown below. The layout is very heavily based on the recommended layout given in the datasheet of the buck converters and can be found in Figure 30 in the datasheet [6]. The recommended layout was used to ensure the best possible thermal management and current capacity to avoid failures due to overheating or overcurrent.
 
 ![Power Distribution Printed Circuit Board Layout](../Images/Power_Distribution/power_dist_layout.png)
 
@@ -107,13 +109,13 @@ To ensure that the power distribution system is "plug-and-play," satisfying the 
 
 For the 12 V power rails there were less connectors put into place due to less components likely to require a 12 V rail in the future. Additionally, the higher current requirements typical of the 12 V rail require a higher-current connection. The screw terminals used for the motor connections allow for up to 10 A of current, far more than what would be being pulled by the motors used in any non-failure scenario [12][17].
 
-There are still more than enough screw terminals for the base robot, allowing for additional motors and motor drivers to be driven by future designs through the extra screw terminals. 
+There are still more than enough screw terminals for the base robot, allowing for additional motors and motor drivers to be driven by future designs through the extra screw terminals.
 
 These measures taken for all of the power rails of the robot ensure that the power distribution system of the robot is as plug-and-play and easily adaptable as possible.
 
 ### Emergency Stop Button
 
-Another constraint laid out for this subsystem is that there must be an emergency stop button that can be pressed at any time to cease all power supply to the motors but not to the sensors and computational components of the robot. This constraint comes from the IEEE hardware competition rules and the NFPA guidelines on machinery safety precautions [1][2][3][4].
+Another constraint laid out for this subsystem is that there must be an emergency stop button that can be pressed at any time to cease all power supply to the motors but not to the sensors and computational components of the robot. This constraint comes from the IEEE hardware competition rules and the NFPA guidelines on machinery safety precautions [1]-[4].
 
 To accomplish this a screw terminal was placed in series with the 12 V rail. This screw terminal is meant to be connected to a SPST emergency stop button with each end of the SPST switch being connected to each connection on the two-connection screw terminal block, allowing the button to interrupt current to the 12 V rail.
 
@@ -125,7 +127,7 @@ This emergency stop button will cut all power from the motors when pressed, but 
 
 The next constraint of the power distribution subsystem is that the DC motors cannot interfere with the power rails of the other components. The reason that DC motors interfere with other power rails is that when a motor is switched off it resists the change in current [19]. As it does this, it generates a "back-EMF" that pushes back against the power supply, lowering the supply voltage for all components connected to that rail. To prevent this a diode, called a flyback diode, is inserted in parallel to the motor and is reverse-biased. After this when the motor induces a back-EMF, the induced voltage forces current through the diode, not the power supply, allowing the current to dissipate safely in the diode instead of the power rail.
 
-The circuit board design utilizes reverse-biased diodes across every motor connector. It should be noted that these are optional. If the user does not want the diodes in place or is connecting a motor driver or another component that does not require it, then the circuit design does not require a diode in place. For easy installation, the polarity of the diode is indicated on a drawing next to each of the diodes on the circuit board. 
+The circuit board design utilizes reverse-biased diodes across every motor connector. It should be noted that these are optional. If the user does not want the diodes in place or is connecting a motor driver or another component that does not require it, then the circuit design does not require a diode in place. For easy installation, the polarity of the diode is indicated on a drawing next to each of the diodes on the circuit board.
 
 In order to ensure the lowest possible chance of failure, the flyback diodes must be able to sustain the maximum current draw of the motor (about 1 A) and the full reverse-biased source voltage of the motor (about 12 V) [12]. The diodes chosen are able to survive much more than the required current and reverse-bias voltage, and can be found in the datasheet [20].
 
@@ -133,7 +135,7 @@ The diode protection added to the circuit board should provide adequate protecti
 
 ### Allowable Ampacities
 
-The final constraint requires that the circuit board traces fall within the allowable ampacities given by the NFPA standard. The allowable currents, trace widths, and other required values are calculated below using the stated NFPA 79-10 and IPC-2221 standards [1][21].
+The final constraint requires that the circuit board traces fall within the allowable ampacities given by the NFPA standard. The allowable currents, trace widths, and other required values are calculated below using the stated NFPA 79-10 and IPC-2221 standards [4][21].
 
 Aside from the voltage regulator chips, the output 3.3 V rail and 5 V rail currents are limited by the narrowest trace on the output line from the chip. In the case of this board the narrowest trace bottle-necking the output current is the trace immediately connected to the SW pin because it is limited by the space between the chip's pins. All other traces that the output current passes through are wider than this trace and so can support more current. The maximum possible width of the trace connected to the SW pin is 0.5 mm.
 
@@ -151,40 +153,47 @@ Finally, the screw terminals used for connecting the motors to the 12 V power ra
 
 The above calculations ensure that the components and traces used on the printed circuit board are within the acceptable value range. This shows that the fifth and final constraint is met by this design.
 
-## BOM 
+### Start Button
+
+A button or switch of some kind that is able to be used for the starting of the robot is also required. This button will be connected to the 5 V power rail and to one of the digital input pins on the Jetson Nano. 
+
+When this switch is flipped, the Jetson Nano will detect that the digital input pin is high and begin navigating the environment, satisfying this requirement. A switch was chosen for this that can sustain much more than the required voltage and current [25].
+
+## BOM
 
 | Item | Part Number | Quantity | Price/Unit | Item Price |
 | --- | --- | --- | --- | --- |
-| Buck Converter        | TPS565201       | 10 | $1.292   | $12.92 |
-| Flyback Diode         | RB070MM         | 10 | $0.277   | $2.77  |
-| LED                   | QBLP615         | 20 | $0.289   | $5.78  |
-| 6 Amp Fuse            | QBLP615         | 10 | $0.700   | $7.00  |
-| 10 Amp Fuse           | QBLP615         | 10 | $0.312   | $3.12  |
-| Screw Terminal        | 0397730002      | 25 | $1.2388  | $30.97 |
-| Female Headers        | 5583            | 5  | $0.95    | $4.75  |
-| Emergency Stop Button | NWAR-27         | 2  | $5.70    | $11.40 |
-| Printed Circuit Board |                 | 5  | $5.16    | $25.80 |
-| 10 kOhm Resistor      | RMCF1206FT10K0  | 50 | $0.0146  | $0.73  | 
-| 33 kOhm Resistor      | RMCF1206JT33K0  | 20 | $0.0200  | $0.40  |
-| 56 kOhm Resistor      | RMCF1206JT56K0  | 20 | $0.0200  | $0.40  |
-| 0.1 uFarad Capacitor  | CL31B104KBCNNNC | 30 | $0.07800 | $2.34  | 
+| Buck Converter    	| TPS565201   	| 10 | $1.292   | $12.92 |
+| Flyback Diode     	| RB070MM     	| 10 | $0.277   | $2.77  |
+| LED               	| QBLP615     	| 20 | $0.289   | $5.78  |
+| 6 Amp Fuse        	| QBLP615     	| 10 | $0.700   | $7.00  |
+| 10 Amp Fuse       	| QBLP615     	| 10 | $0.312   | $3.12  |
+| Screw Terminal    	| 0397730002  	| 25 | $1.2388  | $30.97 |
+| Female Headers    	| 5583        	| 5  | $0.95	| $4.75  |
+| Emergency Stop Button | NWAR-27     	| 2  | $5.70	| $11.40 |
+| On/Off Switch         | ST141D00    	| 1  | $6.07	| $6.07  |
+| Printed Circuit Board |             	| 5  | $5.16	| $25.80 |
+| 10 kOhm Resistor  	| RMCF1206FT10K0  | 50 | $0.0146  | $0.73  |
+| 33 kOhm Resistor  	| RMCF1206JT33K0  | 20 | $0.0200  | $0.40  |
+| 56 kOhm Resistor  	| RMCF1206JT56K0  | 20 | $0.0200  | $0.40  |
+| 0.1 uFarad Capacitor  | CL31B104KBCNNNC | 30 | $0.07800 | $2.34  |
 | 10 uFarad Capacitor   | RMCF1206JT33K0  | 30 | $0.136   | $4.08  |
 | 22 uFarad Capacitor   | RMCF1206JT56K0  | 30 | $0.25100 | $7.53  |
-| Total                 |                 |    |          | $94.19 |
+| Total             	|             	|	|      	| $100.26 |
 
-The component quantities were chosen to provide enough for several full printed circuit boards to be constructed. For example, two buck converters are required per board which requires ten total buck converters for five full PCBs to be constructed. Five PCBs was chosen as it is the minimum quantity offered by JLCPCB, a commonly used PCB manufacturer. 
+The component quantities were chosen to provide enough for several full printed circuit boards to be constructed. For example, two buck converters are required per board which requires ten total buck converters for five full PCBs to be constructed. Five PCBs was chosen as it is the minimum quantity offered by JLCPCB, a commonly used PCB manufacturer.
 
 ## References
 
-[1] “NFPA 79: Electrical Standard for Industrial Machinery.” [Online]. Available: https://link.nfpa.org/free-access/publications/79/2021
+[1] “IEEE SOUTHEASTCON 2024 STUDENT HARDWARE COMPETITION RULES Version 5.6,” Sep. 2023. [Online]. Available: https://ieeesoutheastcon.org/wp-content/uploads/sites/497/SEC24-HW-Competition V5.6-1.pdf
 
-[2] “IEEE SOUTHEASTCON 2024 STUDENT HARDWARE COMPETITION RULES Version 5.6,” Sep. 2023. [Online]. Available: https://ieeesoutheastcon.org/wp-content/uploads/sites/497/SEC24-HW-Competition V5.6-1.pdf
-
-[3] “IEEE SoutheastCon 2023 Hardware Competition Rules,”
+[2] “IEEE SoutheastCon 2023 Hardware Competition Rules,”
 Oct. 2022. [Online]. Available: https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Background%20DocumentsIEEE%20SoutheastCon%202023%20Hardware%20Competition%20Rules%20v3.0.pdf
 
-[4] “IEEE SoutheastCon 2022 Hardware Competition Rules,”
+[3] “IEEE SoutheastCon 2022 Hardware Competition Rules,”
 Mar. 2021. [Online]. Available: https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/tree/main/Documentation
+
+[4] “NFPA 79: Electrical Standard for Industrial Machinery.” [Online]. Available: https://link.nfpa.org/free-access/publications/79/2021
 
 [5] “Using the National Electrical Code® (NEC ®) Ampacity Charts,” May
 2021. [Online]. Available: https://www.nfpa.org/∼/media/Files/Code%
@@ -227,3 +236,5 @@ Mar. 2021. [Online]. Available: https://github.com/lchapman42/Control-Sensing-Wi
 [23] “nglos324 - copper,” Princeton. Accessed: Oct. 13, 2023. [Online]. Available: https://www.princeton.edu/~maelabs/mae324/glos324/copper.htm
 
 [24] “Fabricating Boards,” MIT. Accessed: Oct. 19, 2023. [Online]. Available: https://pcb.mit.edu/lectures/board_fab/
+
+[25] “ST1 Series Toggle Switch.” E-Switch. Accessed: Nov. 14, 2023. [Online]. Available: https://sten-eswitch-13110800-production.s3.amazonaws.com/system/asset/product_line/data_sheet/136/ST1.pdf
