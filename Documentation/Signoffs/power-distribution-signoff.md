@@ -10,7 +10,7 @@ The primary functionality of the power distribution system is to reliably supply
 
 - The power distribution system must be able to supply enough current and power to all other subsystems on the robot for their proper functionality.
     + This constraint was made because the purpose of the power distribution system is to provide adequate power the entire robot. Because of this, the other subsystems constrain the power distribution subsystem and this constraint is the most important to this subsystem.
-- The robot shall have a single start button. Once activated, the robot will begin navigating its environment.
+- C1: The robot shall have a single start button. Once activated, the robot will begin navigating its environment.
     + This constraint was explicitly required by the official hardware competition rules [1]–[3].
 - C4: The robot shall contain modules that are plug-and-play
 adaptable for different IEEE competition requirements.
