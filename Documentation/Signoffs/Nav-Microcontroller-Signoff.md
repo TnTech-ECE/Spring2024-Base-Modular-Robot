@@ -3,7 +3,6 @@
 ## Functionality
 The microcontroller susbystem will provide the computing power needed to read in sensor data, filter the data as needed, and send the resulting values to the master control subsystem via serial communication. The data in the master control will help navigate the robot across the arena.
 
-----
 ## Reach Goals
 
 There are two reach goals in the project. The first is the implementation of the ESP 32 wifi module. The implementation will require 2 sets of the ESP 32 boards. One will act as a receiver and one will act as a transmitter. The trasnitter will be embedded in the robot. The module will be connected to the Arduino navigation microcontroller and will send sensor data to the receiver in various intervals (update). The receiver will be conencted to a pc to display the data via a serial monitor.
@@ -12,8 +11,6 @@ The second reach goal is an on-robot OLED display. The display will aid teams in
 
 
 ***The implementation of reach goals will only occur if it is evident that the requirements provided by the customer are met, or will be met.***
-
----
 
 ## Constraints
 
@@ -28,8 +25,6 @@ The second reach goal is an on-robot OLED display. The display will aid teams in
 	
 - C14: The robot shall have a user manual that explains all functions and capabilities of the robot. 
 	- The microcontroller connections and coding techniques will be documented to make it easily adoptable for future Capstone teams.
-
-----
 
 ## Schematics
 ### Arduino Pinouts
@@ -54,8 +49,6 @@ The I2C bus will be implemented using 4 Grove I2C Hub 6 Port modules. The first 
 
 
 ### Reach Goal Schematics
-
----
 
 ## Analysis
 
@@ -91,8 +84,6 @@ The Arduino will communicate with the Jetson Nano through the USB port. The USB 
 
 By using UART, the serial data must have a beginning marker, such as '<', and an ending marker, such as '>'. This is an effect of the communication method being asynchronous. The start and end markers will allow the Jetson Nano to differentiate the data packages.
 
----
-
 ### Reach Goal Analysis
 
 #### ESP 32
@@ -107,19 +98,15 @@ The SSD 1306 0.96" display has a 128 x 64 dot matrix for display. The module run
 <img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Nav-Microcontroller/OLED_Battery_Life.jpg?raw=true">
 </p>
 
----
 
 ### Coding Conventions
 
 To keep code looking uniform, the coding conventions brought forth by Dr. Bruce will be used. The coding convention documentation can be found here: http://jwbruce.info/teaching/ece4140/files/ccode.pdf. The convention covers variable, struct, and class naming, as well as commenting techniques.
 
----
 
 ## Robot Integration
 
 The Arduino Mega and I2C bus will be attached to the robot via 3D printed trays. The trays will be in the interior of the robot. The ESP 32 will have it's own tray if adopted. The tray must be easily accessible so that wiring can be disconnected for the competition. The OLED display will be mounted on an external wall of the robot where it can be easily viewed.
-
----
 
 ## BOM
 |Item        |Quantity   |Price   |Total   |
@@ -134,8 +121,7 @@ Subsystem Total |||$50.36|
 
 1. This is a sale price listed on Amazon. Normal retail is $55.00
 2. Reach goals
-
----
+   
 ## References
 Arduino Mega Datasheet: https://docs.arduino.cc/resources/datasheets/A000067-datasheet.pdf
 
