@@ -70,7 +70,7 @@ The sampling rate for the time of flight sensor 33 ms at default. The minimum is
 <p align = "center">
 Table 1: Four Modes
 
-<center>
+<div align="center">
 	
 | Range profile | Range timing budget |    Typical performance    | Typical application |
 |---------------|---------------------|---------------------------|---------------------|
@@ -79,15 +79,19 @@ Table 1: Four Modes
 | Long range    | 33 ms               |   2 m, accuracy 4 % - 7 % | Long ranging        |
 | High speed    | 20 ms               | 1.2 m, accuracy +/- 5 %   | High speed          |
 	
-</center>
+</div>
  
 These modes allow the team to prioritize either accuracy, range, or speed.
 
 ## BOM
 
+<div align="center">
+
 | Item | Part Number | Quantity | Price | Total Price | 
 |-|-|-|-|-| 
 |Grove - Time of Flight Distance Sensor(VL53L0X) | SKU 101020532 | 8 | $36.99 | $295.92| 
+
+</div>
 
 ## Reference
 
