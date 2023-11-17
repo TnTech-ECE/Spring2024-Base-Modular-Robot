@@ -110,9 +110,8 @@ The Arduino Mega and I2C bus will be attached to the robot via 3D printed trays.
 ## BOM
 |Item        |Quantity   |Price   |Total   |
 |------------|-----------|--------|--------|
-|Arduino Mega|1          |43.56 $^{1}$ |$43.56|
+|Arduino Mega|1          |\$43.56 $^{1}$ |$43.56|
 |Grove I2C Bus|4         |$1.70|$6.80|
-|Grove Connectors|4      |
 |ESP 32 $^{2}$ |1| $19.95| $19.95|
 |OLED Display $^{2}$|1 |$8.99|$8.99
 Subsystem Total |||$50.36|
