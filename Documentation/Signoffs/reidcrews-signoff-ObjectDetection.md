@@ -69,13 +69,15 @@ The sampling rate for the time of flight sensor 33 ms at default. The minimum is
 
 <p align = "center">
 Table 1: Four Modes
-
+	
+<center>
 | Range profile | Range timing budget |    Typical performance    | Typical application |
 |---------------|---------------------|---------------------------|---------------------|
 | Default mode  | 30 ms               | 1.2 m, accuracy 4 % - 7 % | Standard            |
 | High accuracy | 200 ms              | 1.2 m, accuracy < +/- 3 % | Precise measurement | 
 | Long range    | 33 ms               |   2 m, accuracy 4 % - 7 % | Long ranging        |
 | High speed    | 20 ms               | 1.2 m, accuracy +/- 5 %   | High speed          |
+</center>
 
 These modes allow the team to prioritize either accuracy, range, or speed.
 
