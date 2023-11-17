@@ -48,7 +48,6 @@ The I2C bus will be implemented using 4 Grove I2C Hub 6 Port modules. The first 
 ### Sensor Connections
 
 
-### Reach Goal Schematics
 
 ## Analysis
 
