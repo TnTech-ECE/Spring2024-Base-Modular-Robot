@@ -47,7 +47,9 @@ The I2C bus will be implemented using 4 Grove I2C Hub 6 Port modules. The first 
 
 ### Sensor Connections
 
-
+<p align = "center">
+<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Nav-Microcontroller/Sensor_Connections.png?raw=true">
+</p>
 
 ## Analysis
 
