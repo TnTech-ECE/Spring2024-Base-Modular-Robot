@@ -1,4 +1,0 @@
-(sym_lib_table
-  (version 7)
-  (lib (name "Capstone_Battery_Management")(type "KiCad")(uri "${KIPRJMOD}/Capstone_Battery_Management.kicad_sym")(options "")(descr ""))
-)
