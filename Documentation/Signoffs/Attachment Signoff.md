@@ -54,12 +54,12 @@ The time of flight sensor detects small distances. Therefore, it will be used fo
 
 ### Motor
 The motors possess attachments designed for them; however, they are not compatible with the extruded alumnium. Therefore, these adapators have been designed for attachment onto the extruded aluminum. It is important to note that an attachment was not created to combine these attributes into one design because of the material. It was determined that the the metal mount provided would be the best for direct attachment to motors and this printed attachment will be best for attaching to the chassis frame. The slot instead of matching holes allow for adjusting how far out the wheels sit from the frame. The figures below outline the dimensions for the design and overall connection with the motor system. 
-![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/attachment-signoff/Documentation/Images/Motor%20Attachment%20Drawing.jpg)
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Attachment/Motor%20Attachment%20Drawing.jpg)
 
 ## Analysis
 The analysis performed is confirm that the sensor is placed between 0.125 and 0.375 inches. The first figure below measures the distance from the bottom of the extruded alumninum to the ground being 59.8 mm (2.354 inches).From the top of the line sensor attachment seen in figure 2, which is the same for both line sensor attachments, to the face of the sensor on the pcb is 56.62 mm (2.229 inches) at the lowest setting. Therefore, the minimum height is 2.354 - 2.229 = 0.125 inches. Therefore, this confirms compliance with the sensors specfication for the minimum height. The maximum recommended height is 0.375 inches. Therefore, the adjustment need to be able to move up 0.375 - 0.125 = 0.25 inches. For the design, the goal was to be able to move up to the lip on the adjustment component. This measurement is displayed on the second figure as 6.42 mm (0.25 inches). Therefore, this allows the for full range of adjustment for the sensor. 
-![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/attachment-signoff/Documentation/Images/Motor%20Connection%20Drawing.jpg)
-![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/attachment-signoff/Documentation/Images/Line%20Sensor%202%20Attachment%20Assembly%20Drawing.jpg)
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Attachment/Motor%20Connection%20Drawing.jpg)
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Attachment/Line%20Sensor%202%20Attachment%20Assembly%20Drawing.jpg)
 
 ## BOM
 | Item | Quantity | Price/Item | Total Price | 
