@@ -1,4 +1,4 @@
-#Layout and Organization Signoff 
+# Layout and Organization Signoff 
 
 ## Functionality
 
@@ -54,7 +54,7 @@ The labels should be used to specify the destination of power wires, function of
 and pin numbers for microcontroller GPIO headers. 
 
 ## Analysis
-The main concern for this subsystem is being able to fit all components on the robot while adhearing to constraint 4. Therefore the following figures shows that the frame with components will stay with a 12 in x 12 in x 6 in volume. 
+The main concern for this subsystem is being able to fit all components on the robot while adhearing to constraint 4. Therefore the following figures shows that the frame with components will stay with a 12 in x 12 in x 6 in volume. It is important to note that this is just to prove that these components will fit within the alloted area. The exact layout will be decided during the building phase.
 ![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Layout-Organization/Chassis%20Frame%20Layout%20Size%20Confirmation.jpg)
 ![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Layout-Organization/Robot%20Layout%20Corner%20View.jpg)
 ![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Layout-Organization/Robot%20Layout%20Top%20VIew.jpg)
