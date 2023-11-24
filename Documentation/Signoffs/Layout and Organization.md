@@ -32,7 +32,7 @@ The following buildable schematic is of the slotted peices for components to att
 The following buildable schematic is of the slotted peices for components to attach to. These slots allow for components to be moved around as needed and are provided in such frequency to allow for rearranging as necessary. A total of 12 peices are needed to complete the full area. The middle components are the middle 6 peices and do not possess holes to be attached to the extruded aluminum. These also have notches to allow the peices to be connected together with a connector peice.
 ![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Layout-Organization/Slotted%20Peice%20Middle%20Schematic.jpg)
 
-###Connector
+### Connector
 The following buildable schematic is of the peice that connects the above components together.
 ![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Layout-Organization/Connector%20Schematic.jpg)
 
@@ -61,7 +61,7 @@ The main concern for this subsystem is being able to fit all components on the r
 The following table is the legend for the components in the above image.
 
 | Item | Quantity | Color |
-|-|-|-|-|
+|-|-|-|
 |Battery|1|Red|
 |Charger|1|Blue|
 |Motor Driver|2|Green|
@@ -74,9 +74,9 @@ The following table is the legend for the components in the above image.
 |-|-|-|-|
 |T Slot Nuts (100 pk)|1|$9.78|$9.78| 
 |M4-8mm Screws (50 pk)|1|$7.99|$7.99| 
-|M3-8mm Flat Screws (50 pk)|$6.49|$6.49|
-|M3 Nut (50 pk)|$4.34|$4.34|
-|Spacer Stand off Screws|$13.99|$13.99|
+|M3-8mm Flat Screws (50 pk)|1|$6.49|$6.49|
+|M3 Nut (50 pk)|1|$4.34|$4.34|
+|Spacer Stand off Screws|1|$13.99|$13.99|
 |Wire Labels|1|$9.00|$9.00|
 | | | |$51.59|
 
