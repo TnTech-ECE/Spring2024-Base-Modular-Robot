@@ -85,11 +85,29 @@ These modes allow the team to prioritize either accuracy, range, or speed. Range
 
 $$ Max \space robot \space speed: \space 2 \space {ft \over s}$$
 
+$$ \space $$
+
 $$ Sampling \space Rate \space for \space Default \space Mode \space 30\space ms\space (33.3\space Hz)$$
+
+$$ 2 \space {ft \over s} *0.03 \space s = 0.06 \space ft \space or \space 0.72 \space in $$
 
 $$ Accuracy \space Range \space for \space Default \space Mode $$
 
 $$ 4 \space Percent \space (0.6912 - 0.7488 \space in) \space , \space 7 \space Percent \space (0.6696 - 0.7704 \space in) $$
+
+$$ \space $$
+
+$$ Sampling \space Rate \space for \space High \space Speed \space Mode \space 20\space ms\space (50\space Hz)$$
+
+$$ 2 \space {ft \over s} *0.02 \space s = 0.04 \space ft \space or \space 0.48 \space in $$
+
+$$ Accuracy \space Range \space for \space High \space Speed \space Mode $$
+
+$$ 5 \space Percent \space (0.456 - 0.504 \space in) \space $$
+
+Default Mode is the chosen mode because the sampling rate is the second highest and accuracy range is tied for second lowest. The Default Mode has the best specifications out of the four modes.
+
+
 
 ## BOM
 
