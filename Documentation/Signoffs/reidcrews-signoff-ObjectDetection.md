@@ -81,7 +81,15 @@ Table 1: Four Modes
 	
 </div>
  
-These modes allow the team to prioritize either accuracy, range, or speed.
+These modes allow the team to prioritize either accuracy, range, or speed. Range timing budget is the sampling rate. 
+
+$$ Max \space robot \space speed: \space 2 \space {ft \over s}$$
+
+$$ Sampling \space Rate \space for \space Default \space Mode \space 30\space ms\space (33.3\space Hz)$$
+
+$$ Accuracy \space Range \space for \space Default \space Mode $$
+
+$$ 4 \space Percent \space (0.6912 - 0.7488 \space in) \space , \space 7 \space Percent \space (0.6696 - 0.7704 \space in) $$
 
 ## BOM
 
