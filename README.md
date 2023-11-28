@@ -70,9 +70,9 @@ We would like to recognize and thank Professor Jesse Roberts, Dr. Nan Chen, and 
 
 ### [Documentation](/Documentation)
 
-[Meeting Minutes](/Meeting%20Minutes)
+[Meeting Minutes](/Documentation/Meeting%20Minutes)
 
-[Signoffs](/Signoffs)
+[Signoffs](/Documentation/Signoffs)
 
 
 ### [Software](/Software)
