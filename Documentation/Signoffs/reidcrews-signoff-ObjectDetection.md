@@ -29,20 +29,20 @@ The object detection subsystem sends data to the master control  to control and 
 
 ### Object Detection Subsystem Schematic
 
-![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-ObjectDetection/Documentation/Electrical/Schematics/Sources/Object%20Detection/ObjDetectionSensorSchematic.png)
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Electrical/Schematics/Sources/Object%20Detection/ObjDetectionSensorSchematic.png)
 
 The schematic above is shown. Eight time of flight are used for the object detection with two sensors per each side. Each sensor is I2C communications. Each sensor has a serial clock (SCL) connected to digtial pin 21 of the Arduino Mega. Each sensor also has a serial data (SDA) connected to digtial pin 20 of the Arduino Mega. Each sensor and Arduino Mega are powerd by the 5 V power distribution bus.
 
 ### Object Detection Placement
 
 <p align = "center">
-<img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-ObjectDetection/Documentation/Images/Object%20Detection/ObjDetectionSensorHorizonView.png/>
+<img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Object%20Detection/ObjDetectionSensorHorizonView.png/>
 </p>
 
 The CAD drawing above is the horizontal view of the time of flight. The field of view (FOV) is 25 $^\circ$. The maxmium recommended distance is 1 m (39.37 in). 
 
 <p align = "center">
-<img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-ObjectDetection/Documentation/Images/Object%20Detection/ObjDetectionSensorVerticalView.png/>
+<img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Object%20Detection/ObjDetectionSensorVerticalView.png/>
 </p>
 
 The CAD drawing above is the vertical view of the time of flight.
@@ -53,7 +53,7 @@ The CAD drawing above is the vertical view of the time of flight.
 The time of flight sensor has an operating current at 19 mA and operating voltage at 5 V. The Grove Time of Flight Disyance Sensor requires only two pin for SCL and SDA. The picture below shows the plug-and-play ability because the sensor can be connected the GROVE connectors.
 
 
-![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-ObjectDetection/Documentation/Images/Object%20Detection/TimeOfFlightSensorImage.jpg)
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Object%20Detection/TimeOfFlightSensorImage.jpg)
 
 From the CAD drawing of the horizontal view of the timing of flight, the equation for the blind spot (the area in the middle of the two sensor's FOV).
 
@@ -62,7 +62,7 @@ $$ Max \space Distance = {x \over 2} * tan(77.5^\circ)$$
 The *Max Distance* is max distance in the blind spot and *x* is the distance between the two sensors. For the CAD drawing case, the *Max Distance* is 13.53 in, and the area is 40.59 in $^2$. For the maxmium apart case (12 in apart), *Max Distance* is 54.12 in, and the area is 324.77 in $^2$. The chosen distance between the sensors is 6 in becuase the max distance from edges and blind spot is the lowest average distance. The blue and green lines are 13.53 in.
 
 <p align = "center">
-<img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-ObjectDetection/Documentation/Images/Object%20Detection/ObjDetectionSensorLengthMeasurements.png/>
+<img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Object%20Detection/ObjDetectionSensorLengthMeasurements.png/>
 </p>
 
 The sampling rate for the time of flight sensor 33 ms at default. The minimum is 8 ms, and the maximum is 200 ms. The default frequency is 30.3 Hz. The time of flight sensor has four modes in the table below [1-2].
@@ -131,9 +131,9 @@ Default Mode is the chosen mode because the sampling rate is the second highest 
 
 
 
-[def1]: https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-ObjectDetection/Documentation/Background%20Documents/Object%20Detection/Time-of-Flight%20User%20Manual.pdf
+[def1]: https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Background%20Documents/Object%20Detection/Time-of-Flight%20User%20Manual.pdf
 
-[def2]: https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/reidcrews-signoff-ObjectDetection/Documentation/Background%20Documents/Object%20Detection/Time-of-Flight%20Datasheet.pdf
+[def2]: https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Background%20Documents/Object%20Detection/Time-of-Flight%20Datasheet.pdf
 
 [def3]: https://www.seeedstudio.com/Grove-Time-of-Flight-Distance-Sensor-VL53L0X.html?utm_source=blog&utm_medium=blog
 
