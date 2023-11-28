@@ -13,6 +13,9 @@ The final version of the following are found here in Reports:
 The following capstone projects were helpful in writing our reports:
 
 [SECON 2022](https://github.com/TnTech-ECE/Spring2022-SECON2022)
+
 [SECON 2023](https://github.com/TnTech-ECE/Spring2023-SECONRobot)
+
 [Crawlspace Robot](https://github.com/TnTech-ECE/Fall-2023-2.0-Autonomous-Crawlspace-Inspection-Robot)
+
 [Active Noise Control](https://github.com/CarsonDPope/Active-Noise-Control-With-Wall-Transmission-Detection)
