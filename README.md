@@ -28,13 +28,12 @@ Coming Spring 2024!
 
 **Reid Crews**
 
-[Isaac Hoese](https://www.linkedin.com/in/isaac-hoese-425748251)
-Isaac is a senior electrical engineering student from Greeneville, Tn. He is interested in both power system analysis and embedded system design. In this project, Isaac will be a contributor for the navigation sensing, primarily the line following and orientation subsystems.
+[Isaac Hoese](https://www.linkedin.com/in/isaac-hoese-425748251) is a senior electrical engineering student from Greeneville, Tn. He is interested in both power system analysis and embedded system design. In this project, Isaac will be a contributor for the navigation sensing, primarily the line following and orientation subsystems.
 
 
 **Isaac Jennings**
 
-**Abigail Kennedy** is an electrical engineering major at Tennessee Technological University with minors in mathematics and education. Abigail's primary interest is in controls and PLC design, and for this project, she worked on the motor control subsystem to ensure the robot can move quickly and smoothly.
+**[Abigail Kennedy](https://www.linkedin.com/in/abigail-kennedy-tech/)** is an electrical engineering major at Tennessee Technological University with minors in mathematics and education. Abigail's primary interest is in controls and PLC design, and for this project, she worked on the motor control subsystem to ensure the robot can move quickly and smoothly.
 
 **Mabel Olson**
 
