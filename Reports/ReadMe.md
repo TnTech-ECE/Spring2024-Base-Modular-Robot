@@ -1,13 +1,12 @@
 # What to put in this folder
 
-In this folder the final verion of each of the following should be found:
+The final version of the following are found here in Reports:
 
 1. [The project proposal](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Reports/Project%20Proposal%20Revised.pdf)
 2. [Conceptual Design and Planning](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Reports/Conceptual%20Design%20and%20Planning%20V2.pdf)
 3. [Final Report]() Coming Spring 2024
 4. [Lessons Learned]() Coming Spring 2024
 
-Each of the above are clickable and link to the expectations and requirements for each of the documents.
 
 ## Examples
 
