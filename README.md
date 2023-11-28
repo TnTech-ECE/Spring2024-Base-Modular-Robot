@@ -54,19 +54,19 @@ We would like to recognize and thank Professor Jesse Roberts, Dr. Nan Chen, and 
 
 ## Repo Organization
 
-### [Reports][def10]
+### [Reports](/Reports)
 
-[Project Proposal][def2]
+[Project Proposal](/Reports/Project%20Proposal%20Revised.pdf)
 
-[Conceptual Design][def3]
+[Conceptual Design](/Reports/Conceptual%20Design%20and%20Planning%20V2.pdf)
 
-[Experimentation][def4] Coming Spring 2024!
+[Experimentation](/Reports/Experimentation.md) Coming Spring 2024!
 
-[Poster][def5] Coming Spring 2024!
+[Poster](/Reports/Poster.md) Coming Spring 2024!
 
-[Final Report][def6] Coming Spring 2024!
+[Final Presentation](/Reports/Final%20Presentation.md) Coming Spring 2024!
 
-[Lessons Learned][def7] Coming Spring 2024!
+[Lessons Learned](/Reports/Lessons%20Learned%20and%20Acquired%20Skills.md) Coming Spring 2024!
 
 ### [Documentation](/Documentation)
 
