@@ -29,6 +29,7 @@ Coming Spring 2024!
 **Reid Crews**
 
 **Isaac Hoese**
+Isaac is a senior electrical engineering student from Greeneville, Tn. He is interested in both power system analysis and embedded system design. In this project, Isaac will be a contributor for the navigation sensing, primarily the line following and orientation subsystems.
 
 **Isaac Jennings**
 
