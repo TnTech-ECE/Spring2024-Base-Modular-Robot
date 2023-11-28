@@ -3,7 +3,7 @@
 The final version of the following are found here in Reports:
 
 1. [The project proposal](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Reports/Project%20Proposal%20Revised.pdf)
-2. [Conceptual Design and Planning](/Conceptual Design/Conceptual Design and Planning V2.pdf)
+2. [Conceptual Design and Planning](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Reports/Conceptual%20Design/Conceptual%20Design%20and%20Planning%20V2.pdf)
 3. [Final Report]() Coming Spring 2024
 4. [Lessons Learned]() Coming Spring 2024
 
