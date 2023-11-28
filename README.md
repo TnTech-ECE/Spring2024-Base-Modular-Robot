@@ -68,11 +68,11 @@ We would like to recognize and thank Professor Jesse Roberts, Dr. Nan Chen, and 
 
 [Lessons Learned][def7] Coming Spring 2024!
 
-### [Documentation][def11]
+### [Documentation](/Documentation)
 
-[Meeting Minutes][def8]
+[Meeting Minutes](/Meeting%20Minutes)
 
-[Signoffs][def9]
+[Signoffs](/Signoffs)
 
 
 ### [Software](/Software)
