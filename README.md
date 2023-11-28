@@ -28,7 +28,7 @@ Coming Spring 2024!
 
 **Reid Crews**
 
-[Isaac Hoese](https://www.linkedin.com/in/isaac-hoese-425748251) is a senior electrical engineering student from Greeneville, Tn. He is interested in both power system analysis and embedded system design. In this project, Isaac will be a contributor for the navigation sensing, primarily the line following and orientation subsystems.
+**[Isaac Hoese](https://www.linkedin.com/in/isaac-hoese-425748251)** is a senior electrical engineering student from Greeneville, Tn. He is interested in both power system analysis and embedded system design. In this project, Isaac will be a contributor for the navigation sensing, primarily the line following and orientation subsystems.
 
 
 **Isaac Jennings**
