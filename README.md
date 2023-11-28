@@ -1,46 +1,55 @@
-# {Modular IEEE Robot} - Your project should have a catchy and functional name
-
-The descriptions and information in all readme files in the starter repo (including this one) must be edited. All section descriptions must be deleted. Any failure to remove the description information (like the statement that you are currently reading) will be heavily penalized!
+# Modular IEEE Robot
 
 ## Executive Summary
 
-Give the elevator pitch and abstract for the project. It should allow interested visitors to broadly understand the motivation for the project and what the project has accomplished.
+Each year, Tennessee Technological University (Tech) participates in the Institute of Electrical and Electronics Engineers (IEEE) Southeastern Conference (SECON) hardware competition. The competition asks participants to create a robot that can perform various tasks, and competitors are scored based on their robot’s capability to complete tasks as quickly as possible. In past years, Tech has placed well, but the same problems have arisen each year that have inhibited wins: choppy navigation, shorted cables, and battery depletion are just a few of the many problems teams have repeatedly faced in previous competitions. The team sets out to fix the besetting problems that teams face each year not by competing in SECON, but rather by building a generalized platform that will optimize the basic robotic functionality for future teams. Sensing, movement, and centralized charging are the top priorities in the team’s design, all fitted together in a modular, adaptable framework that can be manipulated to fit most – if not all – IEEE hardware competition specifications. No longer will teams have to spend countless hours learning and designing movement systems or hoping everything works after rewiring a battery mid-competition. The design will take care of these basic competition necessities and leave the custom tailoring to the competition team.  
 
 
 ## Capabilities
 
-Here explain in more detail (though not as much as will be given in the datasheet) what the version of this project in this repo is capable of doing.
+Coming Spring 2024!
 
 
 ## Salient Outcomes
 
-Projects often have some outcomes that are more interesting than others. Here, highlight those things that you found interesting!
+Coming Spring 2024!
 
 
 ## Project Demonstration & Images
 
-Give a link to a video of the project being demonstrated. The video should be hosted on the capstone youtube.
-
-Below the video link show some well-taken, appropriately sized images of the project.
+Coming Spring 2024!
 
 
 ## About Us
 
 ### Team
+- Year, major, minor(s), interests, what you did on project
+**Luke Chapman** 
 
-Give a brief bio for each team member and their broad contribution to the project (no need to be terribly specifc).
+**Reid Crews**
+
+**Isaac Hoese**
+
+**Isaac Jennings**
+
+**Abigail Kennedy**
+
+**Mabel Olson**
+
 
 ### Faculty Supervisor
 
-Tell who the faculty supervisor was for the project
+The faculty supervisor for this project is [Dr. Nan Chen][def1]. She 
+
+[def1]: https://www.linkedin.com/in/nan-chen-319aa185/
 
 ### Stakeholders
 
-Tell a bit about the customer for the project. Also discuss any other groups (specific or general) that are expected to be impacted by the project.
+Tell a bit about the customer for the project. Also, discuss any other groups (specific or general) expected to be impacted by the project.
 
 ### Recognitions
 
-Use this space to recognize anyone that you feel has had an impact on the project. Be sure to recognize the work of previous teams if you referenced it for style or content. 
+We would like to recognize and thank Professor Jesse Roberts, Dr. Nan Chen, and Dr. Charles Van Neste for their continuous input and guidance on the project.
 
 ## Repo Organization
 
