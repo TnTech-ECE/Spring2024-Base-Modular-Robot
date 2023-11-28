@@ -32,7 +32,7 @@ Coming Spring 2024!
 
 **Isaac Jennings**
 
-**Abigail Kennedy**
+**Abigail Kennedy** is an electrical engineering major at Tennessee Technological University with minors in mathematics and education. Abigail's primary interest is in controls and PLC design, and for this project, she worked on the motor control subsystem to ensure the robot can move quickly and smoothly.
 
 **Mabel Olson**
 
@@ -56,9 +56,9 @@ We would like to recognize and thank Professor Jesse Roberts, Dr. Nan Chen, and 
 
 ### [Reports](/Reports)
 
-[Project Proposal](/Reports/Project%20Proposal%20Revised.pdf)
+The [Project Proposal](/Reports/Project%20Proposal%20Revised.pdf) is the initial document for the project where the problem is defined and the goals for the project.
 
-[Conceptual Design](/Reports/Conceptual%20Design%20and%20Planning%20V2.pdf)
+The [Conceptual Design](/Reports/Conceptual%20Design%20and%20Planning%20V2.pdf) gives a more detailed solution to the problem as well as subsystem breakdowns and a projected timeline and budget.
 
 [Experimentation](/Reports/Experimentation.md) Coming Spring 2024!
 
@@ -70,9 +70,9 @@ We would like to recognize and thank Professor Jesse Roberts, Dr. Nan Chen, and 
 
 ### [Documentation](/Documentation)
 
-[Meeting Minutes](/Documentation/Meeting%20Minutes)
+The [Meeting Minutes](/Documentation/Meeting%20Minutes) folder contains the dated minutes from weekly meetings and allows a quick view into the progress of the team.
 
-[Signoffs](/Documentation/Signoffs)
+[Signoffs](/Documentation/Signoffs) are used to finalize designs for each subsystem. This includes schematics, design decisions, BOM, and analysis. 
 
 
 ### [Software](/Software)
