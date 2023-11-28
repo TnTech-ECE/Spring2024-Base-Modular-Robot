@@ -10,8 +10,9 @@ The final version of the following are found here in Reports:
 
 ## Examples
 
-Isaac Newton is quoted as having said that if he "saw further than others", it was because "he stood on the backs of giants" which came before him. Likewise, current teams benefit from the experience of those teams which came before. 
+The following capstone projects were helpful in writing our reports:
 
-Each of the capstone team projects in [this](https://github.com/TnTech-ECE) directory have successfully completed capstone. Peruse them to find examples of how they met these expectations. 
-
-Any past projects that provide significant help or inspiration must be cited as a source.
+[SECON 2022](https://github.com/TnTech-ECE/Spring2022-SECON2022)
+[SECON 2023](https://github.com/TnTech-ECE/Spring2023-SECONRobot)
+[Crawlspace Robot](https://github.com/TnTech-ECE/Fall-2023-2.0-Autonomous-Crawlspace-Inspection-Robot)
+[Active Noise Control](https://github.com/CarsonDPope/Active-Noise-Control-With-Wall-Transmission-Detection)
