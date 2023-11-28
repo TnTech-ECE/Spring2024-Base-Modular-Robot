@@ -39,13 +39,14 @@ Coming Spring 2024!
 
 ### Faculty Supervisor
 
-The faculty supervisor for this project is [Dr. Nan Chen][def1]. She 
+The faculty supervisor for this project is [Dr. Nan Chen][def1]. She completed her electrical and control engineering Bachelor's degree from Nanjing University of Aeronautics and Astronautics. She also completed her Master's and Ph.D. in electrical engineering from the University of Waterloo. 
 
 [def1]: https://www.linkedin.com/in/nan-chen-319aa185/
 
 ### Stakeholders
 
-Tell a bit about the customer for the project. Also, discuss any other groups (specific or general) expected to be impacted by the project.
+The primary customer for the project is Professor Jesse Roberts - the advisor for the IEEE SECON hardware teams. Future teams are impacted by this design but unable to be stakeholders, so he gives input on their behalf based on his years of experience with the competition.
+
 
 ### Recognitions
 
@@ -53,17 +54,29 @@ We would like to recognize and thank Professor Jesse Roberts, Dr. Nan Chen, and 
 
 ## Repo Organization
 
-Give the layout of the repo and what can be found where. Make it easy on those who are interested by making the headings of the various things in this section clickable links to the relevant folder or file in the repo.
+### [Reports][def10]
+
+[Project Proposal][def2]
+
+[Conceptual Design][def3]
+
+[Experimentation][def4] Coming Spring 2024!
+
+[Poster][def5] Coming Spring 2024!
+
+[Final Report][def6] Coming Spring 2024!
+
+[Lessons Learned][def7] Coming Spring 2024!
+
+### [Documentation][def11]
+
+[Meeting Minutes][def8]
+
+[Signoffs][def9]
 
 
-### Reports
+### [Software](/Software)
 
-In the reports section of this repository information about the individual expectations for the reports and how they should be housed is provided.
+Coming Spring 2024!
 
-### Documentation
 
-In the documentaion section information regarding the documentation that is required and how it should be organized is given.
-
-### Software
-
-In the software directory of the repo information regarding how each team is expected to document software can be found.
