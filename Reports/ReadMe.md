@@ -2,10 +2,10 @@
 
 In this folder the final verion of each of the following should be found:
 
-1. [The project proposal](https://github.com/TnTech-ECE/StarterRepo/blob/364141e6634a5ea8218900e1664af58cee2d57e7/Reports/ProjectProposal.md)
-2. [Conceptual Design and Planning](https://github.com/TnTech-ECE/StarterRepo/blob/8979e1445f6a24c35b43196b08c25d6c5497d1a5/Reports/DesignPhase1.md)
-3. [Final Report](https://github.com/TnTech-ECE/StarterRepo/blob/2ec7fa8f6471a12fe058d78877ed54082690cfc5/Reports/FinalReport.md)
-4. [Lessons Learned](https://github.com/TnTech-ECE/CapstoneStarterRepo/blob/main/Reports/Lessons%20Learned.md)
+1. [The project proposal](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Reports/Project%20Proposal%20Revised.pdf)
+2. [Conceptual Design and Planning](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Reports/Conceptual%20Design%20and%20Planning%20V2.pdf)
+3. [Final Report]() Coming Spring 2024
+4. [Lessons Learned]() Coming Spring 2024
 
 Each of the above are clickable and link to the expectations and requirements for each of the documents.
 
