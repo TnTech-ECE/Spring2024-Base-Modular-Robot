@@ -1,4 +1,0 @@
-(fp_lib_table
-  (lib (name "Power_Dist")(type "KiCad")(uri "${KIPRJMOD}/Component_Lib/Power_Dist.pretty")(options "")(descr ""))
-  (lib (name "RB070MM")(type "KiCad")(uri "${KIPRJMOD}/Component_Lib/RB070MM_30TR/footprints.pretty")(options "")(descr ""))
-)

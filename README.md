@@ -1,60 +1,82 @@
-# {Name of the Project} - Your project should have a catchy and functional name
-
-The descriptions and information in all readme files in the starter repo (including this one) must be edited. All section descriptions must be deleted. Any failure to remove the description information (like the statement that you are currently reading) will be heavily penalized!
+# Modular IEEE Robot
 
 ## Executive Summary
 
-Give the elevator pitch and abstract for the project. It should allow interested visitors to broadly understand the motivation for the project and what the project has accomplished.
+Each year, Tennessee Technological University (Tech) participates in the Institute of Electrical and Electronics Engineers (IEEE) Southeastern Conference (SECON) hardware competition. The competition asks participants to create a robot that can perform various tasks, and competitors are scored based on their robot’s capability to complete tasks as quickly as possible. In past years, Tech has placed well, but the same problems have arisen each year that have inhibited wins: choppy navigation, shorted cables, and battery depletion are just a few of the many problems teams have repeatedly faced in previous competitions. The team sets out to fix the besetting problems that teams face each year not by competing in SECON, but rather by building a generalized platform that will optimize the basic robotic functionality for future teams. Sensing, movement, and centralized charging are the top priorities in the team’s design, all fitted together in a modular, adaptable framework that can be manipulated to fit most – if not all – IEEE hardware competition specifications. No longer will teams have to spend countless hours learning and designing movement systems or hoping everything works after rewiring a battery mid-competition. The design will take care of these basic competition necessities and leave the custom tailoring to the competition team.  
 
 
 ## Capabilities
 
-Here explain in more detail (though not as much as will be given in the datasheet) what the version of this project in this repo is capable of doing.
+Coming Spring 2024!
 
 
 ## Salient Outcomes
 
-Projects often have some outcomes that are more interesting than others. Here, highlight those things that you found interesting!
+Coming Spring 2024!
 
 
 ## Project Demonstration & Images
 
-Give a link to a video of the project being demonstrated. The video should be hosted on the capstone youtube.
-
-Below the video link show some well-taken, appropriately sized images of the project.
+Coming Spring 2024!
 
 
 ## About Us
 
 ### Team
+- Year, major, minor(s), interests, what you did on project
+**Luke Chapman** 
 
-Give a brief bio for each team member and their broad contribution to the project (no need to be terribly specifc).
+**Reid Crews**
+
+**Isaac Hoese**
+
+**Isaac Jennings**
+
+**Abigail Kennedy** is an electrical engineering major at Tennessee Technological University with minors in mathematics and education. Abigail's primary interest is in controls and PLC design, and for this project, she worked on the motor control subsystem to ensure the robot can move quickly and smoothly.
+
+**Mabel Olson**
+
 
 ### Faculty Supervisor
 
-Tell who the faculty supervisor was for the project
+The faculty supervisor for this project is [Dr. Nan Chen][def1]. She completed her electrical and control engineering Bachelor's degree from Nanjing University of Aeronautics and Astronautics. She also completed her Master's and Ph.D. in electrical engineering from the University of Waterloo. 
+
+[def1]: https://www.linkedin.com/in/nan-chen-319aa185/
 
 ### Stakeholders
 
-Tell a bit about the customer for the project. Also discuss any other groups (specific or general) that are expected to be impacted by the project.
+The primary customer for the project is Professor Jesse Roberts - the advisor for the IEEE SECON hardware teams. Future teams are impacted by this design but unable to be stakeholders, so he gives input on their behalf based on his years of experience with the competition.
+
 
 ### Recognitions
 
-Use this space to recognize anyone that you feel has had an impact on the project. Be sure to recognize the work of previous teams if you referenced it for style or content. 
+We would like to recognize and thank Professor Jesse Roberts, Dr. Nan Chen, and Dr. Charles Van Neste for their continuous input and guidance on the project.
 
 ## Repo Organization
 
-Give the layout of the repo and what can be found where. Make it easy on those who are interested by making the headings of the various things in this section clickable links to the relevant folder or file in the repo.
+### [Reports](/Reports)
+
+The [Project Proposal](/Reports/Project%20Proposal%20Revised.pdf) is the initial document for the project where the problem is defined and the goals for the project.
+
+The [Conceptual Design](/Reports/Conceptual%20Design%20and%20Planning%20V2.pdf) gives a more detailed solution to the problem as well as subsystem breakdowns and a projected timeline and budget.
+
+[Experimentation](/Reports/Experimentation.md) Coming Spring 2024!
+
+[Poster](/Reports/Poster.md) Coming Spring 2024!
+
+[Final Presentation](/Reports/Final%20Presentation.md) Coming Spring 2024!
+
+[Lessons Learned](/Reports/Lessons%20Learned%20and%20Acquired%20Skills.md) Coming Spring 2024!
+
+### [Documentation](/Documentation)
+
+The [Meeting Minutes](/Documentation/Meeting%20Minutes) folder contains the dated minutes from weekly meetings and allows a quick view into the progress of the team.
+
+[Signoffs](/Documentation/Signoffs) are used to finalize designs for each subsystem. This includes schematics, design decisions, BOM, and analysis. 
 
 
-### Reports
+### [Software](/Software)
 
-In the reports section of this repository information about the individual expectations for the reports and how they should be housed is provided.
+Coming Spring 2024!
 
-### Documentation
 
-In the documentaion section information regarding the documentation that is required and how it should be organized is given.
-
-### Software
-
-In the software directory of the repo information regarding how each team is expected to document software can be found.
