@@ -35,7 +35,7 @@ Coming Spring 2024!
 
 **[Abigail Kennedy](https://www.linkedin.com/in/abigail-kennedy-tech/)** is an electrical engineering major at Tennessee Technological University with minors in mathematics and education. Abigail's primary interest is in controls and PLC design, and for this project, she worked on the motor control subsystem to ensure the robot can move quickly and smoothly.
 
-**Mabel Olson**
+**[Mabel Olson](https://www.linkedin.com/in/mabelolson/)** is an electrical engineering major at Tennessee Technological University with a minor in mathematics. She is intrested in power and control systems. In this project, Mabel is responsible for the chassis design, robot layout, organization, and any 3D designing of component attachment peices. 
 
 
 ### Faculty Supervisor
