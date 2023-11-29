@@ -46,7 +46,7 @@ The faculty supervisor for this project is [Dr. Nan Chen][def1]. She completed h
 
 ### Stakeholders
 
-The primary customer for the project is Professor Jesse Roberts - the advisor for the IEEE SECON hardware teams. Future teams are impacted by this design but unable to be stakeholders, so he gives input on their behalf based on his years of experience with the competition.
+The primary customer for the project is [Professor Jesse Roberts](https://www.linkedin.com/in/jessetnroberts/) - the advisor for the IEEE SECON hardware teams. Future teams are impacted by this design but unable to be stakeholders, so he gives input on their behalf based on his years of experience with the competition.
 
 
 ### Recognitions
