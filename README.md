@@ -70,6 +70,9 @@ The [Conceptual Design](/Reports/Conceptual%20Design%20and%20Planning%20V2.pdf) 
 [Lessons Learned](/Reports/Lessons%20Learned%20and%20Acquired%20Skills.md) Coming Spring 2024!
 
 ### [Documentation](/Documentation)
+All documentation is included in the above folder. Folders for the files including schematics and images are included in their respective folders. All files related to a specific signoff are then in a subfolder labeled appropriately.
+
+Documentation include all schematics, images, models, and designs used in the project.
 
 The [Meeting Minutes](/Documentation/Meeting%20Minutes) folder contains the dated minutes from weekly meetings and allows a quick view into the progress of the team.
 
