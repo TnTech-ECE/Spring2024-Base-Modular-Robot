@@ -22,11 +22,11 @@ The function of this subsystem is to develop a layout that allows for modularity
 	
 ## Buildable Schematics
 
-![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Layout-Organization/Frame%20with%20Slotted%20Pieces%20Corner%20View.jpg)
+![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Layout-Organization/Frame%20with%20Slotted%20Pieces%20Corner%20View.jpg)
 
 ### Slotted Peices (Front/Back Rows)
 The following buildable schematic is of the slotted peices for components to attach to. These slots allow for components to be moved around as needed and are provided in such frequency to allow for rearranging as necessary. A total of 12 peices are needed to complete the full area. The front/back components are the front 3 and back 3 peices and possess holes to be attached to the extruded aluminum. These also have notches to allow the peices to be connected together with a connector peice. 
-![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Layout-Organization/Slotted%20Peices%20Front-Back%20Rows%20Schematic.jpg)
+![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Layout-Organization/Slotted%20Peices%20Front-Back%20Rows%20Schematic.jpg)
 
 ### Slotted Peices (Middle Rows) 
 The following buildable schematic is of the slotted peices for components to attach to. These slots allow for components to be moved around as needed and are provided in such frequency to allow for rearranging as necessary. A total of 12 peices are needed to complete the full area. The middle components are the middle 6 peices and do not possess holes to be attached to the extruded aluminum. These also have notches to allow the peices to be connected together with a connector peice.
@@ -34,7 +34,7 @@ The following buildable schematic is of the slotted peices for components to att
 
 ### Connector
 The following buildable schematic is of the peice that connects the above components together.
-![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Layout-Organization/Connector%20Schematic.jpg)
+![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Layout-Organization/Connector%20Schematic.jpg)
 
 ### Wire Organization
 In order to keep wires organized, a wiring convention will be implemented. 
@@ -55,9 +55,9 @@ and pin numbers for microcontroller GPIO headers.
 
 ## Analysis
 The main concern for this subsystem is being able to fit all components on the robot while adhearing to constraint 4. Therefore the following figures shows that the frame with components will stay with a 12 in x 12 in x 6 in volume. It is important to note that this is just to prove that these components will fit within the alloted area. The exact layout will be decided during the building phase.
-![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Layout-Organization/Chassis%20Frame%20Layout%20Size%20Confirmation.jpg)
-![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Layout-Organization/Robot%20Layout%20Corner%20View.jpg)
-![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Layout-Organization/Robot%20Layout%20Top%20VIew.jpg)
+![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Layout-Organization/Chassis%20Frame%20Layout%20Size%20Confirmation.jpg)
+![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Layout-Organization/Robot%20Layout%20Corner%20View.jpg)
+![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Layout-Organization/Robot%20Layout%20Top%20VIew.jpg)
 The following table is the legend for the components in the above image.
 
 | Item | Quantity | Color |
