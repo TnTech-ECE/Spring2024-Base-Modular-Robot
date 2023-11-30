@@ -31,7 +31,7 @@ Coming Spring 2024!
 
 **[Isaac Hoese](https://www.linkedin.com/in/isaac-hoese-425748251)** is a senior electrical engineering student from Greeneville, Tn. He is interested in both power system analysis and embedded system design. In this project, Isaac will be a contributor for the navigation sensing, primarily the line following and orientation subsystems.
 
-**Isaac Jennings**
+**[Isaac Jennings](www.linkedin.com/in/isaac-jennings-a04680209)** is a senior electrical engineering student with a minor in mathematics from Church Hill, TN. He takes interest in control systems, programming, and embedded systems, which is where he allocated his time by working on the master control systems on the project. He is responsible for the navigation and localization of the robot as it interfaces with the game board.  
 
 **[Abigail Kennedy](https://www.linkedin.com/in/abigail-kennedy-tech/)** is an electrical engineering major at Tennessee Technological University with minors in mathematics and education. Abigail's primary interest is in controls and PLC design, and for this project, she worked on the motor control subsystem to ensure the robot can move quickly and smoothly.
 
