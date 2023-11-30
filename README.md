@@ -23,7 +23,6 @@ Coming Spring 2024!
 ## About Us
 
 ### Team
-- Year, major, minor(s), interests, what you did on project
 
 **[Luke Chapman](https://www.linkedin.com/in/luke-chapman-/)** is an electrical engineering major at Tennessee Technological University with a minor in mathematics. He is interested in electromagnetics, telecommunications, and signal processing. Luke is responsible for the power management and distribution systems of the robot as well as the experimental wireless power charging system.
 
