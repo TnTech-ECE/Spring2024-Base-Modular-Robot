@@ -25,18 +25,17 @@ Coming Spring 2024!
 ### Team
 - Year, major, minor(s), interests, what you did on project
 
-**Luke Chapman** 
+**[Luke Chapman](https://www.linkedin.com/in/luke-chapman-/)** is an electrical engineering major at Tennessee Technological University with a minor in mathematics. He is interested in electromagnetics, telecommunications, and signal processing. Luke is responsible for the power management and distribution systems of the robot as well as the experimental wireless power charging system.
 
 **[Reid Crews](https://www.linkedin.com/in/jackson-crews-381187257/)** is an electrical engineering major, mechatronics concentration at Tennessee Technological University with a minor in mathematics. Reid's interests are mechatronics and control systems. For the project, Reid is a contributor for the navigation sensing, primarily the location and object detection subsystems.
 
 **[Isaac Hoese](https://www.linkedin.com/in/isaac-hoese-425748251)** is a senior electrical engineering student from Greeneville, Tn. He is interested in both power system analysis and embedded system design. In this project, Isaac will be a contributor for the navigation sensing, primarily the line following and orientation subsystems.
 
-
 **Isaac Jennings**
 
 **[Abigail Kennedy](https://www.linkedin.com/in/abigail-kennedy-tech/)** is an electrical engineering major at Tennessee Technological University with minors in mathematics and education. Abigail's primary interest is in controls and PLC design, and for this project, she worked on the motor control subsystem to ensure the robot can move quickly and smoothly.
 
-**[Mabel Olson](https://www.linkedin.com/in/mabelolson/)** is an electrical engineering major at Tennessee Technological University with a minor in mathematics. She is intrested in power and control systems. In this project, Mabel is responsible for the chassis design, robot layout, organization, and any 3D designing of component attachment peices. 
+**[Mabel Olson](https://www.linkedin.com/in/mabelolson/)** is an electrical engineering major at Tennessee Technological University with a minor in mathematics. She is intrested in power and control systems. In this project, Mabel is responsible for the chassis design, robot layout, organization, and any 3D designing of component attachment pieces. 
 
 
 ### Faculty Supervisor
