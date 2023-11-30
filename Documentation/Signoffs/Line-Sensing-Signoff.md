@@ -26,7 +26,7 @@ The line following subsystem will provide the master control with usable data to
 
 ### System Schematics
 
-![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Line-Following/Line_Sensor_Connections.png)
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Line%20Following/Line_Sensor_Connections.png)
 The schematic of the system is shown above. There will be two reflectance sensor arrays used. 
     The Pololu QTR-8RC module has a perforation in the board that allows for two of the eight sensors to be broken
 	off. This leaves one reflectance sensor array with two LED emitters and receivers and one reflectance sensor array with six LED emitters
