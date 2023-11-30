@@ -29,7 +29,7 @@ The second reach goal is an on-robot OLED display. The display will aid teams in
 ## Schematics
 ### Arduino Pinouts
 <p align = "center">
-<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Nav%20Microcontroller/Arduino_Mega_Pinout.png?raw=true"alt="Grove Bus">
+<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Navigation%20Microcontroller/Arduino_Mega_Pinout.png?raw=true"alt="Grove Bus">
 </p>
 
 The pinout diagram of the Arduino Mega 2560 Rev3 board is shown above. The electrical connections for sensors and other modules will be discussed in the following schematic sections. A pinout table will be provided at the end of the schematics section to provide connection documentation.
