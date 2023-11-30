@@ -36,19 +36,19 @@ The pinout diagram of the Arduino Mega 2560 Rev3 board is shown above. The elect
 
 ### Grove Connections
 <p align = "center">
-<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Nav%20Microcontroller/Grove_Connections.png?raw=true"alt="Grove Bus">
+<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Navigation%20Microcontroller/Grove_Connections.png?raw=true"alt="Grove Bus">
 </p>
 
 The I2C bus will be implemented using 4 Grove I2C Hub 6 Port modules. The first connection to each of the modules will be the SCL an SDA pins of the Arduino. The power and ground pins will be connected directly to the regulated bus to prevent the Arduino from sourcing too much current. Two of the four modules will be connected to the 5V power bus while the other two will be connected to the 3.3 V bus. The 5 V and 3 V connections will power all electronic sensors. The bus will allow all I2C compatible sensors to be read in with just 2 Arduino pins. By using the grove bus, every I2C sensor will be 100% plug and play adaptable. 
 
 <p align = "center">
-<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Nav%20Microcontroller/Grove_Arduino_Connections.png?raw=true"alt="Grove-Arduino">
+<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign off Photos/Navigation Microcontroller/Grove_Arduino_Connections.png?raw=true"alt="Grove-Arduino">
 </p>
 
 ### Sensor Connections
 
 <p align = "center">
-<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Nav%20Microcontroller/Sensor_Connections.png?raw=true">
+<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign off Photos/Navigation Microcontroller/Sensor_Connections.png?raw=true">
 </p>
 
 ## Analysis
@@ -96,7 +96,7 @@ The ESP 32 module is an MCU created by Espressif. Adafruit's "Huzzah32" breakout
 The SSD 1306 0.96" display has a 128 x 64 dot matrix for display. The module runs off of 3.3 V and has a maximum operating current of 15 mA. The module is I2C compatible and can be easily implemented into the data bus by using a grove to male pin wire. Because it is an OLED, user-created images can be imported and used. This will aid in showing battery life pictures such as the one seen below: 
 
 <p align = "center">
-<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Nav%20Microcontroller/OLED_Battery_Life.jpg?raw=true">
+<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign off Photos/Navigation Microcontroller/OLED_Battery_Life.jpg?raw=true">
 </p>
 
 
