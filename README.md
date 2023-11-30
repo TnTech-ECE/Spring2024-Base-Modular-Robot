@@ -24,9 +24,10 @@ Coming Spring 2024!
 
 ### Team
 - Year, major, minor(s), interests, what you did on project
+
 **Luke Chapman** 
 
-**Reid Crews**
+**[Reid Crews](https://www.linkedin.com/in/jackson-crews-381187257/)** is an electrical engineering major, mechatronics concentration at Tennessee Technological University with minors in mathematics. Reid's interests are mechatronics and control systems. For the project, Reid is a contributor for the navigation sensing, primarily the location and object detection subsytems.
 
 **[Isaac Hoese](https://www.linkedin.com/in/isaac-hoese-425748251)** is a senior electrical engineering student from Greeneville, Tn. He is interested in both power system analysis and embedded system design. In this project, Isaac will be a contributor for the navigation sensing, primarily the line following and orientation subsystems.
 
