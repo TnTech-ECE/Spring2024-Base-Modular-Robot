@@ -36,7 +36,7 @@ The schematic above is shown. Eight time of flight are used for the object detec
 ### Object Detection Placement
 
 <p align = "center">
-<img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Object%20Detection/ObjDetectionSensorHorizonView.png/>
+<img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Object%20Detection/ObjDetectionSensorHorizonView.png/>
 </p>
 
 The CAD drawing above is the horizontal view of the time of flight. The field of view (FOV) is 25 $^\circ$. The maxmium recommended distance is 1 m (39.37 in). 
