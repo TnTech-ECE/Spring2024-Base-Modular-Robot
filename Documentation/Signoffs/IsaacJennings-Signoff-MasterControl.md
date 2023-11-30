@@ -1,7 +1,7 @@
 # Master Control Signoff
 ## Functionality
 
-![Master Control Pinout](../Images/Sign%off%Photos/Master%Control/Master_Control_Pinout.png)
+![Master Control Pinout](../Images/Sign%20off%20Photos/Master%20Control/Master_Control_Pinout.png)
 ![Circuit Board Schematic](../Images/Sign%20off%20Photos/Power%20Distribution/power_dist_schematic.png)
 
 
