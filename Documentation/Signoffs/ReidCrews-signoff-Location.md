@@ -40,7 +40,7 @@ The location schematic is shown above. The Grove Ultrasonic Distance Sensors are
 
 ### Ultrasonic Sensor Pinout
 
-![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Position/Grove-Ultrasonic-Distance-Sensor-pinout.png)
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Position/Grove-Ultrasonic-Distance-Sensor-pinout.png)
 
 The pinout of the ultrasonic sensor is shown above.
 
@@ -50,12 +50,12 @@ The pinout of the ultrasonic sensor is shown above.
 The ultrasonic sensor has an operating current at 8 mA and operating voltage at 3.3 to 5 V. The wide voltage level range is an advantage compared to the HC-SR04. The Grove Ultrasonic Sensor is easy direct connection with Arduino or Raspberry Pi with STEMMA connectors. The HC-SR04 ultrasonic sensor needs voltage conversion circuit. The Grove Ultrasonic Sensor requires only one pin for the transmitter and receiver. The HC-SR04 ultrasonic sensor needs two pins for the transmitter and receiver. The Grove Ultrasonic Sensor saves one GPIO pin on the microcontroller which is the most valuable resource [1]. 
 
 
-![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Position/UltrasonicSensorComparsion.jpg)
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Position/UltrasonicSensorComparsion.jpg)
 
 The operating frequency is 40 kHz. When a pulse trigger signal with more than 10 &#956;s, the ultrasonic sensor will issue 8 cycles of 40 kHz cycle level and detect the echo signal (return signal). 
 
 <p align = "center">
-<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Position/PositionSensorTimingDiagram.PNG"/>
+<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Position/PositionSensorTimingDiagram.PNG"/>
 </p>
 
 The recommended sampling rate is over 60 ms (16.7 Hz) [2]. 
