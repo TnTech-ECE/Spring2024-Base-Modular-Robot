@@ -18,7 +18,7 @@ The primary function of the battery management system is to provide a system tha
 
 ## Schematic
 
-![Battery Management Schematic](../Images/Battery_Management/Battery_Management_Schem.png)
+![Battery Management Schematic](../Images/Sign%20off%20Photos/Battery%20Management/Battery_Management_Schem.png)
 Figure 1. Battery Management Schematic.
 
 The schematic above shows the system designed for the battery management subsystem. Starting from the top-left, a standard wall socket is shown. Connected to this is the cable chosen that fits standard wall socket with a NEMA 5-15P connector. The other side of this cable is an IEC 320 C13 (female) connector meant to connect to a standard 3-prong male receptacle. 
@@ -27,7 +27,7 @@ Below the cable, a panel-mount power connector with two IEC 320 C14 (male) conne
 
 This adapter allows for male prongs to connect on both sides of the adapter, which is needed because both the chassis connector and charger cable have male prongs on the adapter-side of their cables. The adapter used is shown below in Figure 2. The adapter used is very simple, being a third-party device and entirely passive. The current capabilities of it and the other components are discussed further in "Current Capacities" section.
 
-![Female to Female Adapter](../Images/Battery_Management/Female_Female_Adapter.jpg)
+![Female to Female Adapter](../Images/Sign%20off%20Photos/Battery%20Management/Female_Female_Adapter.jpg)
 Figure 2. Female to Female Adapter Used [2]
 
  A short cable with one side IEC 320 C14 (male) and one side IEC 320 C13 (female) was then chosen to connect the adapter to the battery charger, which has a male receptacle connector for its power supply.
