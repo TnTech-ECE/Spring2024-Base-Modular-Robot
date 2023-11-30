@@ -42,7 +42,7 @@ The sensors will be powered by a 5 V regulated source coming from the power dist
 	outputs will be read by an Arduino Mega. The digital pins 22-28, 30 will be used to conserve analog and PWM pins for future sensor implementation.
 	
 <p align = "center">
-<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Line-Following/2021_SECON_Board.png?raw=true"alt="Secon Board"/>
+<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Line%20Following/2021_SECON_Board.png?raw=true"alt="Secon Board"/>
 </p>
 
 The last IEEE SECON Hardware competition arena with a line was in 2021. A small white line of 1" was used.
@@ -50,20 +50,20 @@ The last IEEE SECON Hardware competition arena with a line was in 2021. A small 
 	than the line, it will be accurate in reading the white color vs the adjacent black color. If the sensor was not larger than the line, there would be no differentiation of the line and the background, as the sensor would 	only receiver the color of the line. When the robot went off center and the background color was received, it would result in the robot making a zig-zag movement rather than going in a continuous direction. An example of 	this is shown below:
 
 <p align = "center">
-<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Line-Following/Line_Example.png?raw=true"alt="Sensor Schematic"/>
+<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Line%20Following/Line_Example.png?raw=true"alt="Sensor Schematic"/>
 </p>
 
 If the sensor cannot detect the line in reference to the background (meaning the line is bigger than the sensor), then there will never be a continuous movement after the robot gets off center or the line curves. The sensor readings will cause the robot to go back and forth from one side of the line to the other.
 
 ### Sensor Schematics
 <p align = "center">
-<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Line-Following/Line_Sensor_Schematic.jpg?raw=true"alt="Sensor Schematic"/>
+<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Line%20Following/Line_Sensor_Schematic.jpg?raw=true"alt="Sensor Schematic"/>
 </p>
 <p align = "center">
-<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Line-Following/Pololu_QTR_8RC.png?raw=true"alt="Pololu QTR-8RC"/>
+<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Line%20Following/Pololu_QTR_8RC.png?raw=true"alt="Pololu QTR-8RC"/>
 </p>
 <p align = "center">
-<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Line-Following/Separated_Sensor.png?raw=true"alt="Separated Sensors"/>
+<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Line%20Following/Separated_Sensor.png?raw=true"alt="Separated Sensors"/>
 </p>
 
 _**The schematics and images above are produced by the supplier**_
@@ -76,7 +76,7 @@ The code for the project will be discussed in detail in the microcontroller sign
     the code will read sensor data in at a determined sampling rate (around 100 Hz, disccussed in analysis), filter the data, then report the data to the master control.
 	A generalized code block diagram is shown below. The sensor has Arduino libraries for customer download to help with implementation.
 <p align = "center">
-<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Line-Following/Line_Sensing_Software_Flowchart.png?raw=true"alt="Code Block Diagram"/>
+<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Line%20Following/Line_Sensing_Software_Flowchart.png?raw=true"alt="Code Block Diagram"/>
 </p>
 
 ## Analysis
@@ -88,7 +88,7 @@ According to the datasheet, each LED will draw 20-25 mA of current resulting in 
 	
 Pololu gives an oscillographic representation of the sensor working
 <p align = "center">
-<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Line-Following/Line_Sensing_Oscillograph.png?raw=true"alt="Sensor Oscilloscope"/>
+<img src = "https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Line%20Following/Line_Sensing_Oscillograph.png?raw=true"alt="Sensor Oscilloscope"/>
 </p>
 
 The example is when the one of the sensor modules detects a black line on a surface. The yellow curve is the sensor reading and the blue curve is the digital input to the microcontroller.
