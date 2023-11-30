@@ -53,7 +53,7 @@ The CAD drawing above is the vertical view of the time of flight.
 The time of flight sensor has an operating current at 19 mA and operating voltage at 5 V. The Grove Time of Flight Disyance Sensor requires only two pin for SCL and SDA. The picture below shows the plug-and-play ability because the sensor can be connected the GROVE connectors.
 
 
-![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Object%20Detection/TimeOfFlightSensorImage.jpg)
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Object%20Detection/TimeOfFlightSensorImage.jpg)
 
 From the CAD drawing of the horizontal view of the timing of flight, the equation for the blind spot (the area in the middle of the two sensor's FOV).
 
@@ -62,7 +62,7 @@ $$ Max \space Distance = {x \over 2} * tan(77.5^\circ)$$
 The *Max Distance* is max distance in the blind spot and *x* is the distance between the two sensors. For the CAD drawing case, the *Max Distance* is 13.53 in, and the area is 40.59 in $^2$. For the maxmium apart case (12 in apart), *Max Distance* is 54.12 in, and the area is 324.77 in $^2$. The chosen distance between the sensors is 6 in becuase the max distance from edges and blind spot is the lowest average distance. The blue and green lines are 13.53 in.
 
 <p align = "center">
-<img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Object%20Detection/ObjDetectionSensorLengthMeasurements.png/>
+<img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Object%20Detection/ObjDetectionSensorLengthMeasurements.png/>
 </p>
 
 The sampling rate for the time of flight sensor 33 ms at default. The minimum is 8 ms, and the maximum is 200 ms. The default frequency is 30.3 Hz. The time of flight sensor has four modes in the table below [1-2].
