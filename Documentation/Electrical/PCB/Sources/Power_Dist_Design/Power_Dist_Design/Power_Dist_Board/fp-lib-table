@@ -1,6 +1,0 @@
-(fp_lib_table
-  (version 7)
-  (lib (name "Power_Dist")(type "KiCad")(uri "${KIPRJMOD}/Component_Lib/Power_Dist.pretty")(options "")(descr ""))
-  (lib (name "RB070MM")(type "KiCad")(uri "${KIPRJMOD}/Component_Lib/RB070MM_30TR/footprints.pretty")(options "")(descr ""))
-  (lib (name "L_TDK_SPM6530")(type "KiCad")(uri "${KIPRJMOD}/Component_Lib/L_TDK_SPM6530.pretty")(options "")(descr ""))
-)
