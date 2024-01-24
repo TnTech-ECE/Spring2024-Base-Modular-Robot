@@ -30,7 +30,7 @@ The following buildable schematic is of the slotted peices for components to att
 
 ### Slotted Peices (Middle Rows) 
 The following buildable schematic is of the slotted peices for components to attach to. These slots allow for components to be moved around as needed and are provided in such frequency to allow for rearranging as necessary. A total of 12 peices are needed to complete the full area. The middle components are the middle 6 peices and do not possess holes to be attached to the extruded aluminum. These also have notches to allow the peices to be connected together with a connector peice.
-![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Layout%20Organization/Slotted%20Peice%20Middle%20Schematic.jpg)
+![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Layout%20Organization/Slotted%20Peice%20Middle%20Schematic.jpg)
 
 ### Connector
 The following buildable schematic is of the peice that connects the above components together.
