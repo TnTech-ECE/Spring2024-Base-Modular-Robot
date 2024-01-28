@@ -16,7 +16,7 @@ charging the robot.
 
 - C15: The robot shall not use radiative wireless power transfer
 technology.
-	+ This constraint rules out radiative wireless power transfer methods for wireless charging. Radiative wireless power transfer has a higher potential for personal harm than nonradiative and so has stricter regulations. Radiadive wireless power can only be safely used for power consumption under 10 milliwatts, much less than the robot requirements, making radiative power transfer too dangerous of an option to pursue [4][5].
+	+ This constraint rules out radiative wireless power transfer methods for wireless charging. Radiative wireless power transfer has a higher potential for personal harm than nonradiative and so has stricter regulations. Radiative wireless power can only be safely used for power consumption under 10 milliwatts, much less than the robot requirements, making radiative power transfer too dangerous of an option to pursue [4][5].
 
 - C16: The robot shall abide by the applicable FCC regulations
 regarding wireless charging methods outlined in parts 15
@@ -43,7 +43,7 @@ It is for these reasons that capacitive power transfer was chosen to be explored
 
 The subsystem design is based primarily on the work done by Van Neste, a faculty member at TnTech, et al. in “Quasi-wireless capacitive energy transfer for the dynamic charging of personal mobility vehicles” and “Quasi-wireless surface power and control for battery-free robotics” [6][7]. This is because the applications of their technology are very close to our applications. In the first paper, the group uses CPT to have a large area over which a personal mobility vehicle can be charged, very similar to this subsystem [6].
 
-In the personal mobility vehicle paper, the research group uses large sheets of aluminum foil for the large conductive planes used as capacitive transmitter and receiver [6]. This transmitting conductive sheet on the ground is excited by a function generator at several MHz and amplified by a high-powered RF amplifier. Aluminum foil will be purchased for this subsystem and function generators are readily available at TnTech facilities as well as the RF amplifiers used in this paper, which can be accessed through collaboration with Dr. Van Neste and his research group. In the future, designing an amplifier system may be investigated.
+In the personal mobility vehicle paper, the research group uses large sheets of aluminum foil for the large conductive planes used as capacitive transmitter and receiver [6]. This transmitting conductive sheet on the ground is excited by a function generator at several MHz and amplified by a high-powered RF amplifier. Aluminum foil will be purchased for this subsystem and function generators are readily available at TnTech facilities as well as the RF amplifiers used in this paper, which can be accessed through collaboration with Dr. Van Neste and his research group. In the future, designing an amplifier system may be investigated. The magnet wire will be purchased for construction of transformers for the CPT system.
 
 ### Not Using Radiative Wireless Power Transfer
 
