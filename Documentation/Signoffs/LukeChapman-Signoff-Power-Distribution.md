@@ -166,7 +166,7 @@ When this switch is flipped, the Jetson Nano will detect that the digital input 
 | Item | Part Number | Quantity | Price/Unit | Item Price |
 | --- | --- | --- | --- | --- |
 | Buck Converter    	| TPS565201   	| 10 | $1.292   | $12.92 |
-| Flyback Diode     	| RB070MM     	| 10 | $0.277   | $2.77  |
+| Flyback Diode     	| RB070MM     	| 20 | $0.277   | $5.54  |
 | LED               	| QBLP615     	| 20 | $0.289   | $5.78  |
 | 6 Amp Fuse        	| QBLP615     	| 10 | $0.700   | $7.00  |
 | 10 Amp Fuse       	| QBLP615     	| 10 | $0.312   | $3.12  |
@@ -179,8 +179,10 @@ When this switch is flipped, the Jetson Nano will detect that the digital input 
 | 33 kOhm Resistor  	| RMCF1206JT33K0  | 20 | $0.0200  | $0.40  |
 | 56 kOhm Resistor  	| RMCF1206JT56K0  | 20 | $0.0200  | $0.40  |
 | 0.1 uFarad Capacitor  | CL31B104KBCNNNC | 30 | $0.07800 | $2.34  |
-| 10 uFarad Capacitor   | RMCF1206JT33K0  | 30 | $0.136   | $4.08  |
-| 22 uFarad Capacitor   | RMCF1206JT56K0  | 30 | $0.25100 | $7.53  |
+| 10 uFarad Capacitor   | CL31A106KAHNNNE | 30 | $0.122   | $3.66  |
+| 22 uFarad Capacitor   | CL31A226KAHNNNE | 30 | $0.239 | $7.17  |
+| 2.2 uHenry Inductor   | SPM6530T-2R2M | 10 | $0.991 | $9.91 |
+| 3.3 uHenry Inductor   | SPM6530T-3R3M | 10 | $0.991 | $9.91  |
 | Total             	|             	|	|      	| $100.26 |
 
 The component quantities were chosen to provide enough for several full printed circuit boards to be constructed. For example, two buck converters are required per board which requires ten total buck converters for five full PCBs to be constructed. Five PCBs was chosen as it is the minimum quantity offered by JLCPCB, a commonly used PCB manufacturer.
