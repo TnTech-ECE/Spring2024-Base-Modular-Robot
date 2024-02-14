@@ -5,8 +5,8 @@ The microcontroller susbystem will provide the computing power needed to read in
 
 ## Reach Goals
 
-There are two reach goals in the project. The first is the implementation of the ESP 32 wifi module. The implementation will require 2 sets of the ESP 32 boards. One will act as a receiver and one will act as a transmitter. The trasnitter will be embedded in the robot. The module will be connected to the Arduino navigation microcontroller and will send sensor data to the receiver in various intervals (update). The receiver will be conencted to a pc to display the data via a serial monitor.
-
+There are two reach goals in the project. The first is the implementation of the ESP 32 wifi module. The implementation will require 2 sets of the ESP 32 boards. One will act as a receiver and one will act as a transmitter. The transmitter will be embedded in the robot. The module will be connected to the Arduino navigation microcontroller and will send sensor data to the receiver in various intervals (update). The receiver will be conencted to a pc to display the data via a serial monitor.
+	Because the ESP uses wifi, the transmission speed should not be an issue. A determined updating rate will be used based on the updating needs. A possible update speed is 100 Hz. This should provide the data to be updated close to real time.
 The second reach goal is an on-robot OLED display. The display will aid teams in troubleshooting, as well as the option of showing the robot's battery life.
 
 
