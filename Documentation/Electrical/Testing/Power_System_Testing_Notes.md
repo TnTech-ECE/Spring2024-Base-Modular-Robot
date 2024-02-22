@@ -1,8 +1,34 @@
-## Notes from Testing PCB and Battery Testing - 2024-02-03
-
-These are my notes from testing the power PCB, battery, and battery charger. They may also be useful to future teams using this system.
+These are my notes from testing the power system. They may also be useful to future teams using this system.
 
 -- Luke 
+
+## Notes from PCB, Battery, and Motor Testing - 2024-02-22
+
+------------
+
+Today with the motors mounted, the power PCB and battery were tested. The system was tested by adding the motors one by one, first with a power supply supplying the power to the board, then with the battery.
+
+The motor speed is controlled in the Arduino code on a scale from 0 to 255.
+
+With 1 motor connected at max speed, the board pulled 0.22 A.
+
+Setting motor intensity below ~50 does not seem to turn the motors on.
+
+With 2 motors connected at max speed, the current jumped to >1 A and settled to ~0.41 A.
+
+Port 4 on the bottom Arduino Mega is bad and should not be used. Switched to port 7.
+
+With all 4 motors connected at max speed, the the current spiked to ~2.8 A, then settled to ~0.8 A.
+
+Voltages across motor terminals on board had no noticeable change when turning on/off the motors at max speed. It would be interesting to see the current through the protection diode to see if that is why, but that may be difficult to see.
+
+The arduino mega has the following options for input power: barrel jack, USB connector, Vin port, and 3.3/5V ports. 
+
+The barrel jack is 9 V, and the power board has no easy way of supplying that. The USB connector is 5 V, so with some cable modifications could be used from the board, but will need someone to modify a cable first (not hard but we need an extra one). The 3.3/5V pins can be used but are not recommended by Arduino. Finally, the Vin pin is another option, but the Arduino website says that the input voltage must be 7-12 V. This is not optimal since the battery is very rarely below 12 V. We decided to test powering the Arduino through the Vin pin from the 5V rail on the power board, and it worked with absolutely no issues. Will ask Roberts if there is any reason not to, but at least until a USB plug is used this seems like the best method.
+
+Overall the battery and board performed perfectly, and the battery lasted around 3 hours of intermittent testing and still had plenty left.
+
+## Notes from PCB and Battery Testing - 2024-02-03
 
 ------------
 
