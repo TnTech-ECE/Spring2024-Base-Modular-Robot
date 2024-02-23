@@ -115,7 +115,7 @@ void run_Orientation();
 void drawBattery(byte);
 void charging();
 void run_Location(); //CHANGE
-void initialize_ObjDetectsensors(); //CHANGE
+void initialize_ObjDetectSensors(); //CHANGE
 void setup_ObjectDetection(); //CHANGE
 void run_ObjectDetection(); //CHANGE
 
@@ -455,13 +455,13 @@ void run_Location(){
 }
 
 /*
-*Function Name: initialize_ObjDetectsensors
+*Function Name: initialize_ObjDetectSensors
 *Parameters: None
 *Returns: void
 *Description: Initialize the Object Detection Sensors
 */
 
-void initialize_ObjDetectsensors(){
+void initialize_ObjDetectSensors(){
   bool found_any_sensors = false;
   // Set all shutdown pins low to shutdown sensors
   for (int i = 0; i < COUNT_SENSORS; i++)
@@ -492,7 +492,7 @@ void initialize_ObjDetectsensors(){
 *Parameters: None
 *Returns: void
 *Description: Setup the ObjDetect Sensors by Shutdown Pins 
-*  then using intialize function
+*  then using initialize function
 */
 
 void setup_ObjectDetection(){
@@ -512,7 +512,8 @@ void setup_ObjectDetection(){
 *Function Name: run_ObjectDetection
 *Parameters: None
 *Returns: void
-*Description: 
+*Description: Read to the amount of sensors and grabs values to save 
+*       it in the packet struct
 */
 
 void run_ObjectDetection(){
