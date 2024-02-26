@@ -2,6 +2,11 @@ These are my notes from testing the power system. They may also be useful to fut
 
 -- Luke 
 
+## Notes from Weighing
+
+Chassis - 5 lbs, 12 oz
+Battery - ~< 2 lbs
+
 ## Notes from PCB, Battery, and Motor Testing - 2024-02-22
 
 ------------
