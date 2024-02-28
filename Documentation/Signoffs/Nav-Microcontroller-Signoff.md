@@ -68,7 +68,7 @@ Orientation Library: [Accelerometer][def4] , [Compass][def5]
 
 Position Library: [Grove - Ultrasonic Ranger][def2]
 
-Object Detection Library: [Grove - Time of Flight Distance Sensor VL53L0X][def1] * The Grove Library was not used, the Adafruit was used
+Object Detection Library: [Grove - Time of Flight Distance Sensor VL53L0X][def1] 
 
 [def1]: https://github.com/adafruit/Adafruit_VL53L0X
 
