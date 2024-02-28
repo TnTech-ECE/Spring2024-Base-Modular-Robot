@@ -70,7 +70,7 @@ Position Library: [Grove - Ultrasonic Ranger][def2]
 
 Object Detection Library: [Grove - Time of Flight Distance Sensor VL53L0X][def1] 
 
-[def1]: https://github.com/Seeed-Studio/Grove-Ranging-sensor-VL53L0X
+[def1]: https://github.com/adafruit/Adafruit_VL53L0X
 
 [def2]: https://github.com/SeeedDocument/Grove_Ultrasonic_Ranger
 
