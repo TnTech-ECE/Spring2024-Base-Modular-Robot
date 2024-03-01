@@ -9,6 +9,7 @@
 
 //Objects
 QTRSensors qtr;
+QTRSensors qtr_back;
 Adafruit_Sensor *accelerometer, *gyroscope, *magnetometer;
 GyverOLED<SSH1106_128x64> oled;
 Adafruit_Mahony filter;
@@ -33,9 +34,10 @@ uint32_t u32_LineFollowingTime = 0;
 //Line Following variables
 const uint8_t SensorCount = 6;
 uint16_t sensorValues[SensorCount];
+uint16_t backSensorValues[SensorCount];
 
 //Location/Position objects
-Ultrasonic ultraSonicFront(8); //CHANGE
+Ultrasonic ultrasonicFront(8); //CHANGE
 Ultrasonic ultrasonicBack(9); //CHANGE
 Ultrasonic ultrasonicRight(10); //CHANGE
 Ultrasonic ultrasonicLeft(11); //CHANGE
@@ -75,31 +77,31 @@ sensorList_t sensors[] = {
   // sensor's XSHUT pin (shut-down pin). Assign digital pin #7 to the sensor's INTERRUPT pin.
   {&sensor2, &Wire, 0x31, 6, 7, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0},
 
-  /*
+  
   // For 'sensor3', define the IIC accress as hexadecimal value 0x32. Assign digital pin #22 to this 
   // sensor's XSHUT pin (shut-down pin). Assign digital pin #23 to the sensor's INTERRUPT pin.
-  {&sensor3, &Wire, 0x32, 22, 23, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0},
+  {&sensor3, &Wire, 0x32, 2, 3, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0},
   
   // For 'sensor4', define the IIC accress as hexadecimal value 0x33. Assign digital pin #24 to this 
   // sensor's XSHUT pin (shut-down pin). Assign digital pin #25 to the sensor's INTERRUPT pin.
-  {&sensor4, &Wire, 0x33, 24, 25, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0},
+  {&sensor4, &Wire, 0x33, 29, 30, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0},
 
   // For 'sensor5', define the IIC accress as hexadecimal value 0x34. Assign digital pin #26 to this 
   // sensor's XSHUT pin (shut-down pin). Assign digital pin #27 to the sensor's INTERRUPT pin.
-  {&sensor5, &Wire, 0x34, 26, 27, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0},
+  {&sensor5, &Wire, 0x34, 31, 32, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0},
 
   // For 'sensor6', define the IIC accress as hexadecimal value 0x35. Assign digital pin #28 to this 
   // sensor's XSHUT pin (shut-down pin). Assign digital pin #29 to the sensor's INTERRUPT pin.
-  {&sensor6, &Wire, 0x35, 28, 29, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0},
+  {&sensor6, &Wire, 0x35, 33, 34, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0},
 
   // For 'sensor7', define the IIC accress as hexadecimal value 0x36. Assign digital pin #30 to this 
   // sensor's XSHUT pin (shut-down pin). Assign digital pin #31 to the sensor's INTERRUPT pin.
-  {&sensor7, &Wire, 0x36, 30, 31, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0},
+  {&sensor7, &Wire, 0x36, 35, 36, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0},
   
   // For 'sensor8', define the IIC accress as hexadecimal value 0x37. Assign digital pin #32 to this 
   // sensor's XSHUT pin (shut-down pin). Assign digital pin #25 to the sensor's INTERRUPT pin.
-  {&sensor8, &Wire, 0x37, 32, 33, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0}
-  */
+  {&sensor8, &Wire, 0x37, 37, 38, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0}
+  
 };
 
 //Object Detection Variables
@@ -109,6 +111,7 @@ uint16_t objectDetectRanges_mm[COUNT_SENSORS]; //CHANGE
 
 void setup_LineFollowing();
 void setup_Orientation();
+void setup_OLED();
 void run_LineFollowing();
 void run_OLED();
 void run_Orientation();
@@ -218,8 +221,12 @@ const uint8_t techLogo [] PROGMEM = {
 void setup_LineFollowing(){
     // configure the sensors
   qtr.setTypeRC();
-  qtr.setSensorPins((const uint8_t[]){52, 51, 50, 49, 48, 47}, SensorCount);
-  qtr.setEmitterPin(53);
+  qtr.setSensorPins((const uint8_t[]){28, 27, 26, 25, 24, 23}, SensorCount);
+  qtr.setEmitterPin(22);
+
+  qtr_back.setTypeRC();
+  qtr_back.setSensorPins((const uint8_t[]){48, 49, 50 , 51, 52, 53}, SensorCount);
+  qtr_back.setEmitterPin(47);
 
   delay(500);
   pinMode(LED_BUILTIN, OUTPUT);
@@ -231,6 +238,7 @@ void setup_LineFollowing(){
   for (uint16_t i = 0; i < 400; i++)
   {
     qtr.calibrate();
+    qtr_back.calibrate();
   }
   digitalWrite(LED_BUILTIN, LOW); // turn off Arduino's LED to indicate we are through with calibration
 
@@ -287,7 +295,7 @@ void run_LineFollowing(){
   uint32_t u32_currentMillis = millis();
   if((u32_currentMillis - u32_LineFollowingTime)>=250){
     uint16_t position = qtr.readLineBlack(sensorValues);
-
+    uint16_t position_back = qtr_back.readLineBlack(backSensorValues);
     // print the sensor values as numbers from 0 to 1000, where 0 means maximum
     // reflectance and 1000 means minimum reflectance, followed by the line
     // position
@@ -451,7 +459,7 @@ void run_Location(){
   packet.locationBack = ultrasonicBack.MeasureInMillimeters();
   packet.locationRight = ultrasonicRight.MeasureInMillimeters();
   packet.locationLeft = ultrasonicLeft.MeasureInMillimeters();
-  delay(60);
+  //delay(60);
 }
 
 /*
@@ -475,9 +483,6 @@ void initialize_ObjDetectSensors(){
     if (sensors[i].psensor->begin(sensors[i].id, false, sensors[i].pwire,
                                   sensors[i].sensor_config)) {
       found_any_sensors = true;
-    } else {
-      Serial.print(i, DEC);
-      Serial.print(F(": c to start\n"));
     }
   }
   if (!found_any_sensors) {
@@ -496,7 +501,6 @@ void initialize_ObjDetectSensors(){
 */
 
 void setup_ObjectDetection(){
-  Serial.println(F("VL53LOX_multi start, initialize IO pins"));
   for (int i = 0; i < COUNT_SENSORS; i++) {
     pinMode(sensors[i].shutdown_pin, OUTPUT);
     digitalWrite(sensors[i].shutdown_pin, LOW);
@@ -504,8 +508,7 @@ void setup_ObjectDetection(){
     if (sensors[i].interrupt_pin >= 0)
       pinMode(sensors[i].interrupt_pin, INPUT_PULLUP);
   }
-  Serial.println(F("Starting..."));
-  initialize_ObjDetectsensors();
+  initialize_ObjDetectSensors();
 }
 
 /*
@@ -537,5 +540,16 @@ void run_ObjectDetection(){
   */
 
   // Delay until the next reading:
-  delay(200);  // Argument is in milliseconds
+  //delay(200);  // Argument is in milliseconds
+}
+
+/*
+*Function Name: setup_OLED
+*Parameters: None
+*Returns: Void
+*Description: Initializes the OLED display
+*/
+void setup_OLED(){
+  oled.init();             
+  oled.clear();
 }
