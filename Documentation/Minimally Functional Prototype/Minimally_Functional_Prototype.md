@@ -6,4 +6,4 @@
 - [ ] Sensor connections easily changeable 
 - [ ] Proper voltages from power buses 
 - [ ] Emergency Stop button 
-- [ ] ESP bluetooth communcation to show sensor data  
+- [ ] Data readout from sensors
