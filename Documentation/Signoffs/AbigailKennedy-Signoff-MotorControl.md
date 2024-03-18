@@ -16,7 +16,7 @@ The motor control subsystem takes serial signals from the master control and det
 ## Buildable Schematics
 
 ### Electrical Schematic
-![image](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Motor%20Control/MotorControl-Schematic.png)
+![image](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Sign%20off%20Photos/Motor%20Control/MotorControl-Schematic-V2.png)
 
 This electrical schematic shows the connections between the microcontroller [1], motor drivers [2], and motors [3]. This microcontroller - Arduino Mega - was chosen due to the number of analog ports available since those are needed to communicate with the motor drivers. This is the same microcontroller used by past SECON robot teams for motor control, so that it will have the capabilities required for the communication from master control to the motor drivers. The motors chosen are similar to ones from past years, but these are larger and have more torque to meet the new obstacle of moving up an incline and the possibility of the robot being double the weight of past robots. The maximum torque needed was calculated to prepare for the worst-case scenario (found in the analysis subsection). When the motors run, they should pull 0.72 A, well below the 2 A maximum rating output current for each driver channel. This driver was chosen since past teams successfully used it, and it can power the motors successfully. All the selected components are connected to either 3.3 V, 5 V, or 12 V based on their specific power ratings in the datasheets. 
 
