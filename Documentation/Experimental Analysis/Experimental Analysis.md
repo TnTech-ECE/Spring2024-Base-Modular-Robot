@@ -90,7 +90,8 @@ Outcome: The ten trials of testing met the expectations.
 ### Constraint 10 - Motor Control
 
 ### Constraint 11 - Navigation
-Speed:
+
+#### Speed
 
 This constraint originated from the time limit for the SECON competition. The constraint is tested by having the robot drive in a straight line for 10 seconds, and then the distance is measured. 
 
