@@ -79,7 +79,7 @@ This constraint originated from standards and competition rules, which state tha
 
 Expected: Each motor should have 0±0.5 V across it and the processors should be on after the emergency stop button is pressed.
 
-See Testing Data -> EmergencyStop.md for the table with the trial data.
+See [EmergencyStop.md](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Experimental%20Analysis/Testing%20Data/EmergencyStop.md) for the table with the trial data.
 
 Outcome: The ten trials of testing met the expectations.
 
@@ -96,7 +96,7 @@ This constraint originated from the time limit for the SECON competition. The co
 
 Expected: The robot should reach a speed of 2 ft/s for ten out of ten trials.
 
-See Testing Data -> Speed.md for the table with the trial data.
+See [Speed.md](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Experimental%20Analysis/Testing%20Data/SpeedTest.md) for the table with the trial data.
 
 Outcome: The speed is slower than expected, but it is consistent. It is believed that the speed is lower since the calculations for the robot's speed for the signoff were considering the robot carrying the maximum amount of weight and being driven on a surface with more friction. Since the robot was not carrying any additional load and was driven on tile flooring for the testing, it is reasonable that the speed is lower. However, the speed is still sufficient to complete an entire SECON course in three minutes since it can go almost the length of the board in ten seconds.
 
