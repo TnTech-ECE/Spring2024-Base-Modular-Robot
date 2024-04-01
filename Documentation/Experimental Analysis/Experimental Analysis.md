@@ -2,7 +2,7 @@
 
 ## Introduction 
 The purpose of this report is to verify the requirements for the project and explain the procedures used to validate results. The results will be compared against the measures of success outlind in the project proposal to determine if the project was successful. This will also detail what the next steps are moving forward.
-o
+
 ### Requirements
 
 | Item | Constraint/Specification | Subsystem | 
@@ -57,7 +57,7 @@ This constraint does not have a true experimental analysis section. The picture 
 #### Component Movement (2 in)
 This constraint does not have a true experimental analysis section. The picture below shows the 2 in movement capabilities of the applicable sensors. This specification was derived from needing to move sensors easily.
 
-|Componet| Does it move 2 inches |
+|Component| Does it move 2 inches |
 |-|-|
 | Ultrasonic | yes |
 | Time of Flight | yes | 
