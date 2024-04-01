@@ -15,7 +15,7 @@ o
 | 6 | Shall evaluate wireless charging as an option for charging the robot. | Wireless Charging|
 | 7 | Shall design a robot to possess a single emergency stop button that is accessible and stops all robot movement without removing power to essential processors. | Power |
 | 8 | Shall design the power bus in such a way that the DC motors do not inhibit robot operation. | Power |
-| 9 | Shall design a robot that can travel inclines and declines up to 22.5 degrees.  | Motors |
+| 9 | Shall design a robot that can travel inclines and declines up to 25 degrees.  | Motors |
 | 10 | Shall design a robot that can turn 360 degrees left and right and move forwards and backwards based on sensor inputs. | Motors |
 | 11 | Shall design a robot whose navigation system controls movement; knows its location within a two-inch tolerance; and possesses a maximum speed of 2 feet per second. | Navigation, Location, Motors|
 | 12 | The attachment components will be 3D printed to reduce cost of project. 	| Attachments, Layout and Organization |
@@ -29,7 +29,7 @@ o
 ### Constraint 2 - Alternate Start Method 
 
 ### Constraint 3 - Dimensions
-The dimensions of the robot are customizable when ordering the extruded alumnium for future teams. The extruded alumnium can be cut to change the dimensions. Additionally, the stock design only takes up the specified 1 ft x 1 ft x 6 in area shown below. This constraint could not be experimentally tested because it is inherently true.
+The dimensions of the robot are customizable when ordering the extruded alumnium for future teams. The extruded alumnium can also be cut to change the dimensions. As shown below, the stock design only takes up the specified 1 ft x 1 ft x 6 in area. This constraint could not be experimentally tested because it is inherently true.
 
 #### Length (12 in)
 ![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/Robot%20Length.jpg)
@@ -99,7 +99,7 @@ This specifcation was derived as a socioeconomic impact of the project. In hopes
 Overall, the constraint was met. The only component that was not 3D printed was the motor attachments and this was due to strength. However, it was still fabricated by the university with scrap metal causing it to have no cost. Therefore, this constraint is still considered met.
 
 ### Specification 13 - Line Sensor Attachment Height 
-This specifcation was derived when designing the attachment of the line sensor and the data sheet recommended a minimum height of 0.125 inches and a maximum height of 0.375 inches. Following experimentation with the sensor and a higher importance constraint, this specification was deemed unnecessary. The data from the sensor was deemed accurate at greater heights. Also, the height of the sensor had to be increase to be able to clear inclines and declines of 22.5 degrees. Therefore, this constraint was not achieved.
+This specifcation was derived when designing the attachment of the line sensor and the data sheet recommended a minimum height of 0.125 inches and a maximum height of 0.375 inches. Following experimentation with the sensor and a higher importance constraint, this specification was deemed unnecessary. The data from the sensor was deemed accurate at greater heights. Also, the height of the sensor had to be increased to be able to clear inclines and declines of 25 degrees. Therefore, this constraint was not achieved.
 
 ### Specification 14 - Frame Weight Requirements
 This specifcation orginated from previous competitions having a weight limit. The typcial limit is 25 lbs, but this was reduced to have a faster speed to 20lbs. Therefore, the frame was specified to be able to hold atleast a 20 lb load. To measure this, a 20 lb weight will be placed on the robot for 5 mins and afterwards the robot frame was inspected for any deformations.
