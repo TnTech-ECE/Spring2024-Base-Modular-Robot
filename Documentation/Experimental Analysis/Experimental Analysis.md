@@ -103,7 +103,12 @@ Outcome: The speed is slower than expected, but it is consistent. It is believed
 
 #### Location
 
-This constraint originated from the lineless board for 2023 SECON competition. The constraint is tested by selecting 10 different points on the 2023 SECON arena.
+This constraint originated from the lineless board for 2023 SECON competition. The constraint is tested by selecting 10 different points on the 2023 SECON arena. The Front, Back, Right, and Left ultrasonic sensors measure to distance from the point to the board.
+
+|![Alt Text](Documentation/Images/Experimental Analysis Photos/2023 SECON Borad with Robot.png) |
+|:--:|
+| *Standard Robot Position to Test the Location* |
+
 
 ### Specfication 12 - 3D Printing to Reduce Cost 
 This specifcation was derived as a socioeconomic impact of the project. In hopes to reduce cost, components were 3D printed instead of finding premade attachments. A list of components and if they were 3D printed is give below.
