@@ -57,6 +57,11 @@ In conclusion, the constraint was met.
 |-|-|
 
 #### Wire Grouping/ Labeling
+This is not able to be experimentally measured because is it inherently true and can be seen in the picture below.
+
+![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/Grouping%20and%20Labeling.jpg)
+
+Overall, the constraint was met.
 
 ### Constraint 5 - Robust Charging System
 
@@ -73,13 +78,30 @@ In conclusion, the constraint was met.
 ### Constraint 11 - Navigation
 
 ### Specfication 12 - 3D Printing to Reduce Cost 
+This specifcation was derived as a socioeconomic impact of the project. In hopes to reduce cost, components were 3D printed instead of finding premade attachments. A list of components and if they were 3D printed is give below.
+| Component | 3D Printed? |
+|-|-|
+| Ultrasonic Attachment | yes |
+| Time of Flight Attachment | yes |
+| Line Following Attachment | yes |
+| Motor Attachment | no |
+| Slotted Sheets Middle/Ends| yes |
+| Sheet Connectors | yes |
+
+Overall, this constraint was met. The only component that was not 3D printed was the motor attachments and this was due to strength. However, it was still fabricated by the university with scrap metal causing it to have no cost. Therefore, this constraint is still considering met.
 
 ### Specification 13 - Line Sensor Attachment Height 
+This specifcation was derived when designing the attachment of the line sensor and the data sheet recommended a minimum height of 0.125 inches and a maximum height of 0.375 inches. Following experimentation with the sensor and a higher importance constraint, this specification was deemed unnecessary. The data from the sensor was deemed accurate at greater heights. Also, the height of the sensor had to be increase to be able to clear inclines and declines of 22.5 degrees. Therefore, this constraint was not achieved.
 
 ### Specification 14 - Frame Weight Requirements
-
-
-
+This specifcation orginated from previous competitions having a weight limit. The typcial limit is 25 lbs, but this was reduced to have a faster speed to 20lbs. Therefore, the frame was specified to be able to hold atleast a 20 lb load. To measure this, a 20 lb weight will be placed on the robot for 5 mins and afterwards the robot frame was inspected for any deformations.
+| Trial | Any Deformation of Frame? |
+|-|-|
+| 1 | No |
+| 2 | No |
+| 3 | No |
+| 4 | No |
+| 5 | No |
 ## Improvements
 
 ## Conclusion
@@ -97,6 +119,6 @@ In conclusion, the constraint was met.
 | 9 | | |
 | 10 | | |
 | 11 | | |
-| 12 | | |
-| 13 | | |
-| 14 | | |
+| 12 | | yes |
+| 13 | | no |
+| 14 | | yes |
