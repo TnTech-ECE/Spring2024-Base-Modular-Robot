@@ -1,7 +1,8 @@
 # Experimental Analysis
 
 ## Introduction 
-
+The purpose of this report is to verify the requirements for the project and explain the procedures used to validate results. The results will be compared against the measures of success outlind in the project proposal to determine if the project was successful. This will also detail what the next steps are moving forward.
+o
 ### Requirements
 
 | Item | Constraint/Specification | Subsystem | 
@@ -44,6 +45,7 @@ In conclusion, the constraint was met.
 ### Constraint 4 - Plug-and-Play Adaptability
 
 #### Wheel Movement (4 in)
+This constraint does not have a true experimental analysis section. The picture below shows the 4 in movement capabilities if the base robot was needed to be reconfigured.
 
 |Wheel| Does it move 4 inches |
 |-|-|
@@ -53,8 +55,13 @@ In conclusion, the constraint was met.
 | BR | yes |
 
 #### Component Movement (2 in)
+This constraint does not have a true experimental analysis section. The picture below shows the 2 in movement capabilities of the applicable sensors. This specification was derived from needing to move sensors easily.
+
 |Componet| Does it move 2 inches |
 |-|-|
+| Ultrasonic | yes |
+| Time of Flight | yes | 
+| Line following | yes |
 
 #### Wire Grouping/ Labeling
 This is not able to be experimentally measured because is it inherently true and can be seen in the picture below.
@@ -79,6 +86,7 @@ Overall, the constraint was met.
 
 ### Specfication 12 - 3D Printing to Reduce Cost 
 This specifcation was derived as a socioeconomic impact of the project. In hopes to reduce cost, components were 3D printed instead of finding premade attachments. A list of components and if they were 3D printed is give below.
+
 | Component | 3D Printed? |
 |-|-|
 | Ultrasonic Attachment | yes |
@@ -95,6 +103,7 @@ This specifcation was derived when designing the attachment of the line sensor a
 
 ### Specification 14 - Frame Weight Requirements
 This specifcation orginated from previous competitions having a weight limit. The typcial limit is 25 lbs, but this was reduced to have a faster speed to 20lbs. Therefore, the frame was specified to be able to hold atleast a 20 lb load. To measure this, a 20 lb weight will be placed on the robot for 5 mins and afterwards the robot frame was inspected for any deformations.
+
 | Trial | Any Deformation of Frame? |
 |-|-|
 | 1 | No |
@@ -102,6 +111,7 @@ This specifcation orginated from previous competitions having a weight limit. Th
 | 3 | No |
 | 4 | No |
 | 5 | No |
+
 ## Improvements
 
 ## Conclusion
@@ -111,7 +121,7 @@ This specifcation orginated from previous competitions having a weight limit. Th
 | 1 | | |
 | 2 | | |
 | 3 | | yes |
-| 4 | | |
+| 4 | | yes |
 | 5 | | |
 | 6 | | |
 | 7 | | |
