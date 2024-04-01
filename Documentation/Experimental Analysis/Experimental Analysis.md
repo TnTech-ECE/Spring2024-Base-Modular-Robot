@@ -90,7 +90,8 @@ Outcome: The ten trials of testing met the expectations.
 ### Constraint 10 - Motor Control
 
 ### Constraint 11 - Navigation
-Speed:
+
+#### Speed
 
 This constraint originated from the time limit for the SECON competition. The constraint is tested by having the robot drive in a straight line for 10 seconds, and then the distance is measured. 
 
@@ -99,6 +100,10 @@ Expected: The robot should reach a speed of 2 ft/s for ten out of ten trials.
 See [Speed.md](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Experimental%20Analysis/Testing%20Data/SpeedTest.md) for the table with the trial data.
 
 Outcome: The speed is slower than expected, but it is consistent. It is believed that the speed is lower since the calculations for the robot's speed for the signoff were considering the robot carrying the maximum amount of weight and being driven on a surface with more friction. Since the robot was not carrying any additional load and was driven on tile flooring for the testing, it is reasonable that the speed is lower. However, the speed is still sufficient to complete an entire SECON course in three minutes since it can go almost the length of the board in ten seconds.
+
+#### Location
+
+This constraint originated from the lineless board for 2023 SECON competition. The constraint is tested by selecting 10 different points on the 2023 SECON arena.
 
 ### Specfication 12 - 3D Printing to Reduce Cost 
 This specifcation was derived as a socioeconomic impact of the project. In hopes to reduce cost, components were 3D printed instead of finding premade attachments. A list of components and if they were 3D printed is give below.
