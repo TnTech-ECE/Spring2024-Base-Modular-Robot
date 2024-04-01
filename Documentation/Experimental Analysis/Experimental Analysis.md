@@ -105,7 +105,7 @@ Outcome: The speed is slower than expected, but it is consistent. It is believed
 
 This constraint originated from the lineless board for 2023 SECON competition. The constraint is tested by selecting 10 different points on the 2023 SECON arena. The Front, Back, Right, and Left ultrasonic sensors measure to distance from the point to the board.
 
-| ![Alt Text](Documentation/Images/Experimental Analysis Photos/2023 SECON Borad with Robot.png) |
+![Alt Text](Documentation/Images/Experimental Analysis Photos/2023 SECON Borad with Robot.png) 
 |:--:|
 | *Standard Robot Position to Test the Location* |
 
