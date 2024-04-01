@@ -17,6 +17,9 @@
 | 9 | Shall design a robot that can travel inclines and declines up to 22.5 degrees.  | Motors |
 | 10 | Shall design a robot that can turn 360 degrees left and right and move forwards and backwards based on sensor inputs. | Motors |
 | 11 | Shall design a robot whose navigation system controls movement; knows its location within a two-inch tolerance; and possesses a maximum speed of 2 feet per second. | Navigation, Location, Motors|
+| 12 | The attachment components will be 3D printed to reduce cost of project. 	| Attachments, Layout and Organization |
+| 13 | The line sensor attachment must be designed to place the sensor between 0.125 and 0.375 inches off the ground. | Attachments | 
+| 14 | The frame will need to be able to withstand 20 pounds. | Chassis |
 
 ## Results
 
@@ -25,6 +28,16 @@
 ### Constraint 2 - Alternate Start Method 
 
 ### Constraint 3 - Dimensions
+The dimensions of the robot are customizable when ordering the extruded alumnium for future teams. The extruded alumnium can be cut to change the dimensions. Additionally, the stock design only takes up the specified 1 ft x 1 ft x 6 in area shown below.
+
+#### Length (12 in)
+![Alt Text] {}
+
+#### Width (12 in)
+![Alt Text] {}
+
+#### Height (6 in)
+![Alt Text] {}
 
 ### Constraint 4 - Plug-and-Play Adaptability
 
@@ -41,6 +54,14 @@
 ### Constraint 10 - Motor Control
 
 ### Constraint 11 - Navigation
+
+### Specfication 12 - 3D Printing to Reduce Cost 
+
+### Specification 13 - Line Sensor Attachment Height 
+
+### Specification 14 - Frame Weight Requirements
+
+
 
 ## Improvements
 
@@ -59,3 +80,6 @@
 | 9 | | |
 | 10 | | |
 | 11 | | |
+| 12 | | |
+| 13 | | |
+| 14 | | |
