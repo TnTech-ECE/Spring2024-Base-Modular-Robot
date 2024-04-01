@@ -16,7 +16,7 @@ The purpose of this report is to verify the requirements for the project and exp
 | 7 | Shall design a robot to possess a single emergency stop button that is accessible and stops all robot movement without removing power to essential processors. | Power |
 | 8 | Shall design the power bus in such a way that the DC motors do not inhibit robot operation. | Power |
 | 9 | Shall design a robot that can travel inclines and declines up to 25 degrees.  | Motors |
-| 10 | Shall design a robot that can turn 360 degrees left and right and move forwards and backwards based on sensor inputs. | Motors |
+| 10 | Shall design a robot that can turn 360 degrees left and right and move forwards and backwards based on sensor inputs. | Navigation, Location, Motors |
 | 11 | Shall design a robot whose navigation system controls movement; knows its location within a two-inch tolerance; and possesses a maximum speed of 2 feet per second. | Navigation, Location, Motors|
 | 12 | The attachment components will be 3D printed to reduce cost of project. 	| Attachments, Layout and Organization |
 | 13 | The line sensor attachment must be designed to place the sensor between 0.125 and 0.375 inches off the ground. | Attachments | 
@@ -75,6 +75,10 @@ Overall, the constraint was met.
 ### Constraint 6 - Wireless Charging
 
 ### Constraint 7 - Emergency Stop
+This constraint originated from standards and competition rules, which state that an emergency stop button must exist and remove power from the motors but not the processors. This is tested by running base code on the robot to run the motors, and the stop button is pressed. The voltage across the motors is tested with a multimeter, and the processors are tested by visual inspection from the onboard LED. 
+Expected: Each motor should have 0±0.5 V across it and the processors should be on after the emergency stop button is pressed.
+See Testing Data -> EmergencyStop.md for the table with the trial data.
+Outcome: The ten trials of testing met the expectations.
 
 ### Constraint 8 - Back EMF
 
@@ -83,6 +87,11 @@ Overall, the constraint was met.
 ### Constraint 10 - Motor Control
 
 ### Constraint 11 - Navigation
+####Speed
+This constraint originated from the time limit for the SECON competition. The constraint is tested by having the robot drive in a straight line for 10 seconds, and then the distance is measured. 
+Expected: The robot should reach a speed of 2 ft/s for ten out of ten trials.
+See Testing Data -> Speed.md for the table with the trial data.
+Outcome: The speed is slower than expected, but it is consistent. It is believed that the speed is lower since the calculations for the robot's speed for the signoff were considering the robot carrying the maximum amount of weight and being driven on a surface with more friction. Since the robot was not carrying any additional load and was driven on tile flooring for the testing, it is reasonable that the speed is lower. However, the speed is still sufficient to complete an entire SECON course in three minutes since it can go almost the length of the board in ten seconds.
 
 ### Specfication 12 - 3D Printing to Reduce Cost 
 This specifcation was derived as a socioeconomic impact of the project. In hopes to reduce cost, components were 3D printed instead of finding premade attachments. A list of components and if they were 3D printed is give below.
@@ -126,7 +135,7 @@ Overall, the constraint was met.
 | 4 | | yes |
 | 5 | | |
 | 6 | | |
-| 7 | | |
+| 7 | | yes |
 | 8 | | |
 | 9 | | |
 | 10 | | |
