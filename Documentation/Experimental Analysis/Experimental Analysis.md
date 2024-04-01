@@ -28,7 +28,7 @@
 ### Constraint 2 - Alternate Start Method 
 
 ### Constraint 3 - Dimensions
-The dimensions of the robot are customizable when ordering the extruded alumnium for future teams. The extruded alumnium can be cut to change the dimensions. Additionally, the stock design only takes up the specified 1 ft x 1 ft x 6 in area shown below.
+The dimensions of the robot are customizable when ordering the extruded alumnium for future teams. The extruded alumnium can be cut to change the dimensions. Additionally, the stock design only takes up the specified 1 ft x 1 ft x 6 in area shown below. This constraint could not be experimentally tested because it is inherently true.
 
 #### Length (12 in)
 ![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/Robot%20Length.jpg)
@@ -38,6 +38,8 @@ The dimensions of the robot are customizable when ordering the extruded alumnium
 
 #### Height (6 in)
 ![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/Robot%20Height.jpg)
+
+In conclusion, the constraint was met.
 
 ### Constraint 4 - Plug-and-Play Adaptability
 
