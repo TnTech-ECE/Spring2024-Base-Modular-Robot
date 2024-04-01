@@ -43,6 +43,21 @@ In conclusion, the constraint was met.
 
 ### Constraint 4 - Plug-and-Play Adaptability
 
+#### Wheel Movement (4 in)
+
+|Wheel| Does it move 4 inches |
+|-|-|
+| FL | yes |
+| FR | yes |
+| BL | yes |
+| BR | yes |
+
+#### Component Movement (2 in)
+|Componet| Does it move 2 inches |
+|-|-|
+
+#### Wire Grouping/ Labeling
+
 ### Constraint 5 - Robust Charging System
 
 ### Constraint 6 - Wireless Charging
