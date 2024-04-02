@@ -115,7 +115,15 @@ Standard Robot Position to Test the Location
 Ten Different Position for Measuring the Robot's Location
 </div>
 
+Expected: The robot should know location within a two-inch tolerance for ten out of ten trials.
 
+Insert graph with average error for F, B, R, and L
+
+<div align="center">
+Graph Showcasing the Average Error for Each Sensor
+</div>
+
+Outcome: Insert Outcome
 
 ### Specfication 12 - 3D Printing to Reduce Cost 
 This specifcation was derived as a socioeconomic impact of the project. In hopes to reduce cost, components were 3D printed instead of finding premade attachments. A list of components and if they were 3D printed is give below.
