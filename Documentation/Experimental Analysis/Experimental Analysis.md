@@ -109,13 +109,14 @@ This constraint originated from the lineless board for 2023 SECON competition. T
 <div align="center">
 Standard Robot Position to Test the Location
 </div>
+<br />
 
 ![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/10%20Positions%20of%20Measuring%20Location.JPG)
 <div align="center">
 Ten Different Position for Measuring the Robot's Location
 </div>
-<div align="center">
-</div>
+<br />
+
 Expected: The robot should know location within a two-inch tolerance for ten out of ten trials.
 
 Insert graph with average error for F, B, R, and L
@@ -123,6 +124,7 @@ Insert graph with average error for F, B, R, and L
 <div align="center">
 Graph Showcasing the Average Error for Each Sensor
 </div>
+<br />
 
 Outcome: Insert Outcome
 
