@@ -126,14 +126,19 @@ Ten Different Position for Measuring the Robot's Location
 <br />
 <br />
 
-Expected: The robot should know location within a two-inch tolerance for ten out of ten trials.
+Expected: The robot should know location within a two-inch tolerance for ten out of ten trials. <br />
+<br />
+
+The graph below shows the average distance error for the Front, Back, Right, and Left sensor. The most inaccurate measured distance is [INSERT ANSWER].
 
 Insert graph with average error for F, B, R, and L
 
 <div align="center">
-Graph Showcasing the Average Error for Each Sensor
+Graph Showcasing the Average Distance Error for Each Sensor
 </div>
 <br />
+
+See [Location Tolerance](Documentation/Experimental Analysis/Testing Data/Location Tolerance.md) for the table of testing data.
 
 Outcome: Insert Outcome
 
