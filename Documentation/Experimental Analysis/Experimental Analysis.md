@@ -108,13 +108,13 @@ This constraint originated from the lineless board for 2023 SECON competition. T
 ![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/2023%20SECON%20Borad%20with%20Robot.png)
 <div align="center">
 Standard Robot Position to Test the Location
-</div>
+</div> <br />
 <br />
 
 ![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/10%20Positions%20of%20Measuring%20Location.JPG)
 <div align="center">
 Ten Different Position for Measuring the Robot's Location
-</div>
+</div> <br />
 <br />
 
 Expected: The robot should know location within a two-inch tolerance for ten out of ten trials.
