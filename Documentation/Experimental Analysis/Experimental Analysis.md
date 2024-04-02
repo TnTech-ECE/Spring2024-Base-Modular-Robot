@@ -103,7 +103,7 @@ Outcome: The speed is slower than expected, but it is consistent. It is believed
 
 #### Location
 
-This constraint originated from the lineless board for 2023 SECON competition. The constraint is tested by selecting 10 different points on the 2023 SECON arena. The Front, Back, Right, and Left ultrasonic sensors measure to distance from the point to the walls of the arena. The robot was placed on the 10 different points from a relative corner of robot. The relative corner will be indicated in the table for testing data. The sensors for the Right and Left are offset from the edge by 11/16 in. (or 17.4625 mm). The equations use to get the location from the desired point to the sensor will be indicate by a table with the asterisks.
+This constraint originated from the lineless board for 2023 SECON competition. The constraint is tested by selecting 10 different points on the 2023 SECON arena. The Front, Back, Right, and Left ultrasonic sensors measure to distance from the point to the walls of the arena. The robot was placed on the 10 different points from a relative corner of robot. The relative corner will be indicated in the table for testing data. The sensors for the Right and Left are offset from the edge by 11/16 in. (or 17.4625 mm). The equations use to get the location from the desired point to the sensor will be indicate by a table with the asterisks. <br />
 
 ![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/2023%20SECON%20Borad%20with%20Robot.png)
 <div align="center">
