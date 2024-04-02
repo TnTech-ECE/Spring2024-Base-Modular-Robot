@@ -114,7 +114,8 @@ Standard Robot Position to Test the Location
 <div align="center">
 Ten Different Position for Measuring the Robot's Location
 </div>
-
+<div align="center">
+</div>
 Expected: The robot should know location within a two-inch tolerance for ten out of ten trials.
 
 Insert graph with average error for F, B, R, and L
