@@ -149,6 +149,54 @@ As can be seen above, the voltages both with and without motor operation are wel
 
 ### Constraint 11 - Navigation
 
+#### Speed
+
+This constraint originated from the time limit for the SECON competition. The constraint is tested by having the robot drive in a straight line for 10 seconds, and then the distance is measured. 
+
+Expected: The robot should reach a speed of 2 ft/s for ten out of ten trials.
+
+See [Speed.md](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Experimental%20Analysis/Testing%20Data/SpeedTest.md) for the table with the trial data.
+
+Outcome: The speed is slower than expected, but it is consistent. It is believed that the speed is lower since the calculations for the robot's speed for the signoff were considering the robot carrying the maximum amount of weight and being driven on a surface with more friction. Since the robot was not carrying any additional load and was driven on tile flooring for the testing, it is reasonable that the speed is lower. However, the speed is still sufficient to complete an entire SECON course in three minutes since it can go almost the length of the board in ten seconds.
+
+#### Location
+
+This constraint originated from the lineless board for 2023 SECON competition. The constraint is tested by selecting 10 different points on the 2023 SECON arena. The Front, Back, Right, and Left ultrasonic sensors measure to distance from the point to the walls of the arena. The robot was placed on the 10 different points from a relative corner of robot. The relative corner will be indicated in the table for testing data. The sensors for the Right and Left are offset from the edge by 11/16 in. (or 17.4625 mm). The equations use to get the location from the desired point to the sensor will be indicate by a table with the asterisks. <br />
+<br />
+<br />
+
+<div align="center">
+<img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/2023%20SECON%20Borad%20with%20Robot.png >
+</div>
+
+<div align="center">
+Standard Robot Position to Test the Location
+</div> <br />
+<br />
+<br />
+
+<div align="center">
+<img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/10%20Positions%20of%20Measuring%20Location.JPG >
+</div>
+<div align="center">
+Ten Different Position for Measuring the Robot's Location
+</div> <br />
+<br />
+<br />
+
+The graph below shows the average distance error for the Front, Back, Right, and Left sensor. The most inaccurate measured distance is [INSERT ANSWER].
+
+Insert graph with average error for F, B, R, and L
+
+<div align="center">
+Graph Showcasing the Average Distance Error for Each Sensor
+</div>
+<br />
+
+See [Location Tolerance](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Experimental%20Analysis/Testing%20Data/Location%20Tolerance.md) for the table of testing data.
+
+**Insert Outcome**
+
 ### Specfication 12 - 3D Printing to Reduce Cost 
 This specifcation was derived as a socioeconomic impact of the project. In hopes to reduce cost, components were 3D printed instead of finding premade attachments. A list of components and if they were 3D printed is give below.
 
