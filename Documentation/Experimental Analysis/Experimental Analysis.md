@@ -65,8 +65,16 @@ Overall, the constraint was met.
 
 #### Wheel Movement (4 in)
 This constraint does not have a true experimental analysis section. The picture below shows the 4 in movement capabilities if the base robot was needed to be reconfigured.
+The front wheel can move 20 mm forward and 95 mm backward. The back wheel can move forward 95 mm and backwards 20 mm. Both wheels can move a total of 115 mm (4.528 in) and this will be the same on both sides.
+#### Front Wheel Forward Movement
+[Alt Text]()
+#### Front Wheel Backward Movement/Back Wheel Forward Movement
+[Alt Text]()
+[Alt Text]()
+#### Back Wheel Backward Movement
+[Alt Text]()
 
-|Wheel| Does it move 4 inches |
+|Wheel| Does it move 4 inches? |
 |-|-|
 | FL | yes |
 | FR | yes |
