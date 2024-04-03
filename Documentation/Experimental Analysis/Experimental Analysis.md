@@ -28,7 +28,7 @@ The purpose of this report is to verify the requirements for the project and exp
 
 The first requirement is for the robot to have a functioning start button, which after activation will begin robot operation. This was tested 10 times by turning the switch off and then on again to see if the robot succesfully starts back up. The robot successfully turned on in 10 out of 10 trials.
 
-| Trial Number | Power Successfully Turned On |
+| Trial Number | Robot Successfully Turned On |
 |---|---|
 | 1 | yes |
 | 2 | yes |
@@ -40,6 +40,10 @@ The first requirement is for the robot to have a functioning start button, which
 | 8 | yes |
 | 9 | yes |
 | 10 | yes |
+
+As can be seen in the above table, the robot successfully turns on in 10 out of 10 trials, and so this constraint has been met.
+
+Video demonstration of start switch demonstration can be found at ./Videos/Start_Switch.mp4
 
 ### Constraint 2 - Alternate Start Method 
 
@@ -89,40 +93,55 @@ Overall, the constraint was met.
 
 
 
-| Measured Input Voltage (V) | Top 5 V Rail (V) | Top 3.3 V Rail (V) | Bottom 5 V Rail (V) | Bottom 3.3 V Rail (V) |
-| --- | --- | --- | --- | --- |
-| 10.0013 | 5.0461 | 3.2792 | 5.0466 | 3.2792 |
-| 11.0010 | 5.0491 | 3.2798 | 5.0490 | 3.2798 |
-| 12.0014 | 5.0508 | 3.2802 | 5.0507 | 3.2802 |
-| 13.0011 | 5.0524 | 3.2807 | 5.0524 | 3.2808 |
-| 14.0008 | 5.0536 | 3.2811 | 5.0536 | 3.2811 |
-| 15.0006 | 5.0547 | 3.2813 | 5.0546 | 3.2814 | 
-
-
 ### Constraint 6 - Wireless Charging
 
 ### Constraint 7 - Emergency Stop
 
-The emergency stop requirement requires that the robot have a button that when pressed, power will be removed from the motors, but not the microcontrollers or sensors. In order for this to be considered successful, in 10 out of 10 trials, pressing the emergency stop button had to result in a complete shutdown of the motors while keeping all other components powered.
+The emergency stop requirement requires that the robot have a button that when pressed, power will be removed from the motors, but not the microcontrollers or sensors. In order for this to be considered successful, in 10 out of 10 trials, pressing the emergency stop button had to result in a complete shutdown of the motors while keeping all other components powered. To be considered successful, the voltage delivered to the motors must be withing 0.5 V of 0.0 V.
 
-| Trial Number | Power Removed from Motors | Power Removed from Microcontrollers
-|---|---|---|
-| 1 | yes | no |
-| 2 | yes | no |
-| 3 | yes | no |
-| 4 | yes | no |
-| 5 | yes | no |
-| 6 | yes | no |
-| 7 | yes | no |
-| 8 | yes | no |
-| 9 | yes | no |
-| 10 | yes | no |
+To test this, the robot was turned on with the motors powered. The emergency stop button was then activated to cut power to the motors. The voltage to each motors was then measured and the LED indicators on the microprocessors were visually verified to ensure that the motors would remain unoperational and the essential processors would remain operational. 
 
+The voltages measured over 10 trials at each of the motors is shown below.
 
+| Trial | Motor 1 Voltage (mV) | Motor 2 Voltage (mV) | Motor 3 Voltage (mV) | Motor 4 Voltage (mV) | Processors on?|
+| --- | --- | --- | --- | --- | --- |
+| 1 | 0.029 | 0.019 | 0.018 | 0.014 | yes |
+| 2 | -0.002 | 0.003 | 0.009 | 0.008 | yes |
+| 3 | -0.016 | -0.007 | 0.033 | 0.004 | yes |
+| 4 | 0.005 | -0.002 | 0.002 | -0.006 | yes |
+| 5 | -0.005 | 0.006 | 0.015 | 0.002 | yes |
+| 6 | 0.004 | 0.001 | 0.006 | -0.002 | yes |
+| 7 | 0.004 | -0.001 | -0.030 | 0.011 | yes |
+| 8 | -0.013 | 0.009 | -0.009 | -0.008 | yes |
+| 9 | 0.0015 | 0.017 | 0.033 | 0.020 | yes |
+| 10 | 0.0028 | 0.030 | 0.027 | 0.034 | yes |
+
+As can be seen above, all of the motor voltages when the emergency stop button was activated are well within 0.5 V of 0.0 V (especially after noting the units of mV, not V). Because of this, this constraint is considered to have been met.
+
+Video of emergency stop button demonstration can be found at ./Videos/Emergency_Stop_Demo.mp4
 
 ### Constraint 8 - Back EMF
 
-Voltage on buses with and without motor operation.
+In order for this constraint to be considered successful, during motor operation the 3.3 V and 5 V rails must not suffer from counter-EMF from the motors. In order to be considered successful, the voltage buses must not drop to more than 80% of the nominal value. 80% was chosen so that the back-EMF would not be able to push a digital high value down below the threshold, turning high values into low values. This gives lower limits of 2.64 V and 4.0 V for the 3.3 V and 5.0 V buses, respectively.
+
+To test this, the motors were turned on and off, and the voltages at each voltage rail were measured each time. This was done at different locations on the voltage buses for even greater rigorousness. 
+
+The table below shows the measured voltages with and without motor operation.
+
+| Trial | 5 V Rail Voltage with Motors Off (V) | 5 V Rail Voltage with Motors On (V) | 3.3 V Rail Voltage with Motors Off (V) | 3.3 V Rail Voltage with Motors On (V) |
+| --- | --- | --- | --- | ---|
+| 1 | 3.2580 | 5.0250 | 3.2575 | 5.0264 |
+| 2 | 3.2575 | 5.0263 | 3.2575 | 5.0264 |
+| 3 | 3.2575 | 5.0261 | 3.2576 | 5.0265 |
+| 4 | 3.2576 | 5.0261 | 3.2575 | 5.0264 |
+| 5 | 3.2576 | 5.0261 | 3.2575 | 5.0264 |
+| 6 | 3.2576 | 5.0269 | 3.2575 | 5.0251 |
+| 7 | 3.2574 | 5.0263 | 3.2566 | 5.0250 |
+| 8 | 3.2576 | 5.0259 | 3.2566 | 5.0549 |
+| 9 | 3.2575 | 5.0264 | 3.2567 | 5.0264 |
+| 10 | 3.2577 | 5.0258 | 3.2575 | 5.0246 |
+
+As can be seen above, the voltages both with and without motor operation are well above the lower limit and will function with no issue for digital high values. Therefore, this constraint has been met.
 
 ### Constraint 9 - Inclines/Declines
 
@@ -166,14 +185,14 @@ Overall, the constraint was met.
 
 | Item | Description | Was constraint met? | 
 |-|-|-|
-| 1 | | |
+| 1 | | yes |
 | 2 | | |
 | 3 | | yes |
 | 4 | | yes |
 | 5 | | |
 | 6 | | |
-| 7 | | |
-| 8 | | |
+| 7 | | yes |
+| 8 | | yes |
 | 9 | | |
 | 10 | | |
 | 11 | | |
