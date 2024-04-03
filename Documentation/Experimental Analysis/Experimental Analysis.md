@@ -62,7 +62,7 @@ The dimensions of the robot are customizable when ordering the extruded alumnium
 Overall, the constraint was met.
 
 ### Constraint 4 - Plug-and-Play Adaptability
-
+This constraint was derived from the goal of the project being to create a base platform for future teams. Therefore, the robot needed to be adapatable. For components, this is possibe due to drop-in t nuts utilized for any component directly attached to the frame. Also, a slotted sheet system was developed for any componets connected to the top of the frame. These allowed for versatility with movement of componets. Additionally, being able to reuse code and having functions avaliable for different sensors was created. Testing some measurable features of both are seen below. 
 #### Wheel Movement (4 in)
 This constraint does not have a true experimental analysis section. The picture below shows the 4 in movement capabilities if the base robot was needed to be reconfigured.
 The front wheel can move 20 mm forward and 95 mm backward. The back wheel can move forward 95 mm and backwards 20 mm. Both wheels can move a total of 115 mm (4.528 in) and this will be the same on both sides.
