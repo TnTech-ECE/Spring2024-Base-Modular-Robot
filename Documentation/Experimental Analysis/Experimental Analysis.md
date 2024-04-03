@@ -50,13 +50,13 @@ Video demonstration of start switch demonstration can be found at ./Videos/Start
 ### Constraint 3 - Dimensions
 The dimensions of the robot are customizable when ordering the extruded alumnium for future teams. The extruded alumnium can be cut to change the dimensions. Additionally, the stock design only takes up the specified 1 ft x 1 ft x 6 in area shown below. This constraint could not be experimentally tested because it is inherently true.
 
-##### Length (12 in)
+##### Figure 1. Length (12 in)
 ![Alt Text](../Images/Experimental%20Analysis%20Photos/Robot%20Length.jpg)
 
-##### Width (12 in)
+##### Figure 2. Width (12 in)
 ![Alt Text](../Images/Experimental%20Analysis%20Photos/Robot%20Width.jpg)
 
-##### Height (6 in)
+##### Figure 3. Height (6 in)
 ![Alt Text](../Images/Experimental%20Analysis%20Photos/Robot%20Height.jpg)
 
 Overall, the constraint was met.
@@ -66,12 +66,12 @@ Overall, the constraint was met.
 #### Wheel Movement (4 in)
 This constraint does not have a true experimental analysis section. The picture below shows the 4 in movement capabilities if the base robot was needed to be reconfigured.
 The front wheel can move 20 mm forward and 95 mm backward. The back wheel can move forward 95 mm and backwards 20 mm. Both wheels can move a total of 115 mm (4.528 in) and this will be the same on both sides.
-##### Front Wheel Forward Movement
+##### Figure 1. Front Wheel Forward Movement
 [Alt Text]()
-##### Front Wheel Backward Movement/Back Wheel Forward Movement
+##### Figure 2. Front Wheel Backward Movement/Back Wheel Forward Movement
 [Alt Text]()
 [Alt Text]()
-##### Back Wheel Backward Movement
+##### Figure 3. Back Wheel Backward Movement
 [Alt Text]()
 
 |Wheel| Does it move 4 inches? |
