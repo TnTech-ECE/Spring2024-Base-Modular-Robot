@@ -8,16 +8,16 @@ The purpose of this report is to verify the requirements for the project and exp
 | Item | Constraint/Specification | Subsystem | 
 |-|-|-|
 | 1 | Shall design a robot with a single start button. Once activated, the robot will begin navigating its environment. | Power |
-| 2 | Shall design a robot that possesses an allocated data input point for an alternative start method. | |
+| 2 | Shall design a robot that possesses an allocated data input point for an alternative start method. | GUI |
 | 3 | Shall design an autonomous robot that has customizable dimensions with the stock design only occupying up to one-half of the allowed cubic foot (1 ft x 1 ft x 6 in). | Chassis |
 | 4 | Shall design a robot platform whose modules are plug-and-play adaptable for different IEEE competition requirements.  | Chassis, Attachments, Navigation|
 | 5 | Shall design a robot that possesses a robust, centralized charging system that does not require the removal of the battery and that allows the robot to be used while being charged. | Battery Management |
 | 6 | Shall evaluate wireless charging as an option for charging the robot. | Wireless Charging|
 | 7 | Shall design a robot to possess a single emergency stop button that is accessible and stops all robot movement without removing power to essential processors. | Power |
 | 8 | Shall design the power bus in such a way that the DC motors do not inhibit robot operation. | Power |
-| 9 | Shall design a robot that can travel inclines and declines up to 22.5 degrees.  | Motors |
-| 10 | Shall design a robot that can turn 360 degrees left and right and move forwards and backwards based on sensor inputs. | Motors |
-| 11 | Shall design a robot whose navigation system controls movement; knows its location within a two-inch tolerance; and possesses a maximum speed of 2 feet per second. | Navigation, Location, Motors|
+| 9 | Shall design a robot that can travel inclines and declines up to 25 degrees.  | Motors |
+| 10 | Shall design a robot that can turn 360 degrees left and right and move forwards and backwards based on sensor inputs. | Motors, GUI |
+| 11 | Shall design a robot whose navigation system controls movement; knows its location within a two-inch tolerance; and possesses a maximum speed of 2 feet per second. | GUI, Navigation, Location, Motors|
 | 12 | The attachment components will be 3D printed to reduce cost of project. 	| Attachments, Layout and Organization |
 | 13 | The line sensor attachment must be designed to place the sensor between 0.125 and 0.375 inches off the ground. | Attachments | 
 | 14 | The frame will need to be able to withstand 20 pounds. | Chassis |
@@ -215,7 +215,7 @@ Overall, the constraint was met. The only component that was not 3D printed was 
 This specifcation was derived when designing the attachment of the line sensor and the data sheet recommended a minimum height of 0.125 inches and a maximum height of 0.375 inches. Following experimentation with the sensor and a higher importance constraint, this specification was deemed unnecessary. The data from the sensor was deemed accurate at greater heights. Also, the height of the sensor had to be increase to be able to clear inclines and declines of 22.5 degrees. Therefore, this constraint was not achieved.
 
 ### Specification 14 - Frame Weight Requirements
-This specifcation orginated from previous competitions having a weight limit. The typcial limit is 25 lbs, but this was reduced to have a faster speed to 20lbs. Therefore, the frame was specified to be able to hold atleast a 20 lb load. To measure this, a 20 lb weight will be placed on the robot for 5 mins and afterwards the robot frame was inspected for any deformations.
+This specifcation orginated from previous competitions having a weight limit. The typcial limit is 25 lbs, but this was reduced to have a faster speed to 20lbs. Therefore, the frame was specified to be able to hold atleast a 20 lb load. To measure this, a 20 lb weight will be placed on the robot for 5 mins and afterwards the robot frame was inspected for any deformations. We did not have an exactly 20 lb weight; therefore, we used a 10.5kg (23.1 lbs) power supply. The weight was found in the data sheet provided [here](https://beyondmeasure.rigoltech.com/acton/attachment/1579/f-01c1/1/-/-/-/-/DP800%20Datasheet.pdf) for the power supply. This process can be seen in the photos below. It is important to note that althought no deformation was seen in the frame, there was some seen in the manufacturer provided atttachment. This can also be seen in the photos together. Therefore, in the future is it recommended to either design a stringer one or reduce the amount of weight. Additionally, the weight used was greater than 20 lbs, but the robot as a whole weights 2 kg (4.4 lbs). Therefore, some of that is also on the frame. In conclusion, there is more than 20 lbs seen on the frame so the constraint is met. However, other things will cause problems first, such as the manufacturer motor attachments. 
 
 | Trial | Any Deformation of Frame? |
 |-|-|
@@ -224,6 +224,22 @@ This specifcation orginated from previous competitions having a weight limit. Th
 | 3 | No |
 | 4 | No |
 | 5 | No |
+
+####
+[Alt Text]()
+####
+[Alt Text]()
+####
+[Alt Text]()
+####
+[Alt Text]()
+####
+[Alt Text]()
+####
+[Alt Text]()
+####
+[Alt Text]()
+
 
 Overall, the constraint was met.
 
