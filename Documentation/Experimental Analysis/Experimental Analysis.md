@@ -81,18 +81,7 @@ The front wheel can move 20 mm forward and 95 mm backward. The back wheel can mo
 | BL | yes |
 | BR | yes |
 
-#### Component Movement (2 in)
-This constraint does not have a true experimental analysis section. The picture below shows the 2 in movement capabilities of the time of flight sensor. This specification was derived from needing to move sensors easily. Specifically, the time of flight sensor will be used to detect objects on the playing field. Therefore, this sensor will more than likely need to be moved relativly frequently with objects typcially being in set positions. Photos of how this was measured can be seen below and a table for each time of slight sensor on the robot.
-|Sensor|2 in manuverability?|
-|-|-|
-|1|-|
-|2|-|
-|3|-|
-|4|-|
-|5|-|
-|6|-|
-|7|-|
-|8|-|
+#### I2C Bus
 
 #### Wire Grouping/ Labeling
 This is not able to be experimentally measured because is it inherently true and can be seen in the picture below.
