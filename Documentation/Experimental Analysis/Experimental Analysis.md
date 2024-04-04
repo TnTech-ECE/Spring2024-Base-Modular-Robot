@@ -183,7 +183,8 @@ This constraint originated from the lineless board for 2023 SECON competition. T
 
 <div align="center">
 Standard Robot Position to Test the Location
-</div> <br />
+</div>
+<br />
 <br />
 <br />
 
@@ -192,7 +193,8 @@ Standard Robot Position to Test the Location
 </div>
 <div align="center">
 Ten Different Position for Measuring the Robot's Location
-</div> <br />
+</div> 
+<br />
 <br />
 <br />
 
