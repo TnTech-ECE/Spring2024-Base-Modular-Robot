@@ -284,16 +284,16 @@ This specifcation orginated from previous competitions having a weight limit. Th
 | 4 | No |
 | 5 | No |
 
-##### Figure 1. No Deformation View 1
+##### Figure 1. Frame with Weight
+![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/Frame%20with%20Weight.jpg)
+##### Figure 2. No Deformation View 1
 ![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/Showing%20no%20deformation%20view%201.jpg)
-##### Figure 2. No Deformation View 2
+##### Figure 3. No Deformation View 2
 ![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/Showing%20no%20deformation%20view%202.jpg)
-##### Figure 3. No Deformation View 3
+##### Figure 4. No Deformation View 3
 ![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/Showing%20no%20deformation%20view%203.jpg)
-##### Figure 4. Wheel Mount Slight Bowing
+##### Figure 45 Wheel Mount Slight Bowing
 ![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/Showing%20wheel%20mount%20deformation.jpg)
-
-
 
 Overall, the constraint was met.
 
