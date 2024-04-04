@@ -103,7 +103,54 @@ Overall, the constraint was met.
 
 ### Constraint 5 - Robust Charging System
 
+This constraint required that the robot possess a robust, centralized, power system and had several requirements. The first requirement is that the power system be able to supply power to a 3.3 V and 5 V power rail successfully. To test this, the voltages at each voltage rail on the power board were measured for the total range of possible input battery voltages, which is between 11 and 14.6 V. This was done to show that the power board would operate as needed for any possible battery voltage. The data recorded is shown below. 
 
+| Measured Input Voltage (V) | Top 5 V Rail (V) | Top 3.3 V Rail (V) | Bottom 5 V Rail (V) | Bottom 3.3 V Rail (V) |
+| --- | --- | --- | --- | --- |
+| 10.0013 | 5.0461 | 3.2792 | 5.0466 | 3.2792 |
+| 11.0010 | 5.0491 | 3.2798 | 5.0490 | 3.2798 |
+| 12.0014 | 5.0508 | 3.2802 | 5.0507 | 3.2802 |
+| 13.0011 | 5.0524 | 3.2807 | 5.0524 | 3.2808 |
+| 14.0008 | 5.0536 | 3.2811 | 5.0536 | 3.2811 |
+| 15.0006 | 5.0547 | 3.2813 | 5.0546 | 3.2814 | 
+
+
+| Trial | Successfully Charging While Running |  
+| --- | --- |
+| 1 | yes |
+| 2 | yes |
+| 3 | yes |
+| 4 | yes |
+| 5 | yes |
+| 6 | yes |
+| 7 | yes |
+| 8 | yes |
+| 9 | yes |
+| 10 | yes |
+
+Video of robot charging while running demonstration can be found at ./Videos/Charging_While_Running.mp4
+
+The other specification required by this constraint has to do with the battery life. In the project proposal document, a requirement of a 2 hour battery life was set. After researching battery capacities, this requirement was then amended to 30 minutes of continuous battery life to make the requirement more realistic.
+
+To test this, the robot was run with all of the motors running at maximum speed. A program was used that continuously rotated the robot in a circle without changing the robot position. This was done so that the robot's continuous battery life could be tested without having to readjust the robot's position and so that the robot did not change directions constantly, causing uneccessary stress on the motors and motor drivers. 
+
+This program was run continuously in 10 minute intervals, between which the robot was turned off for a few minutes to allow for the motors and motor drivers to cool down to prevent overheating. The total elapsed time of the robot being on is what was recorded as the robot's continuous runtime battery life below. The voltage across the battery terminals was monitored to ensure that the battery did not drop below the minimum recommended voltage.
+
+In testing, the battery voltage dropped similar to an exponential decay from around 14 V to about 13.13 V. At 13.13 V, it remained for X(20) minutes before beginning to drop again. After turning the robot off, the battery voltage would increase slightly, to about 13.27 V, and began to decrease to about 13.13 V where it stayed.
+
+The only component that was not present for the battery life testing that could make any different in battery life at all was the Jetson Nano. The arduinos, motors, and sensors, were all connected, powered up and running. Even with this consideration, the Jetson Nano is only running the Master control code and is not using some of its more power-hungry components like the GPU, and so should not change the battery life drastically.
+
+Moreover, the battery life measured vastly exceeded expectations (as can be seen below), and so the Jetson Nano's presence should not make such a large difference that the battery life would fall below the constraint requirement.
+
+Current Elapsed Battery Lifetime: 2:30:31
+
+There is a video demonstration of the battery life test that can be found in ./Videos/Battery_Life_Test.mp4
+
+In the table below, the measured battery life is compared to the calculated worst-case battery life with all components continuously pulling the maximum current. The maximum current required was calculated at just over 10 A (there was a slight increase from what is listed in the Battery Management signoff due to forgetting to include Arduinos in the calculation). Using this current and the rated Amp-Hours of the battery, the estimate was calculated.
+
+| Calculated Worst-Case Battery Life (hour:min:sec) | Measured Battery Life (hour:min:sec) |
+| --- | ---|
+| 0:43:11 | 2:42:03 |
 
 ### Constraint 6 - Wireless Charging
 
