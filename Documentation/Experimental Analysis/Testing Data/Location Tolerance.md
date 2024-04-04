@@ -11,6 +11,7 @@ Table 1: The Equations Used to Measure Error (mm)
 </div>
 <br />
 <br />
+<br />
 
 <div align="center">
 Table 2: Actual and Measured Distances for Position 1 - 5
@@ -19,6 +20,7 @@ Table 2: Actual and Measured Distances for Position 1 - 5
 <div align="center">
 <img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/Constraint_11_Table_Pos%201-5.png >
 </div>
+<br />
 <br />
 <br />
 
