@@ -207,7 +207,10 @@ Graph Showcasing the Average Distance Error for Each Sensor
 </div>
 <br />
 
+<div align="left">
 See [Location Tolerance](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Experimental%20Analysis/Testing%20Data/Location%20Tolerance.md) for the table of testing data.
+</div>
+
 
 **Insert Outcome**
 
