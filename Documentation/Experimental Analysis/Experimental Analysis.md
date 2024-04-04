@@ -191,6 +191,7 @@ Standard Robot Position to Test the Location
 <div align="center">
 <img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/10%20Positions%20of%20Measuring%20Location.JPG >
 </div>
+
 <div align="center">
 Ten Different Position for Measuring the Robot's Location
 </div> 
