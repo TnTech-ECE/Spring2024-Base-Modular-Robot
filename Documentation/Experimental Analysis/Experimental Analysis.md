@@ -154,6 +154,8 @@ In the table below, the measured battery life is compared to the calculated wors
 
 ### Constraint 6 - Wireless Charging
 
+
+
 ### Constraint 7 - Emergency Stop
 
 The emergency stop requirement requires that the robot have a button that when pressed, power will be removed from the motors, but not the microcontrollers or sensors. In order for this to be considered successful, in 10 out of 10 trials, pressing the emergency stop button had to result in a complete shutdown of the motors while keeping all other components powered. To be considered successful, the voltage delivered to the motors must be withing 0.5 V of 0.0 V.
