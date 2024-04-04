@@ -196,7 +196,7 @@ Ten Different Position for Measuring the Robot's Location
 <br />
 <br />
 
-The graph below shows the average distance error for the Front, Back, Right, and Left sensor. The most inaccurate measured distance is [INSERT ANSWER].
+The graph below shows the average distance error for the Front, Back, Right, and Left sensor. The most inaccurate measured distance is 19.025 mm (or 0.7490 in). <br />
 
 <div align="center">
 <img src = ../Images/Experimental%20Analysis%20Photos/Error%20Distance%20for%20Location%20Tolerance.png
