@@ -213,6 +213,8 @@ Graph Showcasing the Average Distance Error for Each Sensor
 
 See [Location Tolerance](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Experimental%20Analysis/Testing%20Data/Location%20Tolerance.md) for the table of testing data.
 
+See [Youtube Link](https://youtube.com/shorts/rvX_kzKgJGA) for the video testing the Location Tolerance of Position #6
+
 
 The constraint is met because the large error distance was 19.025 mm (0.749 in), which is less than the 2-in tolerance constraint. The overall average error distance was around 10 mm. This average does correlate with the expected results because the resolution of the ultrasonic sensor is 1 cm.
 
