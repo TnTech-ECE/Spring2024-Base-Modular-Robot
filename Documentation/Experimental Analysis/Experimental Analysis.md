@@ -205,9 +205,9 @@ The graph below shows the average distance error for the Front, Back, Right, and
 <img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/Error%20Distance%20for%20Location%20Tolerance.png
 </div>
 
-<div align="center">
+<p align="center">
 Graph Showcasing the Average Distance Error for Each Sensor
-</div>
+</p>
 <br />
 
 
