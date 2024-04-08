@@ -196,7 +196,24 @@ The table below shows the measured voltages with and without motor operation.
 As can be seen above, the voltages both with and without motor operation are well above the lower limit and will function with no issue for digital high values. Therefore, this constraint has been met.
 
 ### Constraint 9 - Inclines/Declines
+This constraint was created since the 2024 SECON board has a 25 degree incline and decline. This was tested 10 times by having the robot travel up and down a hill in forward and reverse motion. 
 
+| Trial Number | Robot Successfully Ascended and Descended the Hill |
+|---|---|
+| 1 | yes |
+| 2 | yes |
+| 3 | yes |
+| 4 | yes |
+| 5 | yes |
+| 6 | yes |
+| 7 | yes |
+| 8 | yes |
+| 9 | yes |
+| 10 | yes |
+
+As can be seen in the above table, the robot successfully traverses the hill in 10 out of 10 trials, and so this constraint has been met.
+
+Video demonstration of start switch demonstration can be found on [this video](https://youtube.com/shorts/sC5Fqg60_ig?feature=share)
 ### Constraint 10 - Motor Control
 
 ### Constraint 11 - Navigation
