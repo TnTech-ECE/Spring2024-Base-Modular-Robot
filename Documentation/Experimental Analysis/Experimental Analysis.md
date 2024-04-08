@@ -82,6 +82,8 @@ The front wheel can move 20 mm forward and 95 mm backward. The back wheel can mo
 | BR | yes |
 
 #### I2C Bus
+The I2C bus constrait required that all I2C sensors be plug and play adaptable. To test this constraint the connections on the I2C bus will be scrambled, and data readings will be taken to show the readings are consistent throughout.
+
 
 #### Wire Grouping/ Labeling
 This is not able to be experimentally measured because is it inherently true and can be seen in the picture below.
