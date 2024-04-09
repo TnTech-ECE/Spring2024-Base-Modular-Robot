@@ -106,8 +106,8 @@ See [Youtube Link](https://youtu.be/BVPlBgpR0Bg) for test
 ##### Trial 2
 |Sensor|Moved To|Value|
 |-|-|-
-| 1 | A2 | 533
-| 2 | A1 | 965
+| 1 | A2 | 965
+| 2 | A1 | 533
 | 3 | A4 | 962
 | 4 | A3 | 1019 
 | 5 | B2 | 160
