@@ -82,7 +82,47 @@ The front wheel can move 20 mm forward and 95 mm backward. The back wheel can mo
 | BR | yes |
 
 #### I2C Bus
-The I2C bus constrait required that all I2C sensors be plug and play adaptable. To test this constraint the connections on the I2C bus will be scrambled, and data readings will be taken to show the readings are consistent throughout.
+The I2C bus constrait required that all I2C sensors be plug and play adaptable. To test this constraint the connections on the I2C bus will be scrambled, and data readings will be taken to show the readings are consistent throughout. The spots are differentiated by A (right side of robot) and B (left side of robot) for the two I2C busses. Each bus is split into 5 spots, for example A1 is the first slot of bus A.
+
+See [Youtube Link](https://youtu.be/BVPlBgpR0Bg) for test
+
+##### Trial 1 (No Movement)
+|Sensor|Original Spot|Value|
+|-|-|-
+| 1 | A1 | 965
+| 2 | A2 | 514
+| 3 | A3 | 1020
+| 4 | A4 | 969
+| 5 | B1 | 774
+| 6 | B2 | 165
+| 7 | B3 | 161
+| 8 | B4 | 983
+##### Trial 2
+|Sensor|Moved To|Value|
+|-|-|-
+| 1 | A2 | 965
+| 2 | A1 | 533
+| 3 | A4 | 962
+| 4 | A3 | 1019 
+| 5 | B2 | 160
+| 6 | B1 | 769
+| 7 | B4 | 979
+| 8 | B3 | 160
+##### Trial 3
+|Sensor|Moved To|Value|
+|-|-|-
+| 1 | A4 | 971
+| 2 | A3 | 1018
+| 3 | A2 | 528
+| 4 | A1 | 966
+| 5 | B4 | 980
+| 6 | B3 | 160
+| 7 | B2 | 162
+| 8 | B1 | 769
+
+![ALT TEXT](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/I2CGraph.png)
+
+The data shows no change between trials. Three trials were ran because it is trivial in nature (electrically, nothing changes). The constraint of plug and play adaptability has been met.
 
 
 #### Wire Grouping/ Labeling
