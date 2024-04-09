@@ -288,7 +288,7 @@ The robot was successful in navigating both courses, so the constraint was met.
 
 ### Constraint 11 - Navigation
 
-####Navigation
+#### Navigation
 This constraint was created because the robot needs to be able to autonomously navigate the board for a SECON competition. This was tested by having the robot sweep the 2023 SECON board and follow a line similar to the 2022 and 2024 boards.
 
 [This video](https://youtu.be/3MeIy1WahUA) shows the robot navigating the 2023 board using the ultrasonic sensors. 
