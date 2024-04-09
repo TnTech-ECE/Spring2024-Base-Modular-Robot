@@ -1,0 +1,523 @@
+// This example is designed for use with eight RC QTR sensors. These
+// reflectance sensors should be connected to digital pins 3 to 10. The
+// sensors' emitter control pin (CTRL or LEDON) can optionally be connected to
+// digital pin 2, or you can leave it disconnected and remove the call to
+// setEmitterPin().
+//
+// The setup phase of this example calibrates the sensors for ten seconds and
+// turns on the Arduino's LED (usually on pin 13) while calibration is going
+// on. During this phase, you should expose each reflectance sensor to the
+// lightest and darkest readings they will encounter. For example, if you are
+// making a line follower, you should slide the sensors across the line during
+// the calibration phase so that each sensor can get a reading of how dark the
+// line is and how light the ground is.  Improper calibration will result in
+// poor readings.
+//
+// The main loop of the example reads the calibrated sensor values and uses
+// them to estimate the position of a line. You can test this by taping a piece
+// of 3/4" black electrical tape to a piece of white paper and sliding the
+// sensor across it. It prints the sensor values to the serial monitor as
+// numbers from 0 (maximum reflectance) to 1000 (minimum reflectance) followed
+// by the estimated location of the line as a number from 0 to 5000. 1000 means
+// the line is directly under sensor 1, 2000 means directly under sensor 2,
+// etc. 0 means the line is directly under sensor 0 or was last seen by sensor
+// 0 before being lost. 5000 means the line is directly under sensor 5 or was
+// last seen by sensor 5 before being lost.
+#include <QTRSensors.h>
+QTRSensors qtr;
+const uint8_t SensorCount = 6;
+uint16_t sensorValues[SensorCount];
+int correction;
+int motor_speed_fr, motor_speed_fl, motor_speed_rr, motor_speed_rl; 
+int max_speed = 100; 
+int i = 0;
+
+uint8_t turns[4] = {1,1,0}; 
+uint8_t turns_cnt = 0;
+
+#include <QTRSensors.h>
+#define enA 2 
+#define in1 46 
+#define in2 48 
+#define enB 3 
+#define in3 50 
+#define in4 52 
+#define enC 7 //Skipped port 4 on motor Arduino, does not work 
+#define in5 36 
+#define in6 34 
+#define enD 5 
+#define in7 32 
+#define in8 30
+
+
+void motor_stop();
+void robot_fwd();
+void robot_rev();
+void motors_turn_left();
+void motors_turn_right();
+void crab_walk_right();
+void crab_walk_left();
+void hard_left();
+void lineCal();
+
+float kp = 0.4;
+float kd = 0.6;
+float ki = 0.0001;
+int last = 0;
+uint32_t start = 0;
+void setup()
+{
+  Serial.begin(9600);
+  delay(1000);
+  // configure the sensors
+  pinMode(in1, OUTPUT); //Motor 1 
+
+  pinMode(in2, OUTPUT); 
+
+  pinMode(in3, OUTPUT); //Motor 2 
+
+  pinMode(in4, OUTPUT); 
+
+  pinMode(in5, OUTPUT); //Motor 3 
+
+  pinMode(in6, OUTPUT); 
+
+  pinMode(in7, OUTPUT); //Motor 4 
+
+  pinMode(in8, OUTPUT); 
+
+  pinMode(enA, OUTPUT); //Motor 1, back right 
+
+  pinMode(enB, OUTPUT); //Motor 2, front right 
+
+  pinMode(enC, OUTPUT); //Motor 3, back left 
+
+  pinMode(enD, OUTPUT); //Motor 4, front left 
+
+  qtr.setTypeRC();
+  qtr.setSensorPins((const uint8_t[]){28, 27, 26, 25, 24, 23}, SensorCount);
+  qtr.setEmitterPin(22);
+
+  delay(500);
+  pinMode(LED_BUILTIN, OUTPUT);
+  digitalWrite(LED_BUILTIN, HIGH); // turn on Arduino's LED to indicate we are in calibration mode
+
+  // 2.5 ms RC read timeout (default) * 10 reads per calibrate() call
+  // = ~25 ms per calibrate() call.
+  // Call calibrate() 400 times to make calibration take about 10 seconds.
+  lineCal();
+
+  Serial.println();
+  Serial.println();
+  delay(1000);
+  start = millis();
+}
+
+void loop(){
+  // read calibrated sensor values and obtain a measure of the line position
+  // from 0 to 5000 (for a white line, use readLineWhite() instead
+  uint16_t position = qtr.readLineWhite(sensorValues);
+  uint32_t curr = 0;
+  int e = 2500 - position;
+  i += e;
+  correction = kp*e + i* ki + kd*(e-last);
+  last = e;
+
+  curr = millis();
+  if((curr - start) > 6000){
+    if((sensorValues[0] > 900) && (sensorValues[1] >900) && (sensorValues[2] >900) && (sensorValues[3] >900) && (sensorValues[4] >900) && (sensorValues[5] >900)){
+      hard_left(); 
+    }
+  }
+  //Serial.println(correction);
+  motor_speed_fr = (max_speed - correction); //THESE MAY NEED TO BE CHANGED DEPENDING ON HOW SENSOR IS ORIENTED 
+
+  motor_speed_rr = (max_speed - correction); 
+
+  motor_speed_fl = (max_speed + correction); 
+
+  motor_speed_rl = (max_speed + correction); 
+
+  if (motor_speed_fr > max_speed) { 
+
+  motor_speed_fr = max_speed; 
+
+  } 
+  if (motor_speed_fl > max_speed) { 
+
+  motor_speed_fl = max_speed; 
+
+  } 
+  if (motor_speed_rr > max_speed) { 
+
+  motor_speed_rr = max_speed; 
+
+  } 
+  if (motor_speed_rl > max_speed) { 
+
+  motor_speed_rl = max_speed; 
+
+  } 
+  if (motor_speed_fr < 0) { 
+
+  	motor_speed_fr = 0; 
+
+  } 
+  if (motor_speed_rr < 0) { 
+
+  	motor_speed_rr = 0; 
+
+  } 
+  if (motor_speed_fl < 0) { 
+
+ 	 motor_speed_fl = 0; 
+
+  } 
+  if (motor_speed_rl < 0) { 
+
+  	motor_speed_rl = 0; 
+  }
+  /*Serial.print("Front Right");
+  Serial.println(motor_speed_fr);
+  Serial.print("Front Left");
+  Serial.println(motor_speed_fl);
+  Serial.print("Back Right");
+  Serial.println(motor_speed_rr);
+  Serial.print("Back Left");
+  Serial.println(motor_speed_rl);*/
+  robot_fwd();
+}
+void crab_walk_left() {
+  digitalWrite(in1, LOW); //M1, back right 
+  digitalWrite(in2, HIGH);  
+  digitalWrite(in3, HIGH); //M2, front right 
+  digitalWrite(in4, LOW);  
+  digitalWrite(in5, HIGH); //M3, back left 
+  digitalWrite(in6, LOW);  
+  digitalWrite(in7, LOW); //M4, front left 
+  digitalWrite(in8, HIGH); 
+  analogWrite(enD, 100); 
+  analogWrite(enB, 100); 
+  analogWrite(enC, 100); 
+  analogWrite(enA, 100); 
+  motor_stop(); 
+} 
+
+  
+void crab_walk_right() { 
+
+    digitalWrite(in1, HIGH); //M1, back right 
+
+    digitalWrite(in2, LOW);  
+
+    digitalWrite(in3, LOW); //M2, front right 
+
+    digitalWrite(in4, HIGH);  
+
+    digitalWrite(in5, LOW); //M3, back left 
+
+    digitalWrite(in6, HIGH);  
+
+    digitalWrite(in7, HIGH); //M4, front left 
+
+    digitalWrite(in8, LOW); 
+
+  
+
+    analogWrite(enD, 100); 
+
+    analogWrite(enB, 100); 
+
+    analogWrite(enC, 100); 
+
+    analogWrite(enA, 100); 
+
+
+} 
+
+void motors_turn_right() { 
+
+    digitalWrite(in1, LOW); //M1, back right 
+
+    digitalWrite(in2, HIGH);  
+
+    digitalWrite(in3, HIGH); //M2, front right 
+
+    digitalWrite(in4, LOW);  
+
+    digitalWrite(in5, LOW); //M3, back left 
+
+    digitalWrite(in6, HIGH);  
+
+    digitalWrite(in7, HIGH); //M4, front left 
+
+    digitalWrite(in8, LOW); 
+
+ 
+
+    analogWrite(enD, 80); 
+
+    analogWrite(enB, 80); 
+
+    analogWrite(enC, 80); 
+
+    analogWrite(enA, 80); 
+
+  } 
+
+
+void motors_turn_left() { 
+
+    digitalWrite(in1, HIGH); //M1, back right 
+
+    digitalWrite(in2, LOW);  
+
+    digitalWrite(in3, LOW); //M2, front right 
+
+    digitalWrite(in4, HIGH);  
+
+    digitalWrite(in5, HIGH); //M3, back left 
+
+    digitalWrite(in6, LOW);  
+
+    digitalWrite(in7, LOW); //M4, front left 
+
+    digitalWrite(in8, HIGH); 
+
+ 
+
+    analogWrite(enD, 80); 
+
+    analogWrite(enB, 80); 
+
+    analogWrite(enC, 80); 
+
+    analogWrite(enA, 80); 
+
+
+} 
+
+
+void robot_rev () { 
+
+    digitalWrite(in1, LOW); //M1, back right 
+
+    digitalWrite(in2, HIGH);  
+
+    digitalWrite(in3, HIGH); //M2, front right 
+
+    digitalWrite(in4, LOW);  
+
+    digitalWrite(in5, HIGH); //M3, back left 
+
+    digitalWrite(in6, LOW);  
+
+    digitalWrite(in7, LOW); //M4, front left 
+
+    digitalWrite(in8, HIGH); 
+
+  
+
+  analogWrite(enD, motor_speed_fl); 
+
+  analogWrite(enB, motor_speed_fr); 
+
+  analogWrite(enC, motor_speed_rl); 
+
+  analogWrite(enA, motor_speed_rr); 
+  delay(500);
+} 
+
+
+void robot_fwd() { 
+
+  digitalWrite(in1, HIGH); //M1, back right 
+
+  digitalWrite(in2, LOW);  
+
+  digitalWrite(in3, LOW); //M2, front right 
+
+  digitalWrite(in4, HIGH);  
+
+  digitalWrite(in5, LOW); //M3, back left 
+
+  digitalWrite(in6, HIGH);  
+
+  digitalWrite(in7, HIGH); //M4, front left 
+
+  digitalWrite(in8, LOW); 
+
+  analogWrite(enB, motor_speed_fr); 
+
+  analogWrite(enD, motor_speed_fl); 
+
+  analogWrite(enA, motor_speed_rr); 
+
+  analogWrite(enC, motor_speed_rl); 
+
+} 
+
+
+void motor_stop() { 
+
+    digitalWrite(in1, LOW); //M1, back right 
+
+    digitalWrite(in2, LOW);  
+
+    digitalWrite(in3, LOW); //M2, front right 
+
+    digitalWrite(in4, LOW);  
+
+    digitalWrite(in5, LOW); //M3, back left 
+
+    digitalWrite(in6, LOW);  
+
+    digitalWrite(in7, LOW); //M4, front left 
+
+    digitalWrite(in8, LOW); 
+
+  
+
+  delay(500); 
+
+} 
+void hard_left(){
+  /*digitalWrite(in1, LOW); //M1, back right 
+    digitalWrite(in2, HIGH);  
+    digitalWrite(in3, HIGH); //M2, front right 
+    digitalWrite(in4, LOW);  
+    digitalWrite(in5, HIGH); //M3, back left 
+    digitalWrite(in6, LOW);  
+    digitalWrite(in7, LOW); //M4, front left 
+    digitalWrite(in8, HIGH); 
+  analogWrite(enD, motor_speed_fl); 
+  analogWrite(enB, motor_speed_fr); 
+  analogWrite(enC, motor_speed_rl); 
+  analogWrite(enA, motor_speed_rr); 
+
+  delay(1000);*/
+
+  while((sensorValues[1] >900) && (sensorValues[2] >900) && (sensorValues[3] >900) && (sensorValues[4] >900)){
+    uint16_t position = qtr.readLineWhite(sensorValues);
+    if(turns[turns_cnt] == 1){
+      Serial.println("In turn left");
+      digitalWrite(in1, HIGH); //M1, back right 
+      digitalWrite(in2, LOW);  
+      digitalWrite(in3, LOW); //M2, front right 
+      digitalWrite(in4, HIGH);  
+      digitalWrite(in5, HIGH); //M3, back left 
+      digitalWrite(in6, LOW);  
+      digitalWrite(in7, LOW); //M4, front left 
+      digitalWrite(in8, HIGH); 
+      analogWrite(enD, 150); 
+      analogWrite(enB, 150); 
+      analogWrite(enC, 150); 
+      analogWrite(enA, 150);
+    }
+  else if(turns[turns_cnt] == 0){
+    Serial.println("In turn right");
+    digitalWrite(in1, LOW); //M1, back right 
+    digitalWrite(in2, HIGH);  
+    digitalWrite(in3, HIGH); //M2, front right 
+    digitalWrite(in4, LOW);  
+    digitalWrite(in5, LOW); //M3, back left 
+    digitalWrite(in6, HIGH);  
+    digitalWrite(in7, HIGH); //M4, front left 
+    digitalWrite(in8, LOW); 
+    analogWrite(enD, 150); 
+    analogWrite(enB, 150); 
+    analogWrite(enC, 150); 
+    analogWrite(enA, 150); 
+    }
+  }
+  turns_cnt++;
+}
+
+void lineCal(){
+  uint32_t lineStart = millis();
+  uint32_t curr = 0;
+  curr = millis();
+  while((curr - lineStart) < 1000){
+    curr = millis();
+    digitalWrite(in1, LOW); //M1, back right 
+    digitalWrite(in2, HIGH);  
+    digitalWrite(in3, LOW); //M2, front right 
+    digitalWrite(in4, HIGH);  
+    digitalWrite(in5, LOW); //M3, back left 
+    digitalWrite(in6, HIGH);  
+    digitalWrite(in7, LOW); //M4, front left 
+    digitalWrite(in8, HIGH); 
+    analogWrite(enD, 100); 
+    analogWrite(enB, 100); 
+    analogWrite(enC, 100); 
+    analogWrite(enA, 100);
+    qtr.calibrate();
+  }
+  while((curr - lineStart) < 3000){
+    curr = millis();
+    digitalWrite(in1, HIGH); //M1, back right 
+    digitalWrite(in2, LOW);  
+    digitalWrite(in3, HIGH); //M2, front right 
+    digitalWrite(in4, LOW);  
+    digitalWrite(in5, HIGH); //M3, back left 
+    digitalWrite(in6, LOW);  
+    digitalWrite(in7, HIGH); //M4, front left 
+    digitalWrite(in8, LOW); 
+    analogWrite(enD, 100); 
+    analogWrite(enB, 100); 
+    analogWrite(enC, 100); 
+    analogWrite(enA, 100);
+    qtr.calibrate();
+  }
+    while((curr - lineStart) < 5000){
+    curr = millis();
+    digitalWrite(in1, LOW); //M1, back right 
+    digitalWrite(in2, HIGH);  
+    digitalWrite(in3, LOW); //M2, front right 
+    digitalWrite(in4, HIGH);  
+    digitalWrite(in5, LOW); //M3, back left 
+    digitalWrite(in6, HIGH);  
+    digitalWrite(in7, LOW); //M4, front left 
+    digitalWrite(in8, HIGH); 
+    analogWrite(enD, 100); 
+    analogWrite(enB, 100); 
+    analogWrite(enC, 100); 
+    analogWrite(enA, 100);
+    qtr.calibrate();
+  }
+    while((curr - lineStart) < 7000){
+    curr = millis();
+    digitalWrite(in1, HIGH); //M1, back right 
+    digitalWrite(in2, LOW);  
+    digitalWrite(in3, HIGH); //M2, front right 
+    digitalWrite(in4, LOW);  
+    digitalWrite(in5, HIGH); //M3, back left 
+    digitalWrite(in6, LOW);  
+    digitalWrite(in7, HIGH); //M4, front left 
+    digitalWrite(in8, LOW); 
+    analogWrite(enD, 100); 
+    analogWrite(enB, 100); 
+    analogWrite(enC, 100); 
+    analogWrite(enA, 100);
+    qtr.calibrate();
+  }
+  while((curr - lineStart) < 8000){
+    curr = millis();
+    digitalWrite(in1, LOW); //M1, back right 
+    digitalWrite(in2, HIGH);  
+    digitalWrite(in3, LOW); //M2, front right 
+    digitalWrite(in4, HIGH);  
+    digitalWrite(in5, LOW); //M3, back left 
+    digitalWrite(in6, HIGH);  
+    digitalWrite(in7, LOW); //M4, front left 
+    digitalWrite(in8, HIGH); 
+    analogWrite(enD, 100); 
+    analogWrite(enB, 100); 
+    analogWrite(enC, 100); 
+    analogWrite(enA, 100);
+    qtr.calibrate();
+  }
+
+  robot_rev();
+
+}
