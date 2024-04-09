@@ -141,11 +141,27 @@ In the table below, the measured battery life is compared to the calculated wors
 
 | Calculated Worst-Case Battery Life (hour:min:sec) | Measured Battery Life (hour:min:sec) |
 | --- | ---|
-| 0:43:11 | 2:42:03 |
+| 0:43:11 | 3:05:31 |
+
+At the time given, the battery still showed no signs of being near depletion. The battery voltage stayed at the flat portion of the battery discharge curve for nearly 3 hours. Using the battery datasheet (can be found in the battery management signoff) and the time the battery took to discharge to the flat portion of the discharge curve, the experimental discharge curve was matched to the datasheet discharge curve and the battery life was estimated to be XXX.
 
 ### Constraint 6 - Wireless Charging
 
+For this requirement, the prospect of wireless charging used to power and/or charge the robot over the full area of the arena had to be researched and the feasibility of which had to be evaluated. For wirelessly powering the robot over the full area of the arena, capacitive power transfer was deemed to be more suited, but is much more experimental as inductive wireless power transfer is the primary method used commercially.
 
+In capacitive wireless power transfer, a transmitting sheet is placed underneath the device, which has a receiving sheet, making an effective capacitor between. The transmitting sheet is excited with high frequencies with the positive lead of a function generator and the negative lead is allowed to sit somewhere unconnected to anything. The receiving sheet is the connected to a quarter-wave transformer, which allows for a stray return capacitance beween the receiver and the negative lead of the driving function generator. More information on this can be found in the wireless charging signoff in Documentation/Signoffs.
+
+With research and experimentation, it was found that a load on the robot could be wirelessly powered. A video of wirelessly powering an LED on top of the robot can be found in ./Videos/Wireless_Power.mp4.
+
+With the demonstration of capacitive wireless power it was determined that wireless charging for the robot is plausible but will require more research, development, and precautions. 
+
+The first reason for a need for more research is the power output. At best, with the "blue box" amplifier and small transmitting sheet in Dr. Van Neste's lab and no load attached, a current out of the receiving sheet of 1-2 A could be measured. In order for this to be used to power or charge a robot, the high-frequency signal (MHz range) will need to be shifted down to 60 Hz and/or rectified to DC in order to power electronics on the robot. With this in mind, it is unknown if the system will be able to output enough power that after component inefficiencies will be able to charge a battery or power the robot at all.
+
+An additional factor that makes higher power more difficult is the potential for interfering with or damaging electronics onboard the robot. As the transmitter power increases, the potential for interferance and/or damage to electronics will require more robust shielding of electronics on board.
+
+Another potential cause for concern is the significant safety precautions that will be required if this system is scaled up. With the small transmitting sheet and small load of an LED, the input voltage could be kept to a moderate 10 V peak-to-peak. However, as the transmitting sheet increases in size, the voltage required to power it increases very fast. Because of this, there will need to be significant insulation surrounding all energized metal sheets (primarily the transmitting sheet) to prevent injury. Additionally, there may be university rules and regulations that must be followed when using high voltages in a university laboratory.
+
+With the above research and verification, this constraint has been met.
 
 ### Constraint 7 - Emergency Stop
 
@@ -194,6 +210,8 @@ The table below shows the measured voltages with and without motor operation.
 | 10 | 3.2577 | 5.0258 | 3.2575 | 5.0246 |
 
 As can be seen above, the voltages both with and without motor operation are well above the lower limit and will function with no issue for digital high values. Therefore, this constraint has been met.
+
+Adding 0.1 uF capacitors directly to the motor driver outputs was also experimented with. It is recommended by the Pololu to add 0.1 uF ceramic capacitors between the motor terminals as close to the motors as possible to reduce noise and back-EMF. With no capacitors, the 12 V rail voltage dropped between 0.1-0.5 V when the motors changed direction from full speed in one direction to full speed in the opposite direction. The addition of capacitors to the motor driver outputs did not seem to have a noticeable impact on the voltage drop with a change in motor direction.
 
 ### Constraint 9 - Inclines/Declines
 This constraint was created since the 2024 SECON board has a 25 degree incline and decline. This was tested 10 times by having the robot travel up and down a hill in forward and reverse motion. 
@@ -327,7 +345,7 @@ Overall, the constraint was met.
 | 3 | | yes |
 | 4 | | yes |
 | 5 | | |
-| 6 | | |
+| 6 | | yes |
 | 7 | | yes |
 | 8 | | yes |
 | 9 | | |
