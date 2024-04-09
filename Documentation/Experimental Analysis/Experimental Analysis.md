@@ -296,6 +296,12 @@ This constraint was created because the robot needs to be able to autonomously n
 
 The robot was successful in navigating both courses, so the constraint was met.
 
+##### Object Detection
+
+See [Youtube Link](https://youtu.be/_iFhnvbLboQ) for Object Detection
+
+Constraint is met.
+
 #### Speed
 
 This constraint originated from the time limit for the SECON competition. The constraint is tested by having the robot drive in a straight line for 10 seconds, and then the distance is measured. 
