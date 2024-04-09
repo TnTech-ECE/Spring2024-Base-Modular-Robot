@@ -1,7 +1,7 @@
 # Experimental Analysis
 
 ## Introduction 
-The purpose of this report is to verify the requirements for the project and explain the procedures used to validate results. The results will be compared against the measures of success outlind in the project proposal to determine if the project was successful. This will also detail what the next steps are moving forward.
+The purpose of this report is to verify the requirements for the project and explain the procedures used to validate results. The results will be compared against the measures of success outlined in the project proposal to determine if the project was successful. This will also detail what the next steps are moving forward.
 
 ### Requirements
 
@@ -46,6 +46,8 @@ As can be seen in the above table, the robot successfully turns on in 10 out of 
 Video demonstration of start switch demonstration can be found at ./Videos/Start_Switch.mp4
 
 ### Constraint 2 - Alternate Start Method 
+This constraint was created since SECON has opportunities for teams to receive extra points for having an alternative start method, which is met in the [signoff for the master control](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Signoffs/IsaacJennings-Signoff-MasterControl.md). Since the alternate start method has a spot to be placed on the Jetson Nano, the constraint has been met.
+
 
 ### Constraint 3 - Dimensions
 The dimensions of the robot are customizable when ordering the extruded alumnium for future teams. The extruded alumnium can be cut to change the dimensions. Additionally, the stock design only takes up the specified 1 ft x 1 ft x 6 in area shown below. This constraint could not be experimentally tested because it is inherently true.
@@ -282,14 +284,17 @@ The robot was tasked with moving 360 degrees as well as forwards and backward to
 [This video](https://youtu.be/3MeIy1WahUA) shows the robot navigating the 2023 board using the ultrasonic sensors. 
 [This video](https://youtu.be/stM9KGa8I_E) shows the robot following a line, turning around, and following it back to the start.
 
-The robot was successful in navigating both courses, so the constraint was met
+The robot was successful in navigating both courses, so the constraint was met.
 
 ### Constraint 11 - Navigation
 
 ####Navigation
+This constraint was created because the robot needs to be able to autonomously navigate the board for a SECON competition. This was tested by having the robot sweep the 2023 SECON board and follow a line similar to the 2022 and 2024 boards.
 
-FIX ME, ADD INFO
+[This video](https://youtu.be/3MeIy1WahUA) shows the robot navigating the 2023 board using the ultrasonic sensors. 
+[This video](https://youtu.be/stM9KGa8I_E) shows the robot following a line, turning around, and following it back to the start using the line-following sensors.
 
+The robot was successful in navigating both courses, so the constraint was met.
 
 #### Speed
 
