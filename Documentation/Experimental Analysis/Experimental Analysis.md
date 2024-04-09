@@ -274,9 +274,22 @@ This constraint was created since the 2024 SECON board has a 25 degree incline a
 As can be seen in the above table, the robot successfully traverses the hill in 10 out of 10 trials, and so this constraint has been met.
 
 Video demonstration of start switch demonstration can be found on [this video](https://youtube.com/shorts/sC5Fqg60_ig?feature=share)
+
 ### Constraint 10 - Motor Control
 
+The robot was tasked with moving 360 degrees as well as forwards and backward to show it can fully navigate and roam in any environment, and it must be able to do so based on sensor inputs. This was tested by having the robot sweep the 2023 SECON board which was similar to how it was navigated for competition, and we also had the robot follow a line and return to the starting point.
+
+[This video](https://youtu.be/3MeIy1WahUA) shows the robot navigating the 2023 board using the ultrasonic sensors. 
+[This video](https://youtu.be/stM9KGa8I_E) shows the robot following a line, turning around, and following it back to the start.
+
+The robot was successful in navigating both courses, so the constraint was met
+
 ### Constraint 11 - Navigation
+
+####Navigation
+
+FIX ME, ADD INFO
+
 
 #### Speed
 
@@ -383,16 +396,16 @@ Overall, the constraint was met.
 | Item | Description | Was constraint met? | 
 |-|-|-|
 | 1 | | yes |
-| 2 | | |
+| 2 | | yes |
 | 3 | | yes |
 | 4 | | yes |
-| 5 | | |
+| 5 | | yes |
 | 6 | | yes |
 | 7 | | yes |
 | 8 | | yes |
-| 9 | | |
-| 10 | | |
-| 11 | | |
+| 9 | | yes |
+| 10 | | yes|
+| 11 | | no |
 | 12 | | yes |
 | 13 | | no |
 | 14 | | yes |
