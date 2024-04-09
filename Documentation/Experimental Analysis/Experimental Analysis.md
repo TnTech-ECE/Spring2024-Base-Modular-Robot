@@ -84,6 +84,8 @@ The front wheel can move 20 mm forward and 95 mm backward. The back wheel can mo
 #### I2C Bus
 The I2C bus constrait required that all I2C sensors be plug and play adaptable. To test this constraint the connections on the I2C bus will be scrambled, and data readings will be taken to show the readings are consistent throughout. The spots are differentiated by A (right side of robot) and B (left side of robot) for the two I2C busses. Each bus is split into 5 spots, for example A1 is the first slot of bus A.
 
+See [Youtube Link](https://youtu.be/BVPlBgpR0Bg) for test
+
 ##### Trial 1 (No Movement)
 |Sensor|Original Spot|Value|
 |-|-|-
