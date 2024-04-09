@@ -300,7 +300,21 @@ The robot was successful in navigating both courses, so the constraint was met.
 
 See [Youtube Link](https://youtu.be/_iFhnvbLboQ) for Object Detection
 
-Constraint is met.
+| Trial Number | Object Successfully Detected |
+|---|---|
+| 1 | yes |
+| 2 | yes |
+| 3 | yes |
+| 4 | yes |
+| 5 | yes |
+| 6 | yes |
+| 7 | yes |
+| 8 | yes |
+| 9 | yes |
+| 10 | yes |
+
+
+Object was sucessfully detected 10 out of 10 trials. Constraint is met.
 
 #### Speed
 
