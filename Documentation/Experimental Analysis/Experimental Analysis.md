@@ -92,6 +92,13 @@ This is not able to be experimentally measured because is it inherently true and
 
 Overall, the constraint was met.
 
+#### ROS2 Adaptable Code base
+ROS2 is naturally inclined to easy adaptation, but a few extra common practice steps were taken to make adaptation even simpler. For one, all configuration files (.yaml, .urdf, .xacro
+include their varying parameters at the top of the files for easy access without having to locate variables throughout the code. The unified robot description (URDF) was also broken into 
+multiple XML macro (xacro) files for easy troubleshooting and modularity. If, for instance, the ultrasonic sensors weren't used, simply removing the ultrasonic xacro would remove all of the associated code
+for any robot transforms. The serial communication packages also present modularity by containing function instances for each sensor type that can be easily removed or added to. Finally, all of the launch files are set
+with the filepaths at the top of the file to allow quick changes for the robot. Essentially, the file systems in ROS2 have been set up as templates with parameters at the top of the entities. 
+
 ### Constraint 5 - Robust Charging System
 
 This constraint required that the robot possess a robust, centralized, power system and had several requirements. The first requirement is that the power system be able to supply power to a 3.3 V and 5 V power rail successfully. To test this, the voltages at each voltage rail on the power board were measured for the total range of possible input battery voltages, which is between 11 and 14.6 V. This was done to show that the power board would operate as needed for any possible battery voltage. The data recorded is shown below. 
@@ -274,6 +281,12 @@ See [Youtube Link](https://youtube.com/shorts/rvX_kzKgJGA) for the video testing
 
 
 The constraint is met because the large error distance was 19.025 mm (0.749 in), which is less than the 2-in tolerance constraint. The overall average error distance was around 10 mm. This average does correlate with the expected results because the resolution of the ultrasonic sensor is 1 cm.
+
+#### ROS2 navigation
+Due to the chosen sensor configuration, navigation with ROS2 was not possible. The main issue arose with ROS's need for lidar or GPS data to establish a base scan transform. As a workaround and proof of concept, 
+an RPLidar A2M8 was used to test the robot's capabilites. Shown below are the maps created by the LIDAR. Due to the height requirements of the LIDAR, accurate representations of the SECON boards was not possible in the experimental period,
+but the capabilites are shown possible with proper operation in the classroom. 
+
 
 ### Specfication 12 - 3D Printing to Reduce Cost 
 This specifcation was derived as a socioeconomic impact of the project. In hopes to reduce cost, components were 3D printed instead of finding premade attachments. A list of components and if they were 3D printed is give below.
