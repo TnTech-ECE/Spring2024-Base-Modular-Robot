@@ -105,7 +105,10 @@ $$ Accuracy \space Range \space for \space High \space Speed \space Mode $$
 
 $$ 5 \space Percent \space (0.456 - 0.504 \space in) \space $$
 
-Default Mode is the chosen mode because the sampling rate is the second highest and accuracy range is tied for second lowest. The Default Mode has the best specifications out of the four modes.
+Default Mode is the chosen mode because the sampling rate is the second highest and accuracy range is tied for second lowest. The Default Mode has the best specifications out of the four modes. <br />
+<br />
+
+See [Seeed Studio Forum](https://forum.seeedstudio.com/t/how-to-change-i2c-address-on-grove-time-of-flight-distance-sensor-vl53l0x/266866/2) on how to use multiple VL53L0X time of flight sensors.
 
 
 
