@@ -246,12 +246,13 @@ void setup_ObjectDetection(){
 * 3)
 */
 void update_sensors(){ 
-  int ultraAvg;
-  int leftAvg;
-  int rightAvg;
+  int ultraAvg = 0;
+  int leftAvg = 0;
+  int rightAvg = 0;
 
   run_ObjectDetection();
 
+  //Read in data and store in index
   a16_lastUltra[u8_k] =  ultrasonicBack.MeasureInMillimeters();
   a16_lastRight[u8_k] = objectDetectRanges_mm[4];
   a16_lastLeft[u8_k] = objectDetectRanges_mm[0];
@@ -273,22 +274,19 @@ void update_sensors(){
   a16_diff[0] = abs(leftAvg - ultraAvg);
   a16_diff[1] = abs(rightAvg - ultraAvg);
   a16_diff[2] = abs(leftAvg - rightAvg);
-
-  ultraAvg = 0;
-  leftAvg = 0;
-  rightAvg = 0;
   
   for(int i = 0; i < 3; i++){
-    if(a16_diff[i] > 300){
+    if(a16_diff[i] > 100){
       b_objectDetected = true;
-      digitalWrite(A5, HIGH);
-      Serial.println("In this if");
-    }
-    else{
-      b_objectDetected = false;
-      digitalWrite(A5, LOW);
     }
   }
+  }
+  if(b_objectDetected){
+    digitalWrite(A5, HIGH);
+    b_objectDetected = false;
+  }
+  else{
+    digitalWrite(A5, LOW);
   }
   if(ultrasonicFront.MeasureInMillimeters() < 50){ 
     b_frontFlag = true; 
