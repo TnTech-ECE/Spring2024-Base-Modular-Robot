@@ -82,47 +82,8 @@ The front wheel can move 20 mm forward and 95 mm backward. The back wheel can mo
 | BR | yes |
 
 #### I2C Bus
-The I2C bus constrait required that all I2C sensors be plug and play adaptable. To test this constraint the connections on the I2C bus will be scrambled, and data readings will be taken to show the readings are consistent throughout. The spots are differentiated by A (right side of robot) and B (left side of robot) for the two I2C busses. Each bus is split into 5 spots, for example A1 is the first slot of bus A.
+The I2C bus constrait required that all I2C sensors be plug and play adaptable. To test this constraint the connections on the I2C bus will be scrambled, and data readings will be taken to show the readings are consistent throughout.
 
-See [Youtube Link](https://youtu.be/BVPlBgpR0Bg) for test
-
-##### Trial 1 (No Movement)
-|Sensor|Original Spot|Value|
-|-|-|-
-| 1 | A1 | 965
-| 2 | A2 | 514
-| 3 | A3 | 1020
-| 4 | A4 | 969
-| 5 | B1 | 774
-| 6 | B2 | 165
-| 7 | B3 | 161
-| 8 | B4 | 983
-##### Trial 2
-|Sensor|Moved To|Value|
-|-|-|-
-| 1 | A2 | 965
-| 2 | A1 | 533
-| 3 | A4 | 962
-| 4 | A3 | 1019 
-| 5 | B2 | 160
-| 6 | B1 | 769
-| 7 | B4 | 979
-| 8 | B3 | 160
-##### Trial 3
-|Sensor|Moved To|Value|
-|-|-|-
-| 1 | A4 | 971
-| 2 | A3 | 1018
-| 3 | A2 | 528
-| 4 | A1 | 966
-| 5 | B4 | 980
-| 6 | B3 | 160
-| 7 | B2 | 162
-| 8 | B1 | 769
-
-![ALT TEXT](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/I2CGraph.png)
-
-The data shows no change between trials. Three trials were ran because it is trivial in nature (electrically, nothing changes). The constraint of plug and play adaptability has been met.
 
 #### Wire Grouping/ Labeling
 This is not able to be experimentally measured because is it inherently true and can be seen in the picture below.
@@ -166,13 +127,11 @@ To test this, the robot was run with all of the motors running at maximum speed.
 
 This program was run continuously in 10 minute intervals, between which the robot was turned off for a few minutes to allow for the motors and motor drivers to cool down to prevent overheating. The total elapsed time of the robot being on is what was recorded as the robot's continuous runtime battery life below. The voltage across the battery terminals was monitored to ensure that the battery did not drop below the minimum recommended voltage.
 
-In testing, the battery voltage dropped similar to an exponential decay from around 14 V to about 13.13 V. At 13.13 V, it remained for X(20) minutes before beginning to drop again. After turning the robot off, the battery voltage would increase slightly, to about 13.27 V, and began to decrease to about 13.13 V where it stayed.
+In testing, the battery voltage dropped similar to an exponential decay from around 14 V to about 13.13 V. At 13.13 V, it remained for 20 minutes before beginning to drop again. After turning the robot off, the battery voltage would increase slightly, to about 13.27 V, and began to decrease to about 13.13 V where it stayed.
 
 The only component that was not present for the battery life testing that could make any different in battery life at all was the Jetson Nano. The arduinos, motors, and sensors, were all connected, powered up and running. Even with this consideration, the Jetson Nano is only running the Master control code and is not using some of its more power-hungry components like the GPU, and so should not change the battery life drastically.
 
 Moreover, the battery life measured vastly exceeded expectations (as can be seen below), and so the Jetson Nano's presence should not make such a large difference that the battery life would fall below the constraint requirement.
-
-Current Elapsed Battery Lifetime: 2:30:31
 
 There is a video demonstration of the battery life test that can be found in ./Videos/Battery_Life_Test.mp4
 
@@ -182,7 +141,7 @@ In the table below, the measured battery life is compared to the calculated wors
 | --- | ---|
 | 0:43:11 | 3:05:31 |
 
-At the time given, the battery still showed no signs of being near depletion. The battery voltage stayed at the flat portion of the battery discharge curve for nearly 3 hours. Using the battery datasheet (can be found in the battery management signoff) and the time the battery took to discharge to the flat portion of the discharge curve, the experimental discharge curve was matched to the datasheet discharge curve and the battery life was estimated to be XXX.
+At the time given, the battery still showed no signs of being close to depletion. The battery voltage stayed at the flat portion of the battery discharge curve for nearly 3 hours. Using the battery datasheet (can be found in the battery management signoff) and the time the battery took to discharge to the flat portion of the discharge curve, the experimental discharge curve was matched to the datasheet discharge curve and the battery life was estimated to be around 3 hours and 40 minutes.
 
 ### Constraint 6 - Wireless Charging
 
