@@ -1,9 +1,3 @@
-stock picks April  2024
-CEI - Probably a no go
-SBFM - Good Buy
-ITRG - Good Buy
-OTRK - maybe
-
 # Experimental Analysis
 
 ## Introduction 
