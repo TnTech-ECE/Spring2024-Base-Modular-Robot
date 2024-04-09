@@ -121,7 +121,7 @@ See [Youtube Link](https://youtu.be/BVPlBgpR0Bg) for test
 | 8 | B1 | 769
 
 <div align="center">
-< img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/I2CGraph.png >
+<img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/I2CGraph.png >
 </div>
 
 
