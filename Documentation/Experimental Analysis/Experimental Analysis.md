@@ -1,3 +1,9 @@
+stock picks April  2024
+CEI - Probably a no go
+SBFM - Good Buy
+ITRG - Good Buy
+OTRK - maybe
+
 # Experimental Analysis
 
 ## Introduction 
@@ -89,18 +95,36 @@ See [Youtube Link](https://youtu.be/BVPlBgpR0Bg) for test
 ##### Trial 1 (No Movement)
 |Sensor|Original Spot|Value|
 |-|-|-
-| 1 | A1 | 
-| 2 | A2 | 
-| 3 | A3 | 
-| 4 | A4 | 
-| 5 | B1 | 
-| 6 | B2 | 
-| 7 | B3 | 
-| 8 | B4 | 
+| 1 | A1 | 965
+| 2 | A2 | 514
+| 3 | A3 | 1020
+| 4 | A4 | 969
+| 5 | B1 | 774
+| 6 | B2 | 165
+| 7 | B3 | 161
+| 8 | B4 | 983
 ##### Trial 2
-|Sensor|
+|Sensor|Moved To|Value|
+|-|-|-
+| 1 | A2 | 533
+| 2 | A1 | 965
+| 3 | A4 | 962
+| 4 | A3 | 1019 
+| 5 | B2 | 160
+| 6 | B1 | 769
+| 7 | B4 | 979
+| 8 | B3 | 160
 ##### Trial 3
-|Sensor|
+|Sensor|Moved To|Value|
+|-|-|-
+| 1 | A4 | 971
+| 2 | A3 | 1018
+| 3 | A2 | 528
+| 4 | A1 | 966
+| 5 | B4 | 980
+| 6 | B3 | 160
+| 7 | B2 | 162
+| 8 | B1 | 769
 #### Wire Grouping/ Labeling
 This is not able to be experimentally measured because is it inherently true and can be seen in the picture below.
 
