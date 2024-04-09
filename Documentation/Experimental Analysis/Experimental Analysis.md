@@ -296,7 +296,7 @@ This constraint was created because the robot needs to be able to autonomously n
 
 The robot was successful in navigating both courses, so the constraint was met.
 
-##### Object Detection
+##### **Object Detection**
 
 See [Youtube Link](https://youtu.be/_iFhnvbLboQ) for Object Detection
 
