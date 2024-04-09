@@ -120,9 +120,9 @@ See [Youtube Link](https://youtu.be/BVPlBgpR0Bg) for test
 | 7 | B2 | 162
 | 8 | B1 | 769
 
-<div align="center">
-<img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/I2CGraph.png >
-</div>
+<br />
+<br />
+![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/I2CGraph.png)
 
 
 The data shows no change between trials. Three trials were ran because it is trivial in nature (electrically, nothing changes). The constraint of plug and play adaptability has been met.
