@@ -1,4 +1,3 @@
-
 #include <Adafruit_Sensor_Calibration.h>
 #include <Adafruit_AHRS.h>
 #include <QTRSensors.h>
@@ -6,6 +5,7 @@
 #include <Ultrasonic.h>
 #include <GyverOLED.h>
 GyverOLED<SSH1106_128x64> oled;
+
 
 #define enA 2 
 #define in1 46 
@@ -20,35 +20,44 @@ GyverOLED<SSH1106_128x64> oled;
 #define in7 32 
 #define in8 30 
 
-void Update_sensors(); 
+void update_sensors(); 
 void motor_stop();
-void robot_fwd(bool, int); 
-void robot_rev(bool, int); 
+void robot_fwd(bool); 
+void robot_rev(bool); 
 void motors_turn_right(); 
 void crab_walk_left(int); 
+void run_Location();
+void run_ObjectDetection();
+void setup_ObjectDetection();
+void initialize_ObjDetectSensors();
 
-bool FrontFlag, BackFlag, RightFlag; 
-float LeftUltra, FrontUltra, BackUltra, RightUltra; 
+bool b_inReverse = false;;
+bool b_Started = false;
+bool b_objectDetected = false;
+bool b_frontFlag, b_backFlag, b_rightFlag; 
 
-uint32_t timestamp;
+uint8_t u8_k = 0;
+
+uint16_t a16_diff[3] = {0,0,0};
+uint16_t a16_lastLeft[5] = {0,0,0,0,0};
+uint16_t a16_lastRight[5] = {0,0,0,0,0};
+uint16_t a16_lastUltra[5] = {0,0,0,0,0};
+
 uint32_t u32_currentMillis = 0;
 uint32_t u32_positionMillis = 0;
 uint32_t u32_orientationMillis = 0;
 uint32_t u32_locationMillis = 0;
 uint32_t u32_objectDetectionMillis = 0;
 
-Adafruit_VL53L0X sensor1; //CHANGE
-Adafruit_VL53L0X sensor2; //CHANGE
-Adafruit_VL53L0X sensor3; //CHANGE
-Adafruit_VL53L0X sensor4; //CHANGE
-Adafruit_VL53L0X sensor5; //CHANGE
-Adafruit_VL53L0X sensor6; //CHANGE
-Adafruit_VL53L0X sensor7; //CHANGE
-Adafruit_VL53L0X sensor8; //CHANGE
+Adafruit_VL53L0X sensor1;
+Adafruit_VL53L0X sensor2; 
+Adafruit_VL53L0X sensor3; 
+Adafruit_VL53L0X sensor4; 
+Adafruit_VL53L0X sensor5; 
+Adafruit_VL53L0X sensor6; 
+Adafruit_VL53L0X sensor7; 
+Adafruit_VL53L0X sensor8; 
 
-String start = "<";
-String end = ">";
-String c = ",";
 
 typedef struct {
   Adafruit_VL53L0X *psensor; // pointer to object
@@ -99,38 +108,30 @@ sensorList_t sensors[] = {
   {&sensor8, &Wire, 0x37, 37, 38, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0}
   
 };
-const int COUNT_SENSORS = sizeof(sensors) / sizeof(sensors[0]); //CHANGE
-uint16_t objectDetectRanges_mm[COUNT_SENSORS]; //CHANGE
+const int COUNT_SENSORS = sizeof(sensors) / sizeof(sensors[0]); 
+uint16_t objectDetectRanges_mm[COUNT_SENSORS]; 
 struct Packet{
-  uint32_t locationFront; //CHANGE
-  uint32_t locationBack; //CHANGE
-  uint32_t locationRight; //CHANGE
-  uint32_t locationLeft; //CHANGE
-  uint16_t objectDetectionSensors[8]; //CHANGE
+  uint32_t locationFront;  
+  uint32_t locationBack;  
+  uint32_t locationRight;  
+  uint32_t locationLeft;  
+  uint16_t objectDetectionSensors[8];  
 };
 
 Packet packet;
-void run_Location();
-void run_ObjectDetection();
-void setup_ObjectDetection();
-void initialize_ObjDetectSensors();
-
-Ultrasonic ultrasonicFront(8); //CHANGE
-Ultrasonic ultrasonicBack(9); //CHANGE
-Ultrasonic ultrasonicRight(10); //CHANGE
-Ultrasonic ultrasonicLeft(11); //CHANGE
-
+Ultrasonic ultrasonicFront(8);  
+Ultrasonic ultrasonicBack(9);  
+Ultrasonic ultrasonicRight(10);  
+Ultrasonic ultrasonicLeft(11);  
 
 void setup() {
   Serial.begin(115200);
   delay(200);
-  oled.init();             
-  oled.clear();
   setup_ObjectDetection();
-  timestamp = millis();
   
   Wire.begin();
-   pinMode(in1, OUTPUT); //Motor 1 
+  pinMode(A5, OUTPUT);
+  pinMode(in1, OUTPUT); //Motor 1 
   pinMode(in2, OUTPUT); 
   pinMode(in3, OUTPUT); //Motor 2 
   pinMode(in4, OUTPUT); 
@@ -143,32 +144,33 @@ void setup() {
   pinMode(enC, OUTPUT); //Motor 3, back left 
   pinMode(enD, OUTPUT); //Motor 4, front left 
 }
-uint32_t loopMillis =0;
+
+
 void loop() {
   run_Location();
-  //run_ObjectDetection();
+  run_ObjectDetection();
   for(int i = 0; i<1; i++){ 
     /*turn right until right ultrasonic is on wall 
     backup until back ultra is on wall 
     forward until front ultra is on wall*/ 
-    robot_rev(false, 914); 
-    robot_fwd(false, 914); 
+    robot_rev(false); 
+    robot_fwd(false); 
     /*left until moved length of robot 
     back until back ultra is on wall*/ 
     crab_walk_left(559); 
-    robot_fwd(true, 0);
-    robot_rev(false, 559); 
+    robot_fwd(true);
+    robot_rev(false); 
     /*left length of robot 
     forward until front ultra is on wall*/ 
     crab_walk_left(254); 
-    robot_rev(true, 0);
-    robot_fwd(false, 254); 
+    robot_rev(true);
+    robot_fwd(false); 
 
     /*left until left ultra on the wall 
     back until back ultra on the wall*/ 
     crab_walk_left(20);
-    robot_fwd(false, 20); 
-    robot_rev(true, 0); 
+    robot_fwd(false); 
+    robot_rev(true); 
     motor_stop(); 
   } 
 }
@@ -225,7 +227,6 @@ void initialize_ObjDetectSensors(){
 *Description: Setup the ObjDetect Sensors by Shutdown Pins 
 *  then using initialize function
 */
-
 void setup_ObjectDetection(){
   for (int i = 0; i < COUNT_SENSORS; i++) {
     pinMode(sensors[i].shutdown_pin, OUTPUT);
@@ -234,46 +235,86 @@ void setup_ObjectDetection(){
   initialize_ObjDetectSensors();
 
 }
-void Update_sensors(){ 
+/*
+*Function Name: update_sensors()
+*Parameters: NONE
+*Returns: Nothing
+*Purpose: Updates the object detection and location sensors.
+*NOTES:
+* 1) The averages are used to filter out sensor data for the calculation
+* 2) The averages are not used for the first 5 iterations so that the arrays can be filled
+* 3)
+*/
+void update_sensors(){ 
+  int ultraAvg;
+  int leftAvg;
+  int rightAvg;
 
+  run_ObjectDetection();
+
+  a16_lastUltra[u8_k] =  ultrasonicBack.MeasureInMillimeters();
+  a16_lastRight[u8_k] = objectDetectRanges_mm[4];
+  a16_lastLeft[u8_k] = objectDetectRanges_mm[0];
+  u8_k++;
+  if(u8_k > 5){
+    b_Started = true;
+    u8_k = 0;
+  }
+  if(b_Started){
+  for(int i = 0; i < 5; i++){
+    ultraAvg += a16_lastUltra[i];
+    leftAvg += a16_lastLeft[i];
+    rightAvg += a16_lastRight[i];
+  }
+  ultraAvg = ultraAvg / 5;
+  leftAvg = leftAvg / 5;
+  rightAvg = rightAvg / 5;
+
+  a16_diff[0] = abs(leftAvg - ultraAvg);
+  a16_diff[1] = abs(rightAvg - ultraAvg);
+  a16_diff[2] = abs(leftAvg - rightAvg);
+
+  ultraAvg = 0;
+  leftAvg = 0;
+  rightAvg = 0;
+  
+  for(int i = 0; i < 3; i++){
+    if(a16_diff[i] > 300){
+      b_objectDetected = true;
+      digitalWrite(A5, HIGH);
+      Serial.println("In this if");
+    }
+    else{
+      b_objectDetected = false;
+      digitalWrite(A5, LOW);
+    }
+  }
+  }
   if(ultrasonicFront.MeasureInMillimeters() < 50){ 
-
-    FrontFlag = true; 
-
+    b_frontFlag = true; 
   } 
   else{ 
-
-    FrontFlag = false; 
-
+    b_frontFlag = false; 
   } 
-
   if(ultrasonicBack.MeasureInMillimeters() < 50){ 
-
-    BackFlag = true; 
-
+    b_backFlag = true; 
   } 
   else{ 
-
-    BackFlag = false; 
-
+    b_backFlag = false; 
   } 
-
- 
-
   if(ultrasonicRight.MeasureInMillimeters() < 50){ 
-
-    RightFlag = true; 
-
+    b_rightFlag = true; 
   }
   else{ 
-
-    RightFlag = false; 
-
+    b_rightFlag = false; 
   } 
 } 
-
- 
-
+/*
+*Function Name: motor_stop()
+*Parameters: NONE
+*Returns: Nothing
+*Purpose: Stops all motors
+*/
 void motor_stop() {  
     digitalWrite(in1, LOW); //M1, back right  
     digitalWrite(in2, LOW);   
@@ -288,9 +329,15 @@ void motor_stop() {
 
 }  
 
- 
-
-void robot_fwd(bool useTime, int distance) {  
+/*
+*Function Name: robot_fwd()
+*Parameters: Boolean to denote if the forward movement will be on a timer or use sensors
+*Returns: Nothing
+*Purpose: Move the robot forward for one second if the boolean is true, if the boolean is false, move the robot forward
+* until the front sensors read the wall is close
+*/
+void robot_fwd(bool useTime) { 
+  b_inReverse = false; 
   if(useTime){
     digitalWrite(in1, HIGH); //M1, back right  
     digitalWrite(in2, LOW);   
@@ -307,209 +354,105 @@ void robot_fwd(bool useTime, int distance) {
     delay(500);
   }
   else{
-    Update_sensors();  
-    while(FrontFlag == false){  
-      /*if(ultrasonicLeft.MeasureInMillimeters() > (distance + 20)){
-        digitalWrite(in1, LOW); //M1, back right  
-        digitalWrite(in2, HIGH);   
-        digitalWrite(in3, LOW); //M2, front right  
-        digitalWrite(in4, HIGH);   
-        digitalWrite(in5, LOW); //M3, back left  
-        digitalWrite(in6, HIGH);   
-        digitalWrite(in7, LOW); //M4, front left  
-        digitalWrite(in8, HIGH);  
-
-        analogWrite(enD, 100);  
-        analogWrite(enB, 110);  
-        analogWrite(enC, 110);  
-        analogWrite(enA, 100); 
-      }
-      else if(ultrasonicLeft.MeasureInMillimeters() < (distance - 20)){
-        digitalWrite(in1, HIGH); //M1, back right  
-        digitalWrite(in2, LOW);   
-        digitalWrite(in3, HIGH); //M2, front right  
-        digitalWrite(in4, LOW);   
-        digitalWrite(in5, HIGH); //M3, back left  
-        digitalWrite(in6, LOW);   
-        digitalWrite(in7, HIGH); //M4, front left  
-        digitalWrite(in8, LOW);  
-
-        analogWrite(enD, 100);  
-        analogWrite(enB, 110);  
-        analogWrite(enC, 110);  
-        analogWrite(enA, 100); 
-      }
-      else{*/
-        Update_sensors(); 
-        digitalWrite(in1, HIGH); //M1, back right  
-        digitalWrite(in2, LOW);   
-        digitalWrite(in3, LOW); //M2, front right  
-        digitalWrite(in4, HIGH);   
-        digitalWrite(in5, LOW); //M3, back left  
-        digitalWrite(in6, HIGH);   
-        digitalWrite(in7, HIGH); //M4, front left  
-        digitalWrite(in8, LOW);  
-        analogWrite(enB, 200);  
-        analogWrite(enD, 200);  
-        analogWrite(enA, 200);  
-        analogWrite(enC, 200);
+    update_sensors();  
+    while(b_frontFlag == false){  
+      update_sensors(); 
+      digitalWrite(in1, HIGH); //M1, back right  
+      digitalWrite(in2, LOW);   
+      digitalWrite(in3, LOW); //M2, front right  
+      digitalWrite(in4, HIGH);   
+      digitalWrite(in5, LOW); //M3, back left  
+      digitalWrite(in6, HIGH);   
+      digitalWrite(in7, HIGH); //M4, front left  
+      digitalWrite(in8, LOW);  
+      analogWrite(enB, 200);  
+      analogWrite(enD, 200);  
+      analogWrite(enA, 200);  
+      analogWrite(enC, 200);
     } 
   }
   motor_stop(); 
 }  
 
- 
-
-void robot_rev (bool useTime, int distance) {  
+/*
+*Function Name: robot_rev()
+*Parameters: Boolean to denote if the reverse will be on a timer or use sensors
+*Returns: Nothing
+*Purpose: Reverse the robot for one second if the boolean is true, if the boolean is false, reverse the robot
+* until the back sensors read the wall is close
+*/
+void robot_rev (bool useTime) {  
+  b_inReverse = true;
   if(useTime){
     digitalWrite(in1, LOW); //M1, back right  
-
     digitalWrite(in2, HIGH);   
-
     digitalWrite(in3, HIGH); //M2, front right  
-
     digitalWrite(in4, LOW);   
-
     digitalWrite(in5, HIGH); //M3, back left  
-
     digitalWrite(in6, LOW);   
-
     digitalWrite(in7, LOW); //M4, front left  
-
     digitalWrite(in8, HIGH);  
-
- 
-
     analogWrite(enD, 200);  
-
     analogWrite(enB, 200);  
-
     analogWrite(enC, 200);  
-
     analogWrite(enA, 200);  
     delay(500);
   }
   else{
-  Update_sensors();  
-  while(BackFlag == false){  
-    /*if(ultrasonicLeft.MeasureInMillimeters() > (distance + 20)){
-        digitalWrite(in1, LOW); //M1, back right  
-        digitalWrite(in2, HIGH);   
-        digitalWrite(in3, LOW); //M2, front right  
-        digitalWrite(in4, HIGH);   
-        digitalWrite(in5, LOW); //M3, back left  
-        digitalWrite(in6, HIGH);   
-        digitalWrite(in7, LOW); //M4, front left  
-        digitalWrite(in8, HIGH);  
-
-        analogWrite(enD, 100);  
-        analogWrite(enB, 110);  
-        analogWrite(enC, 110);  
-        analogWrite(enA, 100); 
-      }
-      else if(ultrasonicLeft.MeasureInMillimeters() < (distance - 20)){
-        digitalWrite(in1, HIGH); //M1, back right  
-        digitalWrite(in2, LOW);   
-        digitalWrite(in3, HIGH); //M2, front right  
-        digitalWrite(in4, LOW);   
-        digitalWrite(in5, HIGH); //M3, back left  
-        digitalWrite(in6, LOW);   
-        digitalWrite(in7, HIGH); //M4, front left  
-        digitalWrite(in8, LOW);  
-
-        analogWrite(enD, 100);  
-        analogWrite(enB, 110);  
-        analogWrite(enC, 110);  
-        analogWrite(enA, 100); 
-      }
-    else{*/
-      Update_sensors();  
-
+  update_sensors();  
+  while(b_backFlag == false){  
+      update_sensors();  
       digitalWrite(in1, LOW); //M1, back right  
-
       digitalWrite(in2, HIGH);   
-
       digitalWrite(in3, HIGH); //M2, front right  
-
       digitalWrite(in4, LOW);   
-
       digitalWrite(in5, HIGH); //M3, back left  
-
       digitalWrite(in6, LOW);   
-
       digitalWrite(in7, LOW); //M4, front left  
-
       digitalWrite(in8, HIGH);  
-
-  
-
       analogWrite(enD, 200);  
-
       analogWrite(enB, 200);  
-
       analogWrite(enC, 210);  
-
-      analogWrite(enA, 200);  
+      analogWrite(enA, 200); 
     } 
   }
   motor_stop(); 
 
 }  
-
- 
-
+/*
+*Function Name: motor_turn_right()
+*Parameters: NONE
+*Returns: Nothing
+*Purpose: Turns the robot to the right
+*/
 void motors_turn_right() {  
-
-  Update_sensors();  
-
-  while(RightFlag == false){  
-
-    Update_sensors();  
-
+  update_sensors();  
+  while(b_rightFlag == false){  
+    update_sensors();  
     digitalWrite(in1, LOW); //M1, back right  
-
     digitalWrite(in2, HIGH);   
-
     digitalWrite(in3, HIGH); //M2, front right  
-
     digitalWrite(in4, LOW);   
-
     digitalWrite(in5, LOW); //M3, back left  
-
     digitalWrite(in6, HIGH);   
-
     digitalWrite(in7, HIGH); //M4, front left  
-
     digitalWrite(in8, LOW);  
-
- 
-
     analogWrite(enD, 80);  
-
-    analogWrite(enB, 80);  
-
-    analogWrite(enC, 80);  
-
+    analogWrite(enB, 80); 
+    analogWrite(enC, 80); 
     analogWrite(enA, 80);  
-
   }  
-
   motor_stop(); 
-
 }  
 
- 
-
+/*
+*Function Name: crab_walk_left()
+*Parameters: Distance to travel UNTIL (int)
+*Returns: Nothing
+*Purpose: Makes the robot crab walk to the left until it reaches a certain distance from the wall
+*/
 void crab_walk_left(int distance) {  
-
-  //Update_sensors();  
-  Serial.print("Right: ");
-  Serial.println(ultrasonicRight.MeasureInMillimeters());
-  Serial.print("Left: ");
-  Serial.println(ultrasonicLeft.MeasureInMillimeters());
   while(ultrasonicLeft.MeasureInMillimeters() > distance){  
-    Serial.println(ultrasonicLeft.MeasureInMillimeters());
-    //Update_sensors();  
     digitalWrite(in1, LOW); //M1, back right  
     digitalWrite(in2, HIGH);   
     digitalWrite(in3, LOW); //M2, front right  
@@ -518,12 +461,10 @@ void crab_walk_left(int distance) {
     digitalWrite(in6, HIGH);   
     digitalWrite(in7, LOW); //M4, front left  
     digitalWrite(in8, HIGH);  
-
     analogWrite(enD, 100);  
     analogWrite(enB, 130);  
     analogWrite(enC, 130);  
     analogWrite(enA, 100);  
   }  
   motor_stop(); 
-
 } 
