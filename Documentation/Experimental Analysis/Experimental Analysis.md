@@ -384,17 +384,18 @@ The constraint is met because the large error distance was 19.025 mm (0.749 in),
 #### ROS2 navigation
 Due to the chosen sensor configuration, navigation with ROS2 was not possible. The main issue arose with ROS's need for lidar or GPS data to establish a base scan transform. As a workaround and proof of concept, 
 an RPLidar A2M8 was used to test the robot's capabilites. Shown below are the maps created by the LIDAR. Due to the height requirements of the LIDAR, accurate representations of the SECON boards was not possible in the experimental period,
-but the capabilites are shown possible with proper mapping operation in the classroom. The transformations tree shown below is also an indication that all of the major transforms have been achieved for mapping and autonomous navigation. 
+but the capabilites are shown possible with proper mapping operation in the classroom. 
 
 <div align="center">
 <img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/Capstone_Room_map.jpg
 </div>
 
+The transformations tree shown below is also an indication that all of the major transforms have been achieved for mapping and autonomous navigation. ROS requires the map to odom, odom to base_link, and base_link to base_scan(laser) transforms to map and navigate. All three are shown in the graph below. 
 <div align="center">
 <img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/Robot_TF_Frames.png
 </div>
 
-####ROS2 Object Detection
+#### ROS2 Object Detection
 Using the RPLidar, object detection was made very simple and could easily be shown by the rviz2 GUI. The following video demonstrates the robot detecting movement as members of our group walked around. 
 It is very obvious to see where our legs are as we move in its field of view. 
 
