@@ -387,12 +387,12 @@ an RPLidar A2M8 was used to test the robot's capabilites. Shown below are the ma
 but the capabilites are shown possible with proper mapping operation in the classroom. 
 
 <div align="center">
-<img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/Capstone_Room_map.jpg
+<img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/Capstone_Room_map.jpg>
 </div>
 
 The transformations tree shown below is also an indication that all of the major transforms have been achieved for mapping and autonomous navigation. ROS requires the map to odom, odom to base_link, and base_link to base_scan(laser) transforms to map and navigate. All three are shown in the graph below. 
 <div align="center">
-<img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/Robot_TF_Frames.png
+<img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/Robot_TF_Frames.png>
 </div>
 
 #### ROS2 Object Detection
