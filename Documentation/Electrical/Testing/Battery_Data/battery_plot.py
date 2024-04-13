@@ -20,7 +20,7 @@ time = data[:,0]
 voltage = data[:,1]
 
 plt.figure(figsize=(10,6), dpi=150)
-plt.scatter(time, voltage, marker='.', color='k', s=45)
+plt.scatter(time, voltage, marker='.', color='g', s=45)
 plt.ylim([13,14])
 plt.grid()
 plt.ylabel("Battery Voltage (V)")
