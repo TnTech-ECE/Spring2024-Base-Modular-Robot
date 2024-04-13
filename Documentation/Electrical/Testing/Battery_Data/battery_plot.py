@@ -21,10 +21,11 @@ voltage = data[:,1]
 
 plt.figure(figsize=(10,6), dpi=150)
 plt.scatter(time, voltage, marker='.', color='g', s=45)
-plt.ylim([13,14])
+plt.ylim([10,14])
+plt.xlim([140,2300])
 plt.grid()
 plt.ylabel("Battery Voltage (V)")
 plt.xlabel("Elapsed Time (s)")
 plt.title("Battery Voltage vs Time")
-plt.savefig("battery_plot.svg")
+# plt.savefig("battery_plot.png")
 plt.show()
