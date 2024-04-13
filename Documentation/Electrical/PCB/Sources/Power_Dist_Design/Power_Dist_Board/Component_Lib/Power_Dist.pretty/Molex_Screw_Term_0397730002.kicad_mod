@@ -25,4 +25,9 @@
     (stroke (width 0.12) (type solid)) (fill none) (layer "F.SilkS") (tstamp c4a6577b-7abe-4ec7-9f34-caf569d0c17d))
   (pad "1" thru_hole circle (at -1.29 0) (size 2 2) (drill 1.1) (layers "*.Cu" "*.Mask") (tstamp 5281c0ec-8f69-4146-8e8e-48dee1830e85))
   (pad "2" thru_hole circle (at 1.25 0) (size 2 2) (drill 1.1) (layers "*.Cu" "*.Mask") (tstamp 41b5f6b9-d8a5-44ef-94fe-c2128b061b54))
+  (model "${KIPRJMOD}/Component_Lib/3D_Models/397730002.stp"
+    (offset (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz -90 0 180))
+  )
 )
