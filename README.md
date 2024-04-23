@@ -60,11 +60,11 @@ The [Project Proposal](/Reports/Project%20Proposal%20Revised.pdf) is the initial
 
 The [Conceptual Design](/Reports/Conceptual%20Design%20and%20Planning%20V2.pdf) gives a more detailed solution to the problem as well as subsystem breakdowns and a projected timeline and budget.
 
-[Experimentation](/Reports/Experimentation.md) Coming Spring 2024!
+The [Experimentation](/Reports/Experimentation.md) gives the experimental results of the different subsystems and how constraints were met or not.
 
 The [Poster](/Reports/Poster/Modular%20IEEE%20Robot%20Poster.pdf) is what the team presented at the 2024 capstone showcase.
 
-[Final Presentation](/Reports/Final%20Presentation.md) Coming Spring 2024!
+The [Final Presentation](/Reports/Final%20Presentation.md) is the presentation that the team gave to the IAB board.
 
 In the [Lessons Learned](/Reports/Lessons%20Learned%20and%20Acquired%20Skills.md) the team members reflect on their progress, oversights, and notebable incidents and successes.
 
