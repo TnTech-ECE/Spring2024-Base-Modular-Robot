@@ -62,11 +62,11 @@ The [Conceptual Design](/Reports/Conceptual%20Design%20and%20Planning%20V2.pdf) 
 
 [Experimentation](/Reports/Experimentation.md) Coming Spring 2024!
 
-[Poster](/Reports/Poster.md) Coming Spring 2024!
+The [Poster](/Reports/Poster/Modular%20IEEE%20Robot%20Poster.pdf) is what the team presented at the 2024 capstone showcase.
 
 [Final Presentation](/Reports/Final%20Presentation.md) Coming Spring 2024!
 
-[Lessons Learned](/Reports/Lessons%20Learned%20and%20Acquired%20Skills.md) Coming Spring 2024!
+In the [Lessons Learned](/Reports/Lessons%20Learned%20and%20Acquired%20Skills.md) the team members reflect on their progress, oversights, and notebable incidents and successes.
 
 ### [Documentation](/Documentation)
 All documentation for the project is included in the above folder. Documentation includes all schematics, images, models, BOM, and designs used in the project.
