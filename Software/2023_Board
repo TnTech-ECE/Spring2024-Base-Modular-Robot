@@ -74,7 +74,7 @@ typedef struct {
 // Setup for 8 sensors by defining information for each sensor in a 'sensors' array. Include
 // a separate line of information for each sensor
 sensorList_t sensors[] = {
-  // For 'sensor1', define the IIC accress as hexadecimal value 0x30. Assign digital pin #4 to this 
+  // For 'sensor1', define the IIC accress as hexadecimal value 0x30. Assign digital pin #38 to this 
   // sensor's XSHUT pin (shut-down pin). Assign digital pin #5 to the sensor's INTERRUPT pin.
   {&sensor1, &Wire, 0x30, 38, 5, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0},
 
@@ -83,28 +83,28 @@ sensorList_t sensors[] = {
   {&sensor2, &Wire, 0x31, 6, 7, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0},
 
   
-  // For 'sensor3', define the IIC accress as hexadecimal value 0x32. Assign digital pin #22 to this 
-  // sensor's XSHUT pin (shut-down pin). Assign digital pin #23 to the sensor's INTERRUPT pin.
+  // For 'sensor3', define the IIC accress as hexadecimal value 0x32. Assign digital pin #40 to this 
+  // sensor's XSHUT pin (shut-down pin). Assign digital pin #3 to the sensor's INTERRUPT pin.
   {&sensor3, &Wire, 0x32, 40, 3, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0},
   
-  // For 'sensor4', define the IIC accress as hexadecimal value 0x33. Assign digital pin #24 to this 
-  // sensor's XSHUT pin (shut-down pin). Assign digital pin #25 to the sensor's INTERRUPT pin.
+  // For 'sensor4', define the IIC accress as hexadecimal value 0x33. Assign digital pin #29 to this 
+  // sensor's XSHUT pin (shut-down pin). Assign digital pin #30 to the sensor's INTERRUPT pin.
   {&sensor4, &Wire, 0x33, 29, 30, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0},
 
-  // For 'sensor5', define the IIC accress as hexadecimal value 0x34. Assign digital pin #26 to this 
-  // sensor's XSHUT pin (shut-down pin). Assign digital pin #27 to the sensor's INTERRUPT pin.
+  // For 'sensor5', define the IIC accress as hexadecimal value 0x34. Assign digital pin #31 to this 
+  // sensor's XSHUT pin (shut-down pin). Assign digital pin #32 to the sensor's INTERRUPT pin.
   {&sensor5, &Wire, 0x34, 31, 32, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0},
 
-  // For 'sensor6', define the IIC accress as hexadecimal value 0x35. Assign digital pin #28 to this 
-  // sensor's XSHUT pin (shut-down pin). Assign digital pin #29 to the sensor's INTERRUPT pin.
+  // For 'sensor6', define the IIC accress as hexadecimal value 0x35. Assign digital pin #33 to this 
+  // sensor's XSHUT pin (shut-down pin). Assign digital pin #34 to the sensor's INTERRUPT pin.
   {&sensor6, &Wire, 0x35, 33, 34, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0},
 
-  // For 'sensor7', define the IIC accress as hexadecimal value 0x36. Assign digital pin #30 to this 
-  // sensor's XSHUT pin (shut-down pin). Assign digital pin #31 to the sensor's INTERRUPT pin.
+  // For 'sensor7', define the IIC accress as hexadecimal value 0x36. Assign digital pin #35 to this 
+  // sensor's XSHUT pin (shut-down pin). Assign digital pin #36 to the sensor's INTERRUPT pin.
   {&sensor7, &Wire, 0x36, 35, 36, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0},
   
-  // For 'sensor8', define the IIC accress as hexadecimal value 0x37. Assign digital pin #32 to this 
-  // sensor's XSHUT pin (shut-down pin). Assign digital pin #25 to the sensor's INTERRUPT pin.
+  // For 'sensor8', define the IIC accress as hexadecimal value 0x37. Assign digital pin #37 to this 
+  // sensor's XSHUT pin (shut-down pin). Assign digital pin #38 to the sensor's INTERRUPT pin.
   {&sensor8, &Wire, 0x37, 37, 38, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0}
   
 };
