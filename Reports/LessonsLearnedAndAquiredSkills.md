@@ -4,7 +4,7 @@
 
 Reflect on the project, both technical and organizational. What went well? What didn’t go well? 
 
-- For the most part the power-related subsystems went well. 
+- For the most part the power-related subsystems went well. The power distribution PCB performed adequately and passed all tests. The battery vastly outlasted what it was expected to and .... Finish ....
 
 What unanticipated problems occurred? 
 
