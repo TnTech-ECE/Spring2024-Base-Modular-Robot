@@ -118,7 +118,7 @@ Reflect on the project, both technical and organizational. What went well? What 
 
 What unanticipated problems occurred? 
 
-- There were several problems with our constraints or measures of success where we wouldn't be able to complete them, so we had to work with our advisor to modify them.
+- There were several problems with our constraints or measures of success where we weren't able to fully complete them, so we had to work with our advisor to modify them.
 - The robot went slower than I expected which was part of my section, and I had to find was to test the robot to determine the root cause.
 
 What would you do differently if you were to do it over again? 
