@@ -60,7 +60,7 @@ The [Project Proposal](/Reports/Project%20Proposal%20Revised.pdf) is the initial
 
 The [Conceptual Design](/Reports/Conceptual%20Design%20and%20Planning%20V2.pdf) gives a more detailed solution to the problem as well as subsystem breakdowns and a projected timeline and budget.
 
-The [Experimentation](/Reports/Experimentation.md) gives the experimental results of the different subsystems and how constraints were met or not.
+The [Experimentation](/Documentation/Experimental%20Analysis) gives the experimental results of the different subsystems and how constraints were met or not.
 
 The [Poster](/Reports/Poster/Modular%20IEEE%20Robot%20Poster.pdf) is what the team presented at the 2024 capstone showcase.
 
