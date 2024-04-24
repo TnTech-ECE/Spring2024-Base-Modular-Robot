@@ -1,3 +1,9 @@
+/*
+* Coding structure provided by: https://randomnerdtutorials.com/esp-now-esp32-arduino-ide/
+* Modified by: Isaac Hoese
+* Purpose: Reciever code for ESP32 data transmission
+*/
+
 #include <esp_now.h>
 #include <WiFi.h>
 
