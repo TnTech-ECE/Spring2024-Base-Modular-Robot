@@ -34,7 +34,7 @@ The object detection subsystem sends data to the master control  to control and 
 The schematic above is shown. Eight time of flight are used for the object detection with two sensors per each side. Each sensor is I2C communications. Each sensor has a serial clock (SCL) connected to digtial pin 21 of the Arduino Mega. Each sensor also has a serial data (SDA) connected to digtial pin 20 of the Arduino Mega. Each sensor and Arduino Mega are powerd by the 5 V power distribution bus.
 <br/>
 
-![Alt text](../Documentation/Electrical/Schematics/Sources/Object Detection/ObjDetectionSensorSchematicV2.png)
+![Alt text](../Documentation/Electrical/Schematics/Sources/Object%20Detection/ObjDetectionSensorSchematicV2.png)
 
 ### Object Detection Placement
 
