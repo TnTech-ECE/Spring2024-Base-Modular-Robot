@@ -61,6 +61,7 @@ Reflect on the project, both technical and organizational. What went well? What 
 What unanticipated problems occurred? 
 
 - The I2C bus encountered a low voltage when ran at 5V, but not on 3.3V. This caused our sensors to read maximum values until switching to 3.3V
+- The back line following sensor was shorted. However, the robot runs equally as well with only the front line following sensor active.
 
 What would you do differently if you were to do it over again? 
 
