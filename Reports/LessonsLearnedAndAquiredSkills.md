@@ -76,10 +76,10 @@ Do as much research on your topic as you can up front. In hindsight, we could ha
 
 What new knowledge or skills did you acquire throughout capstone.
 
--Basic ROS knowledge (Just from helping Isaac J.)
--Wireless Data Transmission
--GUI creation
--PID programming
+1) Basic ROS knowledge (From helping Isaac J.)
+2) Wireless Data Transmission
+3) GUI creation
+4) PID programming
 
 
 
