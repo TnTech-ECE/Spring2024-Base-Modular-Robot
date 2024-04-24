@@ -30,27 +30,33 @@ What new knowledge or skills did you acquire throughout capstone.
 
 Reflect on the project, both technical and organizational. What went well? What didn’t go well? 
 
-- ...
+- For technical part of project, the team work well to complete the tasks individually and together with their unique skill set and knowlwdge.
+- For organizational part of the project, the team was efficent in meeting and complete tasks except for a few misunderstandings.
 
 What unanticipated problems occurred? 
 
-- ...
+- The library for the Grove Time of Flight Sensor (VL53L0X) did not allow to set a different address because it was privated in the class. I had to find a different library to set a different address because two I2C devices with the same address can not work at the same time.
+- The I2C bus encountered a low voltage when ran at 5V, but not on 3.3V. This caused our sensors to read maximum values until switching to 3.3V
 
 What would you do differently if you were to do it over again? 
 
-- ...
+- I would make a custom PCB for the I2C hub and connections for all the sensors to be easier to plug in play adaptable.
+- Use a different brand/company for the Time of Flight (VL53L0X).
 
 What “best practices” have you identified? 
 
-- ...
+- Using print statements in the code to debug issues is a great practice. It allows to see how the works and eliminate possible problems.
 
 What words of wisdom would you pass on to future students?
 
-- ...
+- Research and collect many solutions to solve your problem, and then use pros and cons to compare all of your solutions. Use the criteria of money, time, complexity, and feasibility to make the correct decision.
 
 What new knowledge or skills did you acquire throughout capstone.
 
-- ...
+- Understanding I2C communication
+- Testing and Debugging Problems
+- Understanding Technical Documentation
+- PID Controller
 
 ## Isaac Hoese
 
