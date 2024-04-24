@@ -20,7 +20,7 @@ What “best practices” have you identified?
 
 What words of wisdom would you pass on to future students?
 
-- If you are doing a design in the first semester to be tested in the second, especially if it is something foundational: DO YOUR HOMEWORK. I checked and double checked everything, from the current capacities of the narrowest traces on the PCB to the SPICE simulations of the buck converters. I credit this to not having any failures in the power board, and while it took a lot of work in the first semester of Capstone, it saved me and my team an lot amount of additional stress in the second semester.
+- If you are doing a design in the first semester to be tested in the second, especially if it is something foundational: DO YOUR HOMEWORK. It will save you time in the long run. I checked and double checked everything, from the current capacities of the traces on the PCB to the SPICE simulations of the buck converters. I credit this to not having any failures in the power board, and while it took a lot of work in the first semester of Capstone, it saved me and my team an lot amount of additional stress in the second semester.
 
 What new knowledge or skills did you acquire throughout capstone.
 
