@@ -1,9 +1,8 @@
-/*Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files.
-  
-  The above copyright notice and this permission notice shall be included in all
-  copies or substantial portions of the Software.
-*********/
+/*
+* Coding structure provided by: https://randomnerdtutorials.com/esp-now-esp32-arduino-ide/
+* Modified by: Isaac Hoese
+* Purpose: Transmitter code for ESP32 data transmission
+*/
 
 #include <esp_now.h>
 #include <WiFi.h>
