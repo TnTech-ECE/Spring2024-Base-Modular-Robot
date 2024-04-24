@@ -56,30 +56,29 @@ What new knowledge or skills did you acquire throughout capstone.
 
 Reflect on the project, both technical and organizational. What went well? What didn’t go well? 
 
-The bluetooth data transmission and sensors went smoothly.
+- The bluetooth data transmission and sensors went smoothly.
 
 What unanticipated problems occurred? 
 
-1) The I2C bus encountered a low voltage when ran at 5V, but not on 3.3V. This caused our sensors to read maximum values until switching to 3.3V
+- The I2C bus encountered a low voltage when ran at 5V, but not on 3.3V. This caused our sensors to read maximum values until switching to 3.3V
 
 What would you do differently if you were to do it over again? 
 
-I would have combined the Arduino Mega and ESP32 onto a custom PCB. This would eliminate most of the wires on the robot (or at least made them much shorter) since the pin headers could be placed in ideal spots for our specific robot.
+- I would have combined the Arduino Mega and ESP32 onto a custom PCB. This would eliminate most of the wires on the robot (or at least made them much shorter) since the pin headers could be placed in ideal spots for our specific robot.
 
 What “best practices” have you identified? 
 
-I think the main "best practice" was adopting the universal coding conventions which will allow future users to easily adopt code. Using the coding conventions also eliminates ambiguity between integer types ( uint32_t, uint16_t, etc.) and makes variable allocation an easier process.
+- I think the main "best practice" was adopting the universal coding conventions which will allow future users to easily adopt code. Using the coding conventions also eliminates ambiguity between integer types ( uint32_t, uint16_t, etc.) and makes variable allocation an easier process.
 
 What words of wisdom would you pass on to future students?
 
-Do as much research on your topic as you can up front. In hindsight, we could have chosen one sensor for navigation rather than the 14 that we have on the board. The more you research upfront the less work you will have to do in the long run.
+- Do as much research on your topic as you can up front. In hindsight, we could have chosen one sensor for navigation rather than the 14 that we have on the board. The more you research upfront the less work you will have to do in the long run.
 
 What new knowledge or skills did you acquire throughout capstone.
-
-1) Basic ROS knowledge (From helping Isaac J.)
-2) Wireless Data Transmission
-3) GUI creation
-4) PID programming
+- Basic ROS knowledge (From helping Isaac J.)
+- Wireless Data Transmission
+- GUI creation
+- PID programming
 
 
 
