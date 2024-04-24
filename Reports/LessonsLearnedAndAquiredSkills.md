@@ -146,24 +146,32 @@ What new knowledge or skills did you acquire throughout capstone.
 
 Reflect on the project, both technical and organizational. What went well? What didn’t go well? 
 
-- ...
+- On the technical side of the project, I felt like my team was extremely well rounded and this allowed for easy distribution of work to people and allowed everyone to enjoy what we did. I also felt like us being well rounded allowed for a really smooth itegration and experimentation portion of our project.
+- Overall, I think the organization portion of our project went well. Towards the end there were some concerns that were brough forward, but it was too late to fix them. It stemmed from some poor communication between the group throughout the project that was never addressed. 
 
 What unanticipated problems occurred? 
 
-- ...
+- With the motor attachment, there were problems with getting them made out of PLA and being a certain thickness due to a height contraint. Where the attachment was too thin/too weak, it caused bowing on the motors on the frame of the robot. I tried a new design with the same material and it also did not work. Therefore, I had to contact the machine shop to create the attachment out of metal instead. Over two itertions, the mount worked and we could proceed on with building. This caused a slight delay in progress for the robot in January. 
 
 What would you do differently if you were to do it over again? 
 
-- ...
+- I would communicate more clearly every step of the project and through every concern to ensure there were no misunderstandings and more exact expectations layed out.
+- I would have looked more best uses or suggestions for 3D printing componets to avoid needing to do as many iterations of designs and prints. 
 
 What “best practices” have you identified? 
 
-- ...
+- For 3D models, more adimatantly saving each version of a components. There were times were I would make changes and not save a new version and need the old version I had just erased.
+- Document problems faced as they are faced so that when you need to write about it for the presentation or somehting else you already have it written down so you can remember more details.
 
 What words of wisdom would you pass on to future students?
 
-- ...
+- Make more clear expectations and communicate them clearly to keep meetings and communication as easy as possible.
+- Document everything. You will thank yourself later.
+- Keep all group files organized as you go. This will make it easier to find things and save time later.
 
 What new knowledge or skills did you acquire throughout capstone.
 
-- ...
+- I definitely further progressed my skill and knowledge in 3D modeling and CAD software in general. If I use something similar in the future it will be alot easier to pick up.
+- Team and project leadership
+- How to create and present a good technical presentation
+- Project intergration. Seeing and understanding how everyone's subsystems worked together to create our robot. 
