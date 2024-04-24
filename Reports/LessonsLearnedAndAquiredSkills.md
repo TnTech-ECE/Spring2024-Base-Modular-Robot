@@ -4,7 +4,7 @@
 
 Reflect on the project, both technical and organizational. What went well? What didn’t go well? 
 
-- ...
+- For the most part the power-related subsystems went well. 
 
 What unanticipated problems occurred? 
 
@@ -12,7 +12,7 @@ What unanticipated problems occurred?
 
 What would you do differently if you were to do it over again? 
 
-- ...
+- If I were to do it over again I would have done a little more research into the wireless power transfer subsystem. Because not all of the aspects of that subsystem were thought out, only a very basic proof-of-concept could be demonstrated by the end.
 
 What “best practices” have you identified? 
 
