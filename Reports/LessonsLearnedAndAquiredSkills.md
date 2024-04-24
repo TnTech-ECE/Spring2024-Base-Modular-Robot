@@ -146,12 +146,12 @@ What new knowledge or skills did you acquire throughout capstone.
 
 Reflect on the project, both technical and organizational. What went well? What didn’t go well? 
 
-- On the technical side of the project, I felt like my team was extremely well rounded and this allowed for easy distribution of work to people and allowed everyone to enjoy what we did. I also felt like us being well rounded allowed for a really smooth itegration and experimentation portion of our project.
+- On the technical side of the project, I felt like my team was extremely well rounded and this allowed for easy distribution of work to people and allowed everyone to enjoy what we did. I also felt like us being well rounded allowed for a really smooth integration and experimentation portion of our project.
 - Overall, I think the organization portion of our project went well. Towards the end there were some concerns that were brough forward, but it was too late to fix them. It stemmed from some poor communication between the group throughout the project that was never addressed. 
 
 What unanticipated problems occurred? 
 
-- With the motor attachment, there were problems with getting them made out of PLA and being a certain thickness due to a height contraint. Where the attachment was too thin/too weak, it caused bowing on the motors on the frame of the robot. I tried a new design with the same material and it also did not work. Therefore, I had to contact the machine shop to create the attachment out of metal instead. Over two itertions, the mount worked and we could proceed on with building. This caused a slight delay in progress for the robot in January. 
+- With the motor attachment, there were problems with getting them made out of PLA and being a certain thickness due to a height contraint. Where the attachment was too thin/too weak, it caused bowing on the motors on the frame of the robot. I tried a new design with the same material and it also did not work. Therefore, I had to contact the machine shop to create the attachment out of metal instead. Over two iterations, the mount worked and we could proceed on with building. This caused a slight delay in progress for the robot in January. 
 
 What would you do differently if you were to do it over again? 
 
