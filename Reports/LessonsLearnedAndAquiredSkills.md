@@ -26,6 +26,10 @@ What new knowledge or skills did you acquire throughout capstone.
 
 - I learned a lot more about good PCB design. Particularly in the use of having a shared ground connection between "clean" and "dirty" ground connections (in this case between the motors and 3.3/5 V rails). By isolating the two everywhere except for one single small connection, there was no noticeable interference between the motors and other buses through the ground plane, resulting in (to my knowledge) not a single brownout.
 
+What classes have you taken that helped you in capstone? What did they help with?
+
+- ...
+
 ## Reid Crews
 
 Reflect on the project, both technical and organizational. What went well? What didn’t go well? 
@@ -58,6 +62,10 @@ What new knowledge or skills did you acquire throughout capstone.
 - Understanding Technical Documentation
 - PID Controller
 
+What classes have you taken that helped you in capstone? What did they help with?
+
+- ...
+
 ## Isaac Hoese
 
 Reflect on the project, both technical and organizational. What went well? What didn’t go well? 
@@ -87,7 +95,9 @@ What new knowledge or skills did you acquire throughout capstone.
 - GUI creation
 - PID programming
 
+What classes have you taken that helped you in capstone? What did they help with?
 
+- ...
 
 ## Isaac Jennings
 
@@ -112,6 +122,10 @@ What words of wisdom would you pass on to future students?
 - ...
 
 What new knowledge or skills did you acquire throughout capstone.
+
+- ...
+
+What classes have you taken that helped you in capstone? What did they help with?
 
 - ...
 
@@ -148,6 +162,12 @@ What new knowledge or skills did you acquire throughout capstone.
 - How to do electrical schematics
 - How to give a good technical presentation
 
+What classes have you taken that helped you in capstone? What did they help with?
+
+- ECE 4370 - Mechatronics showed me the basics of motor control and how to integrate software with different physical components.
+- ECE 2050, 3050, 4050 - All of the circuits and electronics classes came into play when determining how components should interact regarding different voltages and currents.
+- ECE 3920 - Professionalism helped me determine how to give a better technical presentation, make ethical decisions, and work in an engineering team.
+
 ## Mabel Olson
 
 Reflect on the project, both technical and organizational. What went well? What didn’t go well? 
@@ -180,4 +200,8 @@ What new knowledge or skills did you acquire throughout capstone.
 - I definitely further progressed my skill and knowledge in 3D modeling and CAD software in general. If I use something similar in the future it will be alot easier to pick up.
 - Team and project leadership
 - How to create and present a good technical presentation
-- Project intergration. Seeing and understanding how everyone's subsystems worked together to create our robot. 
+- Project intergration. Seeing and understanding how everyone's subsystems worked together to create our robot.
+
+What classes have you taken that helped you in capstone? What did they help with?
+
+- ...
