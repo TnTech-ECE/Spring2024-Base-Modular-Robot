@@ -1,6 +1,3 @@
-For each of the sets of programs written, create a directory in the software folder. 
-
-Each software folder must contain a readme file detailing
 
 ## Bluetooth Reveiver
 This code is for an ESP32. The reciever microcontroller needs to be connected to a laptop. The GUI can be ran to read sensor data when the Nav_Full code is ran. The code recieves the signal sent by the transmitter.
