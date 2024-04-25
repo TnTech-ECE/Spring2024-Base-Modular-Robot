@@ -32,8 +32,15 @@ As projects progress, there are typically outcomes tht are more impressive than 
 
 ## Project Demonstration & Images
 
-Coming Spring 2024!
+![image](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/ModelvsCreated.png)
 
+3D model of the robot vs the final product
+
+[Watch the video](https://youtu.be/stM9KGa8I_E) of the robot autonomously navigating a line.
+
+[Watch the video](https://youtu.be/3MeIy1WahUA) of the robot autonomously sweeping the board given its location.
+
+[Watch the video](https://youtu.be/3MeIy1WahUA](https://www.youtube.com/watch?v=_iFhnvbLboQ)) of the robot detecting objects in front of it.
 
 ## About Us
 
