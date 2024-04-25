@@ -1,1 +1,8 @@
-See the documentation [Readme](https://github.com/TnTech-ECE/StarterRepo/blob/4acf2722f47a9d7eadf164df901ab597b25184e5/Documentation/ReadMe.md) for information about what should be in this directory
+The 3D models directory has the .stl files for the 3D printed components created for this project.
+
+The .stl files can be viewed in GitHub and used with other 3D editing software.
+
+Please see the respective sign offs for more information on the components.
+
+[Attachments]()
+[Chassis]()
