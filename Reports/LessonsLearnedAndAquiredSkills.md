@@ -34,7 +34,10 @@ What new knowledge or skills did you acquire throughout capstone.
 
 What classes have you taken that helped you in capstone? What did they help with?
 
-- ...
+- Electronics: Electronics taught me a lot of the basics of electronics and more advanced electronics circuits and devices.
+- Signals and Systems: In signals and systems we were taught about the basics of different types of electric signals. This was useful for understanding how a buck converter 
+- Electromagnetics I and II: Electromagnetism played a role in several parts of the power subsystem. The wireless power transfer is an explicitly electromagnetics topic, and required knowledge of electromagnetics for development and research.
+
 
 ## Reid Crews
 
