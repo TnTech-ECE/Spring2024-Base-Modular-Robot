@@ -7,12 +7,23 @@ Each year, Tennessee Technological University (Tech) participates in the Institu
 
 ## Capabilities
 
-Coming Spring 2024!
+The current version of the robot has the following capabilities:
+1. Autonomous navigation
+2. Modular components that can be easily adapted for different uses
+3. Robust, centralized charging system
+4. Functioning emergency stop button
+5. Can travel inclines and declines up to 25 degrees
+7. 360 degrees of movement
+8. Knows location within a 2 inch tolerance
+9. Sensors are are plug and play adpatable with the use of an I2C bus
+10. Foundation layed for autonomous navgivaton with LiDAR and ROS2
+11. User manual for teams to understand design considerations, common problems, and solutions
 
 
 ## Salient Outcomes
 
-Coming Spring 2024!
+1. Wireless charging proof of concept
+2. Multi-navigation 
 
 
 ## Project Demonstration & Images
