@@ -93,6 +93,6 @@ The [Meeting Minutes](/Documentation/Meeting%20Minutes) folder contains the date
 
 ### [Software](/Software)
 
-Coming Spring 2024!
+All of the software used can be found in [Software](./Software).
 
 
