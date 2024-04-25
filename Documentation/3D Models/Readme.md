@@ -4,4 +4,4 @@ The .stl files can be viewed in GitHub and used with other 3D editing software. 
 
 - [Attachments](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Signoffs/Attachment%20Signoff.md)
 - [Chassis](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Signoffs/Chassis%20Frame%20Sign%20Off.md)
-- [Layout & Organization]()
+- [Layout & Organization](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Signoffs/Layout%20and%20Organization.md)
