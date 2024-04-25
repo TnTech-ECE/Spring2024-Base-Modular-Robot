@@ -75,7 +75,7 @@ The [Experimentation](/Documentation/Experimental%20Analysis) gives the experime
 
 The [Poster](.Reports/Poster/Modular%20IEEE%20Robot%20Poster.pdf) is what the team presented at the 2024 capstone showcase.
 
-The [Final Presentation](/Reports/Final%20Presentation.md) is the presentation that the team gave to the IAB.
+The [Final Presentation](./Reports/Final%20Presentation/Final%20Presentation.pdf) is the presentation that the team gave to the IAB.
 
 The [Lessons Learned](./Reports/LessonsLearnedAndAquiredSkills.md) gives team members' reflections on their progress, oversights, noteable incidents, and successes.
 
