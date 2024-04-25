@@ -31,9 +31,6 @@ What new knowledge or skills did you acquire throughout capstone.
 - Basics of Capacitive Wireless power transfer
 - Being a part of a project with distinct subsystems
 
-Classes Used.
-
-- 
 
 What classes have you taken that helped you in capstone? What did they help with?
 
