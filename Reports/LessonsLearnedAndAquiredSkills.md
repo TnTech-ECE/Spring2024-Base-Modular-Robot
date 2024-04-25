@@ -34,9 +34,10 @@ What new knowledge or skills did you acquire throughout capstone.
 
 What classes have you taken that helped you in capstone? What did they help with?
 
-- Electronics: Electronics taught me a lot of the basics of electronics and more advanced electronics circuits and devices.
-- Signals and Systems: In signals and systems we were taught about the basics of different types of electric signals. This was useful for understanding how a buck converter 
-- Electromagnetics I and II: Electromagnetism played a role in several parts of the power subsystem. The wireless power transfer is an explicitly electromagnetics topic, and required knowledge of electromagnetics for development and research.
+- Electronics: Electronics taught me a lot of the basics of electronics and more advanced electronics circuits and devices. For example, how a buck converter works can be understood through what we learned in this class. Finally, developing a more sophisticated understanding of circuit analysis helped me to analyze and develop circuit layouts for the power board.
+- Signals and Systems: In signals and systems we were taught about the basics of different types of electric signals. This was useful for understanding how a buck converter switching waveform operates. We were also introduced to reading datasheets in this course, which helped in the layout of the power board.
+- Electromagnetics I and II: Electromagnetism played a role in several parts of the power subsystem. The wireless power transfer is an explicitly electromagnetics topic, and required knowledge of electromagnetics for development and research. Additionally, the potential interference of an inductor into other circuitry is understood through electromagnetics and so having some knowledge helped me in that regard as well.
+- Intro to Digital Systems: In this class we learned the basics of digital logic and digital circuits. This was helpful in that it taught me about the voltage levels functionality required for the power board to be able to be used as a high or low value for digital circuit operation.
 
 
 ## Reid Crews
