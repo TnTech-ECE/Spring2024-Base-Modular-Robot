@@ -56,9 +56,9 @@ We would like to recognize and thank Professor Jesse Roberts, Dr. Nan Chen, and 
 
 ### [Reports](/Reports)
 
-The [Project Proposal](/Reports/Project%20Proposal%20Revised.pdf) is the initial document for the project where the problem is defined and the goals for the project.
+The [Project Proposal](./Reports/Project%20Proposal%20Revised.pdf) is the initial document for the project where the problem is defined and the goals for the project.
 
-The [Conceptual Design](/Reports/Conceptual%20Design%20and%20Planning%20V2.pdf) gives a more detailed solution to the problem as well as subsystem breakdowns and a projected timeline and budget.
+The [Conceptual Design](./Reports/Conceptual%20Design%20and%20Planning%20V2.pdf) gives a more detailed solution to the problem as well as subsystem breakdowns and a projected timeline and budget.
 
 The [Experimentation](/Documentation/Experimental%20Analysis) gives the experimental results of the different subsystems and how constraints were met or not.
 
