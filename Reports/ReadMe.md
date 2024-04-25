@@ -6,6 +6,7 @@ The final version of the following are found here in Reports:
 2. [Conceptual Design and Planning](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Reports/Conceptual%20Design/Conceptual%20Design%20and%20Planning%20V2.pdf)
 3. [Poster](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Reports/Poster/Modular%20IEEE%20Robot%20Poster.pdf)
 4. [Lessons Learned](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Reports/LessonsLearnedAndAquiredSkills.md)
+5. [Final Presentation](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Reports/Final%20Presentation/Final%20Presentation.pdf)
 
 
 ## Examples
