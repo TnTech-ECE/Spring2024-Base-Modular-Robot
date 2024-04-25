@@ -77,7 +77,7 @@ The [Poster](.Reports/Poster/Modular%20IEEE%20Robot%20Poster.pdf) is what the te
 
 The [Final Presentation](/Reports/Final%20Presentation.md) is the presentation that the team gave to the IAB.
 
-The [Lessons Learned](/Reports/Lessons%20Learned%20and%20Acquired%20Skills.md) gives team members' reflections on their progress, oversights, noteable incidents, and successes.
+The [Lessons Learned](./Reports/LessonsLearnedAndAquiredSkills.md) gives team members' reflections on their progress, oversights, noteable incidents, and successes.
 
 ### [Documentation](/Documentation)
 All documentation for the project is included in the above folder. Documentation includes all schematics, images, models, BOM, and designs used in the project.
