@@ -22,9 +22,13 @@ The current version of the robot has the following capabilities:
 
 ## Salient Outcomes
 
+As projects progress, there are typically outcomes tht are more impressive than others. Here is a list of salient outcomes of this project:
 1. Wireless charging proof of concept
-2. Multi-navigation 
-
+2. Multiple navigation subsets for teams to choose between
+3. Foundation for layed for ROS2 mapping for future uses
+4. Plug and play adapatibility with sensors through I2C buses
+5. Power board with ground isolation
+6. GUI for teams to see their live data transmission 
 
 ## Project Demonstration & Images
 
