@@ -227,7 +227,7 @@ What new knowledge or skills did you acquire throughout capstone.
 
 What classes have you taken that helped you in capstone? What did they help with?
 
-- ECE 4370 : Mecatronics showed me intergration with full systems from the ground up really well. I felt like it prepared me to be able to understand everyone else's subsystems to be able to create a base that would be able to support all functionalities. This class also taught me great trouble shooting techniques that I was able to apply when helping teammates during the construction and experimentation.
+- ECE 4370 : Mechatronics showed me intergration with full systems from the ground up really well. I felt like it prepared me to be able to understand everyone else's subsystems to be able to create a base that would be able to support all functionalities. This class also taught me great trouble shooting techniques that I was able to apply when helping teammates during the construction and experimentation.
 - ECE 3920 : Professionalism prepared me for more of the organizational side of the project. I was able to apply the ethical decision making learned as well as how to give a technical presentation.
 - ECE 2010,3060, 3160: EE Lab 1 & 2 and Digital Systems lab taught me the importance of and how to have great wiring techniques and convention, especially as it related to trouble shooting cirucits.
 - To clarify, I created the chassis and all 3D printed components for the group. Therefore, a majority of my work was done with CAD softwares annd there is no CAD class as part of our curriculum.
