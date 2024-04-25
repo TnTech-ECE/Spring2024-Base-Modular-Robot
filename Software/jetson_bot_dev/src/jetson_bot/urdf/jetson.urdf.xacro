@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">
+
+
+    <xacro:include filename="jetson_core.xacro" />
+    <xacro:include filename="jetson_IR.xacro" />
+    <xacro:include filename="jetson_IMU.xacro" />
+    <xacro:include filename="jetson_lidar.xacro" />
+
+</robot>

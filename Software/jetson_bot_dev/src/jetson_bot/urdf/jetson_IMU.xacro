@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">
+
+    <link name="IMU">
+        <visual>
+          <geometry>
+            <box size=".02 .01 .001"/>
+          </geometry>
+          <material name="red">
+            <color rgba="1.0 0.0 0.0 1.0"/>
+          </material>
+        </visual>
+    </link>
+
+    <joint name="imu_joint" type="fixed">
+      <parent link="base_link"/>
+      <child link="IMU"/>
+      <origin xyz="0.02 0.145 0.0" rpy="0 0 0"/>
+    </joint>
+
+
+</robot>

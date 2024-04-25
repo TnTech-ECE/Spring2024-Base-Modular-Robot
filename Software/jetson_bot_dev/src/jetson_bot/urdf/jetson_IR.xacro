@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">
+
+
+  <xacro:include filename="inertial_macros.xacro" />
+
+
+  <xacro:property name="sensor_width" value="0.015"/> <!-- y-axix -->
+  <xacro:property name="sensor_length" value="0.001"/> <!-- x-axis-->
+  <xacro:property name="sensor_height" value="0.015"/> <!-- z-axis -->
+
+  <xacro:property name="sensor_fb_yoff" value=".0825"/> 
+  <xacro:property name="sensor_fb_zoff" value="-.015"/> 
+  <xacro:property name="sensor_fb_xoff" value=".145"/> 
+
+  <xacro:property name="sensor_rl_yoff" value=".115"/> 
+  <xacro:property name="sensor_rl_zoff" value="-.02"/> 
+  <xacro:property name="sensor_rl_xoff" value=".03"/> 
+
+
+  <!-- Front and Back IR Sensors -->
+  <xacro:macro name="IR_front_back" params="prefix x_reflect y_reflect flip">
+    <link name="${prefix}">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/> <!--set for front left sensor-->
+        <geometry>
+            <box size="${sensor_length} ${sensor_width} ${sensor_height}"/>
+        </geometry>
+        <material name="Gray">
+          <color rgba="0.5 0.5 0.5 1.0"/>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="${prefix}_joint" type="fixed">
+      <parent link="base_link"/>
+      <child link="${prefix}"/>
+      <origin xyz="${x_reflect * sensor_fb_xoff} ${y_reflect * sensor_fb_yoff} ${sensor_fb_zoff}" rpy="0 ${flip * pi} 0"/>
+    </joint>
+ </xacro:macro>  
+ 
+
+  <xacro:IR_front_back prefix="IR_sensor_2" x_reflect="-1" y_reflect="1" flip="1"/> <!--bl_IR-->
+  <xacro:IR_front_back prefix="IR_sensor_4" x_reflect="-1" y_reflect="-1" flip="1"/> <!--br_IR-->
+  <xacro:IR_front_back prefix="IR_sensor_5" x_reflect="1" y_reflect="1" flip="0"/> <!--fl_IR-->
+  <xacro:IR_front_back prefix="IR_sensor_7" x_reflect="1" y_reflect="-1" flip="0"/> <!--fr_IR-->
+
+
+
+  <xacro:macro name="IR_right_left" params="prefix x_reflect y_reflect rotation">
+    <link name="${prefix}">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/> <!--set for left side front sensor-->
+        <geometry>
+            <box size="${sensor_length} ${sensor_width} ${sensor_height}"/>
+        </geometry>
+        <material name="Gray">
+          <color rgba="0.5 0.5 0.5 1.0"/>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="${prefix}_joint" type="fixed">
+      <parent link="base_link"/>
+      <child link="${prefix}"/>
+      <origin xyz="${x_reflect * sensor_rl_xoff} ${y_reflect * sensor_rl_yoff} ${sensor_rl_zoff}" rpy="0 0 ${pi/2 * rotation}"/>
+    </joint>
+ </xacro:macro>  
+
+ <xacro:IR_right_left prefix="IR_sensor_0" x_reflect="-1" y_reflect="1" rotation="1"/> <!--lsb_IR-->
+ <xacro:IR_right_left prefix="IR_sensor_1" x_reflect="1" y_reflect="1" rotation="1"/> <!--lsf_IR-->
+ <xacro:IR_right_left prefix="IR_sensor_3" x_reflect="-1" y_reflect="-1" rotation="-1"/> <!--rsb_IR-->
+ <xacro:IR_right_left prefix="IR_sensor_6" x_reflect="1" y_reflect="-1" rotation="-1"/> <!--rsf_IR-->
+ 
+
+
+
+</robot>

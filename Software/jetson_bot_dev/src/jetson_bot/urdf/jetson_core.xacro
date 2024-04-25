@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">
+
+
+  <xacro:include filename="inertial_macros.xacro" />
+
+
+  <xacro:property name="base_width" value="0.30353"/> <!-- Left to right (11.95 in)-->
+  <xacro:property name="base_length" value="0.2921"/> <!-- Front to back (11.5 in)-->
+  <xacro:property name="base_height" value="0.022225"/> <!-- bottom to top (7/8 in)-->
+
+  <xacro:property name="wheel_radius" value="0.03175"/> <!-- 1.25 in-->
+  <xacro:property name="wheel_width" value="0.0381"/> <!--Only used if wheels are not underneath the robot-->
+  <xacro:property name="wheel_ygap" value="-0.02005"/> <!-- Sets gap between robot and base and wheels (negative if wheels are underneath) Wheel Separation = base_width + 2 * ygap-->
+  <xacro:property name="wheel_zoff" value=".0381"/> <!-- midpoint of robot base to midpoint of wheel-->
+  <xacro:property name="wheel_xoff" value=".0889"/> <!-- distance to midpoint of wheel separation-->
+
+  
+<!-- Robot Base -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="${base_length} ${base_width} ${base_height}"/>
+      </geometry>
+      <material name="Cyan">
+        <color rgba="0 1.0 1.0 1.0"/>
+      </material>
+    </visual>
+    <!--Collision Info-->
+    <collision>
+      <geometry>
+        <box size="${base_length} ${base_width} ${base_height}"/>
+      </geometry>
+    </collision>
+
+    <xacro:inertial_box mass="1.0" x="${base_length}" y="${base_width}" z="${base_height}" >
+        <origin xyz= "0 0 0" rpy= "0 0 0"/>
+    </xacro:inertial_box>
+  </link>
+
+    <gazebo reference="base_link">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+	 
+	 
+  <!-- Robot Footprint -->
+  <link name="base_footprint"/>
+
+  <joint name="base_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_footprint"/>
+    <origin xyz="0.0 0.0 ${-(wheel_radius+wheel_zoff)}" rpy="0 0 0"/>
+  </joint>
+	
+  <!-- Wheels -->
+  <xacro:macro name="wheel" params="prefix x_reflect y_reflect">
+    <link name="${prefix}_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+        <geometry>
+            <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
+        </geometry>
+        <material name="Gray">
+          <color rgba="0.5 0.5 0.5 1.0"/>
+        </material>
+      </visual>
+
+      <!-- Collision Info -->
+      <collision>
+        <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+        <geometry>
+            <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
+        </geometry>
+      </collision>
+
+       <xacro:inertial_cylinder mass=".2" radius="${wheel_radius}" length="${wheel_width}" >
+        <origin xyz= "0 0 0" rpy= "0 0 0"/>
+       </xacro:inertial_cylinder>
+    </link>
+
+    <joint name="${prefix}_joint" type="continuous">
+      <parent link="base_link"/>
+      <child link="${prefix}_link"/>
+      <origin xyz="${x_reflect*wheel_xoff} ${y_reflect*(base_width/2+wheel_ygap)} ${-wheel_zoff}" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+    </joint>
+ </xacro:macro>  
+ 
+
+
+
+
+  <xacro:wheel prefix="drivewhl_bl" x_reflect="-1" y_reflect="1" />
+  <xacro:wheel prefix="drivewhl_br" x_reflect="-1" y_reflect="-1" />
+  <xacro:wheel prefix="drivewhl_fl" x_reflect="1" y_reflect="1" />
+  <xacro:wheel prefix="drivewhl_fr" x_reflect="1" y_reflect="-1" />
+
+
+
+  <!--       Gazebo Reference (not tested)      -->
+  <gazebo reference="drivewhl_bl_link">
+        <material>Gazebo/Black</material>
+    </gazebo>
+ 
+  <gazebo reference="drivewhl_br_link">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+  <gazebo reference="drivewhl_fl_link">
+        <material>Gazebo/Black</material>
+        <mu1 value="0.0001"/> <!--Makes Wheels Frictionless (Used to implement RWD)-->
+        <mu2 value="0.0001"/>
+    </gazebo>
+
+  <gazebo reference="drivewhl_fr_link">
+        <material>Gazebo/Black</material>
+        <mu1 value="0.0001"/> <!--Makes Wheels Frictionless (Used to implement RWD)-->
+        <mu2 value="0.0001"/>
+    </gazebo>
+
+</robot>
