@@ -4,7 +4,7 @@
 
 Reflect on the project, both technical and organizational. What went well? What didn’t go well? 
 
-- For the most part the power-related subsystems went well. The power distribution PCB performed adequately and passed all tests. The battery vastly outlasted what it was expected to and .... Finish ....
+- For the most part the power-related subsystems went well. The power distribution PCB performed adequately and passed all tests. The battery life vastly exceeded expectations. The wireless charging subsystem has the potential for future growth, but will require much more research and development. The largest oversight in the entire power system was the inclusion of reverse-biased diodes at the outputs of the 12V rail on the power board. In the case of a single-directional motors, this may be fine, but in the case of bi-directional motors this could cause issues as voltage polarities switch. At best this would lower the efficiency of a motor and at worst cause a component failure. Organizationally the team was very efficient and communicated very effectively. There were some issues that arose from some subsystems waiting on other subsystems to be finished before beginning development, but for the most part those issues were avoided as much as possible.
 
 What unanticipated problems occurred? 
 
@@ -24,7 +24,16 @@ What words of wisdom would you pass on to future students?
 
 What new knowledge or skills did you acquire throughout capstone.
 
-- I learned a lot more about good PCB design. Particularly in the use of having a shared ground connection between "clean" and "dirty" ground connections (in this case between the motors and 3.3/5 V rails). By isolating the two everywhere except for one single small connection, there was no noticeable interference between the motors and other buses through the ground plane, resulting in (to my knowledge) not a single brownout.
+- PCB Design
+- Trace current capacity calculations
+- Ground isolation between motors and other components
+- Back-EMF Mitigation
+- Basics of Capacitive Wireless power transfer
+- Being a part of a project with distinct subsystems
+
+Classes Used.
+
+- 
 
 What classes have you taken that helped you in capstone? What did they help with?
 
