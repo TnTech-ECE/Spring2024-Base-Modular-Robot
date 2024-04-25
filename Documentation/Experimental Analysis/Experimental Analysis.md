@@ -1,7 +1,7 @@
 # Experimental Analysis
 
 ## Introduction 
-The purpose of this report is to verify the requirements for the project and explain the procedures used to validate results. The results will be compared against the measures of success outlind in the project proposal to determine if the project was successful. This will also detail what the next steps are moving forward.
+The purpose of this report is to verify the requirements for the project and explain the procedures used to validate results. The results will be compared against the measures of success outlined in the project proposal to determine if the project was successful. This will also detail what the next steps are moving forward.
 
 ### Requirements
 
@@ -46,6 +46,8 @@ As can be seen in the above table, the robot successfully turns on in 10 out of 
 Video demonstration of start switch demonstration can be found at ./Videos/Start_Switch.mp4
 
 ### Constraint 2 - Alternate Start Method 
+This constraint was created since SECON has opportunities for teams to receive extra points for having an alternative start method, which is met in the [signoff for the master control](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Signoffs/IsaacJennings-Signoff-MasterControl.md). Since the alternate start method has a spot to be placed on the Jetson Nano, the constraint has been met.
+
 
 ### Constraint 3 - Dimensions
 The dimensions of the robot are customizable when ordering the extruded alumnium for future teams. The extruded alumnium can be cut to change the dimensions. Additionally, the stock design only takes up the specified 1 ft x 1 ft x 6 in area shown below. This constraint could not be experimentally tested because it is inherently true.
@@ -82,6 +84,52 @@ The front wheel can move 20 mm forward and 95 mm backward. The back wheel can mo
 | BR | yes |
 
 #### I2C Bus
+The I2C bus constrait required that all I2C sensors be plug and play adaptable. To test this constraint the connections on the I2C bus will be scrambled, and data readings will be taken to show the readings are consistent throughout. The spots are differentiated by A (right side of robot) and B (left side of robot) for the two I2C busses. Each bus is split into 5 spots, for example A1 is the first slot of bus A.
+
+See [Youtube Link](https://youtu.be/BVPlBgpR0Bg) for test
+
+##### Trial 1 (No Movement)
+|Sensor|Original Spot|Value|
+|-|-|-
+| 1 | A1 | 965
+| 2 | A2 | 514
+| 3 | A3 | 1020
+| 4 | A4 | 969
+| 5 | B1 | 774
+| 6 | B2 | 165
+| 7 | B3 | 161
+| 8 | B4 | 983
+##### Trial 2
+|Sensor|Moved To|Value|
+|-|-|-
+| 1 | A2 | 965
+| 2 | A1 | 533
+| 3 | A4 | 962
+| 4 | A3 | 1019 
+| 5 | B2 | 160
+| 6 | B1 | 769
+| 7 | B4 | 979
+| 8 | B3 | 160
+##### Trial 3
+|Sensor|Moved To|Value|
+|-|-|-
+| 1 | A4 | 971
+| 2 | A3 | 1018
+| 3 | A2 | 528
+| 4 | A1 | 966
+| 5 | B4 | 980
+| 6 | B3 | 160
+| 7 | B2 | 162
+| 8 | B1 | 769
+
+<br />
+<br />
+
+![Alt Text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/I2CGraph.png)
+
+
+The data shows no change between trials. Three trials were ran because it is trivial in nature (electrically, nothing changes). The constraint of plug and play adaptability has been met.
+
 
 #### Wire Grouping/ Labeling
 This is not able to be experimentally measured because is it inherently true and can be seen in the picture below.
@@ -89,6 +137,13 @@ This is not able to be experimentally measured because is it inherently true and
 ![Alt Text](../Images/Experimental%20Analysis%20Photos/Grouping%20and%20Labeling.jpg)
 
 Overall, the constraint was met.
+
+#### ROS2 Adaptable Code base
+ROS2 is naturally inclined to easy adaptation, but a few extra common practice steps were taken to make adaptation even simpler. For one, all configuration files (.yaml, .urdf, .xacro
+include their varying parameters at the top of the files for easy access without having to locate variables throughout the code. The unified robot description (URDF) was also broken into 
+multiple XML macro (xacro) files for easy troubleshooting and modularity. If, for instance, the ultrasonic sensors weren't used, simply removing the ultrasonic xacro would remove all of the associated code
+for any robot transforms. The serial communication packages also present modularity by containing function instances for each sensor type that can be easily removed or added to. Finally, all of the launch files are set
+with the filepaths at the top of the file to allow quick changes for the robot. Essentially, the file systems in ROS2 have been set up as templates with parameters at the top of the entities. 
 
 ### Constraint 5 - Robust Charging System
 
@@ -125,13 +180,11 @@ To test this, the robot was run with all of the motors running at maximum speed.
 
 This program was run continuously in 10 minute intervals, between which the robot was turned off for a few minutes to allow for the motors and motor drivers to cool down to prevent overheating. The total elapsed time of the robot being on is what was recorded as the robot's continuous runtime battery life below. The voltage across the battery terminals was monitored to ensure that the battery did not drop below the minimum recommended voltage.
 
-In testing, the battery voltage dropped similar to an exponential decay from around 14 V to about 13.13 V. At 13.13 V, it remained for X(20) minutes before beginning to drop again. After turning the robot off, the battery voltage would increase slightly, to about 13.27 V, and began to decrease to about 13.13 V where it stayed.
+In testing, the battery voltage dropped similar to an exponential decay from around 14 V to about 13.13 V. At 13.13 V, it remained for 20 minutes before beginning to drop again. After turning the robot off, the battery voltage would increase slightly, to about 13.27 V, and began to decrease to about 13.13 V where it stayed.
 
 The only component that was not present for the battery life testing that could make any different in battery life at all was the Jetson Nano. The arduinos, motors, and sensors, were all connected, powered up and running. Even with this consideration, the Jetson Nano is only running the Master control code and is not using some of its more power-hungry components like the GPU, and so should not change the battery life drastically.
 
 Moreover, the battery life measured vastly exceeded expectations (as can be seen below), and so the Jetson Nano's presence should not make such a large difference that the battery life would fall below the constraint requirement.
-
-Current Elapsed Battery Lifetime: 2:30:31
 
 There is a video demonstration of the battery life test that can be found in ./Videos/Battery_Life_Test.mp4
 
@@ -139,11 +192,27 @@ In the table below, the measured battery life is compared to the calculated wors
 
 | Calculated Worst-Case Battery Life (hour:min:sec) | Measured Battery Life (hour:min:sec) |
 | --- | ---|
-| 0:43:11 | 2:42:03 |
+| 0:43:11 | 3:05:31 |
+
+At the time given, the battery still showed no signs of being close to depletion. The battery voltage stayed at the flat portion of the battery discharge curve for nearly 3 hours. Using the battery datasheet (can be found in the battery management signoff) and the time the battery took to discharge to the flat portion of the discharge curve, the experimental discharge curve was matched to the datasheet discharge curve and the battery life was estimated to be around 3 hours and 40 minutes.
 
 ### Constraint 6 - Wireless Charging
 
+For this requirement, the prospect of wireless charging used to power and/or charge the robot over the full area of the arena had to be researched and the feasibility of which had to be evaluated. For wirelessly powering the robot over the full area of the arena, capacitive power transfer was deemed to be more suited, but is much more experimental as inductive wireless power transfer is the primary method used commercially.
 
+In capacitive wireless power transfer, a transmitting sheet is placed underneath the device, which has a receiving sheet, making an effective capacitor between. The transmitting sheet is excited with high frequencies with the positive lead of a function generator and the negative lead is allowed to sit somewhere unconnected to anything. The receiving sheet is the connected to a quarter-wave transformer, which allows for a stray return capacitance beween the receiver and the negative lead of the driving function generator. More information on this can be found in the wireless charging signoff in Documentation/Signoffs.
+
+With research and experimentation, it was found that a load on the robot could be wirelessly powered. A video of wirelessly powering an LED on top of the robot can be found in ./Videos/Wireless_Power.mp4.
+
+With the demonstration of capacitive wireless power it was determined that wireless charging for the robot is plausible but will require more research, development, and precautions. 
+
+The first reason for a need for more research is the power output. At best, with the "blue box" amplifier and small transmitting sheet in Dr. Van Neste's lab and no load attached, a current out of the receiving sheet of 1-2 A could be measured. In order for this to be used to power or charge a robot, the high-frequency signal (MHz range) will need to be shifted down to 60 Hz and/or rectified to DC in order to power electronics on the robot. With this in mind, it is unknown if the system will be able to output enough power that after component inefficiencies will be able to charge a battery or power the robot at all.
+
+An additional factor that makes higher power more difficult is the potential for interfering with or damaging electronics onboard the robot. As the transmitter power increases, the potential for interferance and/or damage to electronics will require more robust shielding of electronics on board.
+
+Another potential cause for concern is the significant safety precautions that will be required if this system is scaled up. With the small transmitting sheet and small load of an LED, the input voltage could be kept to a moderate 10 V peak-to-peak. However, as the transmitting sheet increases in size, the voltage required to power it increases very fast. Because of this, there will need to be significant insulation surrounding all energized metal sheets (primarily the transmitting sheet) to prevent injury. Additionally, there may be university rules and regulations that must be followed when using high voltages in a university laboratory.
+
+With the above research and verification, this constraint has been met.
 
 ### Constraint 7 - Emergency Stop
 
@@ -193,11 +262,66 @@ The table below shows the measured voltages with and without motor operation.
 
 As can be seen above, the voltages both with and without motor operation are well above the lower limit and will function with no issue for digital high values. Therefore, this constraint has been met.
 
+Adding 0.1 uF capacitors directly to the motor driver outputs was also experimented with. It is recommended by the Pololu to add 0.1 uF ceramic capacitors between the motor terminals as close to the motors as possible to reduce noise and back-EMF. With no capacitors, the 12 V rail voltage dropped between 0.1-0.5 V when the motors changed direction from full speed in one direction to full speed in the opposite direction. The addition of capacitors to the motor driver outputs did not seem to have a noticeable impact on the voltage drop with a change in motor direction.
+
 ### Constraint 9 - Inclines/Declines
+This constraint was created since the 2024 SECON board has a 25 degree incline and decline. This was tested 10 times by having the robot travel up and down a hill in forward and reverse motion. 
+
+| Trial Number | Robot Successfully Ascended and Descended the Hill |
+|---|---|
+| 1 | yes |
+| 2 | yes |
+| 3 | yes |
+| 4 | yes |
+| 5 | yes |
+| 6 | yes |
+| 7 | yes |
+| 8 | yes |
+| 9 | yes |
+| 10 | yes |
+
+As can be seen in the above table, the robot successfully traverses the hill in 10 out of 10 trials, and so this constraint has been met.
+
+Video demonstration of start switch demonstration can be found on [this video](https://youtube.com/shorts/sC5Fqg60_ig?feature=share)
 
 ### Constraint 10 - Motor Control
 
+The robot was tasked with moving 360 degrees as well as forwards and backward to show it can fully navigate and roam in any environment, and it must be able to do so based on sensor inputs. This was tested by having the robot sweep the 2023 SECON board which was similar to how it was navigated for competition, and we also had the robot follow a line and return to the starting point.
+
+[This video](https://youtu.be/3MeIy1WahUA) shows the robot navigating the 2023 board using the ultrasonic sensors. 
+[This video](https://youtu.be/stM9KGa8I_E) shows the robot following a line, turning around, and following it back to the start.
+
+The robot was successful in navigating both courses, so the constraint was met.
+
 ### Constraint 11 - Navigation
+
+#### Navigation
+This constraint was created because the robot needs to be able to autonomously navigate the board for a SECON competition. This was tested by having the robot sweep the 2023 SECON board and follow a line similar to the 2022 and 2024 boards.
+
+[This video](https://youtu.be/3MeIy1WahUA) shows the robot navigating the 2023 board using the ultrasonic sensors. 
+[This video](https://youtu.be/stM9KGa8I_E) shows the robot following a line, turning around, and following it back to the start using the line-following sensors.
+
+The robot was successful in navigating both courses, so the constraint was met.
+
+##### **Object Detection**
+
+See [Youtube Link](https://youtu.be/_iFhnvbLboQ) for Object Detection
+
+| Trial Number | Object Successfully Detected |
+|---|---|
+| 1 | yes |
+| 2 | yes |
+| 3 | yes |
+| 4 | yes |
+| 5 | yes |
+| 6 | yes |
+| 7 | yes |
+| 8 | yes |
+| 9 | yes |
+| 10 | yes |
+
+
+Object was sucessfully detected 10 out of 10 trials. Constraint is met.
 
 #### Speed
 
@@ -211,7 +335,7 @@ Outcome: The speed is slower than expected, but it is consistent. It is believed
 
 #### Location
 
-This constraint originated from the lineless board for 2023 SECON competition. The constraint is tested by selecting 10 different points on the 2023 SECON arena. The Front, Back, Right, and Left ultrasonic sensors measure to distance from the point to the walls of the arena. The robot was placed on the 10 different points from a relative corner of robot. The relative corner will be indicated in the table for testing data. The sensors for the Right and Left are offset from the edge by 11/16 in. (or 17.4625 mm). The equations use to get the location from the desired point to the sensor will be indicate by a table with the asterisks. <br />
+This constraint originated from the lineless board for 2023 SECON competition. The constraint is tested by selecting 10 different points on the 2023 SECON arena. The Front, Back, Right, and Left ultrasonic sensors measure to distance from the point to the walls of the arena. The robot was placed on the 10 different points from a relative corner of robot. The relative corner will be indicated in the table for testing data. The sensors for the Right and Left are offset from the edge by 5/8 in. (or 15.875 mm). The equations use to get the location from the desired point to the sensor will be indicate by a table with the asterisks. <br />
 <br />
 <br />
 
@@ -255,6 +379,28 @@ See [Youtube Link](https://youtube.com/shorts/rvX_kzKgJGA) for the video testing
 
 
 The constraint is met because the large error distance was 19.025 mm (0.749 in), which is less than the 2-in tolerance constraint. The overall average error distance was around 10 mm. This average does correlate with the expected results because the resolution of the ultrasonic sensor is 1 cm.
+
+
+#### ROS2 navigation
+Due to the chosen sensor configuration, navigation with ROS2 was not possible. The main issue arose with ROS's need for lidar or GPS data to establish a base scan transform. As a workaround and proof of concept, 
+an RPLidar A2M8 was used to test the robot's capabilites. Shown below are the maps created by the LIDAR. Due to the height requirements of the LIDAR, accurate representations of the SECON boards was not possible in the experimental period,
+but the capabilites are shown possible with proper mapping operation in the classroom. 
+
+<div align="center">
+<img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/Capstone_Room_map.jpg>
+</div>
+
+The transformations tree shown below is also an indication that all of the major transforms have been achieved for mapping and autonomous navigation. ROS requires the map to odom, odom to base_link, and base_link to base_scan(laser) transforms to map and navigate. All three are shown in the graph below. 
+<div align="center">
+<img src = https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Images/Experimental%20Analysis%20Photos/Robot_TF_Frames.png>
+</div>
+
+#### ROS2 Object Detection
+Using the RPLidar, object detection was made very simple and could easily be shown by the rviz2 GUI. The following video demonstrates the robot detecting movement as members of our group walked around. 
+It is very obvious to see where our legs are as we move in its field of view. 
+
+See [Youtube Link](https://youtu.be/41BcTIW4LsA) for ROS2 object Detection.
+
 
 ### Specfication 12 - 3D Printing to Reduce Cost 
 This specifcation was derived as a socioeconomic impact of the project. In hopes to reduce cost, components were 3D printed instead of finding premade attachments. A list of components and if they were 3D printed is give below.
@@ -304,16 +450,16 @@ Overall, the constraint was met.
 | Item | Description | Was constraint met? | 
 |-|-|-|
 | 1 | | yes |
-| 2 | | |
+| 2 | | yes |
 | 3 | | yes |
 | 4 | | yes |
-| 5 | | |
-| 6 | | |
+| 5 | | yes |
+| 6 | | yes |
 | 7 | | yes |
 | 8 | | yes |
-| 9 | | |
-| 10 | | |
-| 11 | | |
+| 9 | | yes |
+| 10 | | yes|
+| 11 | | no |
 | 12 | | yes |
 | 13 | | no |
 | 14 | | yes |

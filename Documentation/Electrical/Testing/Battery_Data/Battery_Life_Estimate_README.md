@@ -1,0 +1,3 @@
+The battery life was estimated using the following procedure.
+
+Battery voltage data was taken in approximately 10 minute sections to form the dataset shown in battery_plot.svg. The plot of this was then given a transparent background and placed ontop of the datasheet battery curve given for the battery. The experimental data image was scaled to match the datasheet image, and it was found what percentage the experimental data ended at by matching the data to the curves on the datasheet. The data lasted for about 38 minutes, and given the overlaid image, appears to be at about 10-12% battery life. This gives an 80% battery life estimate (time to deplete the battery by 80% since 100% depletion will damage the battery) of between 3 hours 56 minutes and 4 hours 55 minutes.

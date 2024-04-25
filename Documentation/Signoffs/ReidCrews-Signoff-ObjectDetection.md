@@ -32,6 +32,13 @@ The object detection subsystem sends data to the master control  to control and 
 ![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Electrical/Schematics/Sources/Object%20Detection/ObjDetectionSensorSchematic.png)
 
 The schematic above is shown. Eight time of flight are used for the object detection with two sensors per each side. Each sensor is I2C communications. Each sensor has a serial clock (SCL) connected to digtial pin 21 of the Arduino Mega. Each sensor also has a serial data (SDA) connected to digtial pin 20 of the Arduino Mega. Each sensor and Arduino Mega are powerd by the 5 V power distribution bus.
+<br/>
+<br/>
+<br/>
+
+![Alt text](https://github.com/lchapman42/Control-Sensing-Wireless-Charging-Robot/blob/main/Documentation/Electrical/Schematics/Sources/Object%20Detection/ObjDetectionSensorSchematicV2.png)
+<br/>
+**The schematic above is the revised schematic with the 8 ToF XSHUT Pins to intialize each sensor with a new address**
 
 ### Object Detection Placement
 
@@ -105,7 +112,10 @@ $$ Accuracy \space Range \space for \space High \space Speed \space Mode $$
 
 $$ 5 \space Percent \space (0.456 - 0.504 \space in) \space $$
 
-Default Mode is the chosen mode because the sampling rate is the second highest and accuracy range is tied for second lowest. The Default Mode has the best specifications out of the four modes.
+Default Mode is the chosen mode because the sampling rate is the second highest and accuracy range is tied for second lowest. The Default Mode has the best specifications out of the four modes. <br />
+<br />
+
+See [Seeed Studio Forum](https://forum.seeedstudio.com/t/how-to-change-i2c-address-on-grove-time-of-flight-distance-sensor-vl53l0x/266866/2) on how to use multiple VL53L0X time of flight sensors.
 
 
 

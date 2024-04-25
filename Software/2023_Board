@@ -1,0 +1,468 @@
+#include <Adafruit_Sensor_Calibration.h>
+#include <Adafruit_AHRS.h>
+#include <QTRSensors.h>
+#include <Adafruit_VL53L0X.h>
+#include <Ultrasonic.h>
+#include <GyverOLED.h>
+GyverOLED<SSH1106_128x64> oled;
+
+
+#define enA 2 
+#define in1 46 
+#define in2 48 
+#define enB 3 
+#define in3 50 
+#define in4 52 
+#define enC 7 //Skipped port 4 on motor Arduino, does not work 
+#define in5 36 
+#define in6 34 
+#define enD 5 
+#define in7 32 
+#define in8 30 
+
+void update_sensors(); 
+void motor_stop();
+void robot_fwd(bool); 
+void robot_rev(bool); 
+void motors_turn_right(); 
+void crab_walk_left(int); 
+void run_Location();
+void run_ObjectDetection();
+void setup_ObjectDetection();
+void initialize_ObjDetectSensors();
+
+bool b_inReverse = false;;
+bool b_Started = false;
+bool b_objectDetected = false;
+bool b_frontFlag, b_backFlag, b_rightFlag; 
+
+uint8_t u8_k = 0;
+
+uint16_t a16_diff[3] = {0,0,0};
+uint16_t a16_lastLeft[5] = {0,0,0,0,0};
+uint16_t a16_lastRight[5] = {0,0,0,0,0};
+uint16_t a16_lastUltra[5] = {0,0,0,0,0};
+
+uint32_t u32_currentMillis = 0;
+uint32_t u32_positionMillis = 0;
+uint32_t u32_orientationMillis = 0;
+uint32_t u32_locationMillis = 0;
+uint32_t u32_objectDetectionMillis = 0;
+
+Adafruit_VL53L0X sensor1;
+Adafruit_VL53L0X sensor2; 
+Adafruit_VL53L0X sensor3; 
+Adafruit_VL53L0X sensor4; 
+Adafruit_VL53L0X sensor5; 
+Adafruit_VL53L0X sensor6; 
+Adafruit_VL53L0X sensor7; 
+Adafruit_VL53L0X sensor8; 
+
+
+typedef struct {
+  Adafruit_VL53L0X *psensor; // pointer to object
+  TwoWire *pwire;
+  int id;            // IIC id number for the sensor
+  int shutdown_pin;  // which pin for shutdown;
+  int interrupt_pin; // which pin to use for interrupts.
+  Adafruit_VL53L0X::VL53L0X_Sense_config_t sensor_config; // options for how to use the sensor
+  uint16_t range;        // range value used in continuous mode stuff.
+  uint8_t sensor_status; // status from last ranging in continuous.
+} sensorList_t;
+
+
+// Setup for 8 sensors by defining information for each sensor in a 'sensors' array. Include
+// a separate line of information for each sensor
+sensorList_t sensors[] = {
+  // For 'sensor1', define the IIC accress as hexadecimal value 0x30. Assign digital pin #38 to this 
+  // sensor's XSHUT pin (shut-down pin). Assign digital pin #5 to the sensor's INTERRUPT pin.
+  {&sensor1, &Wire, 0x30, 38, 5, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0},
+
+  // For 'sensor2', define the IIC accress as hexadecimal value 0x31. Assign digital pin #6 to this 
+  // sensor's XSHUT pin (shut-down pin). Assign digital pin #7 to the sensor's INTERRUPT pin.
+  {&sensor2, &Wire, 0x31, 6, 7, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0},
+
+  
+  // For 'sensor3', define the IIC accress as hexadecimal value 0x32. Assign digital pin #40 to this 
+  // sensor's XSHUT pin (shut-down pin). Assign digital pin #3 to the sensor's INTERRUPT pin.
+  {&sensor3, &Wire, 0x32, 40, 3, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0},
+  
+  // For 'sensor4', define the IIC accress as hexadecimal value 0x33. Assign digital pin #29 to this 
+  // sensor's XSHUT pin (shut-down pin). Assign digital pin #30 to the sensor's INTERRUPT pin.
+  {&sensor4, &Wire, 0x33, 29, 30, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0},
+
+  // For 'sensor5', define the IIC accress as hexadecimal value 0x34. Assign digital pin #31 to this 
+  // sensor's XSHUT pin (shut-down pin). Assign digital pin #32 to the sensor's INTERRUPT pin.
+  {&sensor5, &Wire, 0x34, 31, 32, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0},
+
+  // For 'sensor6', define the IIC accress as hexadecimal value 0x35. Assign digital pin #33 to this 
+  // sensor's XSHUT pin (shut-down pin). Assign digital pin #34 to the sensor's INTERRUPT pin.
+  {&sensor6, &Wire, 0x35, 33, 34, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0},
+
+  // For 'sensor7', define the IIC accress as hexadecimal value 0x36. Assign digital pin #35 to this 
+  // sensor's XSHUT pin (shut-down pin). Assign digital pin #36 to the sensor's INTERRUPT pin.
+  {&sensor7, &Wire, 0x36, 35, 36, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0},
+  
+  // For 'sensor8', define the IIC accress as hexadecimal value 0x37. Assign digital pin #37 to this 
+  // sensor's XSHUT pin (shut-down pin). Assign digital pin #38 to the sensor's INTERRUPT pin.
+  {&sensor8, &Wire, 0x37, 37, 38, Adafruit_VL53L0X::VL53L0X_SENSE_DEFAULT, 0, 0}
+  
+};
+const int COUNT_SENSORS = sizeof(sensors) / sizeof(sensors[0]); 
+uint16_t objectDetectRanges_mm[COUNT_SENSORS]; 
+struct Packet{
+  uint32_t locationFront;  
+  uint32_t locationBack;  
+  uint32_t locationRight;  
+  uint32_t locationLeft;  
+  uint16_t objectDetectionSensors[8];  
+};
+
+Packet packet;
+Ultrasonic ultrasonicFront(8);  
+Ultrasonic ultrasonicBack(9);  
+Ultrasonic ultrasonicRight(10);  
+Ultrasonic ultrasonicLeft(11);  
+
+void setup() {
+  Serial.begin(115200);
+  delay(200);
+  setup_ObjectDetection();
+  
+  Wire.begin();
+  pinMode(A5, OUTPUT);
+  pinMode(in1, OUTPUT); //Motor 1 
+  pinMode(in2, OUTPUT); 
+  pinMode(in3, OUTPUT); //Motor 2 
+  pinMode(in4, OUTPUT); 
+  pinMode(in5, OUTPUT); //Motor 3 
+  pinMode(in6, OUTPUT); 
+  pinMode(in7, OUTPUT); //Motor 4 
+  pinMode(in8, OUTPUT);
+  pinMode(enA, OUTPUT); //Motor 1, back right 
+  pinMode(enB, OUTPUT); //Motor 2, front right 
+  pinMode(enC, OUTPUT); //Motor 3, back left 
+  pinMode(enD, OUTPUT); //Motor 4, front left 
+}
+
+
+void loop() {
+  run_Location();
+  run_ObjectDetection();
+  for(int i = 0; i<1; i++){ 
+    /*turn right until right ultrasonic is on wall 
+    backup until back ultra is on wall 
+    forward until front ultra is on wall*/ 
+    robot_rev(false); 
+    robot_fwd(false); 
+    /*left until moved length of robot 
+    back until back ultra is on wall*/ 
+    crab_walk_left(559); 
+    robot_fwd(true);
+    robot_rev(false); 
+    /*left length of robot 
+    forward until front ultra is on wall*/ 
+    crab_walk_left(254); 
+    robot_rev(true);
+    robot_fwd(false); 
+
+    /*left until left ultra on the wall 
+    back until back ultra on the wall*/ 
+    crab_walk_left(20);
+    robot_fwd(false); 
+    robot_rev(true); 
+    motor_stop(); 
+  } 
+}
+
+
+void run_Location(){
+  u32_currentMillis = millis();
+  if((u32_currentMillis - u32_positionMillis) > 60){
+    u32_positionMillis = u32_currentMillis;
+    packet.locationFront = ultrasonicFront.MeasureInMillimeters();
+    packet.locationBack = ultrasonicBack.MeasureInMillimeters();
+    packet.locationRight = ultrasonicRight.MeasureInMillimeters();
+    packet.locationLeft = ultrasonicLeft.MeasureInMillimeters();
+  }
+}
+void run_ObjectDetection(){
+  // Read the data from the sensors using a 'for' loop:
+  for (int i = 0; i < COUNT_SENSORS; i++) {
+    objectDetectRanges_mm[i] = sensors[i].psensor->readRange();  // This is where the sensor's data is captured
+    packet.objectDetectionSensors[i] = objectDetectRanges_mm[i];
+  }
+}
+
+/*
+*Function Name: initialize_ObjDetectSensors
+*Parameters: None
+*Returns: void
+*Description: Initialize the Object Detection Sensors
+*/
+
+void initialize_ObjDetectSensors(){
+  bool found_any_sensors = false;
+  // Set all shutdown pins low to shutdown sensors
+  for (int i = 0; i < COUNT_SENSORS; i++)
+    digitalWrite(sensors[i].shutdown_pin, LOW);
+  delay(10);
+
+  for (int i = 0; i < COUNT_SENSORS; i++) {
+    // one by one enable sensors and set their ID
+    digitalWrite(sensors[i].shutdown_pin, HIGH);
+    delay(10); // give time to wake up.
+    if (sensors[i].psensor->begin(sensors[i].id, false, sensors[i].pwire,
+                                  sensors[i].sensor_config)) {
+      found_any_sensors = true;
+    }
+  }
+
+}
+
+/*
+*Function Name: setup_ObjectDetection
+*Parameters: None
+*Returns: void
+*Description: Setup the ObjDetect Sensors by Shutdown Pins 
+*  then using initialize function
+*/
+void setup_ObjectDetection(){
+  for (int i = 0; i < COUNT_SENSORS; i++) {
+    pinMode(sensors[i].shutdown_pin, OUTPUT);
+    digitalWrite(sensors[i].shutdown_pin, LOW);
+  }
+  initialize_ObjDetectSensors();
+
+}
+/*
+*Function Name: update_sensors()
+*Parameters: NONE
+*Returns: Nothing
+*Purpose: Updates the object detection and location sensors.
+*NOTES:
+* 1) The averages are used to filter out sensor data for the calculation
+* 2) The averages are not used for the first 5 iterations so that the arrays can be filled
+* 3)
+*/
+void update_sensors(){ 
+  int ultraAvg = 0;
+  int leftAvg = 0;
+  int rightAvg = 0;
+
+  run_ObjectDetection();
+
+  //Read in data and store in index
+  a16_lastUltra[u8_k] =  ultrasonicBack.MeasureInMillimeters();
+  a16_lastRight[u8_k] = objectDetectRanges_mm[4];
+  a16_lastLeft[u8_k] = objectDetectRanges_mm[0];
+  u8_k++;
+  if(u8_k > 5){
+    b_Started = true;
+    u8_k = 0;
+  }
+  if(b_Started){
+  for(int i = 0; i < 5; i++){
+    ultraAvg += a16_lastUltra[i];
+    leftAvg += a16_lastLeft[i];
+    rightAvg += a16_lastRight[i];
+  }
+  ultraAvg = ultraAvg / 5;
+  leftAvg = leftAvg / 5;
+  rightAvg = rightAvg / 5;
+
+  a16_diff[0] = abs(leftAvg - ultraAvg);
+  a16_diff[1] = abs(rightAvg - ultraAvg);
+  a16_diff[2] = abs(leftAvg - rightAvg);
+  
+  for(int i = 0; i < 3; i++){
+    if(a16_diff[i] > 100){
+      b_objectDetected = true;
+    }
+  }
+  }
+  if(b_objectDetected){
+    digitalWrite(A5, HIGH);
+    b_objectDetected = false;
+  }
+  else{
+    digitalWrite(A5, LOW);
+  }
+  if(ultrasonicFront.MeasureInMillimeters() < 50){ 
+    b_frontFlag = true; 
+  } 
+  else{ 
+    b_frontFlag = false; 
+  } 
+  if(ultrasonicBack.MeasureInMillimeters() < 50){ 
+    b_backFlag = true; 
+  } 
+  else{ 
+    b_backFlag = false; 
+  } 
+  if(ultrasonicRight.MeasureInMillimeters() < 50){ 
+    b_rightFlag = true; 
+  }
+  else{ 
+    b_rightFlag = false; 
+  } 
+} 
+/*
+*Function Name: motor_stop()
+*Parameters: NONE
+*Returns: Nothing
+*Purpose: Stops all motors
+*/
+void motor_stop() {  
+    digitalWrite(in1, LOW); //M1, back right  
+    digitalWrite(in2, LOW);   
+    digitalWrite(in3, LOW); //M2, front right  
+    digitalWrite(in4, LOW);   
+    digitalWrite(in5, LOW); //M3, back left  
+    digitalWrite(in6, LOW);   
+    digitalWrite(in7, LOW); //M4, front left  
+    digitalWrite(in8, LOW);
+
+    delay(250); 
+
+}  
+
+/*
+*Function Name: robot_fwd()
+*Parameters: Boolean to denote if the forward movement will be on a timer or use sensors
+*Returns: Nothing
+*Purpose: Move the robot forward for one second if the boolean is true, if the boolean is false, move the robot forward
+* until the front sensors read the wall is close
+*/
+void robot_fwd(bool useTime) { 
+  b_inReverse = false; 
+  if(useTime){
+    digitalWrite(in1, HIGH); //M1, back right  
+    digitalWrite(in2, LOW);   
+    digitalWrite(in3, LOW); //M2, front right  
+    digitalWrite(in4, HIGH);   
+    digitalWrite(in5, LOW); //M3, back left  
+    digitalWrite(in6, HIGH);   
+    digitalWrite(in7, HIGH); //M4, front left  
+    digitalWrite(in8, LOW);  
+    analogWrite(enB, 200);  
+    analogWrite(enD, 200);  
+    analogWrite(enA, 200);  
+    analogWrite(enC, 200);  
+    delay(500);
+  }
+  else{
+    update_sensors();  
+    while(b_frontFlag == false){  
+      update_sensors(); 
+      digitalWrite(in1, HIGH); //M1, back right  
+      digitalWrite(in2, LOW);   
+      digitalWrite(in3, LOW); //M2, front right  
+      digitalWrite(in4, HIGH);   
+      digitalWrite(in5, LOW); //M3, back left  
+      digitalWrite(in6, HIGH);   
+      digitalWrite(in7, HIGH); //M4, front left  
+      digitalWrite(in8, LOW);  
+      analogWrite(enB, 200);  
+      analogWrite(enD, 200);  
+      analogWrite(enA, 200);  
+      analogWrite(enC, 200);
+    } 
+  }
+  motor_stop(); 
+}  
+
+/*
+*Function Name: robot_rev()
+*Parameters: Boolean to denote if the reverse will be on a timer or use sensors
+*Returns: Nothing
+*Purpose: Reverse the robot for one second if the boolean is true, if the boolean is false, reverse the robot
+* until the back sensors read the wall is close
+*/
+void robot_rev (bool useTime) {  
+  b_inReverse = true;
+  if(useTime){
+    digitalWrite(in1, LOW); //M1, back right  
+    digitalWrite(in2, HIGH);   
+    digitalWrite(in3, HIGH); //M2, front right  
+    digitalWrite(in4, LOW);   
+    digitalWrite(in5, HIGH); //M3, back left  
+    digitalWrite(in6, LOW);   
+    digitalWrite(in7, LOW); //M4, front left  
+    digitalWrite(in8, HIGH);  
+    analogWrite(enD, 200);  
+    analogWrite(enB, 200);  
+    analogWrite(enC, 200);  
+    analogWrite(enA, 200);  
+    delay(500);
+  }
+  else{
+  update_sensors();  
+  while(b_backFlag == false){  
+      update_sensors();  
+      digitalWrite(in1, LOW); //M1, back right  
+      digitalWrite(in2, HIGH);   
+      digitalWrite(in3, HIGH); //M2, front right  
+      digitalWrite(in4, LOW);   
+      digitalWrite(in5, HIGH); //M3, back left  
+      digitalWrite(in6, LOW);   
+      digitalWrite(in7, LOW); //M4, front left  
+      digitalWrite(in8, HIGH);  
+      analogWrite(enD, 200);  
+      analogWrite(enB, 200);  
+      analogWrite(enC, 210);  
+      analogWrite(enA, 200); 
+    } 
+  }
+  motor_stop(); 
+
+}  
+/*
+*Function Name: motor_turn_right()
+*Parameters: NONE
+*Returns: Nothing
+*Purpose: Turns the robot to the right
+*/
+void motors_turn_right() {  
+  update_sensors();  
+  while(b_rightFlag == false){  
+    update_sensors();  
+    digitalWrite(in1, LOW); //M1, back right  
+    digitalWrite(in2, HIGH);   
+    digitalWrite(in3, HIGH); //M2, front right  
+    digitalWrite(in4, LOW);   
+    digitalWrite(in5, LOW); //M3, back left  
+    digitalWrite(in6, HIGH);   
+    digitalWrite(in7, HIGH); //M4, front left  
+    digitalWrite(in8, LOW);  
+    analogWrite(enD, 80);  
+    analogWrite(enB, 80); 
+    analogWrite(enC, 80); 
+    analogWrite(enA, 80);  
+  }  
+  motor_stop(); 
+}  
+
+/*
+*Function Name: crab_walk_left()
+*Parameters: Distance to travel UNTIL (int)
+*Returns: Nothing
+*Purpose: Makes the robot crab walk to the left until it reaches a certain distance from the wall
+*/
+void crab_walk_left(int distance) {  
+  while(ultrasonicLeft.MeasureInMillimeters() > distance){  
+    digitalWrite(in1, LOW); //M1, back right  
+    digitalWrite(in2, HIGH);   
+    digitalWrite(in3, LOW); //M2, front right  
+    digitalWrite(in4, HIGH);   
+    digitalWrite(in5, LOW); //M3, back left  
+    digitalWrite(in6, HIGH);   
+    digitalWrite(in7, LOW); //M4, front left  
+    digitalWrite(in8, HIGH);  
+    analogWrite(enD, 100);  
+    analogWrite(enB, 130);  
+    analogWrite(enC, 130);  
+    analogWrite(enA, 100);  
+  }  
+  motor_stop(); 
+} 
