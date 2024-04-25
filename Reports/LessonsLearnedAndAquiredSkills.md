@@ -113,31 +113,41 @@ What classes have you taken that helped you in capstone? What did they help with
 
 Reflect on the project, both technical and organizational. What went well? What didn’t go well? 
 
-- ...
+- Overall, the project went well, but there were some things that better than others: in the master control subsystem, simultaneous mapping in ROS2 was achieved and was properly 
+organized for future teams to use with very minor changes. Future teams can easily pick up where we left off and continue developing the next iteration of the project. 
 
 What unanticipated problems occurred? 
 
-- ...
+- Connection with the Jetson Nano proved very difficult due to a lack in understanding of networking connections. The issues were resolved by dual booting Ubuntu on my laptop and 
+connecting via CAT5 cable. 
+- We also ran into problems establishing ROS's base_scan and odom sources. ROS requires either LIDAR or GPS for base_scan and either an IMU or LiDAR for odometry, so we utilized a 
+previously used rplidar a2m8 to establish these transforms. 
+
 
 What would you do differently if you were to do it over again? 
 
-- ...
+- I would say the most important change would be to use ROS supported sensors. Having ROS drivers would save a lot of time adapting between the two, and I would recommend future teams
+utilized a one or more LiDAR sensors
 
 What “best practices” have you identified? 
 
-- ...
+- Use ROS enhancement protocols (REPs). This will make the code easy to follow for future teams. Also, name systems intuitively. This is crucial for reproducibility.  
 
 What words of wisdom would you pass on to future students?
 
-- ...
+- If your team decides to use ROS, start learning early. It is a sharp learning curve, but if you have the time to invest, it is possible to learn well enough to make improvements.
+Also make documentation an even bigger deal. Add to the user manual we created this year and tell the next team to continue adding. It may take many years to create a code base that enables
+very competitive ROS bots consistently. 
 
 What new knowledge or skills did you acquire throughout capstone.
 
-- ...
+- I learned a ton about ROS middleware. My research and learning helped me to get a job working with ROS that quickly increased my knowledge and skills. I also learned a little bit of 
+Object Oriented Programming (OOP). In addition to the hard skills, I also got a lot better at conflict management and team communication. 
 
 What classes have you taken that helped you in capstone? What did they help with?
 
-- ...
+- CSC 1300 (Intro to programming) and 1310 (Data Structures and Algorithms): Basic programming knowledge for working with ROS2
+- Microcomputer Systems: Helped with making serial connection witht he Arduino microcontrollers. 
 
 ## Abigail Kennedy
 
