@@ -76,7 +76,7 @@ What classes have you taken that helped you in capstone? What did they help with
 
 - CSC 1300, CSC1310, ECE3130, ECE4140 helped in programming, structure, and debugging
 - ECE/ME4370, ME4140, ME3610 helped with mechanical and electrical application
-- ECE4210 helped the PID controller
+- ECE4210 helped with the PID controller
 
 ## Isaac Hoese
 
