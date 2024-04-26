@@ -107,9 +107,9 @@ What new knowledge or skills did you acquire throughout capstone.
 
 What classes have you taken that helped you in capstone? What did they help with?
 
--CSC 1300, CSC1310, ECE3130, ECE4140 all helped with microcontroller programming and code structure
--ECE4370 for integrating mechanical and electrical systems
--ECE2050 for basic electrial knowledge for evaluating datasheets
+- CSC 1300, CSC1310, ECE3130, ECE4140 all helped with microcontroller programming and code structure
+- ECE4370 for integrating mechanical and electrical systems
+- ECE2050 for basic electrial knowledge for evaluating datasheets
 
 
 ## Isaac Jennings
