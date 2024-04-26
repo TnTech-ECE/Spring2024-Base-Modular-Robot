@@ -100,6 +100,6 @@ The [Meeting Minutes](/Documentation/Meeting%20Minutes) folder contains the date
 
 ### [Software](/Software)
 
- All software used and created is listed in this directory. For each subsystem, there are specific folders listed to find the necessary code.
+ All software used and created is listed in the [Software](./Software) directory. For each subsystem, there are specific folders listed to find the necessary code.
 
 
